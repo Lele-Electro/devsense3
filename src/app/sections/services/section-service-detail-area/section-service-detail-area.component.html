@@ -1,0 +1,22 @@
+<div class="section-content">
+    <div class="service-single-block m-b30">
+        <div class="sx-media">
+            <img src="{{data.image}}" alt="">
+        </div>
+        <h3 class="m-t30 sx-tilte">{{data.title}} </h3>
+        
+        <div [innerHTML]="data.description"></div>
+        
+       <h3 class="m-t30 sx-tilte">{{data.otherskills.title}}</h3>
+       <div class="single-service-list">
+        
+        <ul class="list-angle-right anchor-line">
+            <li *ngFor="let object of data.otherskills.skills">
+                {{object}}
+            </li>
+        </ul>
+            
+    </div>
+                                            
+    </div>                                                 
+</div>

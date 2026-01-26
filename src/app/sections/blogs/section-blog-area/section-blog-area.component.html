@@ -1,0 +1,78 @@
+<div class="single-blog-post blog-detail {{ padding == 1 ? 'm-b30' : '' }}">
+                            
+    <div class="sx-post-meta">
+        <ul>
+            <li class="post-date">Posted {{blog.date}}</li>
+            <li class="post-author">By {{blog.author}}</li>
+            <li class="post-comment">{{blog.comments}} Comments</li>
+        </ul>
+    </div>  
+                                  
+    <div class="sx-post-title ">
+        <h3 class="post-title">{{blog.title}}</h3>
+    </div>
+
+    <div *ngIf="blog.image != ''" class="sx-post-media sx-largr-media-20">
+         <div class="portfolio-item">
+            <img class="img-responsive" src="{{blog.image}}" alt="">
+        </div>
+    </div>
+    
+    <div class="sx-post-text" [innerHTML]="blog.description"></div>
+    
+    <div class="autor-post-tag-share">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="widget_tag_cloud single-post-tag">
+                    
+                    <div class="tagcloud">
+                        <a href="javascript:void(0);" *ngFor="let object of blog.tags">{{object}}</a>
+                    </div>
+                </div>
+            </div>
+            
+        </div> 
+    </div> 
+
+    <div class="autor-post-tag-share p-a30  m-b30 sx-bg-light">
+     
+        <div class="single-post-share text-center">
+            <h5>Share this Post:</h5>
+            <div class="widget_social_inks">
+                <ul class="social-icons social-sm social-square m-b0">
+                    <li><a href="https://www.facebook.com/" class="fa fa-facebook" style="transform: translate3d(0px, 0px, 0px);"></a></li>
+                    <li><a href="https://twitter.com/" class="fa fa-twitter"></a></li>
+                    <li><a href="https://www.linkedin.com/" class="fa fa-linkedin"></a></li>
+                    <li><a href="https://www.instagram.com/" class="fa fa-instagram"></a></li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+    
+    <div class="s-post-pagination-control previous-next previous next">
+        <div class="paging-left paging-item">
+            <div class="paging-content"> 
+                <a class="paging-link" routerLink="/blog/classic">
+                    <i class="fa fa-angle-left"></i>
+                    Previous Post
+                </a>
+                <h4 class="paging-title">
+                    <a routerLink="/blog/classic">{{blog.prev.title}} </a>
+                </h4>
+            </div>
+        </div>
+        <div class="paging-right paging-item">
+            <div class="paging-content"> 
+                <a class="paging-link" routerLink="/blog/classic">Next Post 
+                    <i class="fa fa-angle-right"></i> 
+                </a>
+                <h4 class="paging-title"><a routerLink="/blog/classic">{{blog.next.title}}
+
+                </a>
+                </h4>
+            </div>
+        </div>
+    </div>                                
+                                                     
+</div>

@@ -1,0 +1,180 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "anih": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "",
+      "sourceRoot": "src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/anih",
+            "index": "src/index.html",
+            "main": "src/main.ts",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "tsconfig.app.json",
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
+            ],
+            "styles": [
+              "src/assets/css/bootstrap.min.css",
+              "src/assets/css/fontawesome/css/font-awesome.min.css",
+              "src/assets/css/owl.carousel.min.css",
+              "src/assets/css/magnific-popup.min.css",
+              "src/assets/css/loader.min.css",
+              "src/assets/css/flaticon.min.css",
+              "src/assets/css/lc_lightbox.css",
+              "src/assets/css/magic-mouse.css",
+              "src/assets/css/swiper-bundle.min.css",
+              "src/assets/css/style.css",
+              {
+                "input": "src/assets/css/skin/skin-1.css",
+                "bundleName": "skin-1",
+                "inject": false
+              },
+              {
+                "input": "src/assets/css/skin/skin-2.css",
+                "bundleName": "skin-2",
+                "inject": false
+              },
+              {
+                "input": "src/assets/css/skin/skin-3.css",
+                "bundleName": "skin-3",
+                "inject": false
+              },
+              {
+                "input": "src/assets/css/skin/skin-4.css",
+                "bundleName": "skin-4",
+                "inject": false
+              },
+              {
+                "input": "src/assets/css/skin/skin-5.css",
+                "bundleName": "skin-5",
+                "inject": false
+              },
+              {
+                "input": "src/assets/css/skin/skin-6.css",
+                "bundleName": "skin-6",
+                "inject": false
+              },
+              {
+                "input": "src/assets/css/skin/skin-7.css",
+                "bundleName": "skin-7",
+                "inject": false
+              },
+              {
+                "input": "src/assets/css/skin/skin-8.css",
+                "bundleName": "skin-8",
+                "inject": false
+              },
+              {
+                "input": "src/assets/css/skin/skin-9.css",
+                "bundleName": "skin-7",
+                "inject": false
+              },
+              {
+                "input": "src/assets/css/skin/skin-10.css",
+                "bundleName": "skin-8",
+                "inject": false
+              }
+            ],
+            "scripts": [
+              "src/assets/js/jquery-3.6.0.min.js",
+              "src/assets/js/popper.min.js",
+              "src/assets/js/bootstrap.min.js",
+              "src/assets/js/magnific-popup.min.js",
+              "src/assets/js/waypoints.min.js",
+              "src/assets/js/counterup.min.js",
+              "src/assets/js/waypoints-sticky.min.js",
+              "src/assets/js/isotope.pkgd.min.js",
+              "src/assets/js/imagesloaded.pkgd.min.js",
+              "src/assets/js/owl.carousel.min.js",
+              "src/assets/js/jquery.owl-filter.js",
+              "src/assets/js/theia-sticky-sidebar.js",
+              "src/assets/js/lc_lightbox.lite.js",
+              "src/assets/js/magic_mouse.js",
+              "src/assets/js/swiper-bundle.min.js",
+              "src/assets/js/custom.js"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "anih:build:production"
+            },
+            "development": {
+              "browserTarget": "anih:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "anih:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "src/test.ts",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "tsconfig.spec.json",
+            "karmaConfig": "karma.conf.js",
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
+            ],
+            "styles": [
+              "src/styles.css"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "analytics": "c8f8cee7-67b0-4a20-937e-f0336a5c71ce"
+  }
+}

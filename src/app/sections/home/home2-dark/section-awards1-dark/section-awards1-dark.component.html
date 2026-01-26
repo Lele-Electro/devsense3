@@ -1,0 +1,49 @@
+<div class="section-full mobile-page-padding p-t100 p-b70 sx-bg-dark-light" >
+                <div class="container">
+                        <div class="section-content">
+                            <div class="row">
+                            
+                                <div class="col-lg-5 col-md-12">
+                                    <div class="awards-left">
+                                        <div class="sx-aw-media m-b30">
+                                            <img src="{{data.image}}" alt="">
+                                        </div>                                        
+                                </div>                                	
+                                </div>
+                                
+                                <div class="col-lg-7 col-md-12 col-sm-12">
+                                    <div class="awards-right">
+
+                                        <h3 class="sx-tilte">{{data.description}}</h3>
+                                        <div class="aw-info">
+                                            <!-- Accordian -->
+                                            <div class="wt-accordion acc-dotted" id="accordion">
+                                                <div class="panel wt-panel" *ngFor="let object of data.awards; let i=index;">
+                                                    <div class="acod-head {{ i == 1 ? 'acc-actives' : ''}}" id="heading{{i}}">
+                                                        <h4 class="acod-title">
+                                                        <a class="collapsed" data-toggle="collapse" href="#collapse{{i}}" attr.aria-expanded="{{i==0 ? true : false}}" attr.aria-controls="collapse{{i}}">
+                                                            <span class="aw-year sx-text-primary">{{object.year}}</span> – {{object.title}}
+                                                            <span class="indicator"><i class="fa"></i></span>
+                                                        </a>
+                                                        </h4>
+                                                    </div>
+                                                
+                                                    <div id="collapse{{i}}" class="collapse {{ i==0 ? 'show' : ''}}" attr.aria-labelledby="heading{{i}}" data-parent="#accordion">
+                                                        <div class="acod-content p-tb15">
+                                                            {{object.description}}
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>                                    
+
+                                        </div>
+                                    </div>
+                                </div> 
+
+                                
+                            </div>
+                    </div>
+                </div>
+            
+            </div> 

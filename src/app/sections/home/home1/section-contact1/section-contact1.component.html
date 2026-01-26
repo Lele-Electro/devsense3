@@ -1,0 +1,71 @@
+<div class="section-full mobile-page-padding bg-white sx-bg-none p-t100 p-b70 bg-no-repeat bg-bottom-right"  style="background-image:url(assets/images/background/dot-corner.png);">
+    <div class="container">
+       
+      <!-- TITLE START -->
+       <div class="section-head">
+           <div class="sx-separator-outer separator-center">
+               <div class="sx-separator" data-title="07">
+                   <h2 class="sep-line-one typewrite" data-period="2000" attr.data-type='[ "{{data.title}}"]' ><span class="wrap"></span>{{data.title}}</h2>
+               </div>
+           </div>
+
+       </div>                   
+       <!-- TITLE END --> 
+       <div class="section-contentget-in-touch-form">
+           <div class="row d-flex align-items-center">
+               <div class="col-lg-5 col-md-12 col-sm-12">
+                   <div class="contact-home1-left m-b30">
+                       <h3 class="sx-tilte">{{data.description1}} </h3>
+                       <p>{{data.description2}} </p>
+                       <ul class="list-unstyled line-list-style">
+                           <li>{{data.address}}</li>
+                           <li>{{data.emails}} </li>
+                           <li>{{data.numbers}} </li>
+                           
+                       </ul>
+                   </div>
+               </div> 
+               
+               <div class="col-lg-7 col-md-12 col-sm-12">
+                   <div class="contact-home1-right">
+                       <div class="contact-home-1-form  bg-white">
+                           <form class="cons-contact-form2 form-transparent" method="post" action="assets/handlers/form-handler2.php">
+
+                               <div class="input input-animate">
+                                   <label for="name">Your Name *</label>
+                                   <input type="text" name="username"  id="name" required>
+                                   <span class="spin"></span>
+                               </div>
+
+                               <div class="input input-animate">
+                                   <label for="email">Your Email *</label>
+                                   <input type="email" name="email"   id="email" required>
+                                   <span class="spin"></span>
+                               </div> 
+
+                               <div class="input input-animate">
+                                   <label for="Phone">Phone Number*</label>
+                                   <input type="text" name="phone"  id="Phone" required>
+                                   <span class="spin"></span>
+                               </div>   
+
+                               <div class="input input-animate">
+                                   <label for="message">Your Message*</label>
+                                   <textarea name="message"  id="message" required></textarea>
+                                   <span class="spin"></span>
+                               </div>
+
+                               <div class="text-left p-t10">
+                                   <button type="submit" class="site-button-secondry btn-half outline m-r15">Send Message <span class="sx-bg-primary"></span></button>
+                               </div>    
+                           </form>
+                           <span class="bold-bottom-title">Contact Us</span>
+                       </div>
+                   </div>
+               </div> 
+               
+           </div>
+       </div>
+   </div>
+     
+</div>

@@ -1,0 +1,121 @@
+<div class="page-wraper">
+
+    <!-- HEADER START -->
+    <app-header1></app-header1>
+    <!-- HEADER END -->
+
+    <!-- CONTENT START -->
+    <div class="page-content">
+
+        <!-- INNER PAGE BANNER -->
+        <app-banner [data]="banner"></app-banner>
+        <!-- INNER PAGE BANNER END -->
+
+        <!-- SECTION CONTENTG START -->
+        <div class="section-full p-t100 p-b70 mobile-page-padding">
+            <div class="container">
+
+                <div class="faq-1">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8  m-b30">
+                            <!-- TITLE START -->
+                            <div class="section-head-two center">
+                                <h2 class="sx-title-two">Faq Style One</h2>
+                            </div>
+                            <!-- TITLE END -->
+
+                            <div class="faq-list">
+
+                                <!-- Accordian -->
+                                <div *ngFor="let object of faqs.style1">
+                                    <h4>{{object.que}}</h4>
+                                    <p>{{object.ans}}
+                                    </p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+        <!-- SECTION CONTENT END -->
+
+        <!-- SECTION CONTENTG START -->
+        <div class="section-full p-t100 p-b70 mobile-page-padding sx-bg-light">
+            <div class="container">
+
+                <div class="faq-2">
+                    <!-- TITLE START -->
+                    <div class="section-head-two left">
+                        <h2 class="sx-title-two">Faq Style Two</h2>
+                    </div>
+                    <!-- TITLE END -->
+                    <div class="row">
+                        <div class="col-md-6 faq-list m-b30">
+                            <!-- Accordian -->
+                            <div class="wt-accordion acc-outline" id="accordion">
+                                <div class="panel wt-panel" *ngFor="let object of faqs.style2; let i = index;">
+                                    <div class="acod-head" id="heading{{i}}">
+                                        <h4 class="acod-title">
+                                            <a class="{{ i == 1 ? '' : 'collapsed' }}" data-toggle="collapse" href="#collapse{{i}}" attr.aria-expanded="{{ i == 1 ? true : false}}"
+                                                attr.aria-controls="collapse{{i}}">
+                                                {{object.que}}
+                                                <span class="indicator"><i class="fa"></i></span>
+                                            </a>
+                                        </h4>
+                                    </div>
+
+                                    <div id="collapse{{i}}" class="collapse {{ i == 1 ? 'show' : '' }}" attr.aria-labelledby="heading{{i}}"
+                                        data-parent="#accordion">
+                                        <div class="acod-content p-tb15">
+                                            {{object.ans}}
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-6 m-b30">
+                            <!-- Accordian -->
+                            <div class="sx-accordion acc-bg-primary" id="accordion5">
+
+                                <div class="panel sx-panel" *ngFor="let object of faqs.style3; let i = index;">
+                                    <div class="acod-head acc-actives" id="heading1{{i}}">
+                                        <h4 class="acod-title">
+                                            <a data-toggle="collapse" href="#collapse{{i}}5" class="{{ i == 0 ? '' : 'collapsed'}}" data-parent="#accordion5">
+                                                {{object.que}}
+                                                <span class="indicator"><i class="fa fa-plus"></i></span>
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapse{{i}}5" class="acod-body collapse {{ i == 0 ? 'show' : ''}}" attr.aria-labelledby="heading1{{i}}"
+                                        data-parent="#accordion5">
+                                        <div class="acod-content p-tb15">
+                                            {{object.ans}}
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+        <!-- SECTION CONTENT END -->
+
+    </div>
+    <!-- CONTENT END -->
+
+    <!-- FOOTER START -->
+    <app-footer1></app-footer1>
+    <!-- FOOTER END -->
+
+</div>

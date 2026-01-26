@@ -1,0 +1,37 @@
+<div class="page-wraper"> 
+       	
+    <!-- HEADER START -->
+    <app-header1></app-header1>
+    <!-- HEADER END -->
+    
+    <!-- CONTENT START -->
+    <div class="page-content">
+    
+        <!-- INNER PAGE BANNER -->
+        <app-banner [data]="banner"></app-banner>
+        <!-- INNER PAGE BANNER END -->
+        
+        <!-- SECTION CONTENTG START -->
+        <div class="section-full mobile-page-padding p-t100 p-b100">  
+            <div class="container">
+                <div class="section-content">
+                    <div class="page-notfound">
+                        
+                        <span class="title">404</span>
+                        <p>We're Sorry , But The Page You Were Looking For, Couldn't Be Found.</p>
+                        <a routerLink="/index" class="site-button-secondry btn-half outline m-r15">Back to home <span class="sx-bg-primary"></span></a>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- SECTION CONTENT END -->
+
+    </div>
+    <!-- CONTENT END -->
+    
+    <!-- FOOTER START -->
+    <app-footer1></app-footer1>
+    <!-- FOOTER END -->
+
+</div>

@@ -1,0 +1,46 @@
+<div class="section-full mobile-page-padding bg-white sx-bg-none p-t100 p-b70 bg-no-repeat bg-bottom-right"  style="background-image:url(assets/images/background/dot-corner.png);">
+    <div class="container">
+
+       <!-- TITLE START -->
+        <div class="section-head">
+            <div class="sx-separator-outer separator-center">
+                <div class="sx-separator" data-title="05">
+                    <h2 class="sep-line-one typewrite" data-period="2000" attr.data-type='[ "{{data.title}}"]' ><span class="wrap">{{data.title}}</span></h2>
+                </div>
+            </div>
+
+        </div>                   
+        <!-- TITLE END --> 							
+
+        <!-- IMAGE CAROUSEL START -->
+        <div class="section-content">
+            <div class="row justify-content-center">
+            
+                <div class="col-lg-4 col-md-6 col-sm-12" *ngFor="let object of data.blogs">
+                    <div class="blog-post blog-grid blog-style-1">
+
+                        <div class="sx-post-info">
+                            <div class="post-category"><a routerLink="/blog/single">{{object.category}}</a> </div>                               
+                            <div class="sx-post-title ">
+                                <h4 class="post-title"><a routerLink="/blog/single">{{object.title}}</a></h4>
+                            </div>
+                            <div class="sx-post-meta ">
+                                <ul>
+                                    <li class="post-date"><span class="d-month">{{object.month}}</span><span class="d-date"> {{object.day}}</span><span class="d-year">{{object.year}}</span></li>
+                                </ul>
+                            </div>  												
+
+                            <div class="sx-post-readmore">
+                                 <a routerLink="/blog/single" title="READ MORE" rel="bookmark" class="site-button-link">View More</a>
+                            </div>
+                            
+                        </div>
+                        
+                    </div>
+                </div>
+                                                                                                                                                                                                        
+            </div>
+        </div>
+    </div>
+
+</div> 

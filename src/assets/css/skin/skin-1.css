@@ -1,0 +1,51 @@
+::selection {
+	background: #ed4c2f
+}
+::-moz-selection {
+background:#ed4c2f
+}
+::-webkit-selection {
+background:#ed4c2f
+}
+
+
+/*-----Background Color-----*/
+.nav-dark.header-nav .nav > li .sub-menu li:hover > a, .site-button, .site-button-link::after,.header-style1 .site-search,.sx-separator::before,.sx-bg-primary,[class^="box-animation-"],.filter-pos-left .btn-filter-wrap li:hover:before,.filter-pos-left .btn-filter-wrap li:hover:after,.line-list-style li::before,.input-animate.input .spin,.sx-bnr-inr-entry .banner-title-outer h2:after,.section-head-two:before,.acc-bg-primary a,button.scroltop,.side-bar .widget .widget-title:before,.a-about2:after,.swiper-pagination-bullet-active,.our-team-2 .icons i,
+.swiper-pagination-progressbar .swiper-pagination-progressbar-fill,.header-style2 .social-bx li a::after{
+	background-color: #ed4c2f	
+}
+
+.owl-btn-vertical-center .owl-nav .owl-prev, .owl-btn-vertical-center .owl-nav .owl-next,.blog-style-1 .post-category a::after,.testimonial-home .owl-prev:hover, .testimonial-home.owl-prev:active, .testimonial-home .owl-prev:focus, .testimonial-home .owl-next:hover, .testimonial-home .owl-next:active, .testimonial-home .owl-next:focus{
+	background-color: #ed4c2f !important;	
+}
+
+
+/*-----Text Color-----*/
+h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover, a:active, a:hover, a:focus, .header-nav .nav > li:hover > a, .header-nav .nav > li.active > a, .header-nav .nav > li.current-menu-item > a, .sx-text-primary,.header-style1 .nav-dark.header-nav .nav > li .sub-menu li:hover > a,.filter-pos-left .btn-filter-wrap li:hover,.filter-pos-left .btn-filter-wrap li.btn-active,.blog-style-1 .post-date span,.site-footer .widget_services ul li a:hover,.site-footer .widget_social ul li a:hover,.footer-dark .widget_newsletter .newsletter-bx button,.sx-breadcrumb li a,.sx-post-meta li:after,.widget_services ul li a:hover,.widget_tag_cloud a:hover,.s-post-pagination-control .paging-item .paging-content a.paging-link i,.s-post-pagination-control .paging-item .paging-content a.paging-link:hover,.s-post-pagination-control .paging-item .paging-content .paging-title a:hover,ol.comment-list li.comment .comment-meta a,.header-style1 .nav-dark.header-nav .nav>li .mega-menu>li>a,.header-style1 .nav-dark.header-nav .nav>li .mega-menu>li ul a:hover,.list-my-skils ul li span:hover,.our-team-info .sx-team-position,.our-team-3 .our-team-info .our-team-content a:hover,.sx-team2-swiper .swiper-pagination-total,.swiper-button-next, .swiper-button-prev,.year-ex-count2 .text-outline,.our-team-2 .figcaption p,.header-style1 .nav-dark.header-nav .nav>li .sub-menu li .fa,.header-style1 .nav-dark.header-nav .nav>li .sub-menu li:hover .fa,.page-notfound span.title,.number-block-one .figcaption-number,.filter-navigation li.active a,.filter-navigation li a.btn-inline:hover,.header-style2 .header-nav .nav > li .sub-menu li:hover > a,.header-style2 .header-nav .nav > li .mega-menu > li ul a:hover,.header-style1.nav-transparent .top-bar .social-bx li a:hover{
+    color: #ed4c2f;
+}
+.our-story-year{
+    color: #ed4c2f !important;
+}
+
+
+/*-----Border Color-----*/
+.a-about::after,.contact-home1-right::before,.footer-dark .widget_newsletter .newsletter-bx,.search-bx .input-group{
+	border-color: #ed4c2f;
+}
+
+
+.logo-footer a.sx-text-primary:hover,.header-style1-dark.header-style1.nav-transparent .top-bar .social-bx li a:hover{color: #ed4c2f;}
+
+/*Dark Demo CSS*/
+.header-style1-dark.header-style1.nav-transparent .main-bar .header-nav .nav > li > a,
+.header-style1-dark.header-style1 .e-p-bx li,
+.header-style1-dark.header-style1 .e-p-bx li a,
+.header-style1-dark.header-style1.nav-transparent .top-bar .social-bx li a{color: #fff;}
+.header-style1-dark .social-bx {border-right: 1px solid #424242;}
+.header-style1-dark.header-style1.nav-transparent .top-bar .social-bx li a {border-left: 1px solid #424242;}
+.header-style1-dark.header-style1.nav-transparent .top-bar {border-bottom: 1px solid #424242;}
+.header-style1-dark.header-style1 .e-p-bx li::after {background-color: #424242;}
+
+.header-style2-dark.header-style2{background-color: #323232;}
+.header-style2-dark.header-style2 .is-fixed.color-fill .main-bar {background: #323232;}

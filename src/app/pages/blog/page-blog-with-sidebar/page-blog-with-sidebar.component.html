@@ -1,0 +1,53 @@
+<div class="page-wraper"> 
+       	
+    <!-- HEADER START -->
+    <app-header1></app-header1>
+    <!-- HEADER END -->
+    
+    <!-- CONTENT START -->
+    <div class="page-content">
+    
+        <!-- INNER PAGE BANNER -->
+        <app-banner [data]="banner"></app-banner>
+        <!-- INNER PAGE BANNER END -->
+        
+        <!-- SECTION CONTENT START -->
+        <div class="section-full p-t100 p-b70 mobile-page-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12">
+                        <div class="blog-single-space">
+                            <!-- BLOG START --> 
+                            
+                            <app-section-blog-area [blog]="blog" padding="1"></app-section-blog-area>  
+                            
+                        </div>
+
+                        <div class="clear comment-section-outer" id="comment-list">
+                            <app-section-blog-comments [data]="commentslist"></app-section-blog-comments>
+                        </div>
+                        
+                    </div>
+                    <!-- SIDE BAR START -->
+                    <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 sticky_column">
+                        
+                        <app-section-blog-sidebar [data]="sidebar"></app-section-blog-sidebar>
+
+                    </div>
+                    <!-- SIDE BAR END -->                        
+                </div>
+                                  
+
+                    
+            </div>
+        </div>
+        <!-- SECTION CONTENT END -->
+        
+    </div>
+    <!-- CONTENT END -->
+    
+    <!-- FOOTER START -->
+    <app-footer1></app-footer1>
+    <!-- FOOTER END -->
+
+</div>

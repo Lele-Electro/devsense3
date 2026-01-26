@@ -1,0 +1,45 @@
+<div class="section-full overlay-wraper  mobile-page-padding  p-t100 p-b70 bg-cover bg-gray-light" >
+    <div class="overlay-main sx-bg-white opacity-07"></div>
+    <div class="container">
+
+        <div class="large-title-block">
+            <div class="row">
+                <div class="col-lg-12 col-md-12">
+                    <div class=" large-title">
+                        <!-- TITLE START -->
+                        <div class="section-head-two left">
+                            <h2 class="sx-title-two">{{data.title}}</h2>
+                        </div>                   
+                        <!-- TITLE END -->
+                    </div>
+                </div>
+                                            
+            </div>
+        </div>
+
+        <div class="section-content">
+            <div class="sx-service2-wrap">
+
+                <div class="row number-block-two-outer d-flex justify-content-center">
+                    <div class="col-lg-4 col-md-6 col-sm-12 m-b30" *ngFor="let object of data.strategies">
+                    
+                        <div class="number-block-two animate-in-to-top sx-bg-white">
+                            <div class="figcaption p-a30">
+                                <h4 class="m-t0">{{object.title}}</h4>
+                                <p>{{object.description}}</p>
+                                <a routerLink="/services/detail" class="site-button-link">Read More</a>
+                                <div class="figcaption-number animate-in-to-top-content">
+                                    <span>{{object.serial}}</span>
+                                </div>
+                            </div>
+                        </div>
+                                                        
+                    </div>
+                    
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+ </div>

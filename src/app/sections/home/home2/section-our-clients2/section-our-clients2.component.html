@@ -1,0 +1,35 @@
+<div class="section-full mobile-page-padding p-t100 p-b70 sx-bg-light" >
+            	
+				<div class="container">
+                    <!-- TITLE START -->
+                    <div class="section-head-two center">
+                        <div class="section-head-two center">
+                            <h2 class="sx-title-two">{{data.title}}</h2>
+                        </div>
+                    </div>                   
+                    <!-- TITLE END -->                
+					
+					<div class="section-content">
+                    	<div class="client-logo-pic2-wrap">
+                        
+                        	<div class="row justify-content-center">
+								
+                                <div class="col-lg-2 col-md-4 col-sm-4 col-4" *ngFor="let object of data.logos">
+                                    <a routerLink="/about/company" class="client-logo-pic2">
+                                        <img src="{{object}}" alt="">
+                                    </a>
+                                </div>
+								
+                            </div>
+
+                                                                                   
+                        </div>
+						
+                    </div>
+
+                </div>
+                
+                <div class="hilite-title text-left p-l50 text-uppercase">
+                    <strong>{{data.title2}}</strong>
+                </div>                     
+             </div> 

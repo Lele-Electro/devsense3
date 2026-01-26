@@ -1,0 +1,27 @@
+<div class="product-block">
+    <ul>
+      <li>
+        <h5 class="sx-title">Date:</h5>
+        <p>{{data.date}}</p>
+      </li>
+      <li>
+        <h5 class="sx-title">Client:</h5>
+        <p>{{data.client}}</p>
+       </li>
+      <li>
+        <h5 class="sx-title">Category:</h5>
+        <p>{{data.category}}</p>
+      </li>
+                                              
+  </ul>
+</div>
+
+
+<div class="social-icons-style-one sm-style d-flex">
+    <h5 class="sx-title p-r10 m-b0">Share:</h5>
+    <ul class="social-icons  sx-social-links">
+        <li *ngFor="let object of data.share">
+            <a href="{{object.link}}" class="fa {{object.icon}}"></a>
+        </li>
+    </ul>								
+</div>

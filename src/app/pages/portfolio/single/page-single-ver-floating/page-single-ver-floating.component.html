@@ -1,0 +1,52 @@
+<div class="page-wraper"> 
+       	
+    <!-- HEADER START -->
+    <app-header1></app-header1>
+    <!-- HEADER END -->
+    
+    <!-- CONTENT START -->
+    <div class="page-content">
+    
+        <!-- INNER PAGE BANNER -->
+        <app-banner [data]="banner"></app-banner>
+        <!-- INNER PAGE BANNER END -->
+        
+        <!-- SECTION CONTENT START -->
+        <div class="section-full p-t100 p-b70 sx-bg-white inner-page-padding">
+            <div class="container">
+                <div class="section-content">
+                    <div class="project-v-floating-wrap"> 
+                        <div class="row">
+                            <div class="col-xl-7 col-lg-7 col-md-12 m-b30">
+                                <div class="project-v-floating">
+                                        <!-- COLUMNS 1 -->
+                                        <div class="item" *ngFor="let object of portfolio.images">
+                                            <div class="sx-box">
+                                                <img src="{{object}}" alt=""> 
+                                            </div>
+                                        </div>                                                               
+                                </div>
+                            </div>
+                            <div class="col-xl-5 col-lg-5 col-md-12 sticky_column m-b30">
+                                <div class="portfolio-detail-small sx-info p-l30">
+                                    <h3 class="sx-tilte m-t0">{{portfolio.title}}</h3>
+                                    <div [innerHTML]="portfolio.description"></div>
+                                    <app-section-portfolio-product-details-share [data]="portfolio.details"></app-section-portfolio-product-details-share>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+
+                 </div>
+             </div>
+         </div>           
+        <!-- SECTION CONTENT END  -->
+        
+    </div>
+    <!-- CONTENT END -->
+    
+    <!-- FOOTER START -->
+    <app-footer1></app-footer1>
+    <!-- FOOTER END -->
+
+</div>

@@ -1,0 +1,148 @@
+/*
+==========================
+Dark Theme Css
+==========================
+*/
+body {background-color: #272727;}
+.sx-bg-dark-light{background-color: #323232;}
+.sx-bg-dark{background-color: #272727;}
+
+.icon-count-2-outer{background-color: #272727;}
+.blog-style-1{background-color: #272727;}
+
+
+h1 {color: #fff;}
+h2 {color: #b19777;}
+h3 {color: #fff;}
+h4 {color: #fff;}
+h5 {color: #fff;}
+h6 {color: #fff;}
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+    color: #fff;
+}
+
+.sx-text-black{color: #fff;}
+.year-ex-count .text-outline {
+	color: #fff;
+	-webkit-text-fill-color: rgba(255, 255, 255, 0);
+	-ms-text-fill-color: rgba(0, 0, 0, 0);
+	-moz-text-fill-color: rgba(0, 0, 0, 0);
+	-o-text-fill-color: rgba(0, 0, 0, 0);
+	-webkit-text-stroke-width: 1px;
+	-ms-text-stroke-width: 1px;
+	-moz-text-stroke-width: 1px;
+	-o-text-stroke-width: 1px;
+	-webkit-text-stroke-color: #fff;
+	-ms-text-stroke-color: #fff;
+	-moz-text-stroke-color: #fff;
+	-o-text-stroke-color: #fff;
+}
+.hilite-title strong {
+	color: #fff;
+	-webkit-text-fill-color: rgba(0, 0, 0, 0);
+	-ms-text-fill-color: rgba(0, 0, 0, 0);
+	-moz-text-fill-color: rgba(0, 0, 0, 0);
+	-o-text-fill-color: rgba(0, 0, 0, 0);
+	-webkit-text-stroke-width: 1px;
+	-ms-text-stroke-width: 1px;
+	-moz-text-stroke-width: 1px;
+	-o-text-stroke-width: 1px;
+	-webkit-text-stroke-color: #fff;
+	-ms-text-stroke-color: #fff;
+	-moz-text-stroke-color: #fff;
+	-o-text-stroke-color: #fff;
+}
+
+.bold-bottom-title {
+	color: #fff;
+	-webkit-text-fill-color: rgba(0, 0, 0, 0);
+	-ms-text-fill-color: rgba(0, 0, 0, 0);
+	-moz-text-fill-color: rgba(0, 0, 0, 0);
+	-o-text-fill-color: rgba(0, 0, 0, 0);
+	-webkit-text-stroke-width: 1px;
+	-ms-text-stroke-width: 1px;
+	-moz-text-stroke-width: 1px;
+	-o-text-stroke-width: 1px;
+	-webkit-text-stroke-color: #fff;
+	-ms-text-stroke-color: #fff;
+	-moz-text-stroke-color: #fff;
+	-o-text-stroke-color: #fff;
+}
+
+
+
+.testimonial-2 .testimonial-text {background-color: #272727;}
+.line-list-style li{color: #fff;}
+.testimonial-2 .testimonial-text p:last-child,
+.testimonial-2 .testimonial-name{color: #fff;}
+
+.testimonial-home .owl-prev,
+.testimonial-home .owl-next {color: #fff !important;}
+
+.blog-style-1 .post-date span:last-child:before {background-color: #fff;}
+
+
+.site-button.outline,
+.site-button-secondry.outline {color: #b19777;border: 3px solid #b19777;}
+
+.btn-half.site-button:hover {background-color: #b19777;}
+
+.progressText b,
+.progress span{color: #fff;}
+
+.site-button-link{color: #fff;}
+.filter-pos-left .btn-filter-wrap li{color: #fff;}
+
+[class^="box-animation-"] .box-inner-content { background-color: rgba(0, 0, 0, 0.8);}
+
+.box-inner-content i:after {background-color: #fff;}
+.box-inner-content i:before {background-color: #fff;}
+.client-logo-pic span{background-color: transparent; color: #000;}
+
+.client-logo-pic,.client-grid{border-color: #424242;}
+.blog-style-1{border-color: #424242;}
+
+.input-animate.input input, .input-animate.input textarea, .input-animate.input label{color: #fff;}
+
+.input-animate.input input, .input-animate.input textarea {background: #272727;}
+
+.input-animate.input::before {background: #424242;}
+
+.header-style1.nav-transparent .main-bar .header-nav .nav > li > a,
+.header-style1 .e-p-bx li,
+.header-style1 .e-p-bx li a{color: #fff;}
+
+.header-style1.nav-transparent .top-bar .social-bx li a{color: #fff;}
+
+.header-style1.nav-transparent .top-bar {border-bottom: 1px solid #424242;}
+
+.header-style1.nav-transparent .top-bar .social-bx li a{border-left: 1px solid #424242;}
+.social-bx{border-right: 1px solid #424242;}
+
+.header-style1.nav-transparent .is-fixed.color-fill .main-bar {background: #272727;}
+.header-style1.nav-transparent .navbar-toggler .icon-bar {background-color: #fff;}
+
+.header-style2{background-color: #323232;}
+
+.acod-head a, .acod-head a:hover, .acod-head a:active, .acod-head a:focus{color: #fff;}
+
+
+.acod-head .indicator{color: #fff;}
+.acc-dotted .acod-title a {border-color: #424242;}
+.pricingtable-bx,
+.pricingtable-title * {color: #fff;}
+
+.pricingtable-wrapper {border: 1px dashed #fff;}
+.sx-count {border: 1px solid #424242;}
+
+.sx-service2-inner .sx-title {background-color: #272727;}
+
+.header-style2 .is-fixed.color-fill .main-bar {background: #272727;}
+
+.overlay-main.bg-white{background-color: #000 !important;}
+.sx-bnr-inr-entry .banner-title-outer h2{color: #fff;}
+.sx-breadcrumb li:last-child {color: #fff;}
+.breadcrumb-style-2 li::after {color: #fff;}
+.contact-home-1-form.bg-white{background-color: #323232 !important;}
+.sx-bg-white{background-color: #272727;}
+.contact-info .sx-icon-box-wraper {border: 1px solid #424242;}

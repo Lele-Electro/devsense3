@@ -1,0 +1,36 @@
+<div class="section-full mobile-page-padding sx-bg-dark p-t100 p-b100 ">
+                <div class="container">
+
+                   <!-- TITLE START -->
+                    <div class="section-head-two center">
+                        <div class="section-head-two center">
+                            <h2 class="sx-title-two">{{data.title}}</h2>
+                        </div>
+                    </div>                   
+                    <!-- TITLE END --> 
+
+                </div>
+
+                <div class="container-fluid">
+                    <div class="section-content ">
+                         <div class="our-history">
+                         		<div class="row no-gutters sx-bg-dark">
+                                	<div class="col-xl-4 col-lg-4 col-md-12" *ngFor="let object of data.projects">
+                                    	<div *ngIf="object.type == 'image'" class="our-history-pic bg-no-repeat bg-center bg-cover"  style="background-image:url({{object.image}});">
+										</div>
+
+                                        <div *ngIf="object.type == 'content'" class="our-history-content   pic-bg-border">
+                                            <div class="large-title">
+                                              <h3 class="m-t0 sx-title" data-title="{{object.serial}}">{{object.title}}</h3>
+                                            </div>
+                                            <p>{{object.description}}</p>
+                                            <a routerLink="services/detail" class="site-button-secondry btn-half outline m-r15">Read More <span class="sx-bg-primary"></span></a>
+                                            
+                                        </div>
+                                    </div>
+                                </div> 
+                        </div>
+                    </div>
+                </div>              
+       
+            </div>

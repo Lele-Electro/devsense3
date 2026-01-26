@@ -1,0 +1,118 @@
+<div class="page-wraper">
+
+    <!-- HEADER START -->
+    <app-header1></app-header1>
+    <!-- HEADER END -->
+
+    <!-- CONTENT START -->
+    <div class="page-content">
+
+        <!-- INNER PAGE BANNER -->
+        <app-banner [data]="banner"></app-banner>
+        <!-- INNER PAGE BANNER END -->
+
+        <!-- SECTION CONTENTG START -->
+        <div class="section-full p-t100 p-b70 mobile-page-padding sx-bg-white">
+            <!-- LOCATION BLOCK-->
+            <div class="container">
+                <div class="gmap-outline m-b70">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6309.495304446196!2d-122.43885472228101!3d37.74906395235639!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808f7e12a1d66d03%3A0xb8c905ae4e81369b!2sQ-Architecture!5e0!3m2!1sen!2sin!4v1623689156327!5m2!1sen!2sin"
+                        style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+                <!-- GOOGLE MAP & CONTACT FORM -->
+                <div class="section-content">
+                    <!-- CONTACT FORM-->
+                    <div class="row justify-content-center">
+
+                        <div class="col-lg-7 col-md-12 col-sm-12 m-b30">
+                            <div class="contact-home1-right">
+                                <div class="contact-home-1-form  bg-white">
+                                    <form class="cons-contact-form2 form-transparent" method="post">
+
+                                        <div class="input input-animate">
+                                            <label for="name">Your Name *</label>
+                                            <input type="text" name="username" id="name" required="">
+                                            <span class="spin"></span>
+                                        </div>
+
+                                        <div class="input input-animate">
+                                            <label for="email">Your Email *</label>
+                                            <input type="email" name="email" id="email" required="">
+                                            <span class="spin"></span>
+                                        </div>
+
+                                        <div class="input input-animate">
+                                            <label for="Phone">Phone Number*</label>
+                                            <input type="text" name="phone" id="Phone" required="">
+                                            <span class="spin"></span>
+                                        </div>
+
+                                        <div class="input input-animate">
+                                            <label for="message">Your Message*</label>
+                                            <textarea name="message" id="message" required=""></textarea>
+                                            <span class="spin"></span>
+                                        </div>
+
+                                        <div class="text-left p-t10">
+                                            <button type="submit"
+                                                class="site-button-secondry btn-half outline m-r15">Send Message <span
+                                                    class="sx-bg-primary"></span></button>
+                                        </div>
+                                    </form>
+                                    <span class="bold-bottom-title">Contact Us</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-5 col-md-12 col-sm-12  m-b30">
+                            <div class="contact-info  p-a40">
+                                <h3 class="sx-tilte">Write Us, call us or drop by our office at:</h3>
+                                <div>
+
+                                    <div class="sx-icon-box-wraper left p-b30">
+                                        <div class="icon-md sx-text-primary"><i class="flaticon-telephone"></i></div>
+                                        <div class="icon-content">
+                                            <h5 class="m-t0">Phone number</h5>
+                                            <p>{{contact.phone}}</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="sx-icon-box-wraper left p-b30">
+                                        <div class="icon-md sx-text-primary"><i class="flaticon-email"></i></div>
+                                        <div class="icon-content">
+                                            <h5 class="m-t0">Email address</h5>
+                                            <p>{{contact.email}}</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="sx-icon-box-wraper left">
+                                        <div class="icon-md sx-text-primary"><i class="flaticon-pin"></i></div>
+                                        <div class="icon-content">
+                                            <h5 class="m-t0">Address info</h5>
+                                            <p>{{contact.address}}</p>
+                                        </div>
+                                    </div>
+
+
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+        <!-- SECTION CONTENT END -->
+
+    </div>
+    <!-- CONTENT END -->
+
+    <!-- FOOTER START -->
+    <app-footer1></app-footer1>
+    <!-- FOOTER END -->
+
+</div>
