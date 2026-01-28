@@ -16,7 +16,7 @@ export class AppComponent implements AfterViewInit {
   title = 'anih';
 
   constructor(private router: Router, @Inject(DOCUMENT) private document: Document) {
-    
+
   }
 
   ngAfterViewInit(): void {
@@ -28,7 +28,7 @@ export class AppComponent implements AfterViewInit {
       }
     });
   }
-  
+
   private reinitializeThings() {
     (function ($) {
       setTimeout(function () {
@@ -47,7 +47,7 @@ export class AppComponent implements AfterViewInit {
     let themeLinkskin = this.document.getElementById(
       'client-theme-skin'
     ) as HTMLLinkElement;
-    
+
     if (themeLinkskin) {
       themeLinkskin.href = "assets/css/skin/" + skinName + ".scss";
     } else {

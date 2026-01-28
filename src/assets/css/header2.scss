@@ -1,3 +1,4 @@
+@import '../variables.scss';
 /*======================================
 HEADER (top part of page)
 ======================================*/
@@ -27,14 +28,14 @@ HEADER (top part of page)
 	vertical-align: middle;
 	padding: 0;
 	font-size: 36px;
-	color: #ed4c2f;
+	color: $verdigris;
 	margin: 0px;
 	position: relative;
 	z-index: 11;
 }
 
 .header-style2 .logo-header-inner {display: table-cell;vertical-align: middle;height: 100%;}
-.header-style2 .logo-header-inner img {max-width: 100px;max-height: 100%;}
+.header-style2 .logo-header-inner img {max-width: 300px;max-height: 100%;}
 
 /*-------------------------------------
 	eamil-phone (left) 
@@ -94,7 +95,7 @@ HEADER (top part of page)
 	height: 100%;
 	width: 0px;
 	z-index: -1;
-	background-color: #ed4c2f;
+	background-color: $verdigris;
 	transition: all 0.4s ease;
 	-moz-transition: all 0.4s ease;
 	-webkit-transition: all 0.4s ease;
@@ -123,7 +124,7 @@ HEADER (top part of page)
 .header-style2 .main-bar::after {clear: both;content: "";display: table;}
 
 .header-style2 .site-search{
-	background-color:#ed4c2f;
+	background-color:$verdigris;
 	box-shadow: -3px 3px 0px rgba(0, 0, 0, 0.2);
 	-webkit-transition: all 0.4s linear;
 	-moz-transition: all 0.4s linear;
@@ -172,8 +173,8 @@ HEADER (top part of page)
 .header-style2 .header-nav .nav>li>a:focus {background-color: transparent;}
 
 .header-style2 .header-nav .nav>li.active>a,
-.header-style2 .header-nav .nav>li.current-menu-item>a {background-color: transparent;color: #ed4c2f;}
-.header-style2 .header-nav .nav>li:hover>a {color: #ed4c2f;}
+.header-style2 .header-nav .nav>li.current-menu-item>a {background-color: transparent;color: $verdigris;}
+.header-style2 .header-nav .nav>li:hover>a {color: $verdigris;}
 
 .header-style2 .header-nav .nav>li:hover>.sub-menu,
 .header-style2 .header-nav .nav>li:hover>.mega-menu {
@@ -220,7 +221,7 @@ HEADER (top part of page)
 
 .header-style2 .header-nav .nav>li .sub-menu li a:hover {color: #000;text-decoration: none;}
 .header-style2 .header-nav .nav>li .sub-menu li a:hover:after {width: 4px;	left: -1px;}
-.header-style2 .header-nav .nav>li .sub-menu li:hover>a {color: #ed4c2f;}
+.header-style2 .header-nav .nav>li .sub-menu li:hover>a {color: $verdigris;}
 
 .header-style2 .header-nav .nav>li .sub-menu li:last-child {border-bottom: 0px;}
 .header-style2 .header-nav .nav>li .sub-menu li .fa {color: #000;display: block;float: right;position: absolute;right: 10px;top: 6px;}
@@ -291,7 +292,7 @@ HEADER (top part of page)
 .header-style2 .header-nav .nav>li .mega-menu>li ul {list-style: none;margin: 10px 0px 0px 0px;padding: 0px;}
 
 .header-style2 .header-nav .nav>li .mega-menu>li ul a {color: #474747;display: block;font-size: 13px;line-height: 34px;padding: 2px 20px;}
-.header-style2 .header-nav .nav>li .mega-menu>li ul a:hover {color: #ed4c2f;background-color: #F2F2F2;}
+.header-style2 .header-nav .nav>li .mega-menu>li ul a:hover {color: $verdigris;background-color: #F2F2F2;}
 .header-style2 .header-nav .nav>li.menu-item-has-children:before {
 	content: "\f078";
 	display: block;
@@ -328,9 +329,9 @@ HEADER (top part of page)
 /*-------------------------------------
 	nav dark version
 -------------------------------------*/
-.header-style2 .nav-dark.header-nav .nav>li .sub-menu li:hover>a {	color: #ed4c2f;	background-color: transparent;}
-.header-style2 .nav-dark.header-nav .nav>li .sub-menu li .fa {color: #ed4c2f;}
-.header-style2 .nav-dark.header-nav .nav>li .sub-menu li:hover .fa {color: #ed4c2f;}
+.header-style2 .nav-dark.header-nav .nav>li .sub-menu li:hover>a {	color: $verdigris;	background-color: transparent;}
+.header-style2 .nav-dark.header-nav .nav>li .sub-menu li .fa {color: $verdigris;}
+.header-style2 .nav-dark.header-nav .nav>li .sub-menu li:hover .fa {color: $verdigris;}
 .header-style2 .nav-dark.header-nav .nav>li .sub-menu,
 .header-style2 .nav-dark.header-nav .nav>li .mega-menu {background-color: #212121;border: 1px solid rgba(0, 0, 0, 0.2);}
 .header-style2 .nav-dark.header-nav .nav>li .sub-menu li:last-child {border-bottom: 0px;}
@@ -339,7 +340,7 @@ HEADER (top part of page)
 .header-style2 .nav-dark.header-nav .nav>li .mega-menu>li ul a,
 .header-style2 .nav-dark.header-nav .nav>li .mega-menu>li>a {color: #fff;}
 
-.header-style2 .nav-dark.header-nav .nav>li .mega-menu>li ul a:hover {background-color: transparent;color: #ed4c2f;}
+.header-style2 .nav-dark.header-nav .nav>li .mega-menu>li ul a:hover {background-color: transparent;color: $verdigris;}
 
 .header-style2 .nav-dark.header-nav .nav>li .mega-menu>li:after {background-color: rgba(0, 0, 0, 0.2);}
 
@@ -366,7 +367,7 @@ HEADER (top part of page)
 	.header-style2 .header-nav .nav li .sub-menu,
 	.header-style2 .header-nav .nav li .mega-menu {opacity: 1;margin: 0 !important;}
 	.header-style2 .header-nav .nav i {margin-top: 6px;}
-	.header-style2 .header-nav .nav li.has-child.nav-active>a {color: #ed4c2f;}
+	.header-style2 .header-nav .nav li.has-child.nav-active>a {color: $verdigris;}
 
 	.header-style2 .header-nav .nav>li {margin: 0;	padding: 0;}
 	.header-style2 .header-nav .nav>li.active>a,
@@ -402,7 +403,7 @@ HEADER (top part of page)
 	.header-style2 .nav-dark.header-nav .nav>li>a {border-top: 1px solid rgba(0, 0, 0, 0.2);color: #fff;display:block;}
 	.header-style2 .nav-dark.header-nav .nav>li>a:hover,
 	.header-style2 .nav-dark.header-nav .nav>li>a:active,
-	.header-style2 .nav-dark.header-nav .nav>li>a:focus {background-color: #212121;color: #ed4c2f;	}
+	.header-style2 .nav-dark.header-nav .nav>li>a:focus {background-color: #212121;color: $verdigris;	}
 	.header-style2 .nav-dark.header-nav .nav>li ul,
 	.header-style2 .nav-dark.header-nav .nav>li .sub-menu,
 	.header-style2 .nav-dark.header-nav .nav>li .mega-menu {background-color: #212121;}
