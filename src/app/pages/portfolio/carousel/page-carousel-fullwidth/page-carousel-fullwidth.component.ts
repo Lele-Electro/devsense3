@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-page-carousel-fullwidth',
   templateUrl: './page-carousel-fullwidth.component.html',
-  styleUrls: ['./page-carousel-fullwidth.component.css']
+  styleUrls: ['./page-carousel-fullwidth.component.scss']
 })
 export class PageCarouselFullwidthComponent implements OnInit {
 

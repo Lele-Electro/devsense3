@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-page-single-ver-wide-video',
   templateUrl: './page-single-ver-wide-video.component.html',
-  styleUrls: ['./page-single-ver-wide-video.component.css']
+  styleUrls: ['./page-single-ver-wide-video.component.scss']
 })
 export class PageSingleVerWideVideoComponent implements OnInit {
 

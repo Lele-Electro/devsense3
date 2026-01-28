@@ -3,7 +3,7 @@ import { Component, Input, OnInit } from '@angular/core';
 @Component({
   selector: 'app-section-blog-tags',
   templateUrl: './section-blog-tags.component.html',
-  styleUrls: ['./section-blog-tags.component.css']
+  styleUrls: ['./section-blog-tags.component.scss']
 })
 export class SectionBlogTagsComponent implements OnInit {
 

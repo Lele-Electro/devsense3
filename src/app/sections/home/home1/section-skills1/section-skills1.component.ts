@@ -3,7 +3,7 @@ import { Component, Input, OnInit } from '@angular/core';
 @Component({
   selector: 'app-section-skills1',
   templateUrl: './section-skills1.component.html',
-  styleUrls: ['./section-skills1.component.css']
+  styleUrls: ['./section-skills1.component.scss']
 })
 export class SectionSkills1Component implements OnInit {
 

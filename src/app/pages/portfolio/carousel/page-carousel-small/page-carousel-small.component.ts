@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-page-carousel-small',
   templateUrl: './page-carousel-small.component.html',
-  styleUrls: ['./page-carousel-small.component.css']
+  styleUrls: ['./page-carousel-small.component.scss']
 })
 export class PageCarouselSmallComponent implements OnInit {
 

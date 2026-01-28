@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-page-grid2col-nogut',
   templateUrl: './page-grid2col-nogut.component.html',
-  styleUrls: ['./page-grid2col-nogut.component.css']
+  styleUrls: ['./page-grid2col-nogut.component.scss']
 })
 export class PageGrid2colNogutComponent implements OnInit {
 

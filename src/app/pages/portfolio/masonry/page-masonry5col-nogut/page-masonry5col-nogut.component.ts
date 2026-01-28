@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-page-masonry5col-nogut',
   templateUrl: './page-masonry5col-nogut.component.html',
-  styleUrls: ['./page-masonry5col-nogut.component.css']
+  styleUrls: ['./page-masonry5col-nogut.component.scss']
 })
 export class PageMasonry5colNogutComponent implements OnInit {
 

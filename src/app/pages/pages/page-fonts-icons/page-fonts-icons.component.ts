@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-page-fonts-icons',
   templateUrl: './page-fonts-icons.component.html',
-  styleUrls: ['./page-fonts-icons.component.css']
+  styleUrls: ['./page-fonts-icons.component.scss']
 })
 export class PageFontsIconsComponent implements OnInit {
 

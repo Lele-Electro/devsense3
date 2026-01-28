@@ -7,7 +7,7 @@ declare var killSlider2: any;
 @Component({
   selector: 'app-section-slider2-dark',
   templateUrl: './section-slider2-dark.component.html',
-  styleUrls: ['./section-slider2-dark.component.css']
+  styleUrls: ['./section-slider2-dark.component.scss']
 })
 export class SectionSlider2DarkComponent implements OnInit, OnDestroy {
 

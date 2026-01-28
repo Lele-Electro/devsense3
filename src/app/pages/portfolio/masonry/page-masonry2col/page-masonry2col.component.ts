@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-page-masonry2col',
   templateUrl: './page-masonry2col.component.html',
-  styleUrls: ['./page-masonry2col.component.css']
+  styleUrls: ['./page-masonry2col.component.scss']
 })
 export class PageMasonry2colComponent implements OnInit {
 

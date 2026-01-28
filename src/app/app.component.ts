@@ -10,7 +10,7 @@ declare var initializeOnLoad: any;
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements AfterViewInit {
   title = 'anih';
@@ -49,12 +49,12 @@ export class AppComponent implements AfterViewInit {
     ) as HTMLLinkElement;
     
     if (themeLinkskin) {
-      themeLinkskin.href = "assets/css/skin/" + skinName + ".css";
+      themeLinkskin.href = "assets/css/skin/" + skinName + ".scss";
     } else {
       const skin = this.document.createElement('link');
       skin.id = 'client-theme-skin';
       skin.rel = 'stylesheet';
-      skin.href = "assets/css/skin/" + `${skinName}` + ".css";
+      skin.href = "assets/css/skin/" + `${skinName}` + ".scss";
 
       head.appendChild(skin);
     }

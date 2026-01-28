@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-page-single-ver-floating',
   templateUrl: './page-single-ver-floating.component.html',
-  styleUrls: ['./page-single-ver-floating.component.css']
+  styleUrls: ['./page-single-ver-floating.component.scss']
 })
 export class PageSingleVerFloatingComponent implements OnInit {
 

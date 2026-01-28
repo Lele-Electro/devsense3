@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-page-blog-single',
   templateUrl: './page-blog-single.component.html',
-  styleUrls: ['./page-blog-single.component.css']
+  styleUrls: ['./page-blog-single.component.scss']
 })
 export class PageBlogSingleComponent implements OnInit {
 
