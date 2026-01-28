@@ -1,14 +1,15 @@
 /*
 ==========================
 Author: 7xtheme team
-Version: 1.0  
+Version: 1.0
 ==========================
 */
 
 @import url(header.scss);
 @import url(header2.scss);
+@import '../variables.scss';
 
-/*____GENERAL 
+/*____GENERAL
 ======================================*/
 
 body {
@@ -31,7 +32,7 @@ body {
 @media only screen and (max-width:767px) {
 	body {
 		font-size: 14px;
-	}	
+	}
 }
 
 a {
@@ -49,7 +50,7 @@ a:focus {
 a:active,
 a:hover,
 a:focus {
-	color: #ed4c2f;
+	color: $verdigris;
 }
 
 p {
@@ -121,7 +122,7 @@ summary {
 }
 
 
-/*____HEADING & TITLE 
+/*____HEADING & TITLE
 ======================================*/
 
 h1,
@@ -157,7 +158,7 @@ h3 a:hover,
 h4 a:hover,
 h5 a:hover,
 h6 a:hover {
-	color: #ed4c2f;
+	color: $verdigris;
 }
 
 h1 a.sx-text-white:hover,
@@ -166,7 +167,7 @@ h3 a.sx-text-white:hover,
 h4 a.sx-text-white:hover,
 h5 a.sx-text-white:hover,
 h6 a.sx-text-white:hover {
-	color: #ed4c2f;
+	color: $verdigris;
 }
 
 h1 {
@@ -216,7 +217,7 @@ h6 {
 }
 
 
-/*____TEXT & PARAGRAPH 
+/*____TEXT & PARAGRAPH
 ======================================*/
 
 p {
@@ -353,7 +354,7 @@ Background Effects
 }
 
 
-/*____LISTING STYLES 
+/*____LISTING STYLES
 ======================================*/
 
 dl,
@@ -488,7 +489,7 @@ dl dd {
 -------------------------------------*/
 
 ul.primary li:before {
-	color: #ed4c2f;
+	color: $verdigris;
 }
 
 ul.secondry li:before {
@@ -1716,7 +1717,7 @@ ol.list-num-count.list-outline-none>li:before {
 -------------------------------------*/
 
 .sx-text-primary {
-	color: #ed4c2f;
+	color: $verdigris;
 }
 
 .sx-text-secondry {
@@ -1739,7 +1740,7 @@ ol.list-num-count.list-outline-none>li:before {
 }
 
 .sx-bg-primary {
-	background-color: #ed4c2f;
+	background-color: $verdigris;
 }
 
 .sx-bg-secondry {
@@ -1866,7 +1867,7 @@ ol.list-num-count.list-outline-none>li:before {
 }
 
 
-/*____BOXES CSS 
+/*____BOXES CSS
 ======================================*/
 
 .rounded-bx,
@@ -2289,7 +2290,7 @@ ol.list-num-count.list-outline-none>li:before {
 }
 
 
-/*____IMAGES OVERLAY EFFECTS (overly animation on images)  
+/*____IMAGES OVERLAY EFFECTS (overly animation on images)
 ======================================*/
 
 .sx-img-overlay1 {
@@ -2331,12 +2332,12 @@ ol.list-num-count.list-outline-none>li:before {
 }
 
 
-/*____shortcodeS 
+/*____shortcodeS
 ======================================*/
 
 
 /*-------------------------------------
-	Buttons 
+	Buttons
 --------------------------------------- */
 
 
@@ -2412,7 +2413,7 @@ ol.list-num-count.list-outline-none>li:before {
 }
 
 .site-button {
-	background-color: #ed4c2f;
+	background-color: $verdigris;
 	color: #fff;
 }
 
@@ -2420,7 +2421,7 @@ ol.list-num-count.list-outline-none>li:before {
 .site-button:hover,
 .site-button:focus,
 .active>.site-button {
-	background-color: #ed4c2f;
+	background-color: $verdigris;
 	color: #fff;
 }
 
@@ -2613,7 +2614,7 @@ ol.list-num-count.list-outline-none>li:before {
 	left: 0px;
 	top: -1px;
 	height: 3px;
-	background-color: #ed4c2f;
+	background-color: $verdigris;
 	width: 75%;
 	position: absolute;
 	z-index: -1;
@@ -2679,7 +2680,7 @@ ol.list-num-count.list-outline-none>li:before {
 .masonry-filter>li a:hover,
 .masonry-filter>li a:active,
 .masonry-filter>li a:focus {
-	color: #ed4c2f;
+	color: $verdigris;
 }
 
 @media only screen and (max-width: 600px) {
@@ -2806,7 +2807,7 @@ btn-half {
 
 
 /*-------------------------------------
-	Title separators 
+	Title separators
 -------------------------------------*/
 
 
@@ -2835,7 +2836,7 @@ btn-half {
 .sx-separator:before {
 	position: absolute;
 	content: '';
-	background-color: #ed4c2f;
+	background-color: $verdigris;
 	top: 50%;
 	transform: translateY(-50%);
 	left: 0px;
@@ -2903,7 +2904,7 @@ btn-half {
 .section-head-two:before {
 	position: absolute;
 	content: '';
-	background-color: #ed4c2f;
+	background-color: $verdigris;
 	top: -6px;
 	left: 0px;
 	height: 4px;
@@ -2989,7 +2990,7 @@ btn-half {
 
 
 /*-------------------------------------
-	Section Head Part 
+	Section Head Part
 -------------------------------------*/
 
 .section-head {
@@ -3029,7 +3030,7 @@ btn-half {
 	}
 	}
 /*-------------------------------------
-	TABS 
+	TABS
 -------------------------------------*/
 
 .sx-tabs:after {
@@ -3107,7 +3108,7 @@ btn-half {
 
 
 /*-------------------------------------
-	Accordians 
+	Accordians
 -------------------------------------*/
 
 .sx-accordion .sx-panel {
@@ -3292,7 +3293,7 @@ btn-half {
 /* Accordion bg primary */
 
 .acc-bg-primary a {
-	background-color: #ed4c2f;
+	background-color: $verdigris;
 }
 
 .acc-bg-primary .acod-head a,
@@ -3333,7 +3334,7 @@ btn-half {
 
 
 /*-------------------------------------
-	7. Testimonials 
+	7. Testimonials
 -------------------------------------*/
 
 .testimonial-pic {
@@ -3424,8 +3425,8 @@ btn-half {
 .testimonial-home .owl-next:hover,
 .testimonial-home .owl-next:active,
 .testimonial-home .owl-next:focus {
-	background-color: #ed4c2f !important;
-	border-color: #ed4c2f !important;
+	background-color: $verdigris !important;
+	border-color: $verdigris !important;
 	color: #ffffff !important;
 	opacity: 1;
 }
@@ -3486,7 +3487,7 @@ btn-half {
 	right: 15px;
 	top: 0px;
 	font-size: 70px;
-	color: #ed4c2f;
+	color: $verdigris;
 }
 
 .testimonial-2 .testimonial-detail {
@@ -3524,7 +3525,7 @@ btn-half {
 
 .testimonial-2.testimonial-bg .testimonial-name,
 .testimonial-2.testimonial-bg .testimonial-position {
-	color: #ed4c2f;
+	color: $verdigris;
 }
 
 @media only screen and (max-width:991px){
@@ -3535,7 +3536,7 @@ btn-half {
 		margin-right: 0px;
 		min-height: 500px;
 		background-position: center;
-	}	
+	}
 	.testimonial-home .testimonial-2 {
 		margin: 30px 0px 60px 0px;
 	}
@@ -3600,7 +3601,7 @@ btn-half {
 	.testimonial-2 .testimonial-text p:last-child {
 		font-size: 14px;
 	}
-		
+
 }
 
 /*-------------------------------------
@@ -3634,7 +3635,7 @@ btn-half {
 	.pricingtable-bx {
 		font-size: 48px;
 	}
-	
+
 	.pricingtable-type {
 		font-size: 12px;
 	}
@@ -3699,7 +3700,7 @@ btn-half {
 
 
 /*-------------------------------------
-	Image effects 
+	Image effects
 -------------------------------------*/
 
 .sx-img-effect {
@@ -3861,7 +3862,7 @@ btn-half {
 
 
 /*-------------------------------------
-	Social icons 
+	Social icons
 -------------------------------------*/
 
 .social-icons {
@@ -3905,7 +3906,7 @@ btn-half {
 
 
 /*-------------------------------------
-	Breadcrumb 
+	Breadcrumb
 -------------------------------------*/
 
 
@@ -3927,7 +3928,7 @@ btn-half {
 }
 
 .sx-breadcrumb li a {
-	color: #ed4c2f;
+	color: $verdigris;
 }
 
 .sx-breadcrumb li a:hover {
@@ -3961,7 +3962,7 @@ btn-half {
 
 
 /*-------------------------------------
-	Google map 
+	Google map
 -------------------------------------*/
 
 .google-map {
@@ -3976,12 +3977,12 @@ btn-half {
 @media only screen and (max-width:768px){
 	.gmap-outline {
 		margin-bottom: 30px;
-	}	
+	}
 }
 
 
 /*-------------------------------------
-	Form elements 
+	Form elements
 -------------------------------------*/
 
 label {
@@ -4178,7 +4179,7 @@ input[type=radio]:checked+label:before {
 
 
 /*-------------------------------------
-	 Loading 
+	 Loading
 -------------------------------------*/
 
 
@@ -4219,7 +4220,7 @@ input[type=radio]:checked+label:before {
 
 
 /*-------------------------------------
-	Widgets 
+	Widgets
 -------------------------------------*/
 
 .widget {
@@ -4280,7 +4281,7 @@ input[type=radio]:checked+label:before {
 }
 
 .widget_services ul li a:hover {
-	color: #ed4c2f;
+	color: $verdigris;
 }
 
 .widget_services li {
@@ -4325,7 +4326,7 @@ input[type=radio]:checked+label:before {
 }
 
 .site-footer .widget_services ul li:hover {
-	border-left: 0px solid #ed4c2f;
+	border-left: 0px solid $verdigris;
 	box-shadow: none;
 }
 
@@ -4334,7 +4335,7 @@ input[type=radio]:checked+label:before {
 }
 
 .site-footer .widget_services ul li a:hover {
-	color: #ed4c2f;
+	color: $verdigris;
 }
 
 .site-footer .widget_services li {
@@ -4387,7 +4388,7 @@ input[type=radio]:checked+label:before {
 }
 
 .site-footer .widget_social ul li:hover {
-	border-left: 0px solid #ed4c2f;
+	border-left: 0px solid $verdigris;
 	box-shadow: none;
 }
 
@@ -4396,7 +4397,7 @@ input[type=radio]:checked+label:before {
 }
 
 .site-footer .widget_social ul li a:hover {
-	color: #ed4c2f;
+	color: $verdigris;
 }
 
 .site-footer .widget_social li {
@@ -4421,7 +4422,7 @@ input[type=radio]:checked+label:before {
 }
 
 .search-bx .input-group{
-	border: 2px solid #ed4c2f;
+	border: 2px solid $verdigris;
 
 }
 .search-bx .input-group .form-control {
@@ -4436,7 +4437,7 @@ input[type=radio]:checked+label:before {
 }
 
 .search-bx .input-group-btn .btn:hover {
-	color: #ed4c2f;
+	color: $verdigris;
 }
 
 
@@ -4547,7 +4548,7 @@ input[type=radio]:checked+label:before {
 }
 
 .widget_tag_cloud a:hover {
-	color: #ed4c2f;
+	color: $verdigris;
 }
 
 .widget_tag_cloud a:hover:after {
@@ -4623,7 +4624,7 @@ input[type=radio]:checked+label:before {
 }
 
 .widget_newsletter-2 .newsletter-bx .newsletter-icon {
-	background-color: #ed4c2f;
+	background-color: $verdigris;
 	display: block;
 	width: 100px;
 	height: 100px;
@@ -4682,13 +4683,13 @@ input[type=radio]:checked+label:before {
 
 .footer-dark .social-icons li a:hover {
 	color: #000;
-	background-color: #ed4c2f;
+	background-color: $verdigris;
 	border: 1px solid rgba(255, 255, 255, 0.1)
 }
 
 .footer-dark .widget_newsletter .newsletter-bx {
 	text-align: left;
-	border: 2px solid #ed4c2e;
+	border: 2px solid $verdigris;
 }
 
 .footer-dark .footer-top .widget_newsletter .form-control {
@@ -4708,7 +4709,7 @@ input[type=radio]:checked+label:before {
 
 .footer-dark .widget_newsletter .newsletter-bx button {
 	background-color: transparent;
-	color: #ed4c2f;
+	color: $verdigris;
 	text-transform: uppercase;
 	height: 50px;
 	padding: 0px 15px;
@@ -4749,12 +4750,12 @@ input[type=radio]:checked+label:before {
 
 
 /*-------------------------------------
-	Table 
+	Table
 -------------------------------------*/
 
 
 /*-------------------------------------
-	Video 
+	Video
 -------------------------------------*/
 
 .yt-thum-box img {
@@ -4763,7 +4764,7 @@ input[type=radio]:checked+label:before {
 
 
 /*======================================
-1WP DEFAULT  
+1WP DEFAULT
 ======================================*/
 
 blockquote.author-quote {
@@ -4841,7 +4842,7 @@ blockquote.author-quote .fa-quote-left {
 }
 
 
-/*____BLOG  
+/*____BLOG
 ======================================*/
 
 .blog-post {
@@ -4877,7 +4878,7 @@ blockquote.author-quote .fa-quote-left {
 }
 
 .sx-post-meta li a:hover {
-	color: #ed4c2f;
+	color: $verdigris;
 }
 
 .sx-post-meta i {
@@ -4886,7 +4887,7 @@ blockquote.author-quote .fa-quote-left {
 
 .sx-post-meta li:after {
 	content: "-";
-	color: #ed4c2f;
+	color: $verdigris;
 	display: inline-block;
 	font-weight: normal;
 	margin-left: 5px;
@@ -4950,7 +4951,7 @@ blockquote.author-quote .fa-quote-left {
 .side-bar .widget .widget-title:before {
 	position: absolute;
 	content: '';
-	background-color: #ed4c2f;
+	background-color: $verdigris;
 	top: 50%;
 	left: 0px;
 	height: 2px;
@@ -5038,7 +5039,7 @@ ol.comment-list li.comment .comment-meta {
 }
 
 ol.comment-list li.comment .comment-meta a {
-	color: #ed4c2f;
+	color: $verdigris;
 	display: inline-block;
 	letter-spacing: 1px;
 }
@@ -5342,10 +5343,10 @@ ol.comment-list li.comment .comment-respond .comment-form p {
 		margin-left:0%;
 	   margin-right: 0%;
 	}
-	
+
 }
 @media only screen and (max-width: 768px) {
-	
+
 	.blog-single-space .blog-post.blog-detail{
 		margin-bottom: 0px;
 	}
@@ -5376,7 +5377,7 @@ ol.comment-list li.comment .comment-respond .comment-form p {
 	height: 100%;
 	width: 0px;
 	z-index: -1;
-	background-color: #ed4c2f !important;
+	background-color: $verdigris !important;
 	transition: all 0.5s linear;
 	-moz-transition: all 0.5s linear;
 	-webkit-transition: all 0.5s linear;
@@ -5411,7 +5412,7 @@ ol.comment-list li.comment .comment-respond .comment-form p {
 	font-size: 14px;
 	position: relative;
 	margin-right: 5px;
-	color: #ed4c2f;
+	color: $verdigris;
 }
 
 .blog-style-1 .post-date span:last-child {
@@ -5517,7 +5518,7 @@ ol.comment-list li.comment .comment-respond .comment-form p {
 	vertical-align: middle;
 	padding: 0px 0px 15px 0px;
 	font-size: 36px;
-	color: #ed4c2f;
+	color: $verdigris;
 	margin-top: 0;
 	margin-bottom: 0;
 	margin-left: 0;
@@ -5545,7 +5546,7 @@ ol.comment-list li.comment .comment-respond .comment-form p {
 }
 
 
-/*____ NAVIGATIONS 
+/*____ NAVIGATIONS
 ======================================*/
 
 
@@ -5554,7 +5555,7 @@ ol.comment-list li.comment .comment-respond .comment-form p {
 
 
 /*-------------------------------------
-	inner page banner 
+	inner page banner
 -------------------------------------*/
 
 .sx-bnr-inr {
@@ -5619,7 +5620,7 @@ ol.comment-list li.comment .comment-respond .comment-form p {
 	position: absolute;
 	width: 30px;
 	height: 5px;
-	background-color: #ed4c2f;
+	background-color: $verdigris;
 	left: 50%;
 	bottom: -3px;
 	margin-left: -15px;
@@ -5656,7 +5657,7 @@ ol.comment-list li.comment .comment-respond .comment-form p {
 
 
 /*-------------------------------------
-	owl slider 
+	owl slider
 -------------------------------------*/
 
 
@@ -5710,7 +5711,7 @@ ol.comment-list li.comment .comment-respond .comment-form p {
 
 .owl-carousel .owl-dots .owl-dot.active span,
 .owl-carousel .owl-dots .owl-dot:hover span {
-	background: #ed4c2f;
+	background: $verdigris;
 }
 
 
@@ -5797,7 +5798,7 @@ ol.comment-list li.comment .comment-respond .comment-form p {
 	position: absolute;
 	top: 50%;
 	margin: -15px 0;
-	background-color: #ed4c2f !important;
+	background-color: $verdigris !important;
 	width: 30px;
 	height: 30px;
 	border-radius: 50%;
@@ -5895,7 +5896,7 @@ ol.comment-list li.comment .comment-respond .comment-form p {
 }
 
 
-/*____PAGINATION 
+/*____PAGINATION
 ======================================*/
 
 
@@ -6169,7 +6170,7 @@ ol.comment-list li.comment .comment-respond .comment-form p {
 .footer-dark .footer-top a:active,
 .footer-dark .footer-top a:focus,
 .footer-dark .footer-top a:hover {
-	color: #ed4c2f;
+	color: $verdigris;
 }
 
 .footer-dark .footer-top p a {
@@ -6257,7 +6258,7 @@ ol.comment-list li.comment .comment-respond .comment-form p {
 button.scroltop {
 	height: 40px;
 	width: 40px;
-	background: #ed4c2f;
+	background: $verdigris;
 	border: none;
 	position: fixed;
 	right: 15px;
@@ -6424,7 +6425,7 @@ button.scroltop span {
 
 
 /*-------------------------------------
-	Section Content Part 
+	Section Content Part
 -------------------------------------*/
 
 @media only screen and (max-width:1024px) {
@@ -6459,7 +6460,7 @@ button.scroltop span {
 
 
 /*-------------------------------------
-	Contact us page 
+	Contact us page
 -------------------------------------*/
 
 .contact-form {
@@ -6518,7 +6519,7 @@ ul.contact-info li .fa {
 	.contact-info {
 		padding: 0px;
 	}
-	
+
 }
 
 
@@ -6577,7 +6578,7 @@ ul.contact-info li .fa {
 ======================================*/
 
 .max-w100 {
-	max-width: 100px;
+	max-width: 300px;
 }
 
 .max-w200 {
@@ -6656,7 +6657,7 @@ ul.contact-info li .fa {
 }
 
 
-/*____content show on image box () 
+/*____content show on image box ()
 ======================================*/
 
 @media only screen and (max-width:768px) {
@@ -6667,12 +6668,12 @@ ul.contact-info li .fa {
 }
 
 
-/*____Customize  Grouping css 
+/*____Customize  Grouping css
 ======================================*/
 
 
 /*-------------------------------------
-	set-radius 
+	set-radius
 -------------------------------------*/
 
 .btn,
@@ -6703,8 +6704,8 @@ ol.comment-list li.comment .comment-body {
 }
 
 
-/*------------------------------------- 
-	transition 
+/*-------------------------------------
+	transition
 -------------------------------------*/
 
 a,
@@ -6733,8 +6734,8 @@ a,
 }
 
 
-/*------------------------------------- 
-	float-clearfix 
+/*-------------------------------------
+	float-clearfix
 -------------------------------------*/
 
 .clearfix::after,
@@ -6748,16 +6749,16 @@ ol.commentlist li::after {
 }
 
 
-/*____Inner pages 
+/*____Inner pages
 ======================================*/
 
 
-/*------------------------------------- 
+/*-------------------------------------
 	Out Team
 -------------------------------------*/
 
 
-/*------------------------------------- 
+/*-------------------------------------
 	Product block
 -------------------------------------*/
 
@@ -6850,7 +6851,7 @@ ol.commentlist li::after {
 
 .our-story-year {
 	margin-bottom: 0px;
-	color: #ed4c2f;
+	color: $verdigris;
 }
 
 .experience .our-story {
@@ -6958,11 +6959,11 @@ ol.commentlist li::after {
 }
 
 .filter-pos-left .btn-filter-wrap li.btn-active {
-	color: #ed4c2f;
+	color: $verdigris;
 }
 
 .filter-pos-left .btn-filter-wrap li:hover {
-	color: #ed4c2f;
+	color: $verdigris;
 }
 
 .filter-pos-left .btn-filter-wrap li:before,
@@ -7479,7 +7480,7 @@ ol.commentlist li::after {
 	font-style: italic;
 	display: block;
 	letter-spacing: 1px;
-	color: #ed4c2f;
+	color: $verdigris;
 }
 
 .our-team-2 .icons {
@@ -7548,7 +7549,7 @@ ol.commentlist li::after {
 	display: inline-block;
 	font-size: 14px;
 	text-align: center;
-	background-color: #ed4c2f;
+	background-color: $verdigris;
 	width: 46px;
 	height: 46px;
 	line-height: 46px;
@@ -7827,7 +7828,7 @@ ol.commentlist li::after {
 }
 
 
-/*____Progress Bar 
+/*____Progress Bar
 -------------------------------------*/
 
 .progressText b {
@@ -7971,7 +7972,7 @@ ol.commentlist li::after {
 }
 
 .filter-navigation li.active a {
-	color: #ed4c2f;
+	color: $verdigris;
 	display: block
 }
 
@@ -7987,7 +7988,7 @@ ol.commentlist li::after {
 }
 
 .filter-navigation li a.btn-inline:hover {
-	color: #ed4c2f;
+	color: $verdigris;
 }
 
 .filter-navigation li:first-child a.btn-inline {
@@ -8063,7 +8064,7 @@ ol.commentlist li::after {
 	top: 30px;
 	height: 100%;
 	width: 100%;
-	border: 10px solid #ed4c2f;
+	border: 10px solid $verdigris;
 	z-index: -1;
 }
 
@@ -8174,7 +8175,7 @@ INPUT ANIMATION
 }
 
 .input-animate.input .spin {
-	background: #ed4c2f;
+	background: $verdigris;
 	z-index: 4;
 	width: 0;
 }
@@ -8202,7 +8203,7 @@ INPUT ANIMATION
 		padding: 0px 10px 0px 10px;
 		font-size: 14px !important;
 	}
-	
+
 	.input-animate.input label {
 		position: inherit;
 		top: auto;
@@ -8339,7 +8340,7 @@ Bold Bottom Title
 }
 
 .about-home.owl-carousel .owl-dots .owl-dot.active span {
-	background: #ed4c2f;
+	background: $verdigris;
 }
 
 @media only screen and (max-width:480px) {
@@ -8409,7 +8410,7 @@ Bold Bottom Title
 
 .number-block-one .figcaption-number {
 	opacity: 1;
-	color: #ed4c2f;
+	color: $verdigris;
 	margin-bottom: 15px;
 }
 
@@ -8664,7 +8665,7 @@ scale-in-center
 .page-notfound span.title {
 	position: relative;
     display: block;
-    color: #ed4c2f;
+    color: $verdigris;
     font-size: 250px;
     line-height: 150px;
     font-weight: 900;
@@ -8672,7 +8673,7 @@ scale-in-center
     text-transform: uppercase;
     margin: 0px 0 30px;
 	font-family: 'Barlow Condensed', sans-serif;
-	
+
 }
 
 .page-notfound p {
@@ -8712,7 +8713,7 @@ scale-in-center
 	bottom: 0px;
 	max-width: 330px;
 	left: 0px;
-	box-shadow: -10px -10px #ed4c2f;
+	box-shadow: -10px -10px $verdigris;
 }
 
 @media only screen and (max-width:991px) {
@@ -8834,7 +8835,7 @@ scale-in-center
 }
 
 .our-team-3 .our-team-info .our-team-content a:hover {
-	color: #ed4c2f;
+	color: $verdigris;
 }
 
 .our-team-info {
@@ -8860,7 +8861,7 @@ scale-in-center
 
 .our-team-info .sx-team-position {
 	position: absolute;
-	color: #ed4c2f;
+	color: $verdigris;
 	bottom: 15px;
 	left: 20px;
 	margin: 0px;
@@ -8890,7 +8891,7 @@ scale-in-center
 
 .our-team-info p a:hover,
 .our-team-info p a:focus {
-	color: #ed4c2f;
+	color: $verdigris;
 }
 
 .our-team-info:hover .our-team-content::before,
@@ -9172,7 +9173,7 @@ large-title-block
 	.large-title .sx-title {
 		font-size: 20px;
 	}
-	
+
 }
 /*=======================
 	after before slider
@@ -9194,7 +9195,7 @@ About home1
 .a-about .sx-media img {width: 100%;}
 .a-about .dot-corner {position: absolute;	right: -80px;	bottom: -80px;	z-index: -1;}
 .a-about:after {
-	border:10px solid #ed4c2f;
+	border:10px solid $verdigris;
 	position: absolute;
 	content: '';
 	bottom: -40px;
@@ -9268,7 +9269,7 @@ About home2
 .a-about2 .sx-media img {width: 100%;}
 .a-about2 .dot-corner {position: absolute;	right: -50px;	bottom: -60px;	z-index: -1;}
 .a-about2:after {
-	background-color: #ed4c2f;
+	background-color: $verdigris;
     position: absolute;
     content: '';
     bottom: 0px;
@@ -9290,7 +9291,7 @@ About home2
 	line-height: 140px;
 	font-weight: 700;
 	opacity: 1;
-	color: #ed4c2f;
+	color: $verdigris;
 }
 
 .year-ex-content2 {font-family: 'Barlow Condensed', sans-serif;}
@@ -9376,7 +9377,7 @@ About home2
 @media only screen and (max-width:1199px){
 	.m-skills-right .row [class*="col-"]:nth-child(odd) {
 		margin-top: 0px;
-	}	
+	}
 }
 
 @media only screen and (max-width:991px){
@@ -9385,7 +9386,7 @@ About home2
 	}
 }
 /*-------------------------------------
-	2. Count Section 
+	2. Count Section
 -------------------------------------*/
 
 .icon-count-2-outer {
@@ -9584,7 +9585,7 @@ line-list-style
 	display: block;
 	margin: 0;
 	max-width: 100%;
-	background-color: rgba(237, 76, 47, 0.8);
+	background-color: $verdigrisOpacity;
 	overflow: hidden;
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-backface-visibility: hidden;
@@ -9715,7 +9716,7 @@ line-list-style
 	}
 	.box-animation-one:hover .box-inner-content i:after {
 		width: 35px;
-	}	
+	}
 	.box-inner-content i {
 		margin-top: 10px;
 		width: 35px;
@@ -9814,13 +9815,13 @@ line-list-style
 }
 
 .s-post-pagination-control .paging-item .paging-content a.paging-link:hover {
-	color: #ed4c2f;
+	color: $verdigris;
 }
 
 .s-post-pagination-control .paging-item .paging-content a.paging-link i {
 	padding-right: 10px;
 	font-weight: 700;
-	color: #ed4c2f;
+	color: $verdigris;
 }
 
 .s-post-pagination-control .paging-left {
@@ -9887,7 +9888,7 @@ line-list-style
 /*pagination bg color*/
 
 .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
-	background: #ed4c2f;
+	background: $verdigris;
 }
 
 
@@ -9895,7 +9896,7 @@ line-list-style
 
 .swiper-button-next,
 .swiper-button-prev {
-	color: #ed4c2f;
+	color: $verdigris;
 }
 
 .product-block {
@@ -10029,12 +10030,12 @@ line-list-style
 @media only screen and (max-width:991px){
 	.sx-team2-swiper.swiper-container .swiper-slide {
 		width: 380px
-	}	
+	}
 }
 @media only screen and (max-width:420px){
 	.sx-team2-swiper.swiper-container .swiper-slide {
 		width: 260px
-	}	
+	}
 }
 
 
@@ -10051,7 +10052,7 @@ line-list-style
 	font-weight: 600;
 
 }
-.sx-team2-swiper .swiper-pagination-total{color: #ed4c2f; font-weight: 600;}
+.sx-team2-swiper .swiper-pagination-total{color: $verdigris; font-weight: 600;}
 
 
 /*title typewrite*/
@@ -10097,14 +10098,14 @@ line-list-style
 	outline: none !important;
 }
 .list-my-skils ul li span:hover{
-	color: #ed4c2f;
+	color: $verdigris;
 }
 
 .popover{border: 0px;}
 .popover .arrow{display: none;}
 .popover .popover-body{padding: 0px; box-shadow: -15px 15px 30px rgba(0,0,0,0.2)}
 @media only screen and (max-width:640px){
-	.popover .popover-body{max-width: 100px;box-shadow: -5px 5px 15px rgba(0,0,0,0.2)}
+	.popover .popover-body{max-width: 300px;box-shadow: -5px 5px 15px rgba(0,0,0,0.2)}
 }
 
 
@@ -10125,7 +10126,7 @@ line-list-style
 }
 
 .swiper-pagination-bullet-active {
-	background-color: #ed4c2f;
+	background-color: $verdigris;
 }
 
 .hvr-gradeant {

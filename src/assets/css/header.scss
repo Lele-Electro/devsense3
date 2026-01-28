@@ -1,3 +1,5 @@
+@import '../variables.scss';
+
 header-style1{padding: auto;}
 
 /*======================================
@@ -18,7 +20,7 @@ HEADER (top part of page)
 ======================================*/
 
 /*-------------------------------------
-	logo for header 
+	logo for header
 -------------------------------------*/
 
 .header-style1 .logo-header {
@@ -29,17 +31,17 @@ HEADER (top part of page)
 	vertical-align: middle;
 	padding: 0;
 	font-size: 36px;
-	color: #ed4c2f;
+	color: $verdigris;
 	margin: 0px;
 	position: relative;
 	z-index: 11;
 }
 
 .header-style1 .logo-header-inner {display: table-cell;vertical-align: middle;height: 100%;}
-.header-style1 .logo-header-inner img {max-width: 100px;max-height: 100%;}
+.header-style1 .logo-header-inner img {max-width: 300px;max-height: 100%;}
 
 /*-------------------------------------
-	eamil-phone (left) 
+	eamil-phone (left)
 -------------------------------------*/
 .header-style1 .e-p-bx{padding:0px;}
 .header-style1 .e-p-bx li {
@@ -69,7 +71,7 @@ HEADER (top part of page)
 .header-style1 .e-p-bx li i {margin-right: 5px;vertical-align: middle;}
 
 /*-------------------------------------
-	social-links (right) 
+	social-links (right)
 -------------------------------------*/
 .social-bx {margin:0px;	border-right: 1px solid rgba(0, 0, 0,0.4);}
 .social-bx li{font-size: 12px;	margin: 0;	position: relative;}
@@ -90,7 +92,7 @@ HEADER (top part of page)
 .header-style1 .main-bar::after {clear: both;content: "";display: table;}
 
 .header-style1 .site-search{
-	background-color:#ed4c2f;
+	background-color:$verdigris;
 	-webkit-transition: all 0.4s linear;
 	-moz-transition: all 0.4s linear;
 	-ms-transition: all 0.4s linear;
@@ -141,8 +143,8 @@ HEADER (top part of page)
 .header-style1 .header-nav .nav>li>a:focus {background-color: transparent;}
 
 .header-style1 .header-nav .nav>li.active>a,
-.header-style1 .header-nav .nav>li.current-menu-item>a {background-color: transparent;color: #ed4c2f;}
-.header-style1 .header-nav .nav>li:hover>a {color: #ed4c2f;}
+.header-style1 .header-nav .nav>li.current-menu-item>a {background-color: transparent;color: $verdigris;}
+.header-style1 .header-nav .nav>li:hover>a {color: $verdigris;}
 
 .header-style1 .header-nav .nav>li:hover>.sub-menu,
 .header-style1 .header-nav .nav>li:hover>.mega-menu {
@@ -179,12 +181,12 @@ HEADER (top part of page)
 	font-size: 13px;
 	padding: 10px 20px;
 	overflow: hidden;
-	border-left:0px solid transparent;	
+	border-left:0px solid transparent;
 	-webkit-transition: all 0.2s linear;
 	-moz-transition: all 0.2s linear;
 	-ms-transition: all 0.2s linear;
 	-o-transition: all 0.2s linear;
-	transition: all 0.2s linear;	
+	transition: all 0.2s linear;
 }
 
 .header-style1 .header-nav .nav>li .sub-menu li a:hover {color: #000;text-decoration: none;}
@@ -260,7 +262,7 @@ HEADER (top part of page)
 .header-style1 .header-nav .nav>li .mega-menu>li ul {list-style: none;margin: 10px 0px 0px 0px;padding: 0px;}
 
 .header-style1 .header-nav .nav>li .mega-menu>li ul a {color: #474747;display: block;font-size: 13px;line-height: 34px;padding: 2px 20px;}
-.header-style1 .header-nav .nav>li .mega-menu>li ul a:hover {color: #ed4c2f;background-color: #F2F2F2;}
+.header-style1 .header-nav .nav>li .mega-menu>li ul a:hover {color: $verdigris;background-color: #F2F2F2;}
 .header-style1 .header-nav .nav>li.menu-item-has-children:before {
 	content: "\f078";
 	display: block;
@@ -297,9 +299,9 @@ HEADER (top part of page)
 /*-------------------------------------
 	nav dark version
 -------------------------------------*/
-.header-style1 .nav-dark.header-nav .nav>li .sub-menu li:hover>a {	color: #ed4c2f;	background-color: transparent;}
-.header-style1 .nav-dark.header-nav .nav>li .sub-menu li .fa {color: #ed4c2f;}
-.header-style1 .nav-dark.header-nav .nav>li .sub-menu li:hover .fa {color: #ed4c2f;}
+.header-style1 .nav-dark.header-nav .nav>li .sub-menu li:hover>a {	color: $verdigris;	background-color: transparent;}
+.header-style1 .nav-dark.header-nav .nav>li .sub-menu li .fa {color: $verdigris;}
+.header-style1 .nav-dark.header-nav .nav>li .sub-menu li:hover .fa {color: $verdigris;}
 .header-style1 .nav-dark.header-nav .nav>li .sub-menu,
 .header-style1 .nav-dark.header-nav .nav>li .mega-menu {background-color: #000;border: 1px solid rgba(0, 0, 0, 0.2);}
 .header-style1 .nav-dark.header-nav .nav>li .sub-menu li:last-child {border-bottom: 0px;}
@@ -307,9 +309,9 @@ HEADER (top part of page)
 .header-style1 .nav-dark.header-nav .nav>li .sub-menu li a{color: #fff;}
 
 .header-style1 .nav-dark.header-nav .nav>li .mega-menu>li ul a{color: #fff;}
-.header-style1 .nav-dark.header-nav .nav>li .mega-menu>li>a {color: #ed4c2f;}
+.header-style1 .nav-dark.header-nav .nav>li .mega-menu>li>a {color: $verdigris;}
 
-.header-style1 .nav-dark.header-nav .nav>li .mega-menu>li ul a:hover {background-color: transparent;color: #ed4c2f;}
+.header-style1 .nav-dark.header-nav .nav>li .mega-menu>li ul a:hover {background-color: transparent;color: $verdigris;}
 
 .header-style1 .nav-dark.header-nav .nav>li .mega-menu>li:after {background-color: rgba(0, 0, 0, 0.2);}
 
@@ -329,14 +331,14 @@ HEADER (top part of page)
 
 	.header-style1 .header-nav .nav {float: none;margin: 0px;background: #fff;width:100%; display: block; height: 100%;}
 	.header-style1 .header-nav .nav li {float: none;width: 100%;display: block;}
-	
+
 	.header-style1 .header-nav .nav i {float: right;}
 	.header-style1 .header-nav .nav li .sub-menu>li a {padding-left: 30px;}
 	.header-style1 .header-nav .nav li.has-child {	position: relative;	}
 	.header-style1 .header-nav .nav li .sub-menu,
 	.header-style1 .header-nav .nav li .mega-menu {opacity: 1;margin: 0 !important;}
 	.header-style1 .header-nav .nav i {margin-top: 6px;}
-	.header-style1 .header-nav .nav li.has-child.nav-active>a {color: #ed4c2f;}
+	.header-style1 .header-nav .nav li.has-child.nav-active>a {color: $verdigris;}
 
 	.header-style1 .header-nav .nav>li {margin: 0;	padding: 0;}
 	.header-style1 .header-nav .nav>li.active>a,
@@ -372,7 +374,7 @@ HEADER (top part of page)
 	.header-style1 .nav-dark.header-nav .nav>li>a {border-top: 1px solid rgba(0, 0, 0, 0.2);color: #fff;display:block;}
 	.header-style1 .nav-dark.header-nav .nav>li>a:hover,
 	.header-style1 .nav-dark.header-nav .nav>li>a:active,
-	.header-style1 .nav-dark.header-nav .nav>li>a:focus {background-color: #212121;color: #ed4c2f;	}
+	.header-style1 .nav-dark.header-nav .nav>li>a:focus {background-color: #212121;color: $verdigris;	}
 	.header-style1 .nav-dark.header-nav .nav>li ul,
 	.header-style1 .nav-dark.header-nav .nav>li .sub-menu,
 	.header-style1 .nav-dark.header-nav .nav>li .mega-menu {background-color: #212121;}
@@ -409,7 +411,7 @@ HEADER (top part of page)
 
 /*===========================================================================================*/
 .header-style1.nav-transparent .is-fixed .color-fill.main-bar {background: #f7f7f3;}
-.header-style1.nav-transparent .top-bar .social-bx li a:hover{color: #ed4c2f;}
+.header-style1.nav-transparent .top-bar .social-bx li a:hover{color: $verdigris;}
 .header-style1.nav-transparent .navbar-toggler .icon-bar{background-color:#000;}
 .header-style1.nav-transparent{position: absolute;width: 100%;left: 0px;top: 0px;}
 .header-style1.nav-transparent .top-bar{border-bottom: 1px solid rgba(0, 0, 0,0.4);min-height: 40px;}
@@ -435,7 +437,7 @@ HEADER (top part of page)
 	.header-style1.nav-transparent .main-bar .container {  padding: 0px 15px; max-width: 100%;}
 	.header-style1.nav-transparent .top-bar .container {max-width: 100%;}
 }
-	
+
 @media only screen and (max-width:540px){
 	.header-style1 .e-p-bx li:last-child{display: none;}
 	.header-style1.nav-transparent .top-bar .social-bx li a{width: 30px;}
@@ -445,8 +447,8 @@ HEADER (top part of page)
 	}
 	.header-style1 .site-search .form-control{height: 40px;}
 	.header-style1 .site-search button{height: 40px;}
-} 
-	
+}
+
 
 
 
@@ -457,8 +459,8 @@ HEADER (top part of page)
 .header-style1 .sticky-no .main-bar {position: static !important;}
 
 /*-------------------------------------
-	when header is sticky 
--------------------------------------*/  
+	when header is sticky
+-------------------------------------*/
 /* header sticky  */
 
 /*____WHEN HEADER IS STICKY____*/
