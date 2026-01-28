@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-page-blog-with-sidebar',
   templateUrl: './page-blog-with-sidebar.component.html',
-  styleUrls: ['./page-blog-with-sidebar.component.css']
+  styleUrls: ['./page-blog-with-sidebar.component.scss']
 })
 export class PageBlogWithSidebarComponent implements OnInit {
 

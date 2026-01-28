@@ -23,63 +23,63 @@
               "src/assets"
             ],
             "styles": [
-              "src/assets/css/bootstrap.min.css",
-              "src/assets/css/fontawesome/css/font-awesome.min.css",
-              "src/assets/css/owl.carousel.min.css",
-              "src/assets/css/magnific-popup.min.css",
-              "src/assets/css/loader.min.css",
-              "src/assets/css/flaticon.min.css",
-              "src/assets/css/lc_lightbox.css",
-              "src/assets/css/magic-mouse.css",
-              "src/assets/css/swiper-bundle.min.css",
-              "src/assets/css/style.css",
+              "src/assets/css/bootstrap.min.scss",
+              "src/assets/css/fontawesome/css/font-awesome.min.scss",
+              "src/assets/css/owl.carousel.min.scss",
+              "src/assets/css/magnific-popup.min.scss",
+              "src/assets/css/loader.min.scss",
+              "src/assets/css/flaticon.min.scss",
+              "src/assets/css/lc_lightbox.scss",
+              "src/assets/css/magic-mouse.scss",
+              "src/assets/css/swiper-bundle.min.scss",
+              "src/assets/css/style.scss",
               {
-                "input": "src/assets/css/skin/skin-1.css",
+                "input": "src/assets/css/skin/skin-1.scss",
                 "bundleName": "skin-1",
                 "inject": false
               },
               {
-                "input": "src/assets/css/skin/skin-2.css",
+                "input": "src/assets/css/skin/skin-2.scss",
                 "bundleName": "skin-2",
                 "inject": false
               },
               {
-                "input": "src/assets/css/skin/skin-3.css",
+                "input": "src/assets/css/skin/skin-3.scss",
                 "bundleName": "skin-3",
                 "inject": false
               },
               {
-                "input": "src/assets/css/skin/skin-4.css",
+                "input": "src/assets/css/skin/skin-4.scss",
                 "bundleName": "skin-4",
                 "inject": false
               },
               {
-                "input": "src/assets/css/skin/skin-5.css",
+                "input": "src/assets/css/skin/skin-5.scss",
                 "bundleName": "skin-5",
                 "inject": false
               },
               {
-                "input": "src/assets/css/skin/skin-6.css",
+                "input": "src/assets/css/skin/skin-6.scss",
                 "bundleName": "skin-6",
                 "inject": false
               },
               {
-                "input": "src/assets/css/skin/skin-7.css",
+                "input": "src/assets/css/skin/skin-7.scss",
                 "bundleName": "skin-7",
                 "inject": false
               },
               {
-                "input": "src/assets/css/skin/skin-8.css",
+                "input": "src/assets/css/skin/skin-8.scss",
                 "bundleName": "skin-8",
                 "inject": false
               },
               {
-                "input": "src/assets/css/skin/skin-9.css",
+                "input": "src/assets/css/skin/skin-9.scss",
                 "bundleName": "skin-7",
                 "inject": false
               },
               {
-                "input": "src/assets/css/skin/skin-10.css",
+                "input": "src/assets/css/skin/skin-10.scss",
                 "bundleName": "skin-8",
                 "inject": false
               }
@@ -166,7 +166,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.scss"
             ],
             "scripts": []
           }

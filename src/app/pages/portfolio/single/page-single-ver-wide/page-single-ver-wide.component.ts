@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-page-single-ver-wide',
   templateUrl: './page-single-ver-wide.component.html',
-  styleUrls: ['./page-single-ver-wide.component.css']
+  styleUrls: ['./page-single-ver-wide.component.scss']
 })
 export class PageSingleVerWideComponent implements OnInit {
 

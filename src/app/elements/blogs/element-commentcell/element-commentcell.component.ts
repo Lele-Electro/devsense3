@@ -3,7 +3,7 @@ import { Component, Input, OnInit } from '@angular/core';
 @Component({
   selector: 'app-element-commentcell',
   templateUrl: './element-commentcell.component.html',
-  styleUrls: ['./element-commentcell.component.css']
+  styleUrls: ['./element-commentcell.component.scss']
 })
 export class ElementCommentcellComponent implements OnInit {
 

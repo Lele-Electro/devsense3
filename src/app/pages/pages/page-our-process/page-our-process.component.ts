@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-page-our-process',
   templateUrl: './page-our-process.component.html',
-  styleUrls: ['./page-our-process.component.css']
+  styleUrls: ['./page-our-process.component.scss']
 })
 export class PageOurProcessComponent implements OnInit {
 

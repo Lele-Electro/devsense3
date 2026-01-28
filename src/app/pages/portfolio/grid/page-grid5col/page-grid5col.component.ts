@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-page-grid5col',
   templateUrl: './page-grid5col.component.html',
-  styleUrls: ['./page-grid5col.component.css']
+  styleUrls: ['./page-grid5col.component.scss']
 })
 export class PageGrid5colComponent implements OnInit {
 
