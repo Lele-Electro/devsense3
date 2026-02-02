@@ -14,7 +14,6 @@ import { Header1Component } from '../../../sections/header/header1/header1.compo
     selector: 'app-page-home1',
     templateUrl: './page-home1.component.html',
     styleUrls: ['./page-home1.component.scss'],
-    standalone: true,
     imports: [
         Header1Component,
         SectionSlider1Component,
@@ -26,7 +25,7 @@ import { Header1Component } from '../../../sections/header/header1/header1.compo
         SectionTestimonials1Component,
         SectionContact1Component,
         Footer1Component,
-    ],
+    ]
 })
 export class PageHome1Component implements OnInit {
   constructor() {}

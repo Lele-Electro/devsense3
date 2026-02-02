@@ -5,9 +5,10 @@ declare var loadSlider1: any;
 declare var killSlider1: any;
 
 @Component({
-  selector: 'app-section-slider1-dark',
-  templateUrl: './section-slider1-dark.component.html',
-  styleUrls: ['./section-slider1-dark.component.scss']
+    selector: 'app-section-slider1-dark',
+    templateUrl: './section-slider1-dark.component.html',
+    styleUrls: ['./section-slider1-dark.component.scss'],
+    standalone: false
 })
 export class SectionSlider1DarkComponent implements OnInit, OnDestroy {
 

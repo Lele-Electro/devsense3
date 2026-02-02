@@ -8,7 +8,6 @@ import { Header1Component } from '../../../../sections/header/header1/header1.co
     selector: 'app-page-grid4col',
     templateUrl: './page-grid4col.component.html',
     styleUrls: ['./page-grid4col.component.scss'],
-    standalone: true,
     imports: [Header1Component, BannerComponent, RouterLink, Footer1Component]
 })
 export class PageGrid4colComponent implements OnInit {

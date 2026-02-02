@@ -7,7 +7,6 @@ import { Header1Component } from '../../../sections/header/header1/header1.compo
     selector: 'app-page-faq',
     templateUrl: './page-faq.component.html',
     styleUrls: ['./page-faq.component.scss'],
-    standalone: true,
     imports: [Header1Component, BannerComponent, Footer1Component]
 })
 export class PageFaqComponent implements OnInit {

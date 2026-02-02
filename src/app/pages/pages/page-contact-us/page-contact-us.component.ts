@@ -7,7 +7,6 @@ import { Header1Component } from '../../../sections/header/header1/header1.compo
     selector: 'app-page-contact-us',
     templateUrl: './page-contact-us.component.html',
     styleUrls: ['./page-contact-us.component.scss'],
-    standalone: true,
     imports: [Header1Component, BannerComponent, Footer1Component]
 })
 export class PageContactUsComponent implements OnInit {

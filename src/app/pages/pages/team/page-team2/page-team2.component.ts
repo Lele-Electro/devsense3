@@ -8,7 +8,6 @@ import { Header1Component } from '../../../../sections/header/header1/header1.co
     selector: 'app-page-team2',
     templateUrl: './page-team2.component.html',
     styleUrls: ['./page-team2.component.scss'],
-    standalone: true,
     imports: [Header1Component, BannerComponent, RouterLink, Footer1Component]
 })
 export class PageTeam2Component implements OnInit {

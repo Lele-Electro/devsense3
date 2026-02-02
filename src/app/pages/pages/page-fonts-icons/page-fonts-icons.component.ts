@@ -7,7 +7,6 @@ import { Header1Component } from '../../../sections/header/header1/header1.compo
     selector: 'app-page-fonts-icons',
     templateUrl: './page-fonts-icons.component.html',
     styleUrls: ['./page-fonts-icons.component.scss'],
-    standalone: true,
     imports: [Header1Component, BannerComponent, Footer1Component]
 })
 export class PageFontsIconsComponent implements OnInit {

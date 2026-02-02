@@ -8,7 +8,6 @@ import { Header1Component } from '../../../../sections/header/header1/header1.co
     selector: 'app-page-grid3col-nogut',
     templateUrl: './page-grid3col-nogut.component.html',
     styleUrls: ['./page-grid3col-nogut.component.scss'],
-    standalone: true,
     imports: [Header1Component, BannerComponent, RouterLink, Footer1Component]
 })
 export class PageGrid3colNogutComponent implements OnInit {

@@ -10,7 +10,6 @@ import { Header1Component } from '../../../sections/header/header1/header1.compo
     selector: 'app-page-blog-with-sidebar',
     templateUrl: './page-blog-with-sidebar.component.html',
     styleUrls: ['./page-blog-with-sidebar.component.scss'],
-    standalone: true,
     imports: [Header1Component, BannerComponent, SectionBlogAreaComponent, SectionBlogCommentsComponent, SectionBlogSidebarComponent, Footer1Component]
 })
 export class PageBlogWithSidebarComponent implements OnInit {

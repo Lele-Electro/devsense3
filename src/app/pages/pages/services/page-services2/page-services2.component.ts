@@ -10,7 +10,6 @@ import { Header1Component } from '../../../../sections/header/header1/header1.co
     selector: 'app-page-services2',
     templateUrl: './page-services2.component.html',
     styleUrls: ['./page-services2.component.scss'],
-    standalone: true,
     imports: [Header1Component, BannerComponent, SectionOurServices1Component, SectionAwards1Component, SectionCounter2Component, Footer1Component]
 })
 export class PageServices2Component implements OnInit {

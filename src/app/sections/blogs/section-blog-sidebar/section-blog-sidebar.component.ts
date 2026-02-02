@@ -10,7 +10,6 @@ import { SectionBlogRecentPostsComponent } from '../section-blog-recent-posts/se
     selector: 'app-section-blog-sidebar',
     templateUrl: './section-blog-sidebar.component.html',
     styleUrls: ['./section-blog-sidebar.component.scss'],
-    standalone: true,
     imports: [SectionBlogRecentPostsComponent, SectionBlogSearchComponent, SectionBlogCategoriesComponent, SectionBlogNewsletterComponent, SectionBlogGalleryComponent, SectionBlogTagsComponent]
 })
 export class SectionBlogSidebarComponent implements OnInit {

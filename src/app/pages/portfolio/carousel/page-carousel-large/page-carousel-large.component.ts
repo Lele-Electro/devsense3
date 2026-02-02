@@ -8,7 +8,6 @@ import { Header1Component } from '../../../../sections/header/header1/header1.co
     selector: 'app-page-carousel-large',
     templateUrl: './page-carousel-large.component.html',
     styleUrls: ['./page-carousel-large.component.scss'],
-    standalone: true,
     imports: [Header1Component, BannerComponent, SectionPortfolioProductDetailsShareComponent, Footer1Component]
 })
 export class PageCarouselLargeComponent implements OnInit {

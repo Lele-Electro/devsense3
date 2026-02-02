@@ -5,7 +5,6 @@ import { RouterLink } from '@angular/router';
     selector: 'app-section-experience',
     templateUrl: './section-experience.component.html',
     styleUrls: ['./section-experience.component.scss'],
-    standalone: true,
     imports: [RouterLink]
 })
 export class SectionExperienceComponent implements OnInit {

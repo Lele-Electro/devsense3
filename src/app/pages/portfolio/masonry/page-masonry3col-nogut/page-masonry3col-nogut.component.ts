@@ -8,7 +8,6 @@ import { Header1Component } from '../../../../sections/header/header1/header1.co
     selector: 'app-page-masonry3col-nogut',
     templateUrl: './page-masonry3col-nogut.component.html',
     styleUrls: ['./page-masonry3col-nogut.component.scss'],
-    standalone: true,
     imports: [Header1Component, BannerComponent, RouterLink, Footer1Component]
 })
 export class PageMasonry3colNogutComponent implements OnInit {

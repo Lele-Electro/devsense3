@@ -1,9 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-section-awards1-dark',
-  templateUrl: './section-awards1-dark.component.html',
-  styleUrls: ['./section-awards1-dark.component.scss']
+    selector: 'app-section-awards1-dark',
+    templateUrl: './section-awards1-dark.component.html',
+    styleUrls: ['./section-awards1-dark.component.scss'],
+    standalone: false
 })
 export class SectionAwards1DarkComponent implements OnInit {
 

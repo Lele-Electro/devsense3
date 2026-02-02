@@ -19,7 +19,6 @@ import { Header2Component } from '../../../sections/header/header2/header2.compo
     selector: 'app-page-home2',
     templateUrl: './page-home2.component.html',
     styleUrls: ['./page-home2.component.scss'],
-    standalone: true,
     imports: [Header2Component, SectionSlider2Component, SectionAboutCompany2Component, SectionWhatWeDo1Component, SectionOurServices1Component, SectionOurClients2Component, SectionOurProcess1Component, SectionAwards1Component, SectionOurTeam1Component, SectionPricing1Component, SectionBlogs2Component, SectionCounter1Component, SectionTestimonials2Component, Footer1Component]
 })
 export class PageHome2Component implements OnInit {

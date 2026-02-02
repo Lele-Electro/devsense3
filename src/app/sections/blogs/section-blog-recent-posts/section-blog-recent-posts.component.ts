@@ -5,7 +5,6 @@ import { RouterLink } from '@angular/router';
     selector: 'app-section-blog-recent-posts',
     templateUrl: './section-blog-recent-posts.component.html',
     styleUrls: ['./section-blog-recent-posts.component.scss'],
-    standalone: true,
     imports: [RouterLink]
 })
 export class SectionBlogRecentPostsComponent implements OnInit {

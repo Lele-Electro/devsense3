@@ -5,7 +5,6 @@ import { ElementCommentcellComponent } from '../../../elements/blogs/element-com
     selector: 'app-section-blog-comments',
     templateUrl: './section-blog-comments.component.html',
     styleUrls: ['./section-blog-comments.component.scss'],
-    standalone: true,
     imports: [ElementCommentcellComponent]
 })
 export class SectionBlogCommentsComponent implements OnInit {

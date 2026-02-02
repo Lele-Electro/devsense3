@@ -8,7 +8,6 @@ import { Header1Component } from '../../../../sections/header/header1/header1.co
     selector: 'app-page-masonry2col',
     templateUrl: './page-masonry2col.component.html',
     styleUrls: ['./page-masonry2col.component.scss'],
-    standalone: true,
     imports: [Header1Component, BannerComponent, RouterLink, Footer1Component]
 })
 export class PageMasonry2colComponent implements OnInit {

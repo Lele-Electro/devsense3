@@ -9,7 +9,6 @@ import { Header1Component } from '../../../../sections/header/header1/header1.co
     selector: 'app-page-service-detail',
     templateUrl: './page-service-detail.component.html',
     styleUrls: ['./page-service-detail.component.scss'],
-    standalone: true,
     imports: [Header1Component, BannerComponent, SectionServiceDetailAreaComponent, SectionServicesSidebarComponent, Footer1Component]
 })
 export class PageServiceDetailComponent implements OnInit {

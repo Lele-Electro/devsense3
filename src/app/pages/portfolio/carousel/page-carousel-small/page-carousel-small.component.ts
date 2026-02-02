@@ -8,7 +8,6 @@ import { Header1Component } from '../../../../sections/header/header1/header1.co
     selector: 'app-page-carousel-small',
     templateUrl: './page-carousel-small.component.html',
     styleUrls: ['./page-carousel-small.component.scss'],
-    standalone: true,
     imports: [Header1Component, BannerComponent, SectionPortfolioProductDetailsShareComponent, Footer1Component]
 })
 export class PageCarouselSmallComponent implements OnInit {

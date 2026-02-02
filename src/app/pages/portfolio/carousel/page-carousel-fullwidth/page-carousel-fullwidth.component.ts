@@ -8,7 +8,6 @@ import { Header1Component } from '../../../../sections/header/header1/header1.co
     selector: 'app-page-carousel-fullwidth',
     templateUrl: './page-carousel-fullwidth.component.html',
     styleUrls: ['./page-carousel-fullwidth.component.scss'],
-    standalone: true,
     imports: [Header1Component, BannerComponent, SectionPortfolioProductDetailsShareComponent, Footer1Component]
 })
 export class PageCarouselFullwidthComponent implements OnInit {

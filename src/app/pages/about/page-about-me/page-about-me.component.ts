@@ -12,7 +12,6 @@ import { Header1Component } from '../../../sections/header/header1/header1.compo
     selector: 'app-page-about-me',
     templateUrl: './page-about-me.component.html',
     styleUrls: ['./page-about-me.component.scss'],
-    standalone: true,
     imports: [Header1Component, BannerComponent, SectionAboutCompany2Component, SectionProjects2Component, SectionWhatWeDo1Component, SectionCounter1Component, SectionOurTeam1Component, Footer1Component]
 })
 export class PageAboutMeComponent implements OnInit {

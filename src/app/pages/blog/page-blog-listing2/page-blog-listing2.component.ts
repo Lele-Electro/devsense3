@@ -9,7 +9,6 @@ import { Header1Component } from '../../../sections/header/header1/header1.compo
     selector: 'app-page-blog-listing2',
     templateUrl: './page-blog-listing2.component.html',
     styleUrls: ['./page-blog-listing2.component.scss'],
-    standalone: true,
     imports: [Header1Component, BannerComponent, RouterLink, SectionBlogSidebarComponent, Footer1Component]
 })
 export class PageBlogListing2Component implements OnInit {

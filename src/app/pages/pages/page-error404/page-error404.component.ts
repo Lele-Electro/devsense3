@@ -8,7 +8,6 @@ import { Header1Component } from '../../../sections/header/header1/header1.compo
     selector: 'app-page-error404',
     templateUrl: './page-error404.component.html',
     styleUrls: ['./page-error404.component.scss'],
-    standalone: true,
     imports: [Header1Component, BannerComponent, RouterLink, Footer1Component]
 })
 export class PageError404Component implements OnInit {

@@ -8,7 +8,6 @@ import { Header1Component } from '../../../sections/header/header1/header1.compo
     selector: 'app-page-blog-masonry',
     templateUrl: './page-blog-masonry.component.html',
     styleUrls: ['./page-blog-masonry.component.scss'],
-    standalone: true,
     imports: [Header1Component, BannerComponent, RouterLink, Footer1Component]
 })
 export class PageBlogMasonryComponent implements OnInit {

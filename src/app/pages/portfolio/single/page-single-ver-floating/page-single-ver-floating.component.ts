@@ -8,7 +8,6 @@ import { Header1Component } from '../../../../sections/header/header1/header1.co
     selector: 'app-page-single-ver-floating',
     templateUrl: './page-single-ver-floating.component.html',
     styleUrls: ['./page-single-ver-floating.component.scss'],
-    standalone: true,
     imports: [Header1Component, BannerComponent, SectionPortfolioProductDetailsShareComponent, Footer1Component]
 })
 export class PageSingleVerFloatingComponent implements OnInit {

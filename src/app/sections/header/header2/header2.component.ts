@@ -5,7 +5,6 @@ import { RouterLink } from '@angular/router';
     selector: 'app-header2',
     templateUrl: './header2.component.html',
     styleUrls: ['./header2.component.scss'],
-    standalone: true,
     imports: [RouterLink]
 })
 export class Header2Component implements OnInit {

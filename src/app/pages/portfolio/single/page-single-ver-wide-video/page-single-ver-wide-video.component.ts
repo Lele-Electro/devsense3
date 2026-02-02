@@ -8,7 +8,6 @@ import { Header1Component } from '../../../../sections/header/header1/header1.co
     selector: 'app-page-single-ver-wide-video',
     templateUrl: './page-single-ver-wide-video.component.html',
     styleUrls: ['./page-single-ver-wide-video.component.scss'],
-    standalone: true,
     imports: [Header1Component, BannerComponent, SectionPortfolioProductDetailsShareComponent, Footer1Component]
 })
 export class PageSingleVerWideVideoComponent implements OnInit {

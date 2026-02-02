@@ -5,7 +5,6 @@ import { RouterLink } from '@angular/router';
     selector: 'app-section-design',
     templateUrl: './section-design.component.html',
     styleUrls: ['./section-design.component.scss'],
-    standalone: true,
     imports: [RouterLink]
 })
 export class SectionDesignComponent implements OnInit {

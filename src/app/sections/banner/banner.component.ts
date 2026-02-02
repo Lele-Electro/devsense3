@@ -7,7 +7,6 @@ import { RouterLink } from '@angular/router';
     selector: 'app-banner',
     templateUrl: './banner.component.html',
     styleUrls: ['./banner.component.scss'],
-    standalone: true,
     imports: [RouterLink]
 })
 export class BannerComponent implements OnInit {
