@@ -1,9 +1,17 @@
 import { Component, OnInit } from '@angular/core';
+import { SafePipe } from '../../../pipes/safe.pipe';
+import { Footer1Component } from '../../../sections/footer/footer1/footer1.component';
+import { SectionBlogSidebarComponent } from '../../../sections/blogs/section-blog-sidebar/section-blog-sidebar.component';
+import { RouterLink } from '@angular/router';
+import { BannerComponent } from '../../../sections/banner/banner.component';
+import { Header1Component } from '../../../sections/header/header1/header1.component';
 
 @Component({
-  selector: 'app-page-blog-listing',
-  templateUrl: './page-blog-listing.component.html',
-  styleUrls: ['./page-blog-listing.component.scss']
+    selector: 'app-page-blog-listing',
+    templateUrl: './page-blog-listing.component.html',
+    styleUrls: ['./page-blog-listing.component.scss'],
+    standalone: true,
+    imports: [Header1Component, BannerComponent, RouterLink, SectionBlogSidebarComponent, Footer1Component, SafePipe]
 })
 export class PageBlogListingComponent implements OnInit {
 

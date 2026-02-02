@@ -1,35 +1,39 @@
 <div class="section-full mobile-page-padding p-t100 p-b70 bg-gray-light">
-    <div class="container">
-            <!-- TITLE START -->
-            <div class="section-head-two left">
-                <h2 class="sx-title-two">{{data.title}} </h2>
-            </div>                   
-            <!-- TITLE END -->
-            <div class="section-content">
-                <div class="row">
-                    <div class="col-xl-6 col-lg-6 col-md-12 m-b30">
-                        <div class="sx-about1">
-                            <h3 class="sx-title">
-                                {{data.description1}}
-                            </h3>
-                            <p>{{data.description2}}</p>
-                        </div>
-                    </div>
-                    
-                    <div class="col-xl-6 col-lg-6 col-md-12 m-b30">
-                        
-                            <div class="list-my-skils">
-                                <ul *ngFor="let object of data.projects">
-                                    <li *ngFor="let object1 of object">
-                                        <span data-toggle="popover-hover" attr.data-img="{{object1.image}}">{{object1.title}}</span> 
-                                    </li>
-                                </ul>
-                            </div>                                           
-                        
-                    </div>
-                    
-                </div>
-            </div>
+  <div class="container">
+    <!-- TITLE START -->
+    <div class="section-head-two left">
+      <h2 class="sx-title-two">{{data.title}} </h2>
+    </div>
+    <!-- TITLE END -->
+    <div class="section-content">
+      <div class="row">
+        <div class="col-xl-6 col-lg-6 col-md-12 m-b30">
+          <div class="sx-about1">
+            <h3 class="sx-title">
+              {{data.description1}}
+            </h3>
+            <p>{{data.description2}}</p>
+          </div>
         </div>
-    
+
+        <div class="col-xl-6 col-lg-6 col-md-12 m-b30">
+
+          <div class="list-my-skils">
+            @for (object of data.projects; track object) {
+              <ul>
+                @for (object1 of object; track object1) {
+                  <li>
+                    <span data-toggle="popover-hover" attr.data-img="{{object1.image}}">{{object1.title}}</span>
+                  </li>
+                }
+              </ul>
+            }
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
 </div>

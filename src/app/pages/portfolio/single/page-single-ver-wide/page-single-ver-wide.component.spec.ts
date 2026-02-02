@@ -8,8 +8,8 @@ describe('PageSingleVerWideComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PageSingleVerWideComponent ]
-    })
+    imports: [PageSingleVerWideComponent]
+})
     .compileComponents();
 
     fixture = TestBed.createComponent(PageSingleVerWideComponent);

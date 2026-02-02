@@ -8,8 +8,8 @@ describe('PageMasonry3colComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PageMasonry3colComponent ]
-    })
+    imports: [PageMasonry3colComponent]
+})
     .compileComponents();
 
     fixture = TestBed.createComponent(PageMasonry3colComponent);

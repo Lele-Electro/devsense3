@@ -1,45 +1,44 @@
 <div class="section-full p-t100 p-b70 mobile-page-padding sx-bg-dark">
-                <div class="section-content">
-                    <div class="container">
-                        
-                        <!-- TITLE START -->
-                        <div class="section-head-two center">
-                            <h2 class="sx-title-two">{{data.title}}</h2>
-                        </div>                   
-                        <!-- TITLE END -->
-                        <div class="swiper-container testimonial-home-two">
-                            <div class="swiper-wrapper">
-                                <!--Image 1-->
-                                <div class="swiper-slide" *ngFor="let object of data.quotes">
-                                    <div class="testimonial-2  hover-animation-1 sx-bg-dark">
-                                    
-                                        <div class="testimonial-text ">
-                                            <span class="testimonial-quote sx-text-primary"><i class="flaticon-left-quote"></i></span>
-                                            <p>{{object.quote}}</p>
-                                        </div>
-                                        
-                                        <div class="testimonial-detail clearfix">
-                                            <div class="testimonial-pic shadow scale-in-center"><img src="{{object.image}}" width="100" height="100" alt=""></div>
-                                            <div class="testimonial-user-info">
-                                                <h4 class="testimonial-name">{{object.name}}</h4>
-                                                <span class="testimonial-position">{{object.designation}}</span>
-                                            </div>
-                                        </div>   
-                                        
-                                    </div>
-                                </div>
-                           
-                            </div>
+  <div class="section-content">
+    <div class="container">
 
-                            
-                            <!-- Add Arrows -->
-                            <div class="swiper-button-next"></div>
-                            <div class="swiper-button-prev"></div>
-
-                        </div>
-                                                                                        
-                    </div>
+      <!-- TITLE START -->
+      <div class="section-head-two center">
+        <h2 class="sx-title-two">{{data.title}}</h2>
+      </div>
+      <!-- TITLE END -->
+      <div class="swiper-container testimonial-home-two">
+        <div class="swiper-wrapper">
+          <!--Image 1-->
+          @for (object of data.quotes; track object) {
+            <div class="swiper-slide">
+              <div class="testimonial-2  hover-animation-1 sx-bg-dark">
+                <div class="testimonial-text ">
+                  <span class="testimonial-quote sx-text-primary"><i class="flaticon-left-quote"></i></span>
+                  <p>{{object.quote}}</p>
                 </div>
-
-                
+                <div class="testimonial-detail clearfix">
+                  <div class="testimonial-pic shadow scale-in-center"><img src="{{object.image}}" width="100" height="100" alt=""></div>
+                  <div class="testimonial-user-info">
+                    <h4 class="testimonial-name">{{object.name}}</h4>
+                    <span class="testimonial-position">{{object.designation}}</span>
+                  </div>
+                </div>
+              </div>
             </div>
+          }
+
+        </div>
+
+
+        <!-- Add Arrows -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+
+      </div>
+
+    </div>
+  </div>
+
+
+</div>

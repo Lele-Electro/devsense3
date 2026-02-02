@@ -1,9 +1,19 @@
 import { Component, OnInit } from '@angular/core';
+import { Footer1Component } from '../../../../sections/footer/footer1/footer1.component';
+import { SectionPricing1Component } from '../../../../sections/home/home2/section-pricing1/section-pricing1.component';
+import { SectionOurServices2Component } from '../../../../sections/services/section-our-services2/section-our-services2.component';
+import { SectionOurClients3Component } from '../../../../sections/services/section-our-clients3/section-our-clients3.component';
+import { SectionBrandingComponent } from '../../../../sections/services/section-branding/section-branding.component';
+import { SectionSkills1Component } from '../../../../sections/home/home1/section-skills1/section-skills1.component';
+import { BannerComponent } from '../../../../sections/banner/banner.component';
+import { Header1Component } from '../../../../sections/header/header1/header1.component';
 
 @Component({
-  selector: 'app-page-services1',
-  templateUrl: './page-services1.component.html',
-  styleUrls: ['./page-services1.component.scss']
+    selector: 'app-page-services1',
+    templateUrl: './page-services1.component.html',
+    styleUrls: ['./page-services1.component.scss'],
+    standalone: true,
+    imports: [Header1Component, BannerComponent, SectionSkills1Component, SectionBrandingComponent, SectionOurClients3Component, SectionOurServices2Component, SectionPricing1Component, Footer1Component]
 })
 export class PageServices1Component implements OnInit {
 

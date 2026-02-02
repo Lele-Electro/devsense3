@@ -1,9 +1,17 @@
 import { Component, OnInit } from '@angular/core';
+import { Footer1Component } from '../../../sections/footer/footer1/footer1.component';
+import { SectionBlogSidebarComponent } from '../../../sections/blogs/section-blog-sidebar/section-blog-sidebar.component';
+import { SectionBlogCommentsComponent } from '../../../sections/blogs/section-blog-comments/section-blog-comments.component';
+import { SectionBlogAreaComponent } from '../../../sections/blogs/section-blog-area/section-blog-area.component';
+import { BannerComponent } from '../../../sections/banner/banner.component';
+import { Header1Component } from '../../../sections/header/header1/header1.component';
 
 @Component({
-  selector: 'app-page-blog-with-sidebar',
-  templateUrl: './page-blog-with-sidebar.component.html',
-  styleUrls: ['./page-blog-with-sidebar.component.scss']
+    selector: 'app-page-blog-with-sidebar',
+    templateUrl: './page-blog-with-sidebar.component.html',
+    styleUrls: ['./page-blog-with-sidebar.component.scss'],
+    standalone: true,
+    imports: [Header1Component, BannerComponent, SectionBlogAreaComponent, SectionBlogCommentsComponent, SectionBlogSidebarComponent, Footer1Component]
 })
 export class PageBlogWithSidebarComponent implements OnInit {
 

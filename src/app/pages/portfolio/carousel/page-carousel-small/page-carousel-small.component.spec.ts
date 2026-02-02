@@ -8,8 +8,8 @@ describe('PageCarouselSmallComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PageCarouselSmallComponent ]
-    })
+    imports: [PageCarouselSmallComponent]
+})
     .compileComponents();
 
     fixture = TestBed.createComponent(PageCarouselSmallComponent);

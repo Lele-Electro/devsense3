@@ -8,8 +8,8 @@ describe('PageGrid3colNogutComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PageGrid3colNogutComponent ]
-    })
+    imports: [PageGrid3colNogutComponent]
+})
     .compileComponents();
 
     fixture = TestBed.createComponent(PageGrid3colNogutComponent);

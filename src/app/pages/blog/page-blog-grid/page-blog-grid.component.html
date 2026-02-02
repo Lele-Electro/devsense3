@@ -1,74 +1,72 @@
-<div class="page-wraper"> 
-       	
-    <!-- HEADER START -->
-    <app-header1></app-header1>
-    <!-- HEADER END -->
-    
-    <!-- CONTENT START -->
-    <div class="page-content">
-    
-        <!-- INNER PAGE BANNER -->
-        <app-banner [data]="banner"></app-banner>
-        <!-- INNER PAGE BANNER END -->
-        
-        <!-- SECTION CONTENT START -->
-        <div class="section-full p-t100 p-b70 bg-white mobile-page-padding">
-                
-            <!-- GALLERY CONTENT START -->
-            <div class="container">
-                <div class="masonry-outer mfp-gallery news-grid clearfix row ">
-                        
-                    <!-- COLUMNS 1 -->
-                    <div class="masonry-item  col-lg-4 col-md-6 col-sm-12" *ngFor="let object of blogs">
-                            <div class="blog-post blog-grid date-style-2">
-                            
-                                <div class="sx-post-media sx-img-effect img-reflection">
-                                    <a routerLink="/blog/single"><img src="{{object.image}}" alt=""></a>
-                                </div>
-                                
-                                <div class="sx-post-info p-t30">
-                                    <div class="sx-post-meta ">
-                                        <ul>
-                                            <li class="post-date"><a routerLink="/blog/single">Posted {{object.date}}</a></li>
-                                            <li class="post-author">By<a routerLink="/blog/single">{{object.author}}</a></li>
-                                        </ul>
-                                    </div>                                
-                                    <div class="sx-post-title ">
-                                        <h4 class="post-title"><a routerLink="/blog/single">{{object.title}}</a></h4>
-                                    </div>
-                                    <div class="sx-post-detail">
-                                        <p>{{object.description}}</p>
-                                    </div>
-                                    <div class="sx-post-readmore">
-                                         <a routerLink="/blog/single" title="READ MORE" rel="bookmark" class="site-button-link">View More</a>
-                                    </div>
-                                    
-                                </div>
-                                
-                            </div>                        
-                    </div>
-                    
+<div class="page-wraper">
+
+  <!-- HEADER START -->
+  <app-header1></app-header1>
+  <!-- HEADER END -->
+
+  <!-- CONTENT START -->
+  <div class="page-content">
+
+    <!-- INNER PAGE BANNER -->
+    <app-banner [data]="banner"></app-banner>
+    <!-- INNER PAGE BANNER END -->
+
+    <!-- SECTION CONTENT START -->
+    <div class="section-full p-t100 p-b70 bg-white mobile-page-padding">
+
+      <!-- GALLERY CONTENT START -->
+      <div class="container">
+        <div class="masonry-outer mfp-gallery news-grid clearfix row ">
+
+          <!-- COLUMNS 1 -->
+          @for (object of blogs; track object) {
+            <div class="masonry-item  col-lg-4 col-md-6 col-sm-12">
+              <div class="blog-post blog-grid date-style-2">
+                <div class="sx-post-media sx-img-effect img-reflection">
+                  <a routerLink="/blog/single"><img src="{{object.image}}" alt=""></a>
                 </div>
-                <div class="text-center">
-                    <ul class="pagination m-b0">
-                        <li><a href="javascript:Void();"><span class="fa fa-chevron-left"></span></a></li>
-                        <li><a href="javascript:Void();">1</a></li>
-                        <li class="active"><a href="javascript:Void();">2</a></li>
-                        <li><a href="javascript:Void();">3</a></li>
-                        <li><a href="javascript:Void();"><span class="fa fa-chevron-right"></span></a></li>
+                <div class="sx-post-info p-t30">
+                  <div class="sx-post-meta ">
+                    <ul>
+                      <li class="post-date"><a routerLink="/blog/single">Posted {{object.date}}</a></li>
+                      <li class="post-author">By<a routerLink="/blog/single">{{object.author}}</a></li>
                     </ul>
+                  </div>
+                  <div class="sx-post-title ">
+                    <h4 class="post-title"><a routerLink="/blog/single">{{object.title}}</a></h4>
+                  </div>
+                  <div class="sx-post-detail">
+                    <p>{{object.description}}</p>
+                  </div>
+                  <div class="sx-post-readmore">
+                    <a routerLink="/blog/single" title="READ MORE" rel="bookmark" class="site-button-link">View More</a>
+                  </div>
                 </div>
+              </div>
             </div>
-            <!-- GALLERY CONTENT END -->
-        
+          }
+
         </div>
-        <!-- SECTION CONTENT END  -->
-        
+        <div class="text-center">
+          <ul class="pagination m-b0">
+            <li><a href="javascript:Void();"><span class="fa fa-chevron-left"></span></a></li>
+            <li><a href="javascript:Void();">1</a></li>
+            <li class="active"><a href="javascript:Void();">2</a></li>
+            <li><a href="javascript:Void();">3</a></li>
+            <li><a href="javascript:Void();"><span class="fa fa-chevron-right"></span></a></li>
+          </ul>
+        </div>
+      </div>
+      <!-- GALLERY CONTENT END -->
+
     </div>
-    <!-- CONTENT END -->
-    
-    <!-- FOOTER START -->
-    <app-footer1></app-footer1>
-    <!-- FOOTER END -->
+    <!-- SECTION CONTENT END  -->
+
+  </div>
+  <!-- CONTENT END -->
+
+  <!-- FOOTER START -->
+  <app-footer1></app-footer1>
+  <!-- FOOTER END -->
 
 </div>

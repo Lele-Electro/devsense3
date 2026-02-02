@@ -8,8 +8,8 @@ describe('PageSingleVerFloatingComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PageSingleVerFloatingComponent ]
-    })
+    imports: [PageSingleVerFloatingComponent]
+})
     .compileComponents();
 
     fixture = TestBed.createComponent(PageSingleVerFloatingComponent);

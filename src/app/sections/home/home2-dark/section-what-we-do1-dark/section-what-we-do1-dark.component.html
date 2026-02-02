@@ -1,38 +1,40 @@
 <div class="section-full  mobile-page-padding sx-bg-dark-light  p-t100 p-b70 ">
-                            
-                <div class="container">
-            
-                    <div class="section-content">
-                        <div class="row  justify-content-center">
-                            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 m-b30">
-                                <div class="sx-about-me1">
-                                    <!-- TITLE START -->
-                                    <div class="section-head-two left">
-                                        <h2 class="sx-title-two">{{data.title}}</h2>
-                                    </div>                   
-                                    <!-- TITLE END -->
-                                <h3 class="sx-tilte m-b0">{{data.description}}</h3>
-                                </div> 
-                                                                
-                            </div>
-                            
-                            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 m-b30">
 
-                                <div class="our-exp">
-                                    <div *ngFor="let object of data.skills">
-                                        <span class="progressText "><B>{{object.title}}</B></span>
-                                        <div class="progress">
-                                        <div class="progress-bar sx-bg-primary progress-bar-striped progress-bar-animated text-black" role="progressbar" style="width: {{object.percent}}%;" attr.aria-valuenow="{{object.percent}}" aria-valuemin="0" aria-valuemax="100"></div><span> {{object.percent}}%</span>
-                                        </div>      
-                                    </div>        
-                                </div>
-                                
-                                                                
-                            </div>
-                            
+  <div class="container">
 
-                        </div>
-
-                    </div>
-                </div>
+    <div class="section-content">
+      <div class="row  justify-content-center">
+        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 m-b30">
+          <div class="sx-about-me1">
+            <!-- TITLE START -->
+            <div class="section-head-two left">
+              <h2 class="sx-title-two">{{data.title}}</h2>
             </div>
+            <!-- TITLE END -->
+            <h3 class="sx-tilte m-b0">{{data.description}}</h3>
+          </div>
+
+        </div>
+
+        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 m-b30">
+
+          <div class="our-exp">
+            @for (object of data.skills; track object) {
+              <div>
+                <span class="progressText "><B>{{object.title}}</B></span>
+                <div class="progress">
+                  <div class="progress-bar sx-bg-primary progress-bar-striped progress-bar-animated text-black" role="progressbar" style="width: {{object.percent}}%;" attr.aria-valuenow="{{object.percent}}" aria-valuemin="0" aria-valuemax="100"></div><span> {{object.percent}}%</span>
+                </div>
+              </div>
+            }
+          </div>
+
+
+        </div>
+
+
+      </div>
+
+    </div>
+  </div>
+</div>

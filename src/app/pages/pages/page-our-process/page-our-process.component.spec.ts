@@ -8,8 +8,8 @@ describe('PageOurProcessComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PageOurProcessComponent ]
-    })
+    imports: [PageOurProcessComponent]
+})
     .compileComponents();
 
     fixture = TestBed.createComponent(PageOurProcessComponent);

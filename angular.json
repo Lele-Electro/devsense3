@@ -140,10 +140,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "anih:build:production"
+              "buildTarget": "anih:build:production"
             },
             "development": {
-              "browserTarget": "anih:build:development"
+              "buildTarget": "anih:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -151,7 +151,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "anih:build"
+            "buildTarget": "anih:build"
           }
         },
         "test": {

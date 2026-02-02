@@ -5,8 +5,8 @@ Version: 1.0
 ==========================
 */
 
-@import url(header.scss);
-@import url(header2.scss);
+@import 'header.scss';
+@import 'header2.scss';
 @import '../variables.scss';
 
 /*____GENERAL

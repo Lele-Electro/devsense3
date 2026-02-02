@@ -1,51 +1,53 @@
 <div class="page-wraper">
 
-    <!-- HEADER START -->
-    <app-header1></app-header1>
-    <!-- HEADER END -->
+  <!-- HEADER START -->
+  <app-header1></app-header1>
+  <!-- HEADER END -->
 
-    <!-- CONTENT START -->
-    <div class="page-content">
+  <!-- CONTENT START -->
+  <div class="page-content">
 
-        <!-- INNER PAGE BANNER -->
-        <app-banner [data]="banner"></app-banner>
-        <!-- INNER PAGE BANNER END -->
+    <!-- INNER PAGE BANNER -->
+    <app-banner [data]="banner"></app-banner>
+    <!-- INNER PAGE BANNER END -->
 
-        <!-- SECTION CONTENTG START -->
-        <div class="section-full p-tb100 inner-page-padding">
+    <!-- SECTION CONTENTG START -->
+    <div class="section-full p-tb100 inner-page-padding">
 
-            <div class="container">
+      <div class="container">
 
-                <!-- TITLE START -->
-                <div class="section-head-two left">
-                    <h2 class="sx-title-two">Flaticon</h2>
+        <!-- TITLE START -->
+        <div class="section-head-two left">
+          <h2 class="sx-title-two">Flaticon</h2>
+        </div>
+        <!-- TITLE END -->
+
+        <div class="section-content">
+          <div class="sx-box">
+            <div class="icon-font">
+
+              @for (object of icons; track object) {
+                <div class="icon-font-block">
+                  <div class="flat-icon {{object}}"></div>
+                  <div class="class-name">.{{object}}</div>
                 </div>
-                <!-- TITLE END -->
-
-                <div class="section-content">
-                    <div class="sx-box">
-                        <div class="icon-font">
-
-                            <div class="icon-font-block" *ngFor="let object of icons">
-                                <div class="flat-icon {{object}}"></div>
-                                <div class="class-name">.{{object}}</div>
-                            </div>
-                            
-                        </div>
-                    </div>
-                </div>
+              }
 
             </div>
+          </div>
         </div>
 
-
-        <!-- SECTION CONTENT END -->
-
+      </div>
     </div>
-    <!-- CONTENT END -->
 
-    <!-- FOOTER START -->
-    <app-footer1></app-footer1>
-    <!-- FOOTER END -->
+
+    <!-- SECTION CONTENT END -->
+
+  </div>
+  <!-- CONTENT END -->
+
+  <!-- FOOTER START -->
+  <app-footer1></app-footer1>
+  <!-- FOOTER END -->
 
 </div>

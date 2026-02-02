@@ -8,8 +8,8 @@ describe('SectionSkills1DarkComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SectionSkills1DarkComponent ]
-    })
+    declarations: [SectionSkills1DarkComponent]
+})
     .compileComponents();
 
     fixture = TestBed.createComponent(SectionSkills1DarkComponent);

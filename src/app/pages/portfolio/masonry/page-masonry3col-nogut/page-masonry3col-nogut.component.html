@@ -1,64 +1,68 @@
-<div class="page-wraper"> 
-       	
-    <!-- HEADER START -->
-    <app-header1></app-header1>
-    <!-- HEADER END -->
-    
-    <!-- CONTENT START -->
-    <div class="page-content">
-    
-        <!-- INNER PAGE BANNER -->
-        <app-banner [data]="banner"></app-banner>
-        <!-- INNER PAGE BANNER END -->
-        
-        <!-- SECTION CONTENT START -->
-        <div class="section-full p-t100 p-b70 mobile-page-padding">
-            <div class="container">
-                <!-- Filter Nav START -->
-                <div class="filter-wrap p-b30">
-                    <ul class="filter-navigation masonry-filter clearfix">
-                        <li *ngFor="let object of projects.categories; let i = index;" class="{{ i == 0 ? 'active' : '' }}">
-                            <a class="btn-inline " attr.data-filter="{{ i == 0 ? '' : '.' }}{{object.category}}" href="javascript:void();" attr.data-hover="{{object.title}}">{{object.title}}<span class="num">{{object.count}}</span></a>
-                        </li>
-                    </ul>
-                </div>
-                <!-- Filter Nav END -->
-                
-                <!-- GALLERY CONTENT START -->
-                <ul  class="masonry-outer mfp-gallery work-grid clearfix list-unstyled no-col-gap m-b0">
-                 
-                    <!-- COLUMNS 1 -->
-                    <li *ngFor="let object of projects.items" 
-                        class="masonry-item {{object.category}} col-lg-4 col-md-6 col-sm-12">
-                        <div class="box-animation-one"><img src="{{object.image}}" alt="">
-                            <div class="box-inner-content">
-                                <h4 class="sx-tilte"><a routerLink="/portfolio/carousel/small">{{object.title}}</a></h4>
-                                <p class="m-b0">{{object.subtitle}}</p> 
-                                <a class="elem" href="{{object.image2}}" title="{{object.title2}}" 
-                                attr.data-lcl-txt="{{object.subtitle2}}" attr.data-lcl-author="{{object.author}}" attr.data-lcl-thumb="{{object.thumb}}">
-                                    <i></i>
-                                </a> 													
-                            </div>
-                        </div>
-                    </li>
-                  
-                 </ul>
-                <!-- GALLERY CONTENT END -->
-                
-                <div class="text-center load-more-btn-outer">
-                    <button class="site-button-secondry btn-half outline">View More <span class="sx-bg-primary"></span></button>
-                </div>
-            </div>
+<div class="page-wraper">
 
-        
+  <!-- HEADER START -->
+  <app-header1></app-header1>
+  <!-- HEADER END -->
+
+  <!-- CONTENT START -->
+  <div class="page-content">
+
+    <!-- INNER PAGE BANNER -->
+    <app-banner [data]="banner"></app-banner>
+    <!-- INNER PAGE BANNER END -->
+
+    <!-- SECTION CONTENT START -->
+    <div class="section-full p-t100 p-b70 mobile-page-padding">
+      <div class="container">
+        <!-- Filter Nav START -->
+        <div class="filter-wrap p-b30">
+          <ul class="filter-navigation masonry-filter clearfix">
+            @for (object of projects.categories; track object; let i = $index) {
+              <li class="{{ i == 0 ? 'active' : '' }}">
+                <a class="btn-inline " attr.data-filter="{{ i == 0 ? '' : '.' }}{{object.category}}" href="javascript:void();" attr.data-hover="{{object.title}}">{{object.title}}<span class="num">{{object.count}}</span></a>
+              </li>
+            }
+          </ul>
         </div>
-        <!-- SECTION CONTENT END  -->
-        
+        <!-- Filter Nav END -->
+
+        <!-- GALLERY CONTENT START -->
+        <ul  class="masonry-outer mfp-gallery work-grid clearfix list-unstyled no-col-gap m-b0">
+
+          <!-- COLUMNS 1 -->
+          @for (object of projects.items; track object) {
+            <li
+              class="masonry-item {{object.category}} col-lg-4 col-md-6 col-sm-12">
+              <div class="box-animation-one"><img src="{{object.image}}" alt="">
+                <div class="box-inner-content">
+                  <h4 class="sx-tilte"><a routerLink="/portfolio/carousel/small">{{object.title}}</a></h4>
+                  <p class="m-b0">{{object.subtitle}}</p>
+                  <a class="elem" href="{{object.image2}}" title="{{object.title2}}"
+                    attr.data-lcl-txt="{{object.subtitle2}}" attr.data-lcl-author="{{object.author}}" attr.data-lcl-thumb="{{object.thumb}}">
+                    <i></i>
+                  </a>
+                </div>
+              </div>
+            </li>
+          }
+
+        </ul>
+        <!-- GALLERY CONTENT END -->
+
+        <div class="text-center load-more-btn-outer">
+          <button class="site-button-secondry btn-half outline">View More <span class="sx-bg-primary"></span></button>
+        </div>
+      </div>
+
+
     </div>
-    <!-- CONTENT END -->
-    
-    <!-- FOOTER START -->
-    <app-footer1></app-footer1>
-    <!-- FOOTER END -->
+    <!-- SECTION CONTENT END  -->
+
+  </div>
+  <!-- CONTENT END -->
+
+  <!-- FOOTER START -->
+  <app-footer1></app-footer1>
+  <!-- FOOTER END -->
 
 </div>

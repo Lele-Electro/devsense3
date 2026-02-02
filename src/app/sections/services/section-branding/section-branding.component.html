@@ -1,49 +1,48 @@
 <div class="section-full  mobile-page-padding bg-gray-light  p-t100 p-b70 bg-cover bg-right-center"  style="background-image:url({{data.background}});">
-            
-    <div class="container">
-        <div class="large-title-block">
-            <div class="row">
-                <div class="col-lg-12 col-md-12">
-                    <div class=" large-title">
-                        
-                        <!-- TITLE START -->
-                        <div class="section-head-two left">
-                            <h2 class="sx-title-two">{{data.title}}</h2>
-                        </div>                   
-                        <!-- TITLE END --> 
-                    </div>
-                </div>
-                                            
+
+  <div class="container">
+    <div class="large-title-block">
+      <div class="row">
+        <div class="col-lg-12 col-md-12">
+          <div class=" large-title">
+
+            <!-- TITLE START -->
+            <div class="section-head-two left">
+              <h2 class="sx-title-two">{{data.title}}</h2>
             </div>
+            <!-- TITLE END -->
+          </div>
         </div>
 
-        <div class="section-content">
-            <div class="sx-service2-wrap">
-                <div class="row">
-                    <div class="col-lg-8 col-md-12">
-                        <div class="row number-block-one-outer">
-                            <div class="col-lg-6 col-md-6 col-sm-12 m-b30" *ngFor="let object of data.specifications">
-                            
-                                <div class="number-block-one sx-bg-light">
-                                    <div class="figcaption   p-a30">
-                                        <div class="figcaption-number ">
-                                            <span>{{object.serial}}</span>
-                                        </div>
-                                        <h4 class="m-t0 ">{{object.title}}</h4>
-                                        <p>{{object.description}}</p>
-                                        <a routerLink="/services/detail" class="site-button-link">Read More</a>
-                                        
-                                    </div>
-                                </div>
-                                                                
-                            </div>                            
-                        
-                        </div>
-                    </div>
-                </div>
-            </div>
+      </div>
+    </div>
 
+    <div class="section-content">
+      <div class="sx-service2-wrap">
+        <div class="row">
+          <div class="col-lg-8 col-md-12">
+            <div class="row number-block-one-outer">
+              @for (object of data.specifications; track object) {
+                <div class="col-lg-6 col-md-6 col-sm-12 m-b30">
+                  <div class="number-block-one sx-bg-light">
+                    <div class="figcaption   p-a30">
+                      <div class="figcaption-number ">
+                        <span>{{object.serial}}</span>
+                      </div>
+                      <h4 class="m-t0 ">{{object.title}}</h4>
+                      <p>{{object.description}}</p>
+                      <a routerLink="/services/detail" class="site-button-link">Read More</a>
+                    </div>
+                  </div>
+                </div>
+              }
+
+            </div>
+          </div>
         </div>
+      </div>
 
     </div>
- </div>
+
+  </div>
+</div>

@@ -8,8 +8,8 @@ describe('PageFontsIconsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PageFontsIconsComponent ]
-    })
+    imports: [PageFontsIconsComponent]
+})
     .compileComponents();
 
     fixture = TestBed.createComponent(PageFontsIconsComponent);

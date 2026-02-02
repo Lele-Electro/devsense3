@@ -1,23 +1,29 @@
 <div class="section-full overlay-wraper mobile-page-padding  p-t100 p-b70 bg-center bg-cover" style="background-image:url({{data.background}})">
-    <div class="overlay-main bg-white opacity-01"></div>
-    <div class="container">
-        <div class="section-content">
+  <div class="overlay-main bg-white opacity-01"></div>
+  <div class="container">
+    <div class="section-content">
 
-            <div class="counter-blocks">
-                <div class="row when-item-four justify-content-center">
-                    <div class="col-xl-3 col-md-6 col-sm-6 col-6 m-b30 " *ngFor="let object of data.counters">
-                        <div class="sx-count sx-icon-box-wraper text-center p-a20">
-                            <h2 class="m-t0 sx-text-primary">
-                                <span class="counter">{{object.count}}</span>
-                                <span *ngIf="object.k>='1'">K<b *ngIf="object.k>'1'">+</b></span>
-                            </h2>
-                            <h4 class="m-b0">{{object.title}}</h4>
-                        </div> 
-                    </div>                                                                                                                       
-                </div>
-            </div>                                   
+      <div class="counter-blocks">
+        <div class="row when-item-four justify-content-center">
+          @for (object of data.counters; track object) {
+            <div class="col-xl-3 col-md-6 col-sm-6 col-6 m-b30 ">
+              <div class="sx-count sx-icon-box-wraper text-center p-a20">
+                <h2 class="m-t0 sx-text-primary">
+                  <span class="counter">{{object.count}}</span>
+                  @if (object.k>='1') {
+                    <span>K@if (object.k>'1') {
+                      <b>+</b>
+                    }</span>
+                  }
+                </h2>
+                <h4 class="m-b0">{{object.title}}</h4>
+              </div>
+            </div>
+          }
+        </div>
+      </div>
 
-       </div>
-   </div>
+    </div>
+  </div>
 
-</div> 
+</div>

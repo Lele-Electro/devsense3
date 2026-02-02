@@ -1,11 +1,14 @@
 import { Component, inject, Input, OnInit } from '@angular/core';
 import { WPPost } from 'src/app/interfaces/wordpress';
 import { WordpressService } from 'src/app/services/wordpress.service';
+import { RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'app-section-about-company2',
-  templateUrl: './section-about-company2.component.html',
-  styleUrls: ['./section-about-company2.component.scss']
+    selector: 'app-section-about-company2',
+    templateUrl: './section-about-company2.component.html',
+    styleUrls: ['./section-about-company2.component.scss'],
+    standalone: true,
+    imports: [RouterLink]
 })
 export class SectionAboutCompany2Component implements OnInit {
 

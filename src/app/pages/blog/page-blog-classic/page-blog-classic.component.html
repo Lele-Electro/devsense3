@@ -1,71 +1,69 @@
-<div class="page-wraper"> 
-       	
-    <!-- HEADER START -->
-    <app-header1></app-header1>
-    <!-- HEADER END -->
-    
-    <!-- CONTENT START -->
-    <div class="page-content">
-    
-        <!-- INNER PAGE BANNER -->
-        <app-banner [data]="banner"></app-banner>
-        <!-- INNER PAGE BANNER END -->
-        
-        <!-- SECTION CONTENT START -->
-        <div class="section-full p-t100 p-b70 mobile-page-padding">
-            <!-- GALLERY CONTENT START -->
-            
-            <div class="container clearfix">
-                <div class="masonry-outer mfp-gallery news-masonry  row">
-                   
-                    <!-- COLUMNS 1 -->
-                    <div class="masonry-item col-lg-4 col-md-6 col-sm-12" *ngFor="let object of blogs">
-                        <div class="blog-post blog-grid blog-style-1">
+<div class="page-wraper">
 
-                            <div class="sx-post-info">
-                                <div class="post-category"><a routerLink="/blog/single">{{object.category}}</a> </div>                               
-                                <div class="sx-post-title ">
-                                    <h4 class="post-title"><a routerLink="/blog/single">{{object.title}}</a></h4>
-                                </div>
-                                <div class="sx-post-text">
-                                    <p>{{object.subtitle}}</p> 
-                                </div>
-                                <div class="sx-post-meta ">
-                                    <ul>
-                                        <li class="post-date"><span class="d-month">{{object.month}}</span><span class="d-date"> {{object.day}}</span><span class="d-year">{{object.year}}</span></li>
-                                    </ul>
-                                </div>  												
+  <!-- HEADER START -->
+  <app-header1></app-header1>
+  <!-- HEADER END -->
 
-                                <div class="sx-post-readmore">
-                                     <a routerLink="/blog/single" title="READ MORE" rel="bookmark" class="site-button-link">View More</a>
-                                </div>
-                                
-                            </div>
-                            
-                        </div>							                        
-                    </div>
-                                                               
-                </div>
-                <div class="text-center">
-                    <ul class="pagination m-b0">
-                        <li><a href="javascript:Void();"><span class="fa fa-chevron-left"></span></a></li>
-                        <li><a href="javascript:Void();">1</a></li>
-                        <li class="active"><a href="javascript:Void();">2</a></li>
-                        <li><a href="javascript:Void();">3</a></li>
-                        <li><a href="javascript:Void();"><span class="fa fa-chevron-right"></span></a></li>
+  <!-- CONTENT START -->
+  <div class="page-content">
+
+    <!-- INNER PAGE BANNER -->
+    <app-banner [data]="banner"></app-banner>
+    <!-- INNER PAGE BANNER END -->
+
+    <!-- SECTION CONTENT START -->
+    <div class="section-full p-t100 p-b70 mobile-page-padding">
+      <!-- GALLERY CONTENT START -->
+
+      <div class="container clearfix">
+        <div class="masonry-outer mfp-gallery news-masonry  row">
+
+          <!-- COLUMNS 1 -->
+          @for (object of blogs; track object) {
+            <div class="masonry-item col-lg-4 col-md-6 col-sm-12">
+              <div class="blog-post blog-grid blog-style-1">
+                <div class="sx-post-info">
+                  <div class="post-category"><a routerLink="/blog/single">{{object.category}}</a> </div>
+                  <div class="sx-post-title ">
+                    <h4 class="post-title"><a routerLink="/blog/single">{{object.title}}</a></h4>
+                  </div>
+                  <div class="sx-post-text">
+                    <p>{{object.subtitle}}</p>
+                  </div>
+                  <div class="sx-post-meta ">
+                    <ul>
+                      <li class="post-date"><span class="d-month">{{object.month}}</span><span class="d-date"> {{object.day}}</span><span class="d-year">{{object.year}}</span></li>
                     </ul>
-                </div>                                  
-             </div>
-            <!-- GALLERY CONTENT END -->
-        
+                  </div>
+                  <div class="sx-post-readmore">
+                    <a routerLink="/blog/single" title="READ MORE" rel="bookmark" class="site-button-link">View More</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          }
+
         </div>
-        <!-- SECTION CONTENT END  -->
+        <div class="text-center">
+          <ul class="pagination m-b0">
+            <li><a href="javascript:Void();"><span class="fa fa-chevron-left"></span></a></li>
+            <li><a href="javascript:Void();">1</a></li>
+            <li class="active"><a href="javascript:Void();">2</a></li>
+            <li><a href="javascript:Void();">3</a></li>
+            <li><a href="javascript:Void();"><span class="fa fa-chevron-right"></span></a></li>
+          </ul>
+        </div>
+      </div>
+      <!-- GALLERY CONTENT END -->
 
     </div>
-    <!-- CONTENT END -->
-    
-    <!-- FOOTER START -->
-    <app-footer1></app-footer1>
-    <!-- FOOTER END -->
+    <!-- SECTION CONTENT END  -->
+
+  </div>
+  <!-- CONTENT END -->
+
+  <!-- FOOTER START -->
+  <app-footer1></app-footer1>
+  <!-- FOOTER END -->
 
 </div>

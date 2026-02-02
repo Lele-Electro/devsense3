@@ -8,8 +8,8 @@ describe('PageSingleVerWideVideoComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PageSingleVerWideVideoComponent ]
-    })
+    imports: [PageSingleVerWideVideoComponent]
+})
     .compileComponents();
 
     fixture = TestBed.createComponent(PageSingleVerWideVideoComponent);

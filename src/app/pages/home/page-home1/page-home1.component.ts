@@ -1,9 +1,32 @@
 import { Component, OnInit } from '@angular/core';
+import { Footer1Component } from '../../../sections/footer/footer1/footer1.component';
+import { SectionContact1Component } from '../../../sections/home/home1/section-contact1/section-contact1.component';
+import { SectionTestimonials1Component } from '../../../sections/home/home1/section-testimonials1/section-testimonials1.component';
+import { SectionBlogs1Component } from '../../../sections/home/home1/section-blogs1/section-blogs1.component';
+import { SectionOurClients1Component } from '../../../sections/home/home1/section-our-clients1/section-our-clients1.component';
+import { SectionProjects1Component } from '../../../sections/home/home1/section-projects1/section-projects1.component';
+import { SectionSkills1Component } from '../../../sections/home/home1/section-skills1/section-skills1.component';
+import { SectionAboutCompany1Component } from '../../../sections/home/home1/section-about-company1/section-about-company1.component';
+import { SectionSlider1Component } from '../../../sections/home/home1/section-slider1/section-slider1.component';
+import { Header1Component } from '../../../sections/header/header1/header1.component';
 
 @Component({
-  selector: 'app-page-home1',
-  templateUrl: './page-home1.component.html',
-  styleUrls: ['./page-home1.component.scss'],
+    selector: 'app-page-home1',
+    templateUrl: './page-home1.component.html',
+    styleUrls: ['./page-home1.component.scss'],
+    standalone: true,
+    imports: [
+        Header1Component,
+        SectionSlider1Component,
+        SectionAboutCompany1Component,
+        SectionSkills1Component,
+        SectionProjects1Component,
+        SectionOurClients1Component,
+        SectionBlogs1Component,
+        SectionTestimonials1Component,
+        SectionContact1Component,
+        Footer1Component,
+    ],
 })
 export class PageHome1Component implements OnInit {
   constructor() {}

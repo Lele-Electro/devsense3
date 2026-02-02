@@ -1,9 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-section-blog-search',
-  templateUrl: './section-blog-search.component.html',
-  styleUrls: ['./section-blog-search.component.scss']
+    selector: 'app-section-blog-search',
+    templateUrl: './section-blog-search.component.html',
+    styleUrls: ['./section-blog-search.component.scss'],
+    standalone: true
 })
 export class SectionBlogSearchComponent implements OnInit {
 

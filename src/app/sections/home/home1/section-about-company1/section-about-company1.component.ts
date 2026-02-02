@@ -1,9 +1,12 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'app-section-about-company1',
-  templateUrl: './section-about-company1.component.html',
-  styleUrls: ['./section-about-company1.component.scss']
+    selector: 'app-section-about-company1',
+    templateUrl: './section-about-company1.component.html',
+    styleUrls: ['./section-about-company1.component.scss'],
+    standalone: true,
+    imports: [RouterLink]
 })
 export class SectionAboutCompany1Component implements OnInit {
 

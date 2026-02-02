@@ -1,9 +1,15 @@
 import { Component, OnInit } from '@angular/core';
+import { Footer1Component } from '../../../../sections/footer/footer1/footer1.component';
+import { SectionPortfolioProductDetailsShareComponent } from '../../../../sections/portfolio/section-portfolio-product-details-share/section-portfolio-product-details-share.component';
+import { BannerComponent } from '../../../../sections/banner/banner.component';
+import { Header1Component } from '../../../../sections/header/header1/header1.component';
 
 @Component({
-  selector: 'app-page-carousel-small',
-  templateUrl: './page-carousel-small.component.html',
-  styleUrls: ['./page-carousel-small.component.scss']
+    selector: 'app-page-carousel-small',
+    templateUrl: './page-carousel-small.component.html',
+    styleUrls: ['./page-carousel-small.component.scss'],
+    standalone: true,
+    imports: [Header1Component, BannerComponent, SectionPortfolioProductDetailsShareComponent, Footer1Component]
 })
 export class PageCarouselSmallComponent implements OnInit {
 

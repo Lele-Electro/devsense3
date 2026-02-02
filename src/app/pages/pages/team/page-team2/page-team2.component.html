@@ -1,63 +1,65 @@
-<div class="page-wraper"> 
-       	
-    <!-- HEADER START -->
-    <app-header1></app-header1>
-    <!-- HEADER END -->
-    
-    <!-- CONTENT START -->
-    <div class="page-content">
-    
-        <!-- INNER PAGE BANNER -->
-        <app-banner [data]="banner"></app-banner>
-        <!-- INNER PAGE BANNER END -->
-        
-        <!-- OUR EXPERTS SECTION START -->
-        <div class="section-full p-t100 p-b100 mobile-page-padding sx-bg-white">
-            <div class="container-fluid">
+<div class="page-wraper">
 
-                <!-- IMAGE CAROUSEL START -->
-                <div class="section-content">
-                    <!-- Swiper -->
-                    <div class="sx-team2-swiper swiper-container">
-                        <div class="swiper-wrapper">
+  <!-- HEADER START -->
+  <app-header1></app-header1>
+  <!-- HEADER END -->
 
-                            <!--1 block-->
-                            <div class="swiper-slide" *ngFor="let object of team">
-                                <div class="our-team-3">
-                                    <div class="our-team-info ">
-                                        <img src="{{object.image}}" alt=""/>
-                                        <div class="our-team-content">
-                                            <h4 class="sx-team-name"><a routerLink="/team/team1" class="sx-text-white">{{object.name}}</a></h4>
-                                            <span class="sx-team-position">{{object.designation}}</span>
-                                            <p>
-                                                <a href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a>
-                                                <a href="https://twitter.com/"><i class="fa fa-twitter"></i></a>
-                                                <a href="https://www.instagram.com/"><i class="fa fa-instagram"></i></a>
-                                                <a href="https://www.linkedin.com/"><i class="fa fa-linkedin"></i></a>
-                                            </p>
-                                        </div>			
-                                    </div>
-                                </div>
-                            </div>
-                        
-                        </div>
-                        <!-- Add Pagination -->
-                        <div class="swiper-pagination"></div>
-                        <!-- Add Arrows -->
-                        <div class="swiper-button-next"></div>
-                        <div class="swiper-button-prev"></div>
+  <!-- CONTENT START -->
+  <div class="page-content">
+
+    <!-- INNER PAGE BANNER -->
+    <app-banner [data]="banner"></app-banner>
+    <!-- INNER PAGE BANNER END -->
+
+    <!-- OUR EXPERTS SECTION START -->
+    <div class="section-full p-t100 p-b100 mobile-page-padding sx-bg-white">
+      <div class="container-fluid">
+
+        <!-- IMAGE CAROUSEL START -->
+        <div class="section-content">
+          <!-- Swiper -->
+          <div class="sx-team2-swiper swiper-container">
+            <div class="swiper-wrapper">
+
+              <!--1 block-->
+              @for (object of team; track object) {
+                <div class="swiper-slide">
+                  <div class="our-team-3">
+                    <div class="our-team-info ">
+                      <img src="{{object.image}}" alt=""/>
+                      <div class="our-team-content">
+                        <h4 class="sx-team-name"><a routerLink="/team/team1" class="sx-text-white">{{object.name}}</a></h4>
+                        <span class="sx-team-position">{{object.designation}}</span>
+                        <p>
+                          <a href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a>
+                          <a href="https://twitter.com/"><i class="fa fa-twitter"></i></a>
+                          <a href="https://www.instagram.com/"><i class="fa fa-instagram"></i></a>
+                          <a href="https://www.linkedin.com/"><i class="fa fa-linkedin"></i></a>
+                        </p>
+                      </div>
                     </div>
+                  </div>
                 </div>
-                
-            </div>
-        </div>   
-        <!-- OUR EXPERTS SECTION END -->
+              }
 
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+            <!-- Add Arrows -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+          </div>
+        </div>
+
+      </div>
     </div>
-    <!-- CONTENT END -->
-    
-    <!-- FOOTER START -->
-    <app-footer1></app-footer1>
-    <!-- FOOTER END -->
+    <!-- OUR EXPERTS SECTION END -->
+
+  </div>
+  <!-- CONTENT END -->
+
+  <!-- FOOTER START -->
+  <app-footer1></app-footer1>
+  <!-- FOOTER END -->
 
 </div>

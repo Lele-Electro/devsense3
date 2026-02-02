@@ -1,25 +1,26 @@
 <div class="widget  recent-posts-entry">
-    <h4 class="widget-title  ">Recent Posts</h4>
-    <div class="section-content">
-        <div class="widget-post-bx">
-            
-            <div class="widget-post clearfix" *ngFor="let object of data">
-                <div class="sx-post-media">
-                    <img src="{{object.image}}" alt="">
-                </div>
-                <div class="sx-post-info">
-    
-                    <div class="sx-post-header">
-                        <h5 class="post-title"><a routerLink="/blog/single">{{object.title}}</a></h5>
-                    </div>
-                    <div class="sx-post-meta">
-                        <ul>
-                            <li class="post-author">Posted {{object.date}}</li>
-                        </ul>
-                    </div>                                                             
-                </div>
-            </div>
+  <h4 class="widget-title  ">Recent Posts</h4>
+  <div class="section-content">
+    <div class="widget-post-bx">
 
+      @for (object of data; track object) {
+        <div class="widget-post clearfix">
+          <div class="sx-post-media">
+            <img src="{{object.image}}" alt="">
+          </div>
+          <div class="sx-post-info">
+            <div class="sx-post-header">
+              <h5 class="post-title"><a routerLink="/blog/single">{{object.title}}</a></h5>
+            </div>
+            <div class="sx-post-meta">
+              <ul>
+                <li class="post-author">Posted {{object.date}}</li>
+              </ul>
+            </div>
+          </div>
         </div>
+      }
+
     </div>
+  </div>
 </div>

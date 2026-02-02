@@ -1,53 +1,53 @@
 <div class="section-full mobile-page-padding p-t100  p-b70 sx-bg-dark">
-                <div class="section-content">
-                    <div class="container">
-                        <!-- TITLE START -->
-                        <div class="large-title-block">
-                            <div class="row">
-                                <div class="col-lg-7 col-md-12">
-                                    <div class=" large-title">
-                                        <!-- TITLE START -->
-                                        <div class="section-head-two left">
-                                            <h2 class="sx-title-two">{{data.subtitle}}</h2>
-                                        </div>                   
-                                        <!-- TITLE END -->
-                                    </div>
-                                </div>
-
-                                
-                                <div class="col-lg-5 col-md-12">
-                                    <div class=" large-title-info">
-                                        <p>{{data.description}}
-                                        </p>
-                                    </div>
-                                </div>
-                                                            
-                            </div>
-                        </div>                  
-                        <!-- TITLE END -->
-                        <div class="row">
-                            
-                            <!-- Block one -->
-                            <div class="col-lg-4 col-md-6 col-sm-12 m-b30" *ngFor="let object of data.services">
-                                
-                                <div class="sx-service2-box">
-                                    <div class="sx-service2-inner">
-                                    <img src="{{object.image}}" alt=""/>
-                                    <div class="figcaption">
-                                        <h4 class="sx-title">{{object.title}}</h4>
-                                        <p>{{object.description}}</p>
-                                        <a routerLink="services/detail" class="site-button-link white">View more</a>
-                                    </div>     
-                                    </div>
-                                </div>
-                                
-                            </div>
-                                                                                                                                                                    
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="hilite-title text-left p-l50 text-uppercase">
-                    <strong>{{data.title}}</strong>
-                </div>                
+  <div class="section-content">
+    <div class="container">
+      <!-- TITLE START -->
+      <div class="large-title-block">
+        <div class="row">
+          <div class="col-lg-7 col-md-12">
+            <div class=" large-title">
+              <!-- TITLE START -->
+              <div class="section-head-two left">
+                <h2 class="sx-title-two">{{data.subtitle}}</h2>
+              </div>
+              <!-- TITLE END -->
             </div>
+          </div>
+
+
+          <div class="col-lg-5 col-md-12">
+            <div class=" large-title-info">
+              <p>{{data.description}}
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <!-- TITLE END -->
+      <div class="row">
+
+        <!-- Block one -->
+        @for (object of data.services; track object) {
+          <div class="col-lg-4 col-md-6 col-sm-12 m-b30">
+            <div class="sx-service2-box">
+              <div class="sx-service2-inner">
+                <img src="{{object.image}}" alt=""/>
+                <div class="figcaption">
+                  <h4 class="sx-title">{{object.title}}</h4>
+                  <p>{{object.description}}</p>
+                  <a routerLink="services/detail" class="site-button-link white">View more</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        }
+
+      </div>
+    </div>
+  </div>
+
+  <div class="hilite-title text-left p-l50 text-uppercase">
+    <strong>{{data.title}}</strong>
+  </div>
+</div>

@@ -1,9 +1,16 @@
 import { Component, OnInit } from '@angular/core';
+import { Footer1Component } from '../../../sections/footer/footer1/footer1.component';
+import { SectionBlogSidebarComponent } from '../../../sections/blogs/section-blog-sidebar/section-blog-sidebar.component';
+import { RouterLink } from '@angular/router';
+import { BannerComponent } from '../../../sections/banner/banner.component';
+import { Header1Component } from '../../../sections/header/header1/header1.component';
 
 @Component({
-  selector: 'app-page-blog-listing2',
-  templateUrl: './page-blog-listing2.component.html',
-  styleUrls: ['./page-blog-listing2.component.scss']
+    selector: 'app-page-blog-listing2',
+    templateUrl: './page-blog-listing2.component.html',
+    styleUrls: ['./page-blog-listing2.component.scss'],
+    standalone: true,
+    imports: [Header1Component, BannerComponent, RouterLink, SectionBlogSidebarComponent, Footer1Component]
 })
 export class PageBlogListing2Component implements OnInit {
 

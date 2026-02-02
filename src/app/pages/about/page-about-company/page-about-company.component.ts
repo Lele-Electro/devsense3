@@ -1,9 +1,19 @@
 import { Component, OnInit } from '@angular/core';
+import { Footer1Component } from '../../../sections/footer/footer1/footer1.component';
+import { SectionTestimonials2Component } from '../../../sections/home/home2/section-testimonials2/section-testimonials2.component';
+import { SectionExperienceComponent } from '../../../sections/about/company/section-experience/section-experience.component';
+import { SectionAwardsComponent } from '../../../sections/about/company/section-awards/section-awards.component';
+import { SectionDesignComponent } from '../../../sections/about/company/section-design/section-design.component';
+import { SectionAboutUsComponent } from '../../../sections/about/company/section-about-us/section-about-us.component';
+import { BannerComponent } from '../../../sections/banner/banner.component';
+import { Header1Component } from '../../../sections/header/header1/header1.component';
 
 @Component({
-  selector: 'app-page-about-company',
-  templateUrl: './page-about-company.component.html',
-  styleUrls: ['./page-about-company.component.scss']
+    selector: 'app-page-about-company',
+    templateUrl: './page-about-company.component.html',
+    styleUrls: ['./page-about-company.component.scss'],
+    standalone: true,
+    imports: [Header1Component, BannerComponent, SectionAboutUsComponent, SectionDesignComponent, SectionAwardsComponent, SectionExperienceComponent, SectionTestimonials2Component, Footer1Component]
 })
 export class PageAboutCompanyComponent implements OnInit {
 

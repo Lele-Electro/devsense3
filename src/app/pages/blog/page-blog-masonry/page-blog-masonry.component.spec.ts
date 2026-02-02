@@ -8,8 +8,8 @@ describe('PageBlogMasonryComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PageBlogMasonryComponent ]
-    })
+    imports: [PageBlogMasonryComponent]
+})
     .compileComponents();
 
     fixture = TestBed.createComponent(PageBlogMasonryComponent);

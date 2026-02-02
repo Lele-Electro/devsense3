@@ -8,8 +8,8 @@ describe('PageCarouselLargeComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PageCarouselLargeComponent ]
-    })
+    imports: [PageCarouselLargeComponent]
+})
     .compileComponents();
 
     fixture = TestBed.createComponent(PageCarouselLargeComponent);

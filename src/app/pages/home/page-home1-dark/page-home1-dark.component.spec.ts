@@ -8,8 +8,8 @@ describe('PageHome1DarkComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PageHome1DarkComponent ]
-    })
+    declarations: [PageHome1DarkComponent]
+})
     .compileComponents();
 
     fixture = TestBed.createComponent(PageHome1DarkComponent);
