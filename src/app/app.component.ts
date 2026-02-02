@@ -1,6 +1,6 @@
-import { AfterViewInit, Component, inject } from '@angular/core';
+import { AfterViewInit, Component, inject, DOCUMENT } from '@angular/core';
 import { NavigationEnd, Router, Event } from '@angular/router';
-import { DOCUMENT } from '@angular/common';
+
 
 declare var jQuery: any;
 declare var cursurCircle: any;
