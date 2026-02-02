@@ -105,6 +105,7 @@ import { SectionOurServices2Component } from './sections/services/section-our-se
 import { SectionCounter2Component } from './sections/services/section-counter2/section-counter2.component';
 import { SectionServicesSidebarComponent } from './sections/services/section-services-sidebar/section-services-sidebar.component';
 import { SectionServiceDetailAreaComponent } from './sections/services/section-service-detail-area/section-service-detail-area.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -214,7 +215,8 @@ import { SectionServiceDetailAreaComponent } from './sections/services/section-s
     PortfolioMasonryRoutingModule,
     PortfolioCarouselRoutingModule,
     PortfolioSingleRoutingModule,
-    BlogRoutingModule
+    BlogRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

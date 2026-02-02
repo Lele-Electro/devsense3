@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
+import { WordpressService } from 'src/app/services/wordpress.service';
 
 @Component({
   selector: 'app-page-home2',
@@ -6,10 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./page-home2.component.scss']
 })
 export class PageHome2Component implements OnInit {
-
+  private wpService = inject(WordpressService);
   constructor() { }
 
   ngOnInit(): void {
+    this.wpService.getPostsByCategoryId(2).subscribe(posts => {
+      console.log('Posts in category 1:', posts);
+      this.wpService.makeSequentialCalls(posts).subscribe(postsWithMedia => {
+        console.log('Posts with media URLs:', postsWithMedia);
+      });
+    });
+
   }
 
   about = {
@@ -66,7 +74,7 @@ export class PageHome2Component implements OnInit {
         image: "assets/images/services/service-2/port-3.jpg",
         title: "2D & 3D animation",
         description: "Project management is the process by which our team plans and executes your project. We will develop it..."
-      },{
+      }, {
         image: "assets/images/services/service-2/port-4.jpg",
         title: "Front & Back-end development",
         description: "Project management is the process by which our team plans and executes your project. We will develop it..."
