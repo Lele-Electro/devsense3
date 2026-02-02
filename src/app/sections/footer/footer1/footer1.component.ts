@@ -9,6 +9,8 @@ import { RouterLink } from '@angular/router';
 })
 export class Footer1Component implements OnInit {
 
+  currentYear: number = new Date().getFullYear();
+
   constructor() { }
 
   ngOnInit(): void {
