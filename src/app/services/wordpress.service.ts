@@ -27,7 +27,7 @@ export class WordpressService {
   //   return this.http.get<any>(`${this.baseUrl}/${id}`);
   // }
 
-  getPostsByCategoryId(categoryId: number): Observable<WPPost[]> {
+  getPostsByCategoryId(categoryId: number): Observable<WPPost[] | undefined> {
     const postsUrl = `${this.baseUrl}/posts?categories=${categoryId}`;
     return this.http.get<WPPost[]>(postsUrl).pipe(
       // catchError(error => this.handleError(error, `fetch posts for category ${categoryId}`))

@@ -4,8 +4,8 @@
         <div class="sx-bnr-inr-entry">
             <div class="banner-title-outer">
                 <div class="banner-title-name">
-                    <h2  class="sx-title">{{data.title}}</h2><p>
-{{data.description}}
+                    <h2  class="sx-title">{{aboutUsOne?.title?.rendered}}</h2><p [innerHTML]="aboutUsOne?.content?.rendered">
+{{aboutUsOne?.content?.rendered}}
 </p>
                 </div>
             </div>

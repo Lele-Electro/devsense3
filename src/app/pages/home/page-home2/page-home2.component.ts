@@ -13,7 +13,7 @@ export class PageHome2Component implements OnInit {
   ngOnInit(): void {
     this.wpService.getPostsByCategoryId(2).subscribe(posts => {
       console.log('Posts in category 1:', posts);
-      this.wpService.makeSequentialCalls(posts).subscribe(postsWithMedia => {
+      this.wpService.makeSequentialCalls(posts || []).subscribe(postsWithMedia => {
         console.log('Posts with media URLs:', postsWithMedia);
       });
     });
