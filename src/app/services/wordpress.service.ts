@@ -1,5 +1,5 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { catchError, concatMap, filter, from, map, Observable, throwError, toArray } from 'rxjs';
 import { WPMedia, WPPost } from '../interfaces/wordpress';
 
@@ -7,11 +7,14 @@ import { WPMedia, WPPost } from '../interfaces/wordpress';
 
 @Injectable({ providedIn: 'root' })
 export class WordpressService {
+  private http = inject(HttpClient);
+
   private baseUrl = 'https://devsense.co.za/wp/wp-json/wp/v2';
 
-  constructor(
-    private http: HttpClient,
-    // private alertService: AlertService
+  /** Inserted by Angular inject() migration for backwards compatibility */
+  constructor(...args: unknown[]);
+
+  constructor(  // private alertService: AlertService
   ) { }
 
   // private handleError(error: HttpErrorResponse, operation: string = 'operation') {

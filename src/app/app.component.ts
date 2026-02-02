@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, Inject } from '@angular/core';
+import { AfterViewInit, Component, inject } from '@angular/core';
 import { NavigationEnd, Router, Event } from '@angular/router';
 import { DOCUMENT } from '@angular/common';
 
@@ -13,9 +13,15 @@ declare var initializeOnLoad: any;
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements AfterViewInit {
+  private router = inject(Router);
+  private document = inject<Document>(DOCUMENT);
+
   title = 'anih';
 
-  constructor(private router: Router, @Inject(DOCUMENT) private document: Document) {
+  /** Inserted by Angular inject() migration for backwards compatibility */
+  constructor(...args: unknown[]);
+
+  constructor() {
 
   }
 
