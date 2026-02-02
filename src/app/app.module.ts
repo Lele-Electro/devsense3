@@ -105,12 +105,10 @@ import { SectionOurServices2Component } from './sections/services/section-our-se
 import { SectionCounter2Component } from './sections/services/section-counter2/section-counter2.component';
 import { SectionServicesSidebarComponent } from './sections/services/section-services-sidebar/section-services-sidebar.component';
 import { SectionServiceDetailAreaComponent } from './sections/services/section-service-detail-area/section-service-detail-area.component';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 
-@NgModule({
-    declarations: [AppComponent],
-    imports: [
-        BrowserModule,
+@NgModule({ declarations: [AppComponent],
+    bootstrap: [AppComponent], imports: [BrowserModule,
         AppRoutingModule,
         HomeRoutingModule,
         AboutRoutingModule,
@@ -122,7 +120,6 @@ import { HttpClientModule } from '@angular/common/http';
         PortfolioCarouselRoutingModule,
         PortfolioSingleRoutingModule,
         BlogRoutingModule,
-        HttpClientModule,
         PageAboutMeComponent,
         PageAboutCompanyComponent,
         PageHome2Component,
@@ -214,9 +211,5 @@ import { HttpClientModule } from '@angular/common/http';
         SectionOurServices2Component,
         SectionCounter2Component,
         SectionServicesSidebarComponent,
-        SectionServiceDetailAreaComponent
-    ],
-    providers: [],
-    bootstrap: [AppComponent]
-})
+        SectionServiceDetailAreaComponent], providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class AppModule { }

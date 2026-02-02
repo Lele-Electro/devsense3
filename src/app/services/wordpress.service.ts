@@ -58,7 +58,7 @@ export class WordpressService {
       concatMap((post: WPPost) =>
         this.returnFeatureImage(post.featured_media).pipe(
           map((media: WPMedia) => ({ ...post, media_source_url: media?.source_url })),
-          catchError(error => {
+          catchError((error: any) => {
             // this.alertService.showError(`Failed to fetch media for post ${post.id}`, error);
             return from([post]); // Return post without media rather than failing entire sequence
           })
@@ -68,4 +68,3 @@ export class WordpressService {
     );
   }
 }
-
