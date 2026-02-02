@@ -4,7 +4,7 @@
     <!-- TITLE START -->
     <div class="section-head-two center">
       <div class="section-head-two center">
-        <h2 class="sx-title-two">{{data.title}}</h2>
+        <h2 class="sx-title-two">{{data().title}}</h2>
       </div>
     </div>
     <!-- TITLE END -->
@@ -15,7 +15,7 @@
     <div class="section-content">
       <div class="row justify-content-center">
 
-        @for (object of data.posts; track object) {
+        @for (object of data().posts; track object) {
           <div class="col-lg-4 col-md-6 col-sm-12">
             <div class="blog-post blog-grid date-style-2">
               <div class="sx-post-media sx-img-effect img-reflection">

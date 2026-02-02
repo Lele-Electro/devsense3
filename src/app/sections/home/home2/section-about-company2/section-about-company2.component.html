@@ -6,7 +6,7 @@
                             <div class="col-lg-6 col-md-12 m-b30">
                                 <div class="a-about2">
                                     <div class="sx-media">
-                                        <img src="{{data.image}}" alt="">
+                                        <img src="{{data().image}}" alt="">
                                     </div>
                                     <div class="dot-corner"><img src="assets/images/background/r-corner.png" alt=""></div>
                                 </div>
@@ -16,7 +16,7 @@
                                 <div class="a-about-home-right2">
                                     <!-- TITLE START -->
                                     <div class="section-head-two left">
-                                        <h2 class="sx-title-two">{{data.title}}</h2>
+                                        <h2 class="sx-title-two">{{data().title}}</h2>
                                     </div>                   
                                     <!-- TITLE END -->
                                     <div class="sx-about-me-info2 m-b40" [innerHTML]="aboutUsOne?.content?.rendered">
@@ -25,10 +25,10 @@
                                     
                                     <div class="year-ex2 bg-repeat-x" style="background-image: url(assets/images/background/dot-corner.png)">
                                         <div class="year-ex-info2">
-                                            <div class="year-ex-count2"><span class="text-outline">{{data.experience}}</span></div>
+                                            <div class="year-ex-count2"><span class="text-outline">{{data().experience}}</span></div>
                                             <div class="year-ex-content2">
                                                 <span class="info1 sx-text-black">Years Experience</span>
-                                                <span class="info2 sx-text-black">Established {{data.establishment}}</span>
+                                                <span class="info2 sx-text-black">Established {{data().establishment}}</span>
                                             </div>
                                         </div>
                                     </div>

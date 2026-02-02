@@ -1,9 +1,9 @@
 <div class="comments-area" id="comments">
-  <h2 class="comments-title m-b30">{{data.count}} Comments</h2>
+  <h2 class="comments-title m-b30">{{data().count}} Comments</h2>
   <div class="comments-outer">
     <!-- COMMENT LIST START -->
     <ol class="comment-list">
-      @for (object of data.comments; track object) {
+      @for (object of data().comments; track object) {
         <li class="comment">
           <!-- COMMENT BLOCK -->
           <app-element-commentcell [data]="object"></app-element-commentcell>

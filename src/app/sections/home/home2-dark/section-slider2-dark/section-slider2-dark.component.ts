@@ -1,4 +1,4 @@
-import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, input } from '@angular/core';
 
 declare var jQuery: any;
 declare var loadSlider2: any;
@@ -12,7 +12,7 @@ declare var killSlider2: any;
 })
 export class SectionSlider2DarkComponent implements OnInit, OnDestroy {
 
-  @Input() data: any;
+  readonly data = input<any>();
 
   constructor() { }
 

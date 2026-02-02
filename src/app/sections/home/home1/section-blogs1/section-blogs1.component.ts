@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 @Component({
@@ -9,7 +9,7 @@ import { RouterLink } from '@angular/router';
 })
 export class SectionBlogs1Component implements OnInit {
 
-  @Input() data: any;
+  readonly data = input<any>();
   
   constructor() { }
 

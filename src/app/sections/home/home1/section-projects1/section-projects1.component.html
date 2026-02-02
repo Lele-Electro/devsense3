@@ -5,7 +5,7 @@
       <div class="section-head">
         <div class="sx-separator-outer separator-center">
           <div class="sx-separator" data-title="03">
-            <h2 class="sep-line-one typewrite" data-period="2000" attr.data-type='[ "{{data.title}}"]' ><span class="wrap">{{data.title}}</span></h2>
+            <h2 class="sep-line-one typewrite" data-period="2000" attr.data-type='[ "{{data().title}}"]' ><span class="wrap">{{data().title}}</span></h2>
           </div>
         </div>
 
@@ -18,7 +18,7 @@
         <!-- Filter Menu -->
         <div class="clearfix filter-pos-left sx-bg-light  bg-no-repeat bg-bottom-right" style="background-image: url(assets/images/background/r-corner.png)">
           <ul class="btn-filter-wrap">
-            @for (object of data.categories; track object; let i = $index) {
+            @for (object of data().categories; track object; let i = $index) {
               <li class="btn-filter {{ i==0 ? 'btn-active' : ''}}" attr.data-filter="{{object.class}}">{{object.title}}</li>
             }
           </ul>
@@ -29,7 +29,7 @@
           <div class="section-content ">
             <div class="owl-carousel owl-carousel-filter mfp-gallery owl-btn-vertical-center">
               <!-- COLUMNS 1 -->
-              @for (object of data.projects; track object) {
+              @for (object of data().projects; track object) {
                 <div class="item fadingcol {{object.category}} overflow-hide">
                   <div class="box-animation-one"><img src="{{object.image}}" alt="">
                     <div class="box-inner-content">

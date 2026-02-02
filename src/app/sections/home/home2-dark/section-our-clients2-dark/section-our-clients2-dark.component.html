@@ -4,7 +4,7 @@
     <!-- TITLE START -->
     <div class="section-head-two center">
       <div class="section-head-two center">
-        <h2 class="sx-title-two">{{data.title}}</h2>
+        <h2 class="sx-title-two">{{data().title}}</h2>
       </div>
     </div>
     <!-- TITLE END -->
@@ -14,7 +14,7 @@
 
         <div class="row justify-content-center">
 
-          @for (object of data.logos; track object) {
+          @for (object of data().logos; track object) {
             <div class="col-lg-2 col-md-4 col-sm-4 col-4">
               <a routerLink="about/company" class="client-logo-pic2">
                 <img src="{{object}}" alt="">
@@ -32,6 +32,6 @@
   </div>
 
   <div class="hilite-title text-left p-l50 text-uppercase">
-    <strong>{{data.title2}}</strong>
+    <strong>{{data().title2}}</strong>
   </div>
 </div>

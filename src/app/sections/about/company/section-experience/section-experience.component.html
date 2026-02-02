@@ -3,7 +3,7 @@
 
     <!-- TITLE START -->
     <div class="section-head-two center">
-      <h2 class="sx-title-two">{{data.title}}</h2>
+      <h2 class="sx-title-two">{{data().title}}</h2>
     </div>
     <!-- TITLE END -->
   </div>
@@ -16,7 +16,7 @@
         <div class="swiper-wrapper">
 
           <!--1 block-->
-          @for (object of data.team; track object) {
+          @for (object of data().team; track object) {
             <div class="swiper-slide">
               <div class="our-team-3">
                 <div class="our-team-info ">

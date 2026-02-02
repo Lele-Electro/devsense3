@@ -4,14 +4,14 @@
 
       <!-- TITLE START -->
       <div class="section-head-two center">
-        <h2 class="sx-title-two">{{data.title}}</h2>
+        <h2 class="sx-title-two">{{data().title}}</h2>
       </div>
       <!-- TITLE END -->
       <div class="swiper-container testimonial-home-two">
         <div class="swiper-wrapper">
 
           <!--Image 1-->
-          @for (object of data.quotes; track object) {
+          @for (object of data().quotes; track object) {
             <div class="swiper-slide">
               <div class="testimonial-2  hover-animation-1 bg-white">
                 <div class="testimonial-text ">

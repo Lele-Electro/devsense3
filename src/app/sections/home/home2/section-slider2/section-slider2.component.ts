@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 @Component({
@@ -9,7 +9,7 @@ import { RouterLink } from '@angular/router';
 })
 export class SectionSlider2Component {
 
-  @Input() data: any;
+  readonly data = input<any>();
   
   constructor() { }
 

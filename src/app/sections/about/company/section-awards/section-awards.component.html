@@ -3,13 +3,13 @@
 
     <!-- TITLE START -->
     <div class="section-head-two center">
-      <h2 class="sx-title-two">{{data.title}}</h2>
+      <h2 class="sx-title-two">{{data().title}}</h2>
     </div>
     <!-- TITLE END -->
 
     <div class="section-content ">
       <div class="row">
-        @for (object of data.awards; track object) {
+        @for (object of data().awards; track object) {
           <div class="col-xl-6 col-lg-6 col-md-12 m-b30">
             @for (object1 of object; track object1) {
               <div class="sx-box our-story">

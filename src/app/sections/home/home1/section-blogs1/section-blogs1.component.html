@@ -5,7 +5,7 @@
     <div class="section-head">
       <div class="sx-separator-outer separator-center">
         <div class="sx-separator" data-title="05">
-          <h2 class="sep-line-one typewrite" data-period="2000" attr.data-type='[ "{{data.title}}"]' ><span class="wrap">{{data.title}}</span></h2>
+          <h2 class="sep-line-one typewrite" data-period="2000" attr.data-type='[ "{{data().title}}"]' ><span class="wrap">{{data().title}}</span></h2>
         </div>
       </div>
 
@@ -16,7 +16,7 @@
     <div class="section-content">
       <div class="row justify-content-center">
 
-        @for (object of data.blogs; track object) {
+        @for (object of data().blogs; track object) {
           <div class="col-lg-4 col-md-6 col-sm-12">
             <div class="blog-post blog-grid blog-style-1">
               <div class="sx-post-info">

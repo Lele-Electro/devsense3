@@ -1,7 +1,7 @@
 <div class="about4-section m-b20 bg-gray p-a20">
   <div class="about4-content m-t30">
-    <h4>{{data.offer.title}}</h4>
-    <p>{{data.offer.description}}</p>
+    <h4>{{data().offer.title}}</h4>
+    <p>{{data().offer.description}}</p>
     <a routerLink="/about/me" class="site-button-link">Read More</a>
   </div>
 </div>
@@ -10,16 +10,16 @@
   <div class="pricingtable-inner">
 
     <div class="pricingtable-title">
-      <h4>{{data.plan.type}}</h4>
+      <h4>{{data().plan.type}}</h4>
     </div>
 
     <div class="pricingtable-price">
-      <span class="pricingtable-bx">{{data.plan.price}}</span>
-      <span class="pricingtable-type">{{data.plan.tenure}}</span>
+      <span class="pricingtable-bx">{{data().plan.price}}</span>
+      <span class="pricingtable-type">{{data().plan.tenure}}</span>
     </div>
 
     <ul class="pricingtable-features text-white">
-      @for (object of data.plan.features; track object) {
+      @for (object of data().plan.features; track object) {
         <li>{{object}}</li>
       }
     </ul>

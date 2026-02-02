@@ -3,7 +3,7 @@
 
     <!-- TITLE START -->
     <div class="section-head-two left">
-      <h2 class="sx-title-two">{{data.title}}</h2>
+      <h2 class="sx-title-two">{{data().title}}</h2>
     </div>
     <!-- TITLE END -->
 
@@ -11,7 +11,7 @@
       <div class="pricingtable-row p-t20">
         <div class="row justify-content-center">
 
-          @for (object of data.plans; track object; let i = $index) {
+          @for (object of data().plans; track object; let i = $index) {
             <div class="col-lg-4  col-md-6 col-sm-6  m-b30">
               <div class="pricingtable-wrapper {{ i%2==1 ? 'pricingtable-highlight' : '' }}">
                 <div class="pricingtable-inner">

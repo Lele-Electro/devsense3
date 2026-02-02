@@ -1,21 +1,21 @@
 <div  class="side-bar sx-bg-white">
              
     <!-- RECENT POSTS -->
-    <app-section-blog-recent-posts [data]="data.recentposts"></app-section-blog-recent-posts>  
+    <app-section-blog-recent-posts [data]="data().recentposts"></app-section-blog-recent-posts>  
                               
     <!-- SEARCH -->
     <app-section-blog-search></app-section-blog-search>
                                         
     <!-- Categories  -->                                   
-    <app-section-blog-categories [data]="data.categories"></app-section-blog-categories>
+    <app-section-blog-categories [data]="data().categories"></app-section-blog-categories>
                                                 
     <!-- NEWSLETTER -->
     <app-section-blog-newsletter></app-section-blog-newsletter>
                                                 
     <!-- OUR GALLERY  -->
-    <app-section-blog-gallery [data]="data.gallery"></app-section-blog-gallery>
+    <app-section-blog-gallery [data]="data().gallery"></app-section-blog-gallery>
 
     <!-- TAGS -->
-    <app-section-blog-tags [data]="data.tags"></app-section-blog-tags>
+    <app-section-blog-tags [data]="data().tags"></app-section-blog-tags>
 
 </div>

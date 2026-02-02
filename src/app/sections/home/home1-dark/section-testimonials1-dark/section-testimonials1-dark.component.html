@@ -6,8 +6,8 @@
       <div class="section-head">
         <div class="sx-separator-outer separator-left">
           <div class="sx-separator" data-title="06">
-            <h2 class="sep-line-one typewrite" data-period="2000" attr.data-type='[ "{{data.title}}"]'><span
-            class="wrap">{{data.title}}</span></h2>
+            <h2 class="sep-line-one typewrite" data-period="2000" attr.data-type='[ "{{data().title}}"]'><span
+            class="wrap">{{data().title}}</span></h2>
           </div>
         </div>
 
@@ -15,7 +15,7 @@
       <!-- TITLE END -->
       <div class="row testimonial-h-2 ">
         <div class="col-lg-5 col-md-12">
-          <div class="textimonial-left-media bg-cover" style="background-image: url({{data.sectionImage}});">
+          <div class="textimonial-left-media bg-cover" style="background-image: url({{data().sectionImage}});">
           </div>
         </div>
         <div class="col-lg-7 col-md-12">
@@ -23,7 +23,7 @@
           <div class="owl-carousel testimonial-home bg-no-repeat bg-bottom-right"
             style="background-image: url(assets/images/background/r-corner.png)">
 
-            @for (object of data.quotes; track object) {
+            @for (object of data().quotes; track object) {
               <div class="item">
                 <div class="testimonial-2  hover-animation-1 sx-bg-dark">
                   <div class="testimonial-text ">

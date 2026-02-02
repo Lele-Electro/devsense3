@@ -1,4 +1,4 @@
-import { Component, inject, Input, OnInit } from '@angular/core';
+import { Component, inject, OnInit, input } from '@angular/core';
 import { WPPost } from 'src/app/interfaces/wordpress';
 import { WordpressService } from 'src/app/services/wordpress.service';
 import { RouterLink } from '@angular/router';
@@ -12,7 +12,7 @@ import { RouterLink } from '@angular/router';
 export class SectionAboutCompany2Component implements OnInit {
 
   private wpService = inject(WordpressService);
-  @Input() data: any;
+  readonly data = input<any>();
   aboutUsOne: WPPost | undefined = {} as WPPost;
 
   constructor() { }

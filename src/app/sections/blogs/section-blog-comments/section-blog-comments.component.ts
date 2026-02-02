@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit, input } from '@angular/core';
 import { ElementCommentcellComponent } from '../../../elements/blogs/element-commentcell/element-commentcell.component';
 
 @Component({
@@ -9,7 +9,7 @@ import { ElementCommentcellComponent } from '../../../elements/blogs/element-com
 })
 export class SectionBlogCommentsComponent implements OnInit {
 
-  @Input() data: any;
+  readonly data = input<any>();
   
   constructor() { }
 

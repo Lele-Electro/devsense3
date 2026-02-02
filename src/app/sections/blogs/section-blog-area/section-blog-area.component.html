@@ -1,26 +1,26 @@
-<div class="single-blog-post blog-detail {{ padding == 1 ? 'm-b30' : '' }}">
+<div class="single-blog-post blog-detail {{ padding() == 1 ? 'm-b30' : '' }}">
 
   <div class="sx-post-meta">
     <ul>
-      <li class="post-date">Posted {{blog.date}}</li>
-      <li class="post-author">By {{blog.author}}</li>
-      <li class="post-comment">{{blog.comments}} Comments</li>
+      <li class="post-date">Posted {{blog().date}}</li>
+      <li class="post-author">By {{blog().author}}</li>
+      <li class="post-comment">{{blog().comments}} Comments</li>
     </ul>
   </div>
 
   <div class="sx-post-title ">
-    <h3 class="post-title">{{blog.title}}</h3>
+    <h3 class="post-title">{{blog().title}}</h3>
   </div>
 
-  @if (blog.image != '') {
+  @if (blog().image != '') {
     <div class="sx-post-media sx-largr-media-20">
       <div class="portfolio-item">
-        <img class="img-responsive" src="{{blog.image}}" alt="">
+        <img class="img-responsive" src="{{blog().image}}" alt="">
       </div>
     </div>
   }
 
-  <div class="sx-post-text" [innerHTML]="blog.description"></div>
+  <div class="sx-post-text" [innerHTML]="blog().description"></div>
 
   <div class="autor-post-tag-share">
     <div class="row">
@@ -28,7 +28,7 @@
         <div class="widget_tag_cloud single-post-tag">
 
           <div class="tagcloud">
-            @for (object of blog.tags; track object) {
+            @for (object of blog().tags; track object) {
               <a href="javascript:void(0);">{{object}}</a>
             }
           </div>
@@ -62,7 +62,7 @@
           Previous Post
         </a>
         <h4 class="paging-title">
-          <a routerLink="/blog/classic">{{blog.prev.title}} </a>
+          <a routerLink="/blog/classic">{{blog().prev.title}} </a>
         </h4>
       </div>
     </div>
@@ -71,7 +71,7 @@
         <a class="paging-link" routerLink="/blog/classic">Next Post
           <i class="fa fa-angle-right"></i>
         </a>
-        <h4 class="paging-title"><a routerLink="/blog/classic">{{blog.next.title}}
+        <h4 class="paging-title"><a routerLink="/blog/classic">{{blog().next.title}}
 
         </a>
       </h4>

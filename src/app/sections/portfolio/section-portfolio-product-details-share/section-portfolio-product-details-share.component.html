@@ -2,15 +2,15 @@
   <ul>
     <li>
       <h5 class="sx-title">Date:</h5>
-      <p>{{data.date}}</p>
+      <p>{{data().date}}</p>
     </li>
     <li>
       <h5 class="sx-title">Client:</h5>
-      <p>{{data.client}}</p>
+      <p>{{data().client}}</p>
     </li>
     <li>
       <h5 class="sx-title">Category:</h5>
-      <p>{{data.category}}</p>
+      <p>{{data().category}}</p>
     </li>
 
   </ul>
@@ -20,7 +20,7 @@
 <div class="social-icons-style-one sm-style d-flex">
   <h5 class="sx-title p-r10 m-b0">Share:</h5>
   <ul class="social-icons  sx-social-links">
-    @for (object of data.share; track object) {
+    @for (object of data().share; track object) {
       <li>
         <a href="{{object.link}}" class="fa {{object.icon}}"></a>
       </li>

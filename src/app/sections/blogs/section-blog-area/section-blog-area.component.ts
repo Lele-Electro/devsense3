@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 @Component({
@@ -9,8 +9,8 @@ import { RouterLink } from '@angular/router';
 })
 export class SectionBlogAreaComponent implements OnInit {
 
-  @Input() blog: any;
-  @Input() padding: any;
+  readonly blog = input<any>();
+  readonly padding = input<any>();
   
   constructor() { }
 

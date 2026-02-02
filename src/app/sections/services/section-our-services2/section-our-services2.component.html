@@ -8,7 +8,7 @@
           <div class=" large-title">
             <!-- TITLE START -->
             <div class="section-head-two left">
-              <h2 class="sx-title-two">{{data.title}}</h2>
+              <h2 class="sx-title-two">{{data().title}}</h2>
             </div>
             <!-- TITLE END -->
           </div>
@@ -21,7 +21,7 @@
       <div class="sx-service2-wrap">
 
         <div class="row number-block-two-outer d-flex justify-content-center">
-          @for (object of data.strategies; track object) {
+          @for (object of data().strategies; track object) {
             <div class="col-lg-4 col-md-6 col-sm-12 m-b30">
               <div class="number-block-two animate-in-to-top sx-bg-white">
                 <div class="figcaption p-a30">

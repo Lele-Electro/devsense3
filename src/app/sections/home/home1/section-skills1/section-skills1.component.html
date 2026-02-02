@@ -1,4 +1,4 @@
-<div class="section-full mobile-page-padding p-t100 p-b70 {{home == 1 ? 'sx-bg-light' : 'sx-bg-white'}}">
+<div class="section-full mobile-page-padding p-t100 p-b70 {{home() == 1 ? 'sx-bg-light' : 'sx-bg-white'}}">
   <div class="container">
 
 
@@ -8,19 +8,19 @@
         <div class="col-lg-5 col-md-12">
           <div class="m-skills-left">
 
-            @if (home==0) {
+            @if (home()==0) {
               <div class="section-head-two left">
-                <h2 class="sx-title-two">{{data.title}}</h2>
+                <h2 class="sx-title-two">{{data().title}}</h2>
               </div>
             }
 
             <!-- TITLE START -->
-            @if (home==1) {
+            @if (home()==1) {
               <div class="section-head">
                 <div class="sx-separator-outer separator-left">
                   <div class="sx-separator" data-title="02">
                     <h2 class="sep-line-one typewrite" data-period="2000"
-                      attr.data-type='[ "{{data.title}}"]'><span class="wrap">{{data.title}}</span>
+                      attr.data-type='[ "{{data().title}}"]'><span class="wrap">{{data().title}}</span>
                     </h2>
                   </div>
                 </div>
@@ -28,10 +28,10 @@
             }
             <!-- TITLE END -->
 
-            <h3 class="sx-tilte">{{data.description}}</h3>
+            <h3 class="sx-tilte">{{data().description}}</h3>
 
             <div class="our-exp p-b30">
-              @for (object of data.skills; track object) {
+              @for (object of data().skills; track object) {
                 <div>
                   <span class="progressText "><B>{{object.title}}</B></span>
                   <div class="progress">
@@ -44,7 +44,7 @@
                 }
               </div>
               <div class="sx-btn-wrap m-t30">
-                @if (home==1) {
+                @if (home()==1) {
                   <a routerLink="/services/services2"
                     class="site-button-secondry btn-half outline m-r15 m-b30">All Services <span
                   class="sx-bg-primary"></span></a>
@@ -60,7 +60,7 @@
               <div class="row">
 
                 <!-- Block one -->
-                @for (object of data.services; track object) {
+                @for (object of data().services; track object) {
                   <div class="col-lg-6 col-md-6 m-b30">
                     <div class="icon-count-2-outer">
                       <div class="sx-icon-box-wraper">

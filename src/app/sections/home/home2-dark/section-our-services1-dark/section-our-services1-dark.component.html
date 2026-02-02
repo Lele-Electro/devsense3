@@ -8,7 +8,7 @@
             <div class=" large-title">
               <!-- TITLE START -->
               <div class="section-head-two left">
-                <h2 class="sx-title-two">{{data.subtitle}}</h2>
+                <h2 class="sx-title-two">{{data().subtitle}}</h2>
               </div>
               <!-- TITLE END -->
             </div>
@@ -17,7 +17,7 @@
 
           <div class="col-lg-5 col-md-12">
             <div class=" large-title-info">
-              <p>{{data.description}}
+              <p>{{data().description}}
               </p>
             </div>
           </div>
@@ -28,7 +28,7 @@
       <div class="row">
 
         <!-- Block one -->
-        @for (object of data.services; track object) {
+        @for (object of data().services; track object) {
           <div class="col-lg-4 col-md-6 col-sm-12 m-b30">
             <div class="sx-service2-box">
               <div class="sx-service2-inner">
@@ -48,6 +48,6 @@
   </div>
 
   <div class="hilite-title text-left p-l50 text-uppercase">
-    <strong>{{data.title}}</strong>
+    <strong>{{data().title}}</strong>
   </div>
 </div>

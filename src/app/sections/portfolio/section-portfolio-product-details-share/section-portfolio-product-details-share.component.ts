@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit, input } from '@angular/core';
 
 @Component({
     selector: 'app-section-portfolio-product-details-share',
@@ -8,7 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class SectionPortfolioProductDetailsShareComponent implements OnInit {
 
-  @Input() data: any;
+  readonly data = input<any>();
 
   constructor() { }
 

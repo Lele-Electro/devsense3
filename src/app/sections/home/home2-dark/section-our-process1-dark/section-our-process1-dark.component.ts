@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit, input } from '@angular/core';
 
 @Component({
     selector: 'app-section-our-process1-dark',
@@ -8,7 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class SectionOurProcess1DarkComponent implements OnInit {
 
-  @Input() data: any;
+  readonly data = input<any>();
 
   constructor() { }
 

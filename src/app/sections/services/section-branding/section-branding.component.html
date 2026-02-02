@@ -1,4 +1,4 @@
-<div class="section-full  mobile-page-padding bg-gray-light  p-t100 p-b70 bg-cover bg-right-center"  style="background-image:url({{data.background}});">
+<div class="section-full  mobile-page-padding bg-gray-light  p-t100 p-b70 bg-cover bg-right-center"  style="background-image:url({{data().background}});">
 
   <div class="container">
     <div class="large-title-block">
@@ -8,7 +8,7 @@
 
             <!-- TITLE START -->
             <div class="section-head-two left">
-              <h2 class="sx-title-two">{{data.title}}</h2>
+              <h2 class="sx-title-two">{{data().title}}</h2>
             </div>
             <!-- TITLE END -->
           </div>
@@ -22,7 +22,7 @@
         <div class="row">
           <div class="col-lg-8 col-md-12">
             <div class="row number-block-one-outer">
-              @for (object of data.specifications; track object) {
+              @for (object of data().specifications; track object) {
                 <div class="col-lg-6 col-md-6 col-sm-12 m-b30">
                   <div class="number-block-one sx-bg-light">
                     <div class="figcaption   p-a30">

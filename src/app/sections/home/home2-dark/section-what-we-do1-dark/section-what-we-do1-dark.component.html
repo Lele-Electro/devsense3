@@ -8,10 +8,10 @@
           <div class="sx-about-me1">
             <!-- TITLE START -->
             <div class="section-head-two left">
-              <h2 class="sx-title-two">{{data.title}}</h2>
+              <h2 class="sx-title-two">{{data().title}}</h2>
             </div>
             <!-- TITLE END -->
-            <h3 class="sx-tilte m-b0">{{data.description}}</h3>
+            <h3 class="sx-tilte m-b0">{{data().description}}</h3>
           </div>
 
         </div>
@@ -19,7 +19,7 @@
         <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 m-b30">
 
           <div class="our-exp">
-            @for (object of data.skills; track object) {
+            @for (object of data().skills; track object) {
               <div>
                 <span class="progressText "><B>{{object.title}}</B></span>
                 <div class="progress">

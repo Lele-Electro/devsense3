@@ -1,11 +1,11 @@
-<div class="section-full overlay-wraper mobile-page-padding  p-t100 p-b70 bg-center bg-cover" style="background-image:url({{data.background}})">
+<div class="section-full overlay-wraper mobile-page-padding  p-t100 p-b70 bg-center bg-cover" style="background-image:url({{data().background}})">
   <div class="overlay-main bg-white opacity-01"></div>
   <div class="container">
     <div class="section-content">
 
       <div class="counter-blocks">
         <div class="row when-item-four justify-content-center">
-          @for (object of data.counters; track object) {
+          @for (object of data().counters; track object) {
             <div class="col-xl-3 col-md-6 col-sm-6 col-6 m-b30 ">
               <div class="sx-count sx-icon-box-wraper text-center p-a20">
                 <h2 class="m-t0 sx-text-primary">

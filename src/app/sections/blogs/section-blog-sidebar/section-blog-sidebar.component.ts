@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit, input } from '@angular/core';
 import { SectionBlogTagsComponent } from '../section-blog-tags/section-blog-tags.component';
 import { SectionBlogGalleryComponent } from '../section-blog-gallery/section-blog-gallery.component';
 import { SectionBlogNewsletterComponent } from '../section-blog-newsletter/section-blog-newsletter.component';
@@ -14,7 +14,7 @@ import { SectionBlogRecentPostsComponent } from '../section-blog-recent-posts/se
 })
 export class SectionBlogSidebarComponent implements OnInit {
 
-  @Input() data: any;
+  readonly data = input<any>();
   
   constructor() { }
 
