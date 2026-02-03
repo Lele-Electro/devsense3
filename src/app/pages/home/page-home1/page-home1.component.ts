@@ -284,8 +284,8 @@ export class PageHome1Component implements OnInit {
     description1: 'Feel free to contact for any questions, help, or services!',
     description2:
       'Feel free to contact for any questions or any help or services! We understand the importance of approaching each work integrally and believe in the power of simple and easy communication.',
-    address: '650 Dundee Rd # 380, Northbrook, IL 60062, United States',
-    emails: 'contact@robert.com , help@robert.com',
-    numbers: '+1 848-840-0402 , +1 849-920-0305',
+    address: 'Block D Floor 2, Silver Lakes Office Park, Silver Lakes, Pretoria, 0081, South Africa',
+    emails: 'info@devsense.co.za',
+    numbers: '27 12 345 6789',
   };
 }
