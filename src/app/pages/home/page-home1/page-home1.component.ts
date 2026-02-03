@@ -36,11 +36,11 @@ export class PageHome1Component implements OnInit {
     image: 'assets/images/about/p1.jpg',
     title: 'About Us',
     description:
-      'DevSense: Your expert IT partner with over 5 years of experience. Our seasoned developers craft elegant digital solutions, from scalable web platforms and intuitive UX to seamless cloud integrations. We deliver not just code, but clarity, speed, and a commitment to your success.',
-    experience: '05',
+      'DevSense: Your expert IT partner with over 9 years of experience. Our seasoned developers craft elegant digital solutions, from scalable web platforms and intuitive UX to seamless cloud integrations. We deliver not just code, but clarity, speed, and a commitment to your success.',
+    experience: '09',
     description2:
       'As a premier Software Development Company, we specialize in modernizing applications. We deliver scalable, secure, and modular solutions with robust API integrations, adhering to enterprise-level security and best practices to drive your business forward.',
-    established: '2016',
+    established: '2017',
   };
 
   skills = {
