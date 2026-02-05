@@ -40,21 +40,6 @@ export class SectionContact1Component implements OnInit {
     this.submitSuccess = false;
     this.submitError = false;
 
-    // Here you can send the form data to your backend API
-    // Example using HttpClient (you'll need to inject it and create a service):
-    // this.contactService.sendMessage(this.contactForm.value).subscribe({
-    //   next: (response) => {
-    //     this.submitSuccess = true;
-    //     this.contactForm.reset();
-    //   },
-    //   error: (error) => {
-    //     this.submitError = true;
-    //   },
-    //   complete: () => {
-    //     this.isSubmitting = false;
-    //   }
-    // });
-
     // For now, simulate a successful submission
     setTimeout(() => {
       console.log('Form submitted:', this.contactForm.value);
