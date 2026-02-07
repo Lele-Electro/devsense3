@@ -31,7 +31,7 @@
             <h3 class="sx-tilte">{{data().description}}</h3>
 
             <div class="our-exp p-b30">
-              @for (object of data().skills; track object) {
+              @for (object of data().skills; track $index) {
                 <div>
                   <span class="progressText "><B>{{object.title}}</B></span>
                   <div class="progress">
@@ -60,7 +60,7 @@
               <div class="row">
 
                 <!-- Block one -->
-                @for (object of data().services; track object) {
+                @for (object of data().services; track $index) {
                   <div class="col-lg-6 col-md-6 m-b30">
                     <div class="icon-count-2-outer">
                       <div class="sx-icon-box-wraper">

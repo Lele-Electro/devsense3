@@ -1,7 +1,7 @@
 <div class="widget widget_tag_cloud">
   <h4 class="widget-title">Tag Cloud</h4>
   <div class="tagcloud bg-white">
-    @for (object of data(); track object) {
+    @for (object of data(); track $index) {
       <a href="javascript:void(0);">{{object}}</a>
     }
   </div>

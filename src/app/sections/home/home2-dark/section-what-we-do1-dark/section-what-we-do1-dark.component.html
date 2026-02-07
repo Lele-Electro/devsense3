@@ -19,7 +19,7 @@
         <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 m-b30">
 
           <div class="our-exp">
-            @for (object of data().skills; track object) {
+            @for (object of data().skills; track $index) {
               <div>
                 <span class="progressText "><B>{{object.title}}</B></span>
                 <div class="progress">

@@ -3,7 +3,7 @@
   <div class="section-content">
     <div class="widget-post-bx">
 
-      @for (object of data(); track object) {
+      @for (object of data(); track $index) {
         <div class="widget-post clearfix">
           <div class="sx-post-media">
             <img src="{{object.image}}" alt="">

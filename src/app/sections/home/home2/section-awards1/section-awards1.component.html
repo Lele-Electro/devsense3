@@ -18,7 +18,7 @@
             <div class="aw-info">
               <!-- Accordian -->
               <div class="wt-accordion acc-dotted" id="accordion">
-                @for (object of data().awards; track object; let i = $index) {
+                @for (object of data().awards; track $index; let i = $index) {
                   <div class="panel wt-panel">
                     <div class="acod-head {{ i == 1 ? 'acc-actives' : ''}}" id="heading{{i}}">
                       <h4 class="acod-title">

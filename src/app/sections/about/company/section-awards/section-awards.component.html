@@ -9,9 +9,9 @@
 
     <div class="section-content ">
       <div class="row">
-        @for (object of data().awards; track object) {
+        @for (object of data().awards; track $index) {
           <div class="col-xl-6 col-lg-6 col-md-12 m-b30">
-            @for (object1 of object; track object1) {
+            @for (object1 of object; track $index) {
               <div class="sx-box our-story">
                 <div class="mt-media our-story-info d-flex justify-content-start">
                   <h4 class="text-uppercase our-story-year">{{object1.year}}</h4>

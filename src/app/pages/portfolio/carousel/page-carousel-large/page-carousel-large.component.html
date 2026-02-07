@@ -19,7 +19,7 @@
           <div class="swiper-container swiper-portfolio-container">
             <div class="swiper-wrapper">
               <!--Image 1-->
-              @for (object of portfolio.slider; track object) {
+              @for (object of portfolio.slider; track $index) {
                 <div class="swiper-slide">
                   <div class="sx-box   image-single-carousel ">
                     <img src="{{object}}" alt="">

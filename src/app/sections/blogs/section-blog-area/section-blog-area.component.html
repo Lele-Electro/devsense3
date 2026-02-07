@@ -28,7 +28,7 @@
         <div class="widget_tag_cloud single-post-tag">
 
           <div class="tagcloud">
-            @for (object of blog().tags; track object) {
+            @for (object of blog().tags; track $index) {
               <a href="javascript:void(0);">{{object}}</a>
             }
           </div>

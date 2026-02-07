@@ -16,7 +16,7 @@
         <div class="swiper-wrapper">
 
           <!--1 block-->
-          @for (object of data().team; track object) {
+          @for (object of data().team; track $index) {
             <div class="swiper-slide">
               <div class="our-team-3">
                 <div class="our-team-info ">

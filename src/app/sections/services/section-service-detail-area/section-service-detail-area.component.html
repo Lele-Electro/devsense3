@@ -11,7 +11,7 @@
     <div class="single-service-list">
 
       <ul class="list-angle-right anchor-line">
-        @for (object of data().otherskills.skills; track object) {
+        @for (object of data().otherskills.skills; track $index) {
           <li>
             {{object}}
           </li>

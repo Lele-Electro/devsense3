@@ -21,7 +21,7 @@
                 <div class="row">
 
                   <!-- COLUMNS 1 -->
-                  @for (object of portfolio.images; track object) {
+                  @for (object of portfolio.images; track $index) {
                     <div class="col-xl-12 col-lg-12 col-md-12 m-b30">
                       <div class="sx-box">
                         <img src="{{object}}" alt="">

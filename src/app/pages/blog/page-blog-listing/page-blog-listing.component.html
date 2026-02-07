@@ -21,7 +21,7 @@
             <div class="news-listing ">
 
               <!-- COLUMNS 2 -->
-              @for (object of blogs; track object) {
+              @for (object of blogs; track $index) {
                 <div class="blog-post blog-lg date-style-3">
                   @if (object.type == 'image') {
                     <div

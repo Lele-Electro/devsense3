@@ -35,7 +35,7 @@
 
         <div class="row justify-content-center no-gutters">
 
-          @for (object of data().clients; track object) {
+          @for (object of data().clients; track $index) {
             <div class="col-lg-3 col-md-4 col-sm-6 col-6">
               <a routerLink="about/me" class="client-logo-pic">
                 <img src="{{object}}" alt="">

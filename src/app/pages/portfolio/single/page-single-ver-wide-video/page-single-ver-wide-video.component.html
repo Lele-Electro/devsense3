@@ -33,7 +33,7 @@
                   </div>
 
                   <!-- COLUMNS 2 -->
-                  @for (object of portfolio.images; track object) {
+                  @for (object of portfolio.images; track $index) {
                     <div class="col-xl-6 col-lg-6 col-md-6 m-b30">
                       <div class="sx-box">
                         <img src="{{object}}"  alt="">

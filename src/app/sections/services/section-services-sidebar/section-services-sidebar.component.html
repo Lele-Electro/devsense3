@@ -19,7 +19,7 @@
     </div>
 
     <ul class="pricingtable-features text-white">
-      @for (object of data().plan.features; track object) {
+      @for (object of data().plan.features; track $index) {
         <li>{{object}}</li>
       }
     </ul>

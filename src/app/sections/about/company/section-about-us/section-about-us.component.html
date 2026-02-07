@@ -19,9 +19,9 @@
         <div class="col-xl-6 col-lg-6 col-md-12 m-b30">
 
           <div class="list-my-skils">
-            @for (object of data().projects; track object) {
+            @for (object of data().projects; track $index) {
               <ul>
-                @for (object1 of object; track object1) {
+                @for (object1 of object; track $index) {
                   <li>
                     <span data-toggle="popover-hover" attr.data-img="{{object1.image}}">{{object1.title}}</span>
                   </li>

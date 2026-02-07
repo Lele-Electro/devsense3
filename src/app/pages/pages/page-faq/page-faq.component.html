@@ -27,7 +27,7 @@
               <div class="faq-list">
 
                 <!-- Accordian -->
-                @for (object of faqs.style1; track object) {
+                @for (object of faqs.style1; track $index) {
                   <div>
                     <h4>{{object.que}}</h4>
                     <p>{{object.ans}}
@@ -59,7 +59,7 @@
             <div class="col-md-6 faq-list m-b30">
               <!-- Accordian -->
               <div class="wt-accordion acc-outline" id="accordion">
-                @for (object of faqs.style2; track object; let i = $index) {
+                @for (object of faqs.style2; track $index; let i = $index) {
                   <div class="panel wt-panel">
                     <div class="acod-head" id="heading{{i}}">
                       <h4 class="acod-title">
@@ -87,7 +87,7 @@
               <!-- Accordian -->
               <div class="sx-accordion acc-bg-primary" id="accordion5">
 
-                @for (object of faqs.style3; track object; let i = $index) {
+                @for (object of faqs.style3; track $index; let i = $index) {
                   <div class="panel sx-panel">
                     <div class="acod-head acc-actives" id="heading1{{i}}">
                       <h4 class="acod-title">

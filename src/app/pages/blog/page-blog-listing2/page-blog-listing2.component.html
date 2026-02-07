@@ -20,7 +20,7 @@
           <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12">
             <div class="news-listing ">
               <!-- COLUMNS 1 -->
-              @for (object of blogs; track object) {
+              @for (object of blogs; track $index) {
                 <div class="blog-post blog-lg date-style-2 blog-list2">
                   @if (object.type == 'image') {
                     <div

@@ -23,7 +23,7 @@
           <div class="owl-carousel testimonial-home bg-no-repeat bg-bottom-right"
             style="background-image: url(assets/images/background/r-corner.png)">
 
-            @for (object of data().quotes; track object) {
+            @for (object of data().quotes; track $index) {
               <div class="item">
                 <div class="testimonial-2  hover-animation-1 sx-bg-dark">
                   <div class="testimonial-text ">

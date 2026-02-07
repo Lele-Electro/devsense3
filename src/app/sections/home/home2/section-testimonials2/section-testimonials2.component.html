@@ -11,7 +11,7 @@
         <div class="swiper-wrapper">
 
           <!--Image 1-->
-          @for (object of data().quotes; track object) {
+          @for (object of data().quotes; track $index) {
             <div class="swiper-slide">
               <div class="testimonial-2  hover-animation-1 bg-white">
                 <div class="testimonial-text ">

@@ -17,7 +17,7 @@
         <!-- Filter Nav START -->
         <div class="filter-wrap p-b30">
           <ul class="filter-navigation masonry-filter clearfix">
-            @for (object of projects.categories; track object; let i = $index) {
+            @for (object of projects.categories; track $index; let i = $index) {
               <li class="{{ i == 0 ? 'active' : '' }}">
                 <a class="btn-inline " attr.data-filter="{{ i == 0 ? '' : '.' }}{{object.category}}" href="javascript:void();" attr.data-hover="{{object.title}}">{{object.title}}<span class="num">{{object.count}}</span></a>
               </li>
@@ -30,7 +30,7 @@
         <ul  class="masonry-outer mfp-gallery row work-grid clearfix list-unstyled m-b0">
 
           <!-- COLUMNS 1 -->
-          @for (object of projects.items; track object) {
+          @for (object of projects.items; track $index) {
             <li
               class="masonry-item {{object.category}} col-xl-3  col-lg-4 col-md-6 col-sm-12 m-b30">
               <div class="box-animation-one"><img src="{{object.image}}" alt="">

@@ -1,7 +1,7 @@
 <div class="widget widget_gallery mfp-gallery">
   <h4 class="widget-title  ">Our Gallery</h4>
   <ul class="bg-white clearfix">
-    @for (object of data(); track object) {
+    @for (object of data(); track $index) {
       <li>
         <div class="sx-post-thum">
           <a href="{{object.image}}" class="mfp-link" ><img src="{{object.thumb}}" alt=""></a>

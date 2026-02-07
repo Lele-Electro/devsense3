@@ -16,22 +16,22 @@ import { SectionSlider2Component } from '../../../sections/home/home2/section-sl
 import { Header2Component } from '../../../sections/header/header2/header2.component';
 
 @Component({
-    selector: 'app-page-home2',
-    templateUrl: './page-home2.component.html',
-    styleUrls: ['./page-home2.component.scss'],
-    imports: [Header2Component, SectionSlider2Component, SectionAboutCompany2Component, SectionWhatWeDo1Component, SectionOurServices1Component, SectionOurClients2Component, SectionOurProcess1Component, SectionAwards1Component, SectionOurTeam1Component, SectionPricing1Component, SectionBlogs2Component, SectionCounter1Component, SectionTestimonials2Component, Footer1Component]
+  selector: 'app-page-home2',
+  templateUrl: './page-home2.component.html',
+  styleUrls: ['./page-home2.component.scss'],
+  imports: [Header2Component, SectionSlider2Component, SectionAboutCompany2Component, SectionWhatWeDo1Component, SectionOurServices1Component, SectionOurClients2Component, SectionOurProcess1Component, SectionAwards1Component, SectionOurTeam1Component, SectionPricing1Component, SectionBlogs2Component, SectionCounter1Component, SectionTestimonials2Component, Footer1Component]
 })
 export class PageHome2Component implements OnInit {
   private wpService = inject(WordpressService);
   constructor() { }
 
   ngOnInit(): void {
-    this.wpService.getPostsByCategoryId(2).subscribe(posts => {
-      console.log('Posts in category 1:', posts);
-      this.wpService.makeSequentialCalls(posts || []).subscribe(postsWithMedia => {
-        console.log('Posts with media URLs:', postsWithMedia);
-      });
-    });
+    // this.wpService.getPostsByCategoryId(2).subscribe(posts => {
+    //   console.log('Posts in category 1:', posts);
+    //   this.wpService.makeSequentialCalls(posts || []).subscribe(postsWithMedia => {
+    //     console.log('Posts with media URLs:', postsWithMedia);
+    //   });
+    // });
 
   }
 

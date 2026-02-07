@@ -3,7 +3,7 @@
   <div class="comments-outer">
     <!-- COMMENT LIST START -->
     <ol class="comment-list">
-      @for (object of data().comments; track object) {
+      @for (object of data().comments; track $index) {
         <li class="comment">
           <!-- COMMENT BLOCK -->
           <app-element-commentcell [data]="object"></app-element-commentcell>

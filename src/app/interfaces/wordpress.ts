@@ -82,7 +82,6 @@ export interface WPPost {
     media_source_url?: string; // Custom property to hold the feature image URL
 }
 
-
 export interface WPMedia {
     id: number;
     date: string;

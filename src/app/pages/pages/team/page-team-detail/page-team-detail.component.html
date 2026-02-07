@@ -39,7 +39,7 @@
                     </div>
                     <div class="our-exp m-b30">
 
-                      @for (object of detail.specializations; track object) {
+                      @for (object of detail.specializations; track $index) {
                         <div>
                           <span class="progressText "><B>{{object.skill}}</B></span>
                           <div class="progress">

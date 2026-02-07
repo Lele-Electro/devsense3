@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-    selector: 'app-page-home2-dark',
-    templateUrl: './page-home2-dark.component.html',
-    styleUrls: ['./page-home2-dark.component.scss'],
-    standalone: false
+  selector: 'app-page-home2-dark',
+  templateUrl: './page-home2-dark.component.html',
+  styleUrls: ['./page-home2-dark.component.scss'],
+  standalone: false
 })
 export class PageHome2DarkComponent implements OnInit {
 
@@ -67,7 +67,7 @@ export class PageHome2DarkComponent implements OnInit {
         image: "assets/images/services/service-2/port-3.jpg",
         title: "2D & 3D animation",
         description: "Project management is the process by which our team plans and executes your project. We will develop it..."
-      },{
+      }, {
         image: "assets/images/services/service-2/port-4.jpg",
         title: "Front & Back-end development",
         description: "Project management is the process by which our team plans and executes your project. We will develop it..."
@@ -307,5 +307,5 @@ export class PageHome2DarkComponent implements OnInit {
       }
     ]
   }
-  
+
 }

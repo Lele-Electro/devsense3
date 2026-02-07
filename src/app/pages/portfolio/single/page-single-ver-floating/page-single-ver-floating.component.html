@@ -20,7 +20,7 @@
               <div class="col-xl-7 col-lg-7 col-md-12 m-b30">
                 <div class="project-v-floating">
                   <!-- COLUMNS 1 -->
-                  @for (object of portfolio.images; track object) {
+                  @for (object of portfolio.images; track $index) {
                     <div class="item">
                       <div class="sx-box">
                         <img src="{{object}}" alt="">
