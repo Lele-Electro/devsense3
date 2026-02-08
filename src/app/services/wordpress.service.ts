@@ -1,5 +1,5 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { Injectable, inject } from '@angular/core';
+import { Injectable, WritableSignal, inject, signal } from '@angular/core';
 import { catchError, concatMap, filter, from, map, Observable, throwError, toArray } from 'rxjs';
 import { WPMedia, WPPost } from '../interfaces/wordpress';
 import { WebsiteContent } from '../interfaces/website-content';
@@ -8,11 +8,10 @@ import { WebsiteContent } from '../interfaces/website-content';
 
 @Injectable({ providedIn: 'root' })
 export class WordpressService {
+  websiteContent: WritableSignal<Record<string, any>> = signal({});
   private http = inject(HttpClient);
-
-  // websiteContent: WebsiteContent = new WebsiteContent();
-
   private baseUrl = 'https://devsense.co.za/wp/wp-json/wp/v2';
+  public uncategorizedPosts: WritableSignal<WPPost[]> = signal<WPPost[]>([]);
 
   /** Inserted by Angular inject() migration for backwards compatibility */
   constructor(...args: unknown[]);
@@ -20,21 +19,6 @@ export class WordpressService {
 
   constructor(  // private alertService: AlertService
   ) { }
-
-  // private handleError(error: HttpErrorResponse, operation: string = 'operation') {
-  //   this.alertService.showError(`Failed to ${operation}`, error);
-  //   return throwError(() => error);
-  // }
-
-  // getCategories(): Observable<any[]> {
-  //   return this.http.get<any[]>(this.baseUrl);
-  // }
-
-  // getCategoryById(id: number): Observable<any> {
-  //   return this.http.get<any>(`${this.baseUrl}/${id}`);
-  // }
-
-
   getPostsByCategoryId(categoryId: number): Observable<WPPost[] | undefined> {
 
 
@@ -87,66 +71,20 @@ export class WordpressService {
     );
   }
 
-  populateWebsiteContentFromPosts(posts: WPPost[]): WebsiteContent | undefined {
-    if (!posts?.length) {
-      return undefined;
-    }
-
-    const camelToHyphen = (str: string): string => {
-      return str.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase();
-    };
-
-    // Define all WebsiteContent keys and their hyphenated versions
-    const contentKeys = ['aboutUsOne', 'aboutUsTwo', 'servicesOverview'];
-    const expertiseKeys = ['webApplicationDevelopment', 'mobileApplicationDevelopment', 'applicationAndEmailHosting', 'databaseArchitectureAndManagement'];
-
-    // Create a mapping of hyphenated keys to actual keys
-    const keyMapping: { [key: string]: string } = {};
-
-    contentKeys.forEach(key => {
-      keyMapping[camelToHyphen(key)] = key;
-    });
-
-    expertiseKeys.forEach(key => {
-      keyMapping[camelToHyphen(key)] = key;
-    });
-
-    // Initialize the websiteContent object
-    const result: any = {
-      websiteContentExpertise: {}
-    };
-
-    // Iterate through posts and match slugs to keys
-    posts.forEach((post: WPPost) => {
-      if (post.slug) {
-        const hyphenSlug = post.slug.toLowerCase();
-
-        // Check if this slug matches any content key
-        if (keyMapping[hyphenSlug]) {
-          const originalKey = keyMapping[hyphenSlug];
-
-          // Check if it's an expertise key or main key
-          if (expertiseKeys.includes(originalKey)) {
-            result.websiteContentExpertise[originalKey] = post;
-          } else {
-            result[originalKey] = post;
-          }
-
-          console.log(`✓ Matched post slug "${hyphenSlug}" to key "${originalKey}"`);
-        }
-      }
-    });
-
-    return result as WebsiteContent;
+  getMedia(mediaId: number): Observable<string | undefined> {
+    const mediaUrl = `${this.baseUrl}/media/${mediaId}`;
+    return this.http.get<WPMedia>(mediaUrl).pipe(
+      map((media: WPMedia) => media?.source_url)
+    );
   }
+
+
 
   makeSequentialCalls(posts: WPPost[]): Observable<(WPPost & { media_source_url?: string })[]> {
     if (!posts?.length) {
       // this.alertService.showError('No posts provided for processing');
       return from([]);
     }
-
-
 
     return from(posts).pipe(
       filter((post: WPPost) => {

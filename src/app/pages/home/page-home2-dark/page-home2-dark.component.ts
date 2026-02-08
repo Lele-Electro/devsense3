@@ -179,22 +179,22 @@ export class PageHome2DarkComponent implements OnInit {
       {
         image: "assets/images/our-team5/1.jpg",
         name: "Johnny Jackman",
-        designation: "Co-Founder, Anih. Media",
+        designation: "Co-Founder, Devsense. Media",
       },
       {
         image: "assets/images/our-team5/2.jpg",
         name: "Daniel Rickman",
-        designation: "CEO, Anih. Media",
+        designation: "CEO, Devsense. Media",
       },
       {
         image: "assets/images/our-team5/6.jpg",
         name: "Daniel Rickman",
-        designation: "CEO, Anih. Media",
+        designation: "CEO, Devsense. Media",
       },
       {
         image: "assets/images/our-team5/7.jpg",
         name: "Mark Norwich",
-        designation: "Co-Founder, Anih. Media",
+        designation: "Co-Founder, Devsense. Media",
       }
     ]
   }

@@ -11,26 +11,26 @@ import { SectionSlider1Component } from '../../../sections/home/home1/section-sl
 import { Header1Component } from '../../../sections/header/header1/header1.component';
 
 @Component({
-    selector: 'app-page-home1',
-    templateUrl: './page-home1.component.html',
-    styleUrls: ['./page-home1.component.scss'],
-    imports: [
-        Header1Component,
-        SectionSlider1Component,
-        SectionAboutCompany1Component,
-        SectionSkills1Component,
-        SectionProjects1Component,
-        SectionOurClients1Component,
-        SectionBlogs1Component,
-        SectionTestimonials1Component,
-        SectionContact1Component,
-        Footer1Component,
-    ]
+  selector: 'app-page-home1',
+  templateUrl: './page-home1.component.html',
+  styleUrls: ['./page-home1.component.scss'],
+  imports: [
+    Header1Component,
+    SectionSlider1Component,
+    SectionAboutCompany1Component,
+    SectionSkills1Component,
+    SectionProjects1Component,
+    SectionOurClients1Component,
+    SectionBlogs1Component,
+    SectionTestimonials1Component,
+    SectionContact1Component,
+    Footer1Component,
+  ]
 })
 export class PageHome1Component implements OnInit {
-  constructor() {}
+  constructor() { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   about = {
     image: 'assets/images/about/p1.jpg',
@@ -267,14 +267,14 @@ export class PageHome1Component implements OnInit {
           'Gilroy is a great and super-professional service provider, which brought new technologes, new methodology, and a fresh perspective to our project',
         image: 'assets/images/testimonials/pic2.jpg',
         name: 'Johnny Jackman',
-        designation: 'Co-Founder, Anih. Media',
+        designation: 'Co-Founder, Devsense. Media',
       },
       {
         quote:
           'Gilroy is a great and super-professional service provider, which brought new technologes, new methodology, and a fresh perspective to our project',
         image: 'assets/images/testimonials/pic3.jpg',
         name: 'Mark Norwich',
-        designation: 'CEO, Anih. Media',
+        designation: 'CEO, Devsense. Media',
       },
     ],
   };

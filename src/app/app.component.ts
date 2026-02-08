@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, inject, DOCUMENT, OnInit, PLATFORM_ID } from '@angular/core';
+import { AfterViewInit, Component, inject, DOCUMENT, OnInit, signal, WritableSignal, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { NavigationEnd, Router, Event, RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
@@ -6,6 +6,7 @@ import { WordpressService } from './services/wordpress.service';
 import { WPPost } from './interfaces/wordpress';
 import { WebsiteContent, websiteContentExpertise } from './interfaces/website-content';
 import { HelperService } from './services/helper.service';
+import { catchError, concatMap, forkJoin, map, of } from 'rxjs';
 import { LoaderComponent } from './elements/loader/loader.component';
 
 
@@ -27,9 +28,9 @@ export class AppComponent implements OnInit, AfterViewInit {
   private platformId = inject(PLATFORM_ID);
   private wpService = inject(WordpressService);
   private helperService = inject(HelperService);
-  public uncategorizedPosts: WPPost[] = [];
+
   aboutUsOne: WPPost | undefined = {} as WPPost;
-  websiteContent: WebsiteContent = {} as any;
+
 
   title = 'devsense';
 
@@ -40,32 +41,53 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   }
   ngOnInit(): void {
-    this.wpService.getAllPosts().subscribe(posts => {
-      this.uncategorizedPosts = posts;
+    this.wpService.getAllPosts().pipe(
+      concatMap((posts: WPPost[]) => {
+        const enriched$ = posts.map(post =>
+          post.featured_media
+            ? this.wpService.getMedia(post.featured_media).pipe(
+              map(url => { post.imageUrl = url ?? undefined; return post; }),
+              catchError(() => { post.imageUrl = undefined; return of(post); })
+            )
+            : of(post)
+        );
+        return enriched$.length ? forkJoin(enriched$) : of([]);
+      })
+    ).subscribe(posts => {
+      this.wpService.uncategorizedPosts.set(posts);
+
+
+      this.helperService.log(this.wpService.uncategorizedPosts(), 'All uncategorized posts:');
       this.wpService.getSubcategoriesByCategoryId(2).subscribe(subcategories => {
+        const content = this.wpService.websiteContent();
         subcategories.forEach(subcategory => {
-          this.websiteContent[this.helperService.hyphenToCamel(subcategory.slug) as keyof WebsiteContent] = { parentCategory: subcategory.id } as WPPost & any;
+          content[this.helperService.hyphenToCamel(subcategory.slug) as keyof WebsiteContent] = { parentCategory: subcategory.id } as WPPost & any;
         });
-        this.assignPostsToWebsiteContent(this.uncategorizedPosts);
-        this.assignSubcategoryPostsToWebsiteContent(subcategories, this.uncategorizedPosts);
+        this.wpService.websiteContent.set(content);
+        this.assignPostsToWebsiteContent(this.wpService.uncategorizedPosts());
+        this.assignSubcategoryPostsToWebsiteContent(subcategories, this.wpService.uncategorizedPosts());
       });
     }
     );
   }
 
   assignPostsToWebsiteContent(posts: WPPost[]) {
-    this.uncategorizedPosts.forEach((post: WPPost) => {
+    const content = this.wpService.websiteContent();
+    posts.forEach((post: WPPost) => {
       if (post.slug && post.categories[0] === 2) {
         const camelKey = this.helperService.hyphenToCamel(post.slug);
-        (this.websiteContent as any)[camelKey] = post;
+        content[camelKey] = post;
       }
     }
     );
+    this.wpService.websiteContent.set(content);
   }
   assignSubcategoryPostsToWebsiteContent(subcategories: any[], posts: WPPost[]) {
+    const content = this.wpService.websiteContent();
+
     subcategories.forEach(subcategory => {
       const camelKey = this.helperService.hyphenToCamel(subcategory.slug) as keyof WebsiteContent;
-      const entry = this.websiteContent[camelKey] as any;
+      const entry = content[camelKey] as any;
 
       if (entry && entry.parentCategory) {
         const parentCategoryId = entry.parentCategory;
@@ -76,21 +98,16 @@ export class AppComponent implements OnInit, AfterViewInit {
     // Replace the entry object with just the matching posts array
     subcategories.forEach(subcategory => {
       const camelKey = this.helperService.hyphenToCamel(subcategory.slug) as keyof WebsiteContent;
-      const entry = this.websiteContent[camelKey] as any;
+      const entry = content[camelKey] as any;
       if (entry && entry.wpPostsArray) {
-        (this.websiteContent as any)[camelKey] = entry.wpPostsArray;
+        content[camelKey] = entry.wpPostsArray;
       }
     });
-    this.logWebsiteContent();
+
+    this.wpService.websiteContent.set(content);
+    this.helperService.log(this.wpService.websiteContent(), 'websiteContent after assigning subcategory posts');
   }
 
-  logWebsiteContent() {
-    console.log('\n%c═══════════════════════════════════════', 'color: #00CCFF; font-weight: bold');
-    console.log('%c📦 WEBSITE CONTENT (with subcategory posts)', 'color: #00CCFF; font-weight: bold; font-size: 16px');
-    console.log('%c═══════════════════════════════════════', 'color: #00CCFF; font-weight: bold');
-    console.log(this.websiteContent);
-    console.log('%c═══════════════════════════════════════\n', 'color: #00CCFF; font-weight: bold');
-  }
 
   ngAfterViewInit(): void {
     // Only run browser-specific code on the client side

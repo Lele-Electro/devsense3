@@ -26,12 +26,8 @@ export class PageHome2Component implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    // this.wpService.getPostsByCategoryId(2).subscribe(posts => {
-    //   console.log('Posts in category 1:', posts);
-    //   this.wpService.makeSequentialCalls(posts || []).subscribe(postsWithMedia => {
-    //     console.log('Posts with media URLs:', postsWithMedia);
-    //   });
-    // });
+
+
 
   }
 
@@ -201,22 +197,22 @@ export class PageHome2Component implements OnInit {
       {
         image: "assets/images/our-team5/1.jpg",
         name: "Johnny Jackman",
-        designation: "Co-Founder, Anih. Media",
+        designation: "Co-Founder, Devsense. Media",
       },
       {
         image: "assets/images/our-team5/2.jpg",
         name: "Daniel Rickman",
-        designation: "CEO, Anih. Media",
+        designation: "CEO, Devsense. Media",
       },
       {
         image: "assets/images/our-team5/6.jpg",
         name: "Daniel Rickman",
-        designation: "CEO, Anih. Media",
+        designation: "CEO, Devsense. Media",
       },
       {
         image: "assets/images/our-team5/7.jpg",
         name: "Mark Norwich",
-        designation: "Co-Founder, Anih. Media",
+        designation: "Co-Founder, Devsense. Media",
       }
     ]
   }

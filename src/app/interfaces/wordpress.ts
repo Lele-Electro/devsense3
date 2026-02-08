@@ -79,7 +79,8 @@ export interface WPPost {
         }>;
     };
     state?: number | null; // Custom property to track the state of the card
-    media_source_url?: string; // Custom property to hold the feature image URL
+    media_source_url?: string;
+    imageUrl?: string; // // Custom property to hold the feature image URL
 }
 
 export interface WPMedia {
@@ -153,4 +154,5 @@ export interface WPMedia {
         author: Array<{ embeddable: boolean; href: string }>;
         replies: Array<{ embeddable: boolean; href: string }>;
     };
+    imageUrl?: string; // Custom property to hold the image URL
 }
