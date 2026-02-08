@@ -1,0 +1,24 @@
+# Sitemap for DevSense Website
+# Last Updated: 2026-02-08
+
+User-agent: *
+Allow: /
+Allow: /about
+Allow: /services
+Allow: /portfolio
+Allow: /blog
+Allow: /pages
+Allow: /team
+
+# Disallow specific paths that shouldn't be indexed
+Disallow: /admin/
+Disallow: /api/
+Disallow: /temp/
+Disallow: /*.json$
+Disallow: /*.js$
+
+# Crawl delay (optional)
+Crawl-delay: 1
+
+# Sitemap location
+Sitemap: https://www.devsense.co.za/sitemap.xml

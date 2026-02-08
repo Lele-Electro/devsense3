@@ -11,12 +11,12 @@ import { CommonModule } from '@angular/common';
 })
 export class SectionContact1Component implements OnInit {
 
-  readonly data = input<any>(); 
+  readonly data = input<any>();
   contactForm!: FormGroup;
   isSubmitting = false;
   submitSuccess = false;
   submitError = false;
-  
+
   constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
@@ -46,7 +46,7 @@ export class SectionContact1Component implements OnInit {
       this.submitSuccess = true;
       this.isSubmitting = false;
       this.contactForm.reset();
-      
+
       // Reset success message after 5 seconds
       setTimeout(() => {
         this.submitSuccess = false;

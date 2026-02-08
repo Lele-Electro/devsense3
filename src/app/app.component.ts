@@ -1,9 +1,12 @@
-import { AfterViewInit, Component, inject, DOCUMENT, OnInit } from '@angular/core';
-import { NavigationEnd, Router, Event } from '@angular/router';
+import { AfterViewInit, Component, inject, DOCUMENT, OnInit, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { NavigationEnd, Router, Event, RouterOutlet } from '@angular/router';
+import { CommonModule } from '@angular/common';
 import { WordpressService } from './services/wordpress.service';
 import { WPPost } from './interfaces/wordpress';
 import { WebsiteContent, websiteContentExpertise } from './interfaces/website-content';
 import { HelperService } from './services/helper.service';
+import { LoaderComponent } from './elements/loader/loader.component';
 
 
 declare var jQuery: any;
@@ -15,18 +18,20 @@ declare var initializeOnLoad: any;
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  standalone: false
+  standalone: true,
+  imports: [RouterOutlet, CommonModule, LoaderComponent]
 })
 export class AppComponent implements OnInit, AfterViewInit {
   private router = inject(Router);
   private document = inject<Document>(DOCUMENT);
+  private platformId = inject(PLATFORM_ID);
   private wpService = inject(WordpressService);
   private helperService = inject(HelperService);
   public uncategorizedPosts: WPPost[] = [];
   aboutUsOne: WPPost | undefined = {} as WPPost;
   websiteContent: WebsiteContent = {} as any;
 
-  title = 'anih';
+  title = 'devsense';
 
   /** Inserted by Angular inject() migration for backwards compatibility */
   constructor(...args: unknown[]);
@@ -88,13 +93,16 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    cursurCircle();
-    this.router.events.subscribe((event: Event) => {
-      if (event instanceof NavigationEnd) {
-        this.reinitializeThings();
-        this.loadStyle('skin-1');
-      }
-    });
+    // Only run browser-specific code on the client side
+    if (isPlatformBrowser(this.platformId)) {
+      cursurCircle();
+      this.router.events.subscribe((event: Event) => {
+        if (event instanceof NavigationEnd) {
+          this.reinitializeThings();
+          this.loadStyle('skin-1');
+        }
+      });
+    }
   }
 
   private reinitializeThings() {

@@ -879,7 +879,7 @@ All JavaScript fuctions Start
 			/* sending message */
 			
 			jQuery.ajax({
-				url: 'https://theme7x.com/angular/anih/assets/handlers/phpmailer/mail.php',
+				url: 'https://theme7x.com/angular/devsense/assets/handlers/phpmailer/mail.php',
 				data: form.serialize() + "&action=contactform",
 				type: 'POST',
 				dataType: 'JSON',

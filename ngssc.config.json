@@ -1,0 +1,20 @@
+{
+  "prerender": {
+    "routes": [
+      "/",
+      "/about",
+      "/services",
+      "/portfolio/grid",
+      "/portfolio/masonry",
+      "/blog"
+    ],
+    "guessRoute": true,
+    "numProcesses": 4
+  },
+  "ssr": {
+    "timeout": 10000,
+    "platformServer": {
+      "bootstrapModule": "src/main.server"
+    }
+  }
+}

@@ -2,10 +2,18 @@
   "name": "devsense",
   "description": "The official website for DevSense (Pty) Ltd a Pretoria based Software Development Agency & Consultancy",
   "version": "3.0.0",
+  "type": "module",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:ssr": "ng build devsense && npm run build:server:dev",
+    "build:prod:ssr": "ng build devsense --configuration production && npm run build:server:prod",
+    "build:server:dev": "tsc --project tsconfig.server.json",
+    "build:server:prod": "tsc --project tsconfig.server.json",
+    "serve:ssr": "node dist/devsense/server/server.js",
+    "prerender": "npm run build:prod:ssr && npm run prerender:routes",
+    "prerender:routes": "tsx prerender.ts",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
@@ -18,7 +26,10 @@
     "@angular/forms": "^21.1.2",
     "@angular/platform-browser": "^21.1.2",
     "@angular/platform-browser-dynamic": "^21.1.2",
+    "@angular/platform-server": "^21.1.3",
     "@angular/router": "^21.1.2",
+    "@angular/ssr": "^21.1.3",
+    "express": "^5.2.1",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.15.1"
@@ -27,7 +38,10 @@
     "@angular/build": "^21.1.2",
     "@angular/cli": "~21.1.2",
     "@angular/compiler-cli": "^21.1.2",
+    "@nguniversal/express-engine": "^16.2.0",
+    "@types/express": "^5.0.6",
     "@types/jasmine": "~4.0.0",
+    "@types/node": "^25.2.2",
     "jasmine-core": "~4.3.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.1.0",
@@ -35,6 +49,8 @@
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.0.0",
     "less": "^4.2.0",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.21.0",
     "typescript": "~5.9.3"
   }
 }
