@@ -107,8 +107,8 @@ import { SectionServicesSidebarComponent } from './sections/services/section-ser
 import { SectionServiceDetailAreaComponent } from './sections/services/section-service-detail-area/section-service-detail-area.component';
 import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 
-@NgModule({ declarations: [AppComponent],
-    bootstrap: [AppComponent], imports: [BrowserModule,
+@NgModule({ imports: [BrowserModule,
+        AppComponent,
         AppRoutingModule,
         HomeRoutingModule,
         AboutRoutingModule,

@@ -5,9 +5,9 @@ Version: 1.0
 ==========================
 */
 
-@import 'header.scss';
-@import 'header2.scss';
-@import '../variables.scss';
+@use 'header';
+@use 'header2';
+@use '../variables' as *;
 
 /*____GENERAL
 ======================================*/

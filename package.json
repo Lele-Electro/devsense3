@@ -11,7 +11,7 @@
     "build:prod:ssr": "ng build devsense --configuration production && npm run build:server:prod",
     "build:server:dev": "tsc --project tsconfig.server.json",
     "build:server:prod": "tsc --project tsconfig.server.json",
-    "serve:ssr": "node dist/devsense/server/server.js",
+    "serve:ssr": "node dist/devsense/browser/server/server.mjs",
     "prerender": "npm run build:prod:ssr && npm run prerender:routes",
     "prerender:routes": "tsx prerender.ts",
     "watch": "ng build --watch --configuration development",

@@ -2,7 +2,7 @@ import { dirname, join, resolve } from 'path';
 import { fileURLToPath } from 'url';
 import express from 'express';
 import { CommonEngine } from '@angular/ssr/node';
-import bootstrap from './src/main.server';
+import bootstrap from './src/main.server.js';
 
 const app = express();
 const __filename = fileURLToPath(import.meta.url);
@@ -36,8 +36,8 @@ app.get(/.*/, (req, res, next) => {
       publicPath: browserDistFolder,
       providers: [{ provide: 'REQUEST', useValue: req }],
     })
-    .then((html) => res.send(html))
-    .catch((err) => next(err));
+    .then((html: string) => res.send(html))
+    .catch((err: unknown) => next(err));
 });
 
 // Start server
