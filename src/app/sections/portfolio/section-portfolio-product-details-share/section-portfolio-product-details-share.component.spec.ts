@@ -8,8 +8,8 @@ describe('SectionPortfolioProductDetailsShareComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SectionPortfolioProductDetailsShareComponent ]
-    })
+    imports: [SectionPortfolioProductDetailsShareComponent]
+})
     .compileComponents();
 
     fixture = TestBed.createComponent(SectionPortfolioProductDetailsShareComponent);

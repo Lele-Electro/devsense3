@@ -1,68 +1,70 @@
 <div class="section-full mobile-page-padding p-t100 p-b70 sx-bg-dark-light" >
-            
-    <div class="container">
-    
-        <div class=" large-title-block">
-            <div class="row">
-                <div class="col-lg-7 col-md-6">
-                    <div class=" large-title">
-                        <!-- TITLE START -->
-                        <div class="section-head">
-                            <div class="sx-separator-outer separator-left">
-                                <div class="sx-separator" data-title="04">
-                                    <h2 class="sep-line-one typewrite" data-period="2000" attr.data-type='[ "{{data.title}}"]' ><span class="wrap">{{data.title}}</span></h2>
-                                </div>
-                            </div>
 
-                        </div>                   
-                        <!-- TITLE END -->
-                    </div>
-                </div>
+  <div class="container">
 
-                
-                <div class="col-lg-5 col-md-6">
-                    <div class=" large-title-info">
-                        <p>{{data.description}} 
-                        </p>
-                    </div>
+    <div class=" large-title-block">
+      <div class="row">
+        <div class="col-lg-7 col-md-6">
+          <div class=" large-title">
+            <!-- TITLE START -->
+            <div class="section-head">
+              <div class="sx-separator-outer separator-left">
+                <div class="sx-separator" data-title="04">
+                  <h2 class="sep-line-one typewrite" data-period="2000" attr.data-type='[ "{{data().title}}"]' ><span class="wrap">{{data().title}}</span></h2>
                 </div>
-                                            
-            </div>
-        </div>	
-        
-        <div class="section-content">
-            <div class="client-grid m-b40">
-            
-                <div class="row justify-content-center no-gutters">
-                    
-                    <div class="col-lg-3 col-md-4 col-sm-6 col-6" *ngFor="let object of data.clients">
-                        <a routerLink="about/me" class="client-logo-pic">
-                        <img src="{{object}}" alt="">
-                          <div>
-                            <span class="site-button-link">View More</span>
-                          </div>                                      
-                        </a>
-                    </div>							
-                    
-                </div>
+              </div>
 
-                                                                       
             </div>
-            <div class="two-part-b-section d-flex justify-content-between">
-                <a routerLink="pages/contact-us" class="site-button-secondry btn-half outline m-r15">Hire Me <span class="sx-bg-primary"></span></a>
-                <div class="social-icons-style-one">
-                    <ul class="social-icons  sx-social-links">
-                        <li><a href="https://www.behance.net/" class="fa fa-behance"></a></li>
-                        <li><a href="https://www.facebook.com/" class="fa fa-facebook"></a></li>
-                        <li><a href="https://twitter.com/" class="fa fa-twitter"></a></li>
-                        <li><a href="https://www.instagram.com/" class="fa fa-instagram"></a></li>
-                    </ul>								
-                </div>
-            </div>
+            <!-- TITLE END -->
+          </div>
         </div>
+
+
+        <div class="col-lg-5 col-md-6">
+          <div class=" large-title-info">
+            <p>{{data().description}}
+            </p>
+          </div>
+        </div>
+
+      </div>
     </div>
-    
-    <div class="hilite-title text-left p-l50 text-uppercase">
-        <strong>{{data.title}}</strong>
-    </div>                     
- </div> 
+
+    <div class="section-content">
+      <div class="client-grid m-b40">
+
+        <div class="row justify-content-center no-gutters">
+
+          @for (object of data().clients; track $index) {
+            <div class="col-lg-3 col-md-4 col-sm-6 col-6">
+              <a routerLink="about/me" class="client-logo-pic">
+                <img src="{{object}}" alt="">
+                <div>
+                  <span class="site-button-link">View More</span>
+                </div>
+              </a>
+            </div>
+          }
+
+        </div>
+
+
+      </div>
+      <div class="two-part-b-section d-flex justify-content-between">
+        <a routerLink="pages/contact-us" class="site-button-secondry btn-half outline m-r15">Hire Me <span class="sx-bg-primary"></span></a>
+        <div class="social-icons-style-one">
+          <ul class="social-icons  sx-social-links">
+            <li><a href="https://www.behance.net/" class="fa fa-behance"></a></li>
+            <li><a href="https://www.facebook.com/" class="fa fa-facebook"></a></li>
+            <li><a href="https://twitter.com/" class="fa fa-twitter"></a></li>
+            <li><a href="https://www.instagram.com/" class="fa fa-instagram"></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hilite-title text-left p-l50 text-uppercase">
+    <strong>{{data().title}}</strong>
+  </div>
+</div>

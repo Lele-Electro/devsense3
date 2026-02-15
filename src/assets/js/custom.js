@@ -829,8 +829,6 @@ All JavaScript fuctions Start
 		color_fill_header(),
 		//________masonry function function by = isotope.pkgd.min.js________//			
 		masonryBox(),
-		//________page loader function by = custom.js________//			
-		page_loader(),
 		//________project carousel  function by = swiper-bundle.min.js________//	
 		project_carousel1(),
 	
@@ -879,7 +877,7 @@ All JavaScript fuctions Start
 			/* sending message */
 			
 			jQuery.ajax({
-				url: 'https://theme7x.com/angular/anih/assets/handlers/phpmailer/mail.php',
+				url: 'https://theme7x.com/angular/devsense/assets/handlers/phpmailer/mail.php',
 				data: form.serialize() + "&action=contactform",
 				type: 'POST',
 				dataType: 'JSON',

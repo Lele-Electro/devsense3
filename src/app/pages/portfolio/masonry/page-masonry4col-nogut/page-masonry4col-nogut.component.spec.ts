@@ -8,8 +8,8 @@ describe('PageMasonry4colNogutComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PageMasonry4colNogutComponent ]
-    })
+    imports: [PageMasonry4colNogutComponent]
+})
     .compileComponents();
 
     fixture = TestBed.createComponent(PageMasonry4colNogutComponent);

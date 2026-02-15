@@ -10,7 +10,7 @@ import { PortfolioMasonryRoutingModule } from './modules/portfolio-masonry-routi
 import { PortfolioCarouselRoutingModule } from './modules/portfolio-carousel-routing/portfolio-carousel-routing.module';
 import { PortfolioSingleRoutingModule } from './modules/portfolio-single-routing/portfolio-single-routing.module';
 import { BlogRoutingModule } from './modules/blog-routing/blog-routing.module';
-import { PageError404Component } from './pages/pages/page-error404/page-error404.component';
+
 
 const routes: Routes = [
   { path: '', loadChildren: () => HomeRoutingModule },
@@ -23,7 +23,7 @@ const routes: Routes = [
   { path: 'portfolio/carousel', loadChildren: () => PortfolioCarouselRoutingModule },
   { path: 'portfolio/single', loadChildren: () => PortfolioSingleRoutingModule },
   { path: 'blog', loadChildren: () => BlogRoutingModule },
-  { path: '**', pathMatch: 'full', component: PageError404Component }
+  { path: '**', pathMatch: 'full', loadComponent: () => import('./pages/pages/page-error404/page-error404.component').then(m => m.PageError404Component) }
 ];
 
 @NgModule({

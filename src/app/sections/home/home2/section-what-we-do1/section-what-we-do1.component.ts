@@ -1,13 +1,14 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit, input } from '@angular/core';
 
 @Component({
-  selector: 'app-section-what-we-do1',
-  templateUrl: './section-what-we-do1.component.html',
-  styleUrls: ['./section-what-we-do1.component.scss']
+    selector: 'app-section-what-we-do1',
+    templateUrl: './section-what-we-do1.component.html',
+    styleUrls: ['./section-what-we-do1.component.scss'],
+    standalone: true
 })
 export class SectionWhatWeDo1Component implements OnInit {
 
-  @Input() data: any;
+  readonly data = input<any>();
   
   constructor() { }
 

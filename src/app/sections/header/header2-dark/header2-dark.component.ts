@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-header2-dark',
-  templateUrl: './header2-dark.component.html',
-  styleUrls: ['./header2-dark.component.scss']
+    selector: 'app-header2-dark',
+    templateUrl: './header2-dark.component.html',
+    styleUrls: ['./header2-dark.component.scss'],
+    standalone: false
 })
 export class Header2DarkComponent implements OnInit {
 

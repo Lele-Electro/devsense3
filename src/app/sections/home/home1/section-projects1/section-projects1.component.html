@@ -1,50 +1,54 @@
 <div class="section-full mobile-page-padding  p-t100 p-b70 bg-white">
-    <div class="section-content">  
-        <div class="container">
-               <!-- TITLE START -->
-                <div class="section-head">
-                    <div class="sx-separator-outer separator-center">
-                        <div class="sx-separator" data-title="03">
-                            <h2 class="sep-line-one typewrite" data-period="2000" attr.data-type='[ "{{data.title}}"]' ><span class="wrap">{{data.title}}</span></h2>
-                        </div>
-                    </div>
+  <div class="section-content">
+    <div class="container">
+      <!-- TITLE START -->
+      <div class="section-head">
+        <div class="sx-separator-outer separator-center">
+          <div class="sx-separator" data-title="03">
+            <h2 class="sep-line-one typewrite" data-period="2000" attr.data-type='[ "{{data().title}}"]' ><span class="wrap">{{data().title}}</span></h2>
+          </div>
+        </div>
 
-                </div>                   
-                <!-- TITLE END --> 
-         </div>
-                                                             
-         <div class="container-fluid filter-carousal-1-outer relative">
-             <div class="fliter-left-style">
-                <!-- Filter Menu -->
-                    <div class="clearfix filter-pos-left sx-bg-light  bg-no-repeat bg-bottom-right" style="background-image: url(assets/images/background/r-corner.png)">
-                        <ul class="btn-filter-wrap">
-                            <li *ngFor="let object of data.categories; let i=index;" class="btn-filter {{ i==0 ? 'btn-active' : ''}}" attr.data-filter="{{object.class}}">{{object.title}}</li>
-                        </ul>
-                    </div>
-                <!-- Filter Menu -->
-                <div class="filter-carousal-1">
-                    <!-- IMAGE CAROUSEL START -->
-                    <div class="section-content ">
-                        <div class="owl-carousel owl-carousel-filter mfp-gallery owl-btn-vertical-center">
-                         <!-- COLUMNS 1 --> 
-                        <div *ngFor="let object of data.projects" class="item fadingcol {{object.category}} overflow-hide">										
-                            <div class="box-animation-one"><img src="{{object.image}}" alt="">
-                                <div class="box-inner-content">
-                                    <h4 class="sx-tilte"><a href="javascript:void();">{{object.title}}</a></h4>
-                                    <p class="m-b0">{{object.subtitle}}</p> 
-                                    <a class="elem" href="{{object.image}}" title="{{object.title2}}" 
-                                    attr.data-lcl-txt="{{object.subtitle2}}" attr.data-lcl-author="{{object.author}}" attr.data-lcl-thumb="{{object.thumb}}">
-                                        <i></i>
-                                    </a> 													
-                                </div>
-                            </div>
-                       </div>                                  
-                     
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>            
-        
+      </div>
+      <!-- TITLE END -->
     </div>
-</div> 
+
+    <div class="container-fluid filter-carousal-1-outer relative">
+      <div class="fliter-left-style">
+        <!-- Filter Menu -->
+        <div class="clearfix filter-pos-left sx-bg-light  bg-no-repeat bg-bottom-right" style="background-image: url(assets/images/background/r-corner.png)">
+          <ul class="btn-filter-wrap">
+            @for (object of data().categories; track $index; let i = $index) {
+              <li class="btn-filter {{ i==0 ? 'btn-active' : ''}}" attr.data-filter="{{object.class}}">{{object.title}}</li>
+            }
+          </ul>
+        </div>
+        <!-- Filter Menu -->
+        <div class="filter-carousal-1">
+          <!-- IMAGE CAROUSEL START -->
+          <div class="section-content ">
+            <div class="owl-carousel owl-carousel-filter mfp-gallery owl-btn-vertical-center">
+              <!-- COLUMNS 1 -->
+              @for (object of data().projects; track $index) {
+                <div class="item fadingcol {{object.category}} overflow-hide">
+                  <div class="box-animation-one"><img src="{{object.image}}" alt="">
+                    <div class="box-inner-content">
+                      <h4 class="sx-tilte"><a href="javascript:void();">{{object.title}}</a></h4>
+                      <p class="m-b0">{{object.subtitle}}</p>
+                      <a class="elem" href="{{object.image}}" title="{{object.title2}}"
+                        attr.data-lcl-txt="{{object.subtitle2}}" attr.data-lcl-author="{{object.author}}" attr.data-lcl-thumb="{{object.thumb}}">
+                        <i></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              }
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

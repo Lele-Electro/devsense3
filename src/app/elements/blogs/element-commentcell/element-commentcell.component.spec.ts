@@ -8,8 +8,8 @@ describe('ElementCommentcellComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ElementCommentcellComponent ]
-    })
+    imports: [ElementCommentcellComponent]
+})
     .compileComponents();
 
     fixture = TestBed.createComponent(ElementCommentcellComponent);

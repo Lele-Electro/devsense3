@@ -1,48 +1,49 @@
 <div class="section-full p-t100 p-b70 mobile-page-padding sx-bg-white ">
-    <div class="container">
-            
-        <!-- TITLE START -->
-        <div class="section-head-two center">
-            <h2 class="sx-title-two">{{data.title}}</h2>
-        </div>                   
-        <!-- TITLE END -->
+  <div class="container">
+
+    <!-- TITLE START -->
+    <div class="section-head-two center">
+      <h2 class="sx-title-two">{{data().title}}</h2>
     </div>
-    <div class="container-fluid">
+    <!-- TITLE END -->
+  </div>
+  <div class="container-fluid">
 
-        <!-- IMAGE CAROUSEL START -->
-        <div class="section-content">
-            <!-- Swiper -->
-            <div class="sx-team2-swiper swiper-container">
-                <div class="swiper-wrapper">
+    <!-- IMAGE CAROUSEL START -->
+    <div class="section-content">
+      <!-- Swiper -->
+      <div class="sx-team2-swiper swiper-container">
+        <div class="swiper-wrapper">
 
-                    <!--1 block-->
-                    <div class="swiper-slide" *ngFor="let object of data.team">
-                        <div class="our-team-3">
-                            <div class="our-team-info ">
-                                <img src="{{object.image}}" alt=""/>
-                                <div class="our-team-content">
-                                    <h4 class="sx-team-name"><a routerLink="/team/detail" class="sx-text-white">{{object.name}}</a></h4>
-                                    <span class="sx-team-position">{{object.designation}}</span>
-                                    <p>
-                                        <a href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a>
-                                        <a href="https://twitter.com/"><i class="fa fa-twitter"></i></a>
-                                        <a href="https://www.instagram.com/"><i class="fa fa-instagram"></i></a>
-                                        <a href="https://www.linkedin.com/"><i class="fa fa-linkedin"></i></a>
-                                    </p>
-                                    
-                                </div>			
-                            </div>
-                        </div>
-                    </div>
-                
+          <!--1 block-->
+          @for (object of data().team; track $index) {
+            <div class="swiper-slide">
+              <div class="our-team-3">
+                <div class="our-team-info ">
+                  <img src="{{object.image}}" alt=""/>
+                  <div class="our-team-content">
+                    <h4 class="sx-team-name"><a routerLink="/team/detail" class="sx-text-white">{{object.name}}</a></h4>
+                    <span class="sx-team-position">{{object.designation}}</span>
+                    <p>
+                      <a href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a>
+                      <a href="https://twitter.com/"><i class="fa fa-twitter"></i></a>
+                      <a href="https://www.instagram.com/"><i class="fa fa-instagram"></i></a>
+                      <a href="https://www.linkedin.com/"><i class="fa fa-linkedin"></i></a>
+                    </p>
+                  </div>
                 </div>
-                <!-- Add Pagination -->
-                <div class="swiper-pagination"></div>
-                <!-- Add Arrows -->
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
+              </div>
             </div>
+          }
+
         </div>
-        
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+        <!-- Add Arrows -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
     </div>
-    </div>
+
+  </div>
+</div>

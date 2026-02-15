@@ -1,13 +1,14 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit, input } from '@angular/core';
 
 @Component({
-  selector: 'app-section-blog-gallery',
-  templateUrl: './section-blog-gallery.component.html',
-  styleUrls: ['./section-blog-gallery.component.scss']
+    selector: 'app-section-blog-gallery',
+    templateUrl: './section-blog-gallery.component.html',
+    styleUrls: ['./section-blog-gallery.component.scss'],
+    standalone: true
 })
 export class SectionBlogGalleryComponent implements OnInit {
 
-  @Input() data: any;
+  readonly data = input<any>();
   
   constructor() { }
 

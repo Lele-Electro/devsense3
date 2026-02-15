@@ -1,79 +1,81 @@
-<div class="page-wraper"> 
-       	
-    <!-- HEADER START -->
-    <app-header1></app-header1>
-    <!-- HEADER END -->
-    
-    <!-- CONTENT START -->
-    <div class="page-content">
-    
-        <!-- INNER PAGE BANNER -->
-        <app-banner [data]="banner"></app-banner>
-        <!-- INNER PAGE BANNER END -->
-        
-        <!-- ABOUT TEAM MEMBER SECTION START -->
-        <div class="section-full p-t100 p-b70 bg-white mobile-page-padding">
-            <div class="container">
-                <div class="section-content ">
-                     <div class="about-team-member">
-                        <div class="row">
-                        
-                            <div class="col-lg-6 col-md-12 col-sm-12">
-                                <div class="about-single-team-info-left">
-                                    <div class="our-team-single">
-                                        <div class="our-team-single-info ">
-                                            <img src="{{detail.image}}" alt=""/>
-                                        </div>
-                                    </div>
+<div class="page-wraper">
 
-                                  </div>
-                            </div>
-                            
-                            <div class="col-lg-6 col-md-12 col-sm-12">
-                                
-                                <div class="about-single-team-info">
-                                    <div class="our-exp p-b30">
-                                        <div class="sx-box">
-                                            <h3 class="m-t0 m-b30">{{detail.about}} </h3>
-                                            <p>{{detail.description}}</p>
-                                        </div>                                    
-                                        <div class="our-exp m-b30">
+  <!-- HEADER START -->
+  <app-header1></app-header1>
+  <!-- HEADER END -->
 
-                                            <div *ngFor="let object of detail.specializations">
-                                                <span class="progressText "><B>{{object.skill}}</B></span>
-                                                <div class="progress">
-                                                <div class="progress-bar sx-bg-primary progress-bar-striped progress-bar-animated text-black" role="progressbar" style="width: {{object.percentage}}%;" attr.aria-valuenow="{{object.percentage}}" aria-valuemin="0" aria-valuemax="100"></div><span> {{object.percentage}}%</span>
-                                                </div> 
-                                            </div>
+  <!-- CONTENT START -->
+  <div class="page-content">
 
-                                        </div>
-                                        <div class="team-single-social ">
-                                            <ul class="m-b0 list-unstyled">
-                                                <li><span><i class="fa fa-envelope"></i></span><span>{{detail.email}}</span></li>
-                                                <li><span><i class="fa fa-phone"></i></span><span>{{detail.contact}}</span></li>
-                                                <li><span><i class="fa fa-map-marker"></i></span><span>{{detail.address}}</span></li>
-                                                <li><span><i class="fa fa-globe"></i></span><span>{{detail.website}}</span></li>
-                                            </ul>
-                                      </div>
-                                       
-                                
-                                    </div>
-                                 
-                                    
-                              </div>
-                           </div>
+    <!-- INNER PAGE BANNER -->
+    <app-banner [data]="banner"></app-banner>
+    <!-- INNER PAGE BANNER END -->
+
+    <!-- ABOUT TEAM MEMBER SECTION START -->
+    <div class="section-full p-t100 p-b70 bg-white mobile-page-padding">
+      <div class="container">
+        <div class="section-content ">
+          <div class="about-team-member">
+            <div class="row">
+
+              <div class="col-lg-6 col-md-12 col-sm-12">
+                <div class="about-single-team-info-left">
+                  <div class="our-team-single">
+                    <div class="our-team-single-info ">
+                      <img src="{{detail.image}}" alt=""/>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+              <div class="col-lg-6 col-md-12 col-sm-12">
+
+                <div class="about-single-team-info">
+                  <div class="our-exp p-b30">
+                    <div class="sx-box">
+                      <h3 class="m-t0 m-b30">{{detail.about}} </h3>
+                      <p>{{detail.description}}</p>
+                    </div>
+                    <div class="our-exp m-b30">
+
+                      @for (object of detail.specializations; track $index) {
+                        <div>
+                          <span class="progressText "><B>{{object.skill}}</B></span>
+                          <div class="progress">
+                            <div class="progress-bar sx-bg-primary progress-bar-striped progress-bar-animated text-black" role="progressbar" style="width: {{object.percentage}}%;" attr.aria-valuenow="{{object.percentage}}" aria-valuemin="0" aria-valuemax="100"></div><span> {{object.percentage}}%</span>
+                          </div>
                         </div>
-                     </div>
-                </div>    
-            </div>
-        </div>   
-        <!-- ABOUT TEAM MEMBER SECTION END -->
+                      }
 
+                    </div>
+                    <div class="team-single-social ">
+                      <ul class="m-b0 list-unstyled">
+                        <li><span><i class="fa fa-envelope"></i></span><span>{{detail.email}}</span></li>
+                        <li><span><i class="fa fa-phone"></i></span><span>{{detail.contact}}</span></li>
+                        <li><span><i class="fa fa-map-marker"></i></span><span>{{detail.address}}</span></li>
+                        <li><span><i class="fa fa-globe"></i></span><span>{{detail.website}}</span></li>
+                      </ul>
+                    </div>
+
+
+                  </div>
+
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <!-- CONTENT END -->
-    
-    <!-- FOOTER START -->
-    <app-footer1></app-footer1>
-    <!-- FOOTER END -->
+    <!-- ABOUT TEAM MEMBER SECTION END -->
+
+  </div>
+  <!-- CONTENT END -->
+
+  <!-- FOOTER START -->
+  <app-footer1></app-footer1>
+  <!-- FOOTER END -->
 
 </div>

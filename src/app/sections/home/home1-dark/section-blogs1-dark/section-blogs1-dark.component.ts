@@ -1,13 +1,14 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit, input } from '@angular/core';
 
 @Component({
-  selector: 'app-section-blogs1-dark',
-  templateUrl: './section-blogs1-dark.component.html',
-  styleUrls: ['./section-blogs1-dark.component.scss']
+    selector: 'app-section-blogs1-dark',
+    templateUrl: './section-blogs1-dark.component.html',
+    styleUrls: ['./section-blogs1-dark.component.scss'],
+    standalone: false
 })
 export class SectionBlogs1DarkComponent implements OnInit {
 
-  @Input() data: any;
+  readonly data = input<any>();
   
   constructor() { }
 

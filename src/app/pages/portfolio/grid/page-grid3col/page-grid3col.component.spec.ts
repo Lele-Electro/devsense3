@@ -8,8 +8,8 @@ describe('PageGrid3colComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PageGrid3colComponent ]
-    })
+    imports: [PageGrid3colComponent]
+})
     .compileComponents();
 
     fixture = TestBed.createComponent(PageGrid3colComponent);

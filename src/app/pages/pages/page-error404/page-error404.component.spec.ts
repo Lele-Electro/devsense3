@@ -8,8 +8,8 @@ describe('PageError404Component', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PageError404Component ]
-    })
+    imports: [PageError404Component]
+})
     .compileComponents();
 
     fixture = TestBed.createComponent(PageError404Component);

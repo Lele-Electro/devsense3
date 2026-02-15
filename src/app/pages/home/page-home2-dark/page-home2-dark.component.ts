@@ -3,7 +3,8 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-page-home2-dark',
   templateUrl: './page-home2-dark.component.html',
-  styleUrls: ['./page-home2-dark.component.scss']
+  styleUrls: ['./page-home2-dark.component.scss'],
+  standalone: false
 })
 export class PageHome2DarkComponent implements OnInit {
 
@@ -66,7 +67,7 @@ export class PageHome2DarkComponent implements OnInit {
         image: "assets/images/services/service-2/port-3.jpg",
         title: "2D & 3D animation",
         description: "Project management is the process by which our team plans and executes your project. We will develop it..."
-      },{
+      }, {
         image: "assets/images/services/service-2/port-4.jpg",
         title: "Front & Back-end development",
         description: "Project management is the process by which our team plans and executes your project. We will develop it..."
@@ -178,22 +179,22 @@ export class PageHome2DarkComponent implements OnInit {
       {
         image: "assets/images/our-team5/1.jpg",
         name: "Johnny Jackman",
-        designation: "Co-Founder, Anih. Media",
+        designation: "Co-Founder, Devsense. Media",
       },
       {
         image: "assets/images/our-team5/2.jpg",
         name: "Daniel Rickman",
-        designation: "CEO, Anih. Media",
+        designation: "CEO, Devsense. Media",
       },
       {
         image: "assets/images/our-team5/6.jpg",
         name: "Daniel Rickman",
-        designation: "CEO, Anih. Media",
+        designation: "CEO, Devsense. Media",
       },
       {
         image: "assets/images/our-team5/7.jpg",
         name: "Mark Norwich",
-        designation: "Co-Founder, Anih. Media",
+        designation: "Co-Founder, Devsense. Media",
       }
     ]
   }
@@ -306,5 +307,5 @@ export class PageHome2DarkComponent implements OnInit {
       }
     ]
   }
-  
+
 }

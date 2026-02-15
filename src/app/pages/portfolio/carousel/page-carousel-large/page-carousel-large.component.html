@@ -1,71 +1,73 @@
 <div class="page-wraper">
 
-    <!-- HEADER START -->
-    <app-header1></app-header1>
-    <!-- HEADER END -->
+  <!-- HEADER START -->
+  <app-header1></app-header1>
+  <!-- HEADER END -->
 
-    <!-- CONTENT START -->
-    <div class="page-content">
+  <!-- CONTENT START -->
+  <div class="page-content">
 
-        <!-- INNER PAGE BANNER -->
-        <app-banner [data]="banner"></app-banner>
-        <!-- INNER PAGE BANNER END -->
+    <!-- INNER PAGE BANNER -->
+    <app-banner [data]="banner"></app-banner>
+    <!-- INNER PAGE BANNER END -->
 
-        <!-- SECTION CONTENT START -->
-        <div class="section-full">
+    <!-- SECTION CONTENT START -->
+    <div class="section-full">
 
-            <div class="section-content">
-                <div class="pf-carousel-large overflow-hidden">
-                    <div class="swiper-container swiper-portfolio-container">
-                        <div class="swiper-wrapper">
-                            <!--Image 1-->
-                            <div class="swiper-slide" *ngFor="let object of portfolio.slider">
-                                <div class="sx-box   image-single-carousel ">
-                                    <img src="{{object}}" alt="">
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <!-- Add Pagination -->
-                        <div class="swiper-pagination"></div>
-                        <!-- Add Arrows -->
-                        <div class="swiper-button-next"></div>
-                        <div class="swiper-button-prev"></div>
-
-                    </div>
+      <div class="section-content">
+        <div class="pf-carousel-large overflow-hidden">
+          <div class="swiper-container swiper-portfolio-container">
+            <div class="swiper-wrapper">
+              <!--Image 1-->
+              @for (object of portfolio.slider; track $index) {
+                <div class="swiper-slide">
+                  <div class="sx-box   image-single-carousel ">
+                    <img src="{{object}}" alt="">
+                  </div>
                 </div>
+              }
+
             </div>
 
-        </div>
-        <!-- SECTION CONTENT END  -->
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+            <!-- Add Arrows -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
 
-        <!-- SECTION CONTENT START -->
-        <div class="section-full p-tb80 sx-bg-white inner-page-padding">
-            <div class="container">
-                <div class="section-content">
-                    <div class="project-small-slider-wrap">
-                        <div class="row d-flex align-items-center justify-content-center">
-                            <div class="col-xl-8 col-lg-8 col-md-12">
-                                <div class="portfolio-detail-small sx-info">
-                                    <h3 class="sx-tilte m-t0">{{portfolio.title}}</h3>
-                                    <div [innerHTML]="portfolio.description"></div>
-                                    <app-section-portfolio-product-details-share [data]="portfolio.details"></app-section-portfolio-product-details-share>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
+          </div>
         </div>
-        <!-- SECTION CONTENT END  -->
+      </div>
 
     </div>
-    <!-- CONTENT END -->
+    <!-- SECTION CONTENT END  -->
 
-    <!-- FOOTER START -->
-    <app-footer1></app-footer1>
-    <!-- FOOTER END -->
+    <!-- SECTION CONTENT START -->
+    <div class="section-full p-tb80 sx-bg-white inner-page-padding">
+      <div class="container">
+        <div class="section-content">
+          <div class="project-small-slider-wrap">
+            <div class="row d-flex align-items-center justify-content-center">
+              <div class="col-xl-8 col-lg-8 col-md-12">
+                <div class="portfolio-detail-small sx-info">
+                  <h3 class="sx-tilte m-t0">{{portfolio.title}}</h3>
+                  <div [innerHTML]="portfolio.description"></div>
+                  <app-section-portfolio-product-details-share [data]="portfolio.details"></app-section-portfolio-product-details-share>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <!-- SECTION CONTENT END  -->
+
+  </div>
+  <!-- CONTENT END -->
+
+  <!-- FOOTER START -->
+  <app-footer1></app-footer1>
+  <!-- FOOTER END -->
 
 </div>

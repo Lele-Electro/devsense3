@@ -1,45 +1,43 @@
 <div class="section-full p-t100 p-b70 bg-top-right mobile-page-padding sx-bg-light">
-                <div class="container">
-                
-                <!-- TITLE START -->
-                <div class="section-head-two left">
-                    <h2 class="sx-title-two">{{data.title}}</h2>
-                </div>                   
-                <!-- TITLE END --> 
-                    
-                    <div class="section-content">
-                        <div class="pricingtable-row p-t20">
-                            <div class="row justify-content-center">
-                            
-                                <div class="col-lg-4  col-md-6 col-sm-6  m-b30" *ngFor="let object of data.plans; let i=index;">
-                                    <div class="pricingtable-wrapper {{ i%2==1 ? 'pricingtable-highlight' : '' }}">
-                                        <div class="pricingtable-inner">
-                                            <div class="pricingtable-title">
-                                                <h4>{{object.plan}}</h4>
-                                            </div>
-                                            
-                                            <div class="pricingtable-price">
-                                                <span class="pricingtable-bx">{{object.price}}</span>
-                                                <span class="pricingtable-type">{{object.tenure}}</span>
-                                            </div>
-                                            
-                                            <ul class="pricingtable-features {{ i%2==1 ? 'text-white' : 'text-black' }}">
-                                                <li *ngFor="let obj of object.features">{{obj}}</li>
-                                            </ul>
-                                            
-                                            <div class="pricingtable-footer">
-                                                <a routerLink="/about/company" class="site-button-link {{ i%2==1 ? 'white' : '' }}">Purchase</a>
-                                            </div>
-                                            
-                                            
-                                        </div>
-                                        
-                                    </div>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                
+  <div class="container">
+
+    <!-- TITLE START -->
+    <div class="section-head-two left">
+      <h2 class="sx-title-two">{{data().title}}</h2>
+    </div>
+    <!-- TITLE END -->
+
+    <div class="section-content">
+      <div class="pricingtable-row p-t20">
+        <div class="row justify-content-center">
+
+          @for (object of data().plans; track $index; let i = $index) {
+            <div class="col-lg-4  col-md-6 col-sm-6  m-b30">
+              <div class="pricingtable-wrapper {{ i%2==1 ? 'pricingtable-highlight' : '' }}">
+                <div class="pricingtable-inner">
+                  <div class="pricingtable-title">
+                    <h4>{{object.plan}}</h4>
+                  </div>
+                  <div class="pricingtable-price">
+                    <span class="pricingtable-bx">{{object.price}}</span>
+                    <span class="pricingtable-type">{{object.tenure}}</span>
+                  </div>
+                  <ul class="pricingtable-features {{ i%2==1 ? 'text-white' : 'text-black' }}">
+                    @for (obj of object.features; track obj) {
+                      <li>{{obj}}</li>
+                    }
+                  </ul>
+                  <div class="pricingtable-footer">
+                    <a routerLink="/about/company" class="site-button-link {{ i%2==1 ? 'white' : '' }}">Purchase</a>
+                  </div>
                 </div>
+              </div>
             </div>
+          }
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

@@ -8,8 +8,8 @@ describe('PageBlogWithSidebarComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PageBlogWithSidebarComponent ]
-    })
+    imports: [PageBlogWithSidebarComponent]
+})
     .compileComponents();
 
     fixture = TestBed.createComponent(PageBlogWithSidebarComponent);

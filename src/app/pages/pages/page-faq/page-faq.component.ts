@@ -1,9 +1,13 @@
 import { Component, OnInit } from '@angular/core';
+import { Footer1Component } from '../../../sections/footer/footer1/footer1.component';
+import { BannerComponent } from '../../../sections/banner/banner.component';
+import { Header1Component } from '../../../sections/header/header1/header1.component';
 
 @Component({
-  selector: 'app-page-faq',
-  templateUrl: './page-faq.component.html',
-  styleUrls: ['./page-faq.component.scss']
+    selector: 'app-page-faq',
+    templateUrl: './page-faq.component.html',
+    styleUrls: ['./page-faq.component.scss'],
+    imports: [Header1Component, BannerComponent, Footer1Component]
 })
 export class PageFaqComponent implements OnInit {
 

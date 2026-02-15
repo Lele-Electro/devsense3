@@ -1,56 +1,58 @@
 <div class="page-wraper">
 
-    <!-- HEADER START -->
-    <app-header1></app-header1>
-    <!-- HEADER END -->
+  <!-- HEADER START -->
+  <app-header1></app-header1>
+  <!-- HEADER END -->
 
-    <!-- CONTENT START -->
-    <div class="page-content">
+  <!-- CONTENT START -->
+  <div class="page-content">
 
-        <!-- INNER PAGE BANNER -->
-        <app-banner [data]="banner"></app-banner>
-        <!-- INNER PAGE BANNER END -->
+    <!-- INNER PAGE BANNER -->
+    <app-banner [data]="banner"></app-banner>
+    <!-- INNER PAGE BANNER END -->
 
-        <!-- ABOUT COMPANY SECTION START -->
-        <div class="section-full p-t100 p-b100	 bg-white inner-page-padding">
-            <div class="container-fluid">
-                <div class="section-content ">
-                    <div class="our-history">
+    <!-- ABOUT COMPANY SECTION START -->
+    <div class="section-full p-t100 p-b100	 bg-white inner-page-padding">
+      <div class="container-fluid">
+        <div class="section-content ">
+          <div class="our-history">
 
-                        <div class="row no-gutters sx-bg-white">
-                            <div class="col-xl-4 col-lg-4 col-md-12" *ngFor="let object of process">
-
-                                <div *ngIf="object.type == 'image'"
-                                    class="our-history-pic bg-no-repeat bg-center bg-cover"
-                                    style="background-image:url({{object.image}});">
-
-                                </div>
-
-                                <div *ngIf="object.type == 'data'"
-                                    class="our-history-content pic-bg-border">
-                                    <div class="large-title">
-                                        <h3 class="m-t0 sx-title" attr.data-title="{{object.serial}}">{{object.title}}</h3>
-                                    </div>
-                                    <p>{{object.description}}</p>
-                                    <a routerLink="/services/detail"
-                                        class="site-button-secondry btn-half outline m-r15">Read More <span
-                                            class="sx-bg-primary"></span></a>
-                                </div>
-
-                            </div>
-                        </div>
-
+            <div class="row no-gutters sx-bg-white">
+              @for (object of process; track $index) {
+                <div class="col-xl-4 col-lg-4 col-md-12">
+                  @if (object.type == 'image') {
+                    <div
+                      class="our-history-pic bg-no-repeat bg-center bg-cover"
+                      style="background-image:url({{object.image}});">
                     </div>
+                  }
+                  @if (object.type == 'data') {
+                    <div
+                      class="our-history-content pic-bg-border">
+                      <div class="large-title">
+                        <h3 class="m-t0 sx-title" attr.data-title="{{object.serial}}">{{object.title}}</h3>
+                      </div>
+                      <p>{{object.description}}</p>
+                      <a routerLink="/services/detail"
+                        class="site-button-secondry btn-half outline m-r15">Read More <span
+                      class="sx-bg-primary"></span></a>
+                    </div>
+                  }
                 </div>
+              }
             </div>
+
+          </div>
         </div>
-        <!-- ABOUT COMPANY SECTION END -->
-
+      </div>
     </div>
-    <!-- CONTENT END -->
+    <!-- ABOUT COMPANY SECTION END -->
 
-    <!-- FOOTER START -->
-    <app-footer1></app-footer1>
-    <!-- FOOTER END -->
+  </div>
+  <!-- CONTENT END -->
+
+  <!-- FOOTER START -->
+  <app-footer1></app-footer1>
+  <!-- FOOTER END -->
 
 </div>

@@ -1,20 +1,22 @@
 <div class="section-full overlay-wraper sx-bg-dark-light mobile-page-padding  p-t100 p-b70">
-                            
-                <div class="container">
-                    <div class="section-content">
 
-                        <div class="counter-blocks">
-                            <div class="row when-item-four">
-                                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 m-b30 " *ngFor="let object of data">
-                                    <div class="sx-count sx-icon-box-wraper bg-no-repeat bg-bottom-right p-a20" style="background-image:url(assets/images/background/r-corner.png)">
-                                        <h2 class="m-t0 sx-text-primary text-right"><span class="counter">{{object.count}}</span></h2>
-                                        <h4 class="m-b0">{{object.title}}</h4>
-                                    </div> 
-                                </div>                                                                     
-                            </div>
-                        </div>                                   
+  <div class="container">
+    <div class="section-content">
 
-                </div>
+      <div class="counter-blocks">
+        <div class="row when-item-four">
+          @for (object of data(); track $index) {
+            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 m-b30 ">
+              <div class="sx-count sx-icon-box-wraper bg-no-repeat bg-bottom-right p-a20" style="background-image:url(assets/images/background/r-corner.png)">
+                <h2 class="m-t0 sx-text-primary text-right"><span class="counter">{{object.count}}</span></h2>
+                <h4 class="m-b0">{{object.title}}</h4>
+              </div>
             </div>
+          }
+        </div>
+      </div>
 
-            </div>
+    </div>
+  </div>
+
+</div>

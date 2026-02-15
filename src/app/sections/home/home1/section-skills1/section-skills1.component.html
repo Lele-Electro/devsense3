@@ -1,75 +1,94 @@
-<div class="section-full mobile-page-padding p-t100 p-b70 {{home == 1 ? 'sx-bg-light' : 'sx-bg-white'}}" >
-    <div class="container">
+<div class="section-full mobile-page-padding p-t100 p-b70 {{home() == 1 ? 'sx-bg-light' : 'sx-bg-white'}}">
+  <div class="container">
 
 
-            <div class="section-content">
-                <div class="row">
-                
-                    <div class="col-lg-5 col-md-12">
-                          <div class="m-skills-left">
+    <div class="section-content">
+      <div class="row">
 
-                            <div *ngIf="home==0" class="section-head-two left">
-                                <h2 class="sx-title-two">{{data.title}}</h2>
-                            </div>
+        <div class="col-lg-5 col-md-12">
+          <div class="m-skills-left">
 
-                           <!-- TITLE START -->
-                            <div *ngIf="home==1" class="section-head">
-                                <div class="sx-separator-outer separator-left">
-                                    <div class="sx-separator" data-title="02" >
-                                        <h2 class="sep-line-one typewrite" data-period="2000" attr.data-type='[ "{{data.title}}"]'><span class="wrap">{{data.title}}</span></h2>
-                                    </div>
-                                </div>
-                            </div>                   
-                            <!-- TITLE END --> 
+            @if (home()==0) {
+              <div class="section-head-two left">
+                <h2 class="sx-title-two">{{data().title}}</h2>
+              </div>
+            }
 
-                            <h3 class="sx-tilte">{{data.description}}</h3>
-                            
-                            <div class="our-exp p-b30">
-                                <div *ngFor="let object of data.skills">
-                                    <span class="progressText "><B>{{object.title}}</B></span>
-                                    <div class="progress">
-                                    <div class="progress-bar sx-bg-primary progress-bar-striped progress-bar-animated text-black" role="progressbar" style="width: {{object.percentage}}%;" attr.aria-valuenow="{{object.percentage}}" aria-valuemin="0" aria-valuemax="100"></div><span> {{object.percentage}}%</span>
-                                    </div>   
-                                </div> 
-                            </div>										
-                            <div class="sx-btn-wrap m-t30">
-                            <a *ngIf="home==1" routerLink="/services/services2" class="site-button-secondry btn-half outline m-r15 m-b30">All Services <span class="sx-bg-primary"></span></a>
-                            <a href="assets/images/resume.zip" class="site-button btn-half m-b30">Download Resume</a>
-                            </div>
-                       </div>                                	
-                    </div>
-                    
-                    <div class="col-lg-7 col-md-12 col-sm-12">
-                        <div class="m-skills-right">
-                            <div class="row">
-
-                                <!-- Block one -->
-                                <div class="col-lg-6 col-md-6 m-b30" *ngFor="let object of data.services">
-                                    <div class="icon-count-2-outer">
-                                        <div class="sx-icon-box-wraper">
-                                            <div class="icon-count-2">
-                                                <div class="icon-xld inline-icon m-b30 scale-in-center">
-                                                    <span class="icon-cell sx-text-primary"><i class="{{object.icon}}"></i></span>
-                                                </div>
-                                                <div class="icon-content">
-                                                    <h4 class="sx-tilte">{{object.title}}</h4>
-                                                    <p>{{object.description}}</p>
-                                                    <div class="text-left">
-                                                        <a routerLink="/services/detail" class="site-button-link">Learn More</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>                            	
-
-                                </div>
-                            </div>
-                        </div>
-                       </div>  
-
-                    
+            <!-- TITLE START -->
+            @if (home()==1) {
+              <div class="section-head">
+                <div class="sx-separator-outer separator-left">
+                  <div class="sx-separator" data-title="02">
+                    <h2 class="sep-line-one typewrite" data-period="2000"
+                      attr.data-type='[ "{{data().title}}"]'><span class="wrap">{{data().title}}</span>
+                    </h2>
+                  </div>
                 </div>
-           </div>
-     </div>
-   
-</div> 
+              </div>
+            }
+            <!-- TITLE END -->
+
+            <h3 class="sx-tilte">{{data().description}}</h3>
+
+            <div class="our-exp p-b30">
+              @for (object of data().skills; track $index) {
+                <div>
+                  <span class="progressText "><B>{{object.title}}</B></span>
+                  <div class="progress">
+                    <div class="progress-bar sx-bg-primary progress-bar-striped progress-bar-animated text-black"
+                      role="progressbar" [style.width]="object.percentage + '%'"
+                      [attr.aria-valuenow]="object.percentage" aria-valuemin="0"
+                      aria-valuemax="100"></div><span> {{object.percentage}}%</span>
+                    </div>
+                  </div>
+                }
+              </div>
+              <div class="sx-btn-wrap m-t30">
+                @if (home()==1) {
+                  <a routerLink="/services/services2"
+                    class="site-button-secondry btn-half outline m-r15 m-b30">All Services <span
+                  class="sx-bg-primary"></span></a>
+                }
+                <a href="assets/images/resume.zip" class="site-button btn-half m-b30">Download Company
+                Profile</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-7 col-md-12 col-sm-12">
+            <div class="m-skills-right">
+              <div class="row">
+
+                <!-- Block one -->
+                @for (object of data().services; track $index) {
+                  <div class="col-lg-6 col-md-6 m-b30">
+                    <div class="icon-count-2-outer">
+                      <div class="sx-icon-box-wraper">
+                        <div class="icon-count-2">
+                          <div class="icon-xld inline-icon m-b30 scale-in-center">
+                            <span class="icon-cell sx-text-primary"><i
+                            class="{{object.icon}}"></i></span>
+                          </div>
+                          <div class="icon-content">
+                            <h4 class="sx-tilte">{{object.title}}</h4>
+                            <p>{{object.description}}</p>
+                            <div class="text-left">
+                              <a routerLink="/services/detail" class="site-button-link">Learn
+                              More</a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                }
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+
+  </div>

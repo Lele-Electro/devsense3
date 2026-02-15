@@ -1,53 +1,55 @@
-<div class="page-wraper"> 
-       	
-    <!-- HEADER START -->
-    <app-header1></app-header1>
-    <!-- HEADER END -->
-    
-    <!-- CONTENT START -->
-    <div class="page-content">
-    
-        <!-- INNER PAGE BANNER -->
-        <app-banner [data]="banner"></app-banner>
-        <!-- INNER PAGE BANNER END -->
-        
-        <!-- OUR Team START -->
-        <div class="section-full p-t100 p-b70 mobile-page-padding">
-            <div class="container-fluid">
+<div class="page-wraper">
 
-                <!-- IMAGE CAROUSEL START -->
-                <div class="section-content">
-                    <div class="row our-team-2-outer no-gutters justify-content-center">
-                    
-                        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6" *ngFor="let object of team">
-                            <div class="our-team-2">
-                                    <div class="profile-image">
-                                        <img src="{{object.image}}" alt="" />
-                                        <div class="icons">
-                                        <a href="https://www.facebook.com/"><span>Fb</span><i class="fa fa-facebook"></i></a>
-                                        <a href="https://twitter.com/"><span>Tw</span><i class="fa fa-twitter"></i></a>
-                                        <a href="https://www.instagram.com/"><span>In</span><i class="fa fa-instagram"></i></a>
-                                    </div>                                            
-                                    </div>
-                                    <div class="figcaption text-black">
-                                        <h4 class="m-t0"><a routerLink="/team/team2">{{object.name}}</a></h4>
-                                        <p>{{object.designation}}</p>
-                                    </div>
-                                </div>
-                        </div>  
-            
+  <!-- HEADER START -->
+  <app-header1></app-header1>
+  <!-- HEADER END -->
+
+  <!-- CONTENT START -->
+  <div class="page-content">
+
+    <!-- INNER PAGE BANNER -->
+    <app-banner [data]="banner"></app-banner>
+    <!-- INNER PAGE BANNER END -->
+
+    <!-- OUR Team START -->
+    <div class="section-full p-t100 p-b70 mobile-page-padding">
+      <div class="container-fluid">
+
+        <!-- IMAGE CAROUSEL START -->
+        <div class="section-content">
+          <div class="row our-team-2-outer no-gutters justify-content-center">
+
+            @for (object of team; track $index) {
+              <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+                <div class="our-team-2">
+                  <div class="profile-image">
+                    <img src="{{object.image}}" alt="" />
+                    <div class="icons">
+                      <a href="https://www.facebook.com/"><span>Fb</span><i class="fa fa-facebook"></i></a>
+                      <a href="https://twitter.com/"><span>Tw</span><i class="fa fa-twitter"></i></a>
+                      <a href="https://www.instagram.com/"><span>In</span><i class="fa fa-instagram"></i></a>
                     </div>
+                  </div>
+                  <div class="figcaption text-black">
+                    <h4 class="m-t0"><a routerLink="/team/team2">{{object.name}}</a></h4>
+                    <p>{{object.designation}}</p>
+                  </div>
                 </div>
-                
-            </div>
-         </div>   
-        <!-- OUR Team END -->
+              </div>
+            }
 
+          </div>
+        </div>
+
+      </div>
     </div>
-    <!-- CONTENT END -->
-    
-    <!-- FOOTER START -->
-    <app-footer1></app-footer1>
-    <!-- FOOTER END -->
+    <!-- OUR Team END -->
+
+  </div>
+  <!-- CONTENT END -->
+
+  <!-- FOOTER START -->
+  <app-footer1></app-footer1>
+  <!-- FOOTER END -->
 
 </div>

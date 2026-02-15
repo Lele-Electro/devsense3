@@ -1,51 +1,49 @@
 <div class="section-full mobile-page-padding sx-bg-dark p-t100 p-b70 ">
-                        <div class="container">
-        
-						   <!-- TITLE START -->
-							<div class="section-head-two center">
-								<div class="section-head-two center">
-                                    <h2 class="sx-title-two">{{data.title}}</h2>
-                                </div>
-							</div>                   
-							<!-- TITLE END --> 
-                            
-                            
-             
-                            <!-- IMAGE CAROUSEL START -->
-                            <div class="section-content">
-                                <div class="row justify-content-center">
-                                
-                                    <div class="col-lg-4 col-md-6 col-sm-12" *ngFor="let object of data.posts">
-                                        <div class="blog-post blog-grid date-style-2">
-                                
-                                            <div class="sx-post-media sx-img-effect img-reflection">
-                                                <a routerLink="blog/single"><img src="{{object.image}}" alt=""></a>
-                                            </div>
-                                            
-                                            <div class="sx-post-info p-t30">
-                                                <div class="sx-post-meta ">
-                                                    <ul>
-                                                        <li class="post-date"><a routerLink="blog/single">Posted {{object.date}}</a></li>
-                                                        <li class="post-author">By<a routerLink="blog/single">{{object.author}}</a></li>
-                                                    </ul>
-                                                </div>                             
-                                                <div class="sx-post-title ">
-                                                    <h4 class="post-title"><a routerLink="blog/single">{{object.title}}</a></h4>
-                                                </div>
-                                                <div class="sx-post-detail">
-                                                    <p>{{object.description}}</p>
-                                                </div>
-                                                <div class="sx-post-readmore">
-                                                     <a routerLink="blog/grid" title="READ MORE" rel="bookmark" class="site-button-link">View More</a>
-                                                </div>
-                                                
-                                            </div>
-                                            
-                                        </div>
-                                    </div>
-                                                                                                                                                                                                                            
-                                </div>
-                            </div>
-                        </div>
-               
+  <div class="container">
+
+    <!-- TITLE START -->
+    <div class="section-head-two center">
+      <div class="section-head-two center">
+        <h2 class="sx-title-two">{{data().title}}</h2>
+      </div>
+    </div>
+    <!-- TITLE END -->
+
+
+
+    <!-- IMAGE CAROUSEL START -->
+    <div class="section-content">
+      <div class="row justify-content-center">
+
+        @for (object of data().posts; track $index) {
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="blog-post blog-grid date-style-2">
+              <div class="sx-post-media sx-img-effect img-reflection">
+                <a routerLink="blog/single"><img src="{{object.image}}" alt=""></a>
+              </div>
+              <div class="sx-post-info p-t30">
+                <div class="sx-post-meta ">
+                  <ul>
+                    <li class="post-date"><a routerLink="blog/single">Posted {{object.date}}</a></li>
+                    <li class="post-author">By<a routerLink="blog/single">{{object.author}}</a></li>
+                  </ul>
+                </div>
+                <div class="sx-post-title ">
+                  <h4 class="post-title"><a routerLink="blog/single">{{object.title}}</a></h4>
+                </div>
+                <div class="sx-post-detail">
+                  <p>{{object.description}}</p>
+                </div>
+                <div class="sx-post-readmore">
+                  <a routerLink="blog/grid" title="READ MORE" rel="bookmark" class="site-button-link">View More</a>
+                </div>
+              </div>
             </div>
+          </div>
+        }
+
+      </div>
+    </div>
+  </div>
+
+</div>

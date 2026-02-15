@@ -1,9 +1,15 @@
 import { Component, OnInit } from '@angular/core';
+import { Footer1Component } from '../../../sections/footer/footer1/footer1.component';
+import { SectionBlogCommentsComponent } from '../../../sections/blogs/section-blog-comments/section-blog-comments.component';
+import { SectionBlogAreaComponent } from '../../../sections/blogs/section-blog-area/section-blog-area.component';
+import { BannerComponent } from '../../../sections/banner/banner.component';
+import { Header1Component } from '../../../sections/header/header1/header1.component';
 
 @Component({
-  selector: 'app-page-blog-single',
-  templateUrl: './page-blog-single.component.html',
-  styleUrls: ['./page-blog-single.component.scss']
+    selector: 'app-page-blog-single',
+    templateUrl: './page-blog-single.component.html',
+    styleUrls: ['./page-blog-single.component.scss'],
+    imports: [Header1Component, BannerComponent, SectionBlogAreaComponent, SectionBlogCommentsComponent, Footer1Component]
 })
 export class PageBlogSingleComponent implements OnInit {
 

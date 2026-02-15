@@ -1,15 +1,34 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
+import { WordpressService } from 'src/app/services/wordpress.service';
+import { Footer1Component } from '../../../sections/footer/footer1/footer1.component';
+import { SectionTestimonials2Component } from '../../../sections/home/home2/section-testimonials2/section-testimonials2.component';
+import { SectionCounter1Component } from '../../../sections/home/home2/section-counter1/section-counter1.component';
+import { SectionBlogs2Component } from '../../../sections/home/home2/section-blogs2/section-blogs2.component';
+import { SectionPricing1Component } from '../../../sections/home/home2/section-pricing1/section-pricing1.component';
+import { SectionOurTeam1Component } from '../../../sections/home/home2/section-our-team1/section-our-team1.component';
+import { SectionAwards1Component } from '../../../sections/home/home2/section-awards1/section-awards1.component';
+import { SectionOurProcess1Component } from '../../../sections/home/home2/section-our-process1/section-our-process1.component';
+import { SectionOurClients2Component } from '../../../sections/home/home2/section-our-clients2/section-our-clients2.component';
+import { SectionOurServices1Component } from '../../../sections/home/home2/section-our-services1/section-our-services1.component';
+import { SectionWhatWeDo1Component } from '../../../sections/home/home2/section-what-we-do1/section-what-we-do1.component';
+import { SectionAboutCompany2Component } from '../../../sections/home/home2/section-about-company2/section-about-company2.component';
+import { SectionSlider2Component } from '../../../sections/home/home2/section-slider2/section-slider2.component';
+import { Header2Component } from '../../../sections/header/header2/header2.component';
 
 @Component({
   selector: 'app-page-home2',
   templateUrl: './page-home2.component.html',
-  styleUrls: ['./page-home2.component.scss']
+  styleUrls: ['./page-home2.component.scss'],
+  imports: [Header2Component, SectionSlider2Component, SectionAboutCompany2Component, SectionWhatWeDo1Component, SectionOurServices1Component, SectionOurClients2Component, SectionOurProcess1Component, SectionAwards1Component, SectionOurTeam1Component, SectionPricing1Component, SectionBlogs2Component, SectionCounter1Component, SectionTestimonials2Component, Footer1Component]
 })
 export class PageHome2Component implements OnInit {
-
+  private wpService = inject(WordpressService);
   constructor() { }
 
   ngOnInit(): void {
+
+
+
   }
 
   about = {
@@ -66,7 +85,7 @@ export class PageHome2Component implements OnInit {
         image: "assets/images/services/service-2/port-3.jpg",
         title: "2D & 3D animation",
         description: "Project management is the process by which our team plans and executes your project. We will develop it..."
-      },{
+      }, {
         image: "assets/images/services/service-2/port-4.jpg",
         title: "Front & Back-end development",
         description: "Project management is the process by which our team plans and executes your project. We will develop it..."
@@ -178,22 +197,22 @@ export class PageHome2Component implements OnInit {
       {
         image: "assets/images/our-team5/1.jpg",
         name: "Johnny Jackman",
-        designation: "Co-Founder, Anih. Media",
+        designation: "Co-Founder, Devsense. Media",
       },
       {
         image: "assets/images/our-team5/2.jpg",
         name: "Daniel Rickman",
-        designation: "CEO, Anih. Media",
+        designation: "CEO, Devsense. Media",
       },
       {
         image: "assets/images/our-team5/6.jpg",
         name: "Daniel Rickman",
-        designation: "CEO, Anih. Media",
+        designation: "CEO, Devsense. Media",
       },
       {
         image: "assets/images/our-team5/7.jpg",
         name: "Mark Norwich",
-        designation: "Co-Founder, Anih. Media",
+        designation: "Co-Founder, Devsense. Media",
       }
     ]
   }

@@ -1,32 +1,34 @@
 <div class="section-full">
-    <div class="container-fluid">
-        <div class="section-content">
-                        
-            <div class="swiper-container  about-me-slider">
-                <div class="swiper-wrapper">
-                    <!--Image 1-->
-                    <div class="swiper-slide" *ngFor="let object of data">
-                    <div class="box-animation-one"><img src="{{object.image}}" alt="pic">
-                        <div class="box-inner-content">
-                            <h4 class="sx-tilte"><a href="javascript:void();">{{object.title}}</a></h4>
-                            <p class="m-b0">{{object.subtitle}}</p> 
-                            <a class="elem" href="{{object.imageLarge}}" title="{{object.title2}}" 
-                            attr.data-lcl-txt="{{object.subtitle2}}" attr.data-lcl-author="{{object.author}}" attr.data-lcl-thumb="{{object.imageLarge}}">
-                                <i></i>
-                            </a> 													
-                        </div>
-                    </div>
-                    </div>
+  <div class="container-fluid">
+    <div class="section-content">
+
+      <div class="swiper-container  about-me-slider">
+        <div class="swiper-wrapper">
+          <!--Image 1-->
+          @for (object of data(); track $index) {
+            <div class="swiper-slide">
+              <div class="box-animation-one"><img src="{{object.image}}" alt="pic">
+                <div class="box-inner-content">
+                  <h4 class="sx-tilte"><a href="javascript:void();">{{object.title}}</a></h4>
+                  <p class="m-b0">{{object.subtitle}}</p>
+                  <a class="elem" href="{{object.imageLarge}}" title="{{object.title2}}"
+                    attr.data-lcl-txt="{{object.subtitle2}}" attr.data-lcl-author="{{object.author}}" attr.data-lcl-thumb="{{object.imageLarge}}">
+                    <i></i>
+                  </a>
                 </div>
-
-                <!-- Add Pagination -->
-                <div class="swiper-pagination"></div>
-                <!-- Add Arrows -->
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-
+              </div>
             </div>
-
-            </div>
+          }
         </div>
-</div> 
+
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+        <!-- Add Arrows -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
