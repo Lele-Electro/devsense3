@@ -81,6 +81,7 @@ export interface WPPost {
     state?: number | null; // Custom property to track the state of the card
     media_source_url?: string;
     imageUrl?: string; // // Custom property to hold the feature image URL
+    featured_media_src_url?: string; // Custom property applied by plugin to hold the feature image URL
 }
 
 export interface WPMedia {

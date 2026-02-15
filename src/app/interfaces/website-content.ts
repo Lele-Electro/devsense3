@@ -8,6 +8,18 @@ export interface WebsiteContent {
     testimonials: Signal<WPPost[]>;
 }
 
+export interface PortfolioProjects {
+    categories: ProjectCategory[];
+    items: PortfolioItem[];
+}
+
+export interface ProjectCategory {
+    category: string;
+    title: string;
+    count: string;
+}
+
+
 export interface websiteContentExpertise {
     webApplicationDevelopment: Signal<WPPost>;
     mobileApplicationDevelopment: Signal<WPPost>;
@@ -26,3 +38,17 @@ export interface Testimonials {
     title: string;
     quotes: TestimonialQuote[];
 }
+
+export interface PortfolioItem {
+    category: string;
+    image: string;
+    title: string;
+    subtitle: string;
+    image2: string;
+    title2: string;
+    subtitle2: string;
+    author: string;
+    thumb: string;
+}
+
+

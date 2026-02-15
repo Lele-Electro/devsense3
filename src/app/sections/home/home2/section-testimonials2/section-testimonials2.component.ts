@@ -28,18 +28,15 @@ export class SectionTestimonials2Component implements AfterViewInit {
   }
   private uncategorizedPostsEffect = effect(() => {
     const wpPosts = this.wpService.uncategorizedPosts();
-    // alert('change');
+    const data = this.wpService.fetchPostsUnderCategory(wpPosts, 'category-testimonials');
 
-    const data = wpPosts?.filter(
-      (post: any) => post.class_list?.includes('category-testimonials')
-    ) ?? [];
     this.testimonials = data.map((post: any) => ({
       name: post.title.rendered,
       quote: post.content.rendered,
       image: post.imageUrl ?? 'assets/images/testimonials/anonymous-user.png',
       designation: null as any
     }));
-    this.helperService.log(this.testimonials, 'Final Testimonial Quotes:');
+    this.helperService.log(this.testimonials, 'Final Testimonial Quotes:', '  #667eea', '#764ba2', '#fff');
   });
 
 

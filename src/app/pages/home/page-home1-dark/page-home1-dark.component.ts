@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-    selector: 'app-page-home1-dark',
-    templateUrl: './page-home1-dark.component.html',
-    styleUrls: ['./page-home1-dark.component.scss'],
-    standalone: false
+  selector: 'app-page-home1-dark',
+  templateUrl: './page-home1-dark.component.html',
+  styleUrls: ['./page-home1-dark.component.scss'],
+  standalone: false
 })
 export class PageHome1DarkComponent implements OnInit {
 
@@ -101,7 +101,7 @@ export class PageHome1DarkComponent implements OnInit {
         image: "assets/images/projects/portrait/port-1.jpg",
         title: "Photografhy",
         subtitle: "Graphic Studio",
-        title2: "Energy",
+        title2: "Toni Test",
         subtitle2: "Regulatory Compliance System",
         author: "someone",
         thumb: "assets/images/projects/portrait/port-1.jpg"
@@ -111,7 +111,7 @@ export class PageHome1DarkComponent implements OnInit {
         image: "assets/images/projects/portrait/port-2.jpg",
         title: "Branding",
         subtitle: "Branding , Prin",
-        title2: "Energy",
+        title2: "Toni Test",
         subtitle2: "Regulatory Compliance System",
         author: "someone",
         thumb: "assets/images/projects/portrait/port-2.jpg"
@@ -121,7 +121,7 @@ export class PageHome1DarkComponent implements OnInit {
         image: "assets/images/projects/portrait/port-3.jpg",
         title: "Ui/Ux & interaction",
         subtitle: "Print , Packaging",
-        title2: "Energy",
+        title2: "Toni Test",
         subtitle2: "Regulatory Compliance System",
         author: "someone",
         thumb: "assets/images/projects/portrait/port-3.jpg"
@@ -131,7 +131,7 @@ export class PageHome1DarkComponent implements OnInit {
         image: "assets/images/projects/portrait/port-4.jpg",
         title: "Graphic design",
         subtitle: "Advetising",
-        title2: "Energy",
+        title2: "Toni Test",
         subtitle2: "Regulatory Compliance System",
         author: "someone",
         thumb: "assets/images/projects/portrait/port-4.jpg"
@@ -141,7 +141,7 @@ export class PageHome1DarkComponent implements OnInit {
         image: "assets/images/projects/portrait/port-5.jpg",
         title: "Animation & motion",
         subtitle: "Media Marketing",
-        title2: "Energy",
+        title2: "Toni Test",
         subtitle2: "Regulatory Compliance System",
         author: "someone",
         thumb: "assets/images/projects/portrait/port-5.jpg"
@@ -151,7 +151,7 @@ export class PageHome1DarkComponent implements OnInit {
         image: "assets/images/projects/portrait/port-6.jpg",
         title: "Development",
         subtitle: "Game Development",
-        title2: "Energy",
+        title2: "Toni Test",
         subtitle2: "Regulatory Compliance System",
         author: "someone",
         thumb: "assets/images/projects/portrait/port-6.jpg"
@@ -161,7 +161,7 @@ export class PageHome1DarkComponent implements OnInit {
         image: "assets/images/projects/portrait/port-7.jpg",
         title: "Web Design",
         subtitle: "Project Design",
-        title2: "Energy",
+        title2: "Toni Test",
         subtitle2: "Regulatory Compliance System",
         author: "someone",
         thumb: "assets/images/projects/portrait/port-7.jpg"

@@ -1,6 +1,8 @@
-<router-outlet></router-outlet>
+@if (wpService.isLoading()) {
+  <app-loader></app-loader>
+} @else {
+  <router-outlet></router-outlet>
 
-<!-- BUTTON TOP START -->
-<button class="scroltop"><span class="fa fa-angle-up  relative" id="btn-vibrate"></span></button>
-
-<app-loader></app-loader>
+  <!-- BUTTON TOP START -->
+  <button class="scroltop"><span class="fa fa-angle-up  relative" id="btn-vibrate"></span></button>
+}
