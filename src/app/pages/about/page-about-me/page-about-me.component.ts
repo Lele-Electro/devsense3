@@ -42,7 +42,7 @@ export class PageAboutMeComponent implements OnInit {
       title: "Photography",
       subtitle: "Graphic Studio",
       imageLarge: "assets/images/projects/land/land-1.jpg",
-      title2: "Energy",
+      title2: "Toni Test",
       subtitle2: "Regulatory Compliance System",
       author: "someone"
     },
@@ -51,7 +51,7 @@ export class PageAboutMeComponent implements OnInit {
       title: "Branding",
       subtitle: "Branding, Print",
       imageLarge: "assets/images/projects/land/land-2.jpg",
-      title2: "Energy",
+      title2: "Toni Test",
       subtitle2: "Regulatory Compliance System",
       author: "someone"
     },
@@ -60,7 +60,7 @@ export class PageAboutMeComponent implements OnInit {
       title: "Ui/Ux & interaction",
       subtitle: "Print, Packaging",
       imageLarge: "assets/images/projects/land/land-3.jpg",
-      title2: "Energy",
+      title2: "Toni Test",
       subtitle2: "Regulatory Compliance System",
       author: "someone"
     },
@@ -69,7 +69,7 @@ export class PageAboutMeComponent implements OnInit {
       title: "Graphic design",
       subtitle: "Advetising",
       imageLarge: "assets/images/projects/land/land-4.jpg",
-      title2: "Energy",
+      title2: "Toni Test",
       subtitle2: "Regulatory Compliance System",
       author: "someone"
     },
@@ -78,7 +78,7 @@ export class PageAboutMeComponent implements OnInit {
       title: "Animation & motion",
       subtitle: "Media Marketing",
       imageLarge: "assets/images/projects/land/land-5.jpg",
-      title2: "Energy",
+      title2: "Toni Test",
       subtitle2: "Regulatory Compliance System",
       author: "someone"
     },
@@ -87,7 +87,7 @@ export class PageAboutMeComponent implements OnInit {
       title: "Development",
       subtitle: "Game Development",
       imageLarge: "assets/images/projects/land/land-6.jpg",
-      title2: "Energy",
+      title2: "Toni Test",
       subtitle2: "Regulatory Compliance System",
       author: "someone"
     },
@@ -96,7 +96,7 @@ export class PageAboutMeComponent implements OnInit {
       title: "Web Design",
       subtitle: "Project Design",
       imageLarge: "assets/images/projects/land/land-7.jpg",
-      title2: "Energy",
+      title2: "Toni Test",
       subtitle2: "Regulatory Compliance System",
       author: "someone"
     },
@@ -105,7 +105,7 @@ export class PageAboutMeComponent implements OnInit {
       title: "Web Design",
       subtitle: "Project Design",
       imageLarge: "assets/images/projects/land/land-8.jpg",
-      title2: "Energy",
+      title2: "Toni Test",
       subtitle2: "Regulatory Compliance System",
       author: "someone"
     }

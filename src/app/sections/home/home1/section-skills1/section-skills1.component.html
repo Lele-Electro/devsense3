@@ -60,27 +60,33 @@
               <div class="row">
 
                 <!-- Block one -->
-                @for (object of data().services; track $index) {
-                  <div class="col-lg-6 col-md-6 m-b30">
+                @for (object of serviceCards | sortBy:'number'; track $index) {
+                  @if (object.number !== 99999) {
+                    <div class="col-lg-6 col-md-6 m-b30">
                     <div class="icon-count-2-outer">
                       <div class="sx-icon-box-wraper">
-                        <div class="icon-count-2">
-                          <div class="icon-xld inline-icon m-b30 scale-in-center">
-                            <span class="icon-cell sx-text-primary"><i
-                            class="{{object.icon}}"></i></span>
-                          </div>
-                          <div class="icon-content">
-                            <h4 class="sx-tilte">{{object.title}}</h4>
-                            <p>{{object.description}}</p>
-                            <div class="text-left">
-                              <a routerLink="/services/detail" class="site-button-link">Learn
-                              More</a>
-                            </div>
-                          </div>
+                      <div class="icon-count-2">
+                        <div class="icon-xld inline-icon m-b30 scale-in-center">
+                        <span class="icon-cell sx-text-primary"><i
+                        [class]="object.icon"></i></span>
+                        </div>
+                        <div class="icon-content">
+                          @if(object?.title){
+                            <h4 class="sx-tilte" [innerHTML]="object.title"></h4>
+                          } @else {
+                            <h4>Not yet loaded</h4>
+                          }
+                          <div class="card-content" [innerHTML]="object.description"></div>
+                        <div class="text-left">
+                          <a routerLink="/services/detail" class="site-button-link">Learn
+                          More</a>
+                        </div>
                         </div>
                       </div>
+                      </div>
                     </div>
-                  </div>
+                    </div>
+                  }
                 }
               </div>
             </div>

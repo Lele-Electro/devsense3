@@ -12,30 +12,54 @@
         <!-- INNER PAGE BANNER END -->
     
         <!-- ABOUT COMPANY START -->
-        <app-section-about-us [data]="about"></app-section-about-us>   
+        @defer (on viewport(aboutViewport); when !wpService.isLoading()) {
+            <app-section-about-us [data]="about"></app-section-about-us>
+        } @placeholder {
+            <div #aboutViewport></div>
+        }
         <!-- ABOUT COMPANY END -->
 
         <!-- ABOUT COMPANY SECTION START -->
-        <app-section-design [data]="design"></app-section-design>
+        @defer (on viewport(designViewport); when !wpService.isLoading()) {
+            <app-section-design [data]="design"></app-section-design>
+        } @placeholder {
+            <div #designViewport></div>
+        }
         <!-- ABOUT COMPANY SECTION END -->            
 
         <!-- OUR AWARDS SECTION START -->
-        <app-section-awards [data]="awards"></app-section-awards>
+        @defer (on viewport(awardsViewport); when !wpService.isLoading()) {
+            <app-section-awards [data]="awards"></app-section-awards>
+        } @placeholder {
+            <div #awardsViewport></div>
+        }
         <!-- OUR AWARDS SECTION END -->  
 
         <!-- OUR EXPERTS SECTION START -->
-        <app-section-experience [data]="experience"></app-section-experience>
+        @defer (on viewport(experienceViewport); when !wpService.isLoading()) {
+            <app-section-experience [data]="experience"></app-section-experience>
+        } @placeholder {
+            <div #experienceViewport></div>
+        }
         <!-- OUR EXPERTS SECTION END -->
         
         <!-- TESTIMONIAL START -->
-        <app-section-testimonials2 [data]="testimonials"></app-section-testimonials2>  
+        @defer (on viewport(testimonialsViewport); when !wpService.isLoading()) {
+            <app-section-testimonials2 [data]="testimonials"></app-section-testimonials2>
+        } @placeholder {
+            <div #testimonialsViewport></div>
+        }
         <!-- TESTIMONIAL  END -->                          
         
     </div>
     <!-- CONTENT END -->
     
     <!-- FOOTER START -->
-    <app-footer1></app-footer1>
+    @defer (on viewport(footerViewport); when !wpService.isLoading()) {
+        <app-footer1></app-footer1>
+    } @placeholder {
+        <div #footerViewport></div>
+    }
     <!-- FOOTER END -->
 
 </div>

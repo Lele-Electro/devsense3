@@ -2,16 +2,19 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable, WritableSignal, inject, signal } from '@angular/core';
 import { catchError, concatMap, filter, from, map, Observable, throwError, toArray } from 'rxjs';
 import { WPMedia, WPPost } from '../interfaces/wordpress';
-import { WebsiteContent } from '../interfaces/website-content';
+import { PortfolioProjects, serviceCardClass, servicesIntro, WebsiteContent } from '../interfaces/website-content';
 
 // import { AlertService } from '../alert/alert.service';
 
 @Injectable({ providedIn: 'root' })
 export class WordpressService {
   websiteContent: WritableSignal<Record<string, any>> = signal({});
+  isLoading: WritableSignal<boolean> = signal(true);
   private http = inject(HttpClient);
-  private baseUrl = 'https://devsense.co.za/wp/wp-json/wp/v2';
+  private baseUrl = 'https://devsense.co.za/wp3/wp-json/wp/v2';
   public uncategorizedPosts: WritableSignal<WPPost[]> = signal<WPPost[]>([]);
+  public portfolioProjects: WritableSignal<PortfolioProjects> = signal<PortfolioProjects>({ categories: [], items: [] });
+  public services: WritableSignal<{ serviceCard: serviceCardClass[], serviceIntro: servicesIntro }> = signal<{ serviceCard: serviceCardClass[], serviceIntro: servicesIntro }>({ serviceCard: [], serviceIntro: { title: '', paragraph: '' } });
 
   /** Inserted by Angular inject() migration for backwards compatibility */
   constructor(...args: unknown[]);
@@ -32,7 +35,7 @@ export class WordpressService {
   }
 
   getAllPosts(): Observable<WPPost[]> {
-    const postsUrl = `${this.baseUrl}/posts`;
+    const postsUrl = `${this.baseUrl}/posts?per_page=100`; // Adjust per_page as needed (max 100 for WordPress REST API)
     return this.http.get<WPPost[]>(postsUrl).pipe(
 
     );
@@ -78,8 +81,6 @@ export class WordpressService {
     );
   }
 
-
-
   makeSequentialCalls(posts: WPPost[]): Observable<(WPPost & { media_source_url?: string })[]> {
     if (!posts?.length) {
       // this.alertService.showError('No posts provided for processing');
@@ -106,4 +107,12 @@ export class WordpressService {
       toArray()
     );
   }
+
+  fetchPostsUnderCategory(posts: WPPost[], categorySlug: string): WPPost[] {
+    return posts?.filter(
+      (post: any) => post.class_list?.includes(categorySlug)
+    ) ?? [];
+  }
+
+
 }

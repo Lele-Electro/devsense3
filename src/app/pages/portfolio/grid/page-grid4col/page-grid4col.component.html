@@ -8,7 +8,7 @@
   <div class="page-content">
 
     <!-- INNER PAGE BANNER -->
-    <app-banner [data]="banner"></app-banner>
+    <app-banner></app-banner>
     <!-- INNER PAGE BANNER END -->
 
     <!-- SECTION CONTENT START -->
@@ -17,7 +17,7 @@
         <!-- Filter Nav START -->
         <div class="filter-wrap p-b30">
           <ul class="filter-navigation masonry-filter clearfix">
-            @for (object of projects.categories; track $index; let i = $index) {
+            @for (object of wpService.portfolioProjects().categories; track $index; let i = $index) {
               <li class="{{ i == 0 ? 'active' : '' }}">
                 <a class="btn-inline " attr.data-filter="{{ i == 0 ? '' : '.' }}{{object.category}}" href="javascript:void();" attr.data-hover="{{object.title}}">{{object.title}}<span class="num">{{object.count}}</span></a>
               </li>
@@ -30,15 +30,15 @@
         <ul  class="masonry-outer mfp-gallery row work-grid clearfix list-unstyled m-b30">
 
           <!-- COLUMNS 1 -->
-          @for (object of projects.items; track $index) {
+          @for (object of wpService.portfolioProjects().items; track $index) {
             <li
               class="masonry-item {{object.category}} col-xl-3  col-lg-4 col-md-6 col-sm-12 m-b30">
               <div class="box-animation-one"><img src="{{object.image}}" alt="">
                 <div class="box-inner-content">
-                  <h4 class="sx-tilte"><a routerLink="/portfolio/carousel/small">{{object.title}}</a></h4>
-                  <p class="m-b0">{{object.subtitle}}</p>
+                  <h4 class="sx-tilte"><a routerLink="/portfolio/carousel/small" [innerHTML]="object.title"></a></h4>
+                  <p class="m-b0" [innerHTML]="object.subtitle"></p>
                   <a class="elem" href="{{object.image2}}" title="{{object.title2}}"
-                    attr.data-lcl-txt="{{object.subtitle2}}" attr.data-lcl-author="{{object.author}}" attr.data-lcl-thumb="{{object.thumb}}">
+                    attr.data-lcl-txt  [innerHTML]="object.subtitle2" attr.data-lcl-author="{{object.author}}" attr.data-lcl-thumb="{{object.thumb}}">
                     <i></i>
                   </a>
                 </div>
