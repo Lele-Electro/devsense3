@@ -31,13 +31,20 @@ export class WordpressService {
 
     const postsUrl = `${this.baseUrl}/posts?categories=${categoryId}`;
     return this.http.get<WPPost[]>(postsUrl).pipe(
+      catchError((error: HttpErrorResponse) => {
+        console.warn(`Failed to fetch posts for category ${categoryId}:`, error.message);
+        return from([]);
+      })
     );
   }
 
   getAllPosts(): Observable<WPPost[]> {
     const postsUrl = `${this.baseUrl}/posts?per_page=100`; // Adjust per_page as needed (max 100 for WordPress REST API)
     return this.http.get<WPPost[]>(postsUrl).pipe(
-
+      catchError((error: HttpErrorResponse) => {
+        console.warn(`Failed to fetch all posts:`, error.message);
+        return from([]);
+      })
     );
   }
 
@@ -56,28 +63,41 @@ export class WordpressService {
   getPostsByParentId(parentId: number): Observable<WPPost[]> {
     const postsUrl = `${this.baseUrl}/posts?parent=${parentId}`;
     return this.http.get<WPPost[]>(postsUrl).pipe(
-      // catchError(error => this.handleError(error, `fetch posts for parent ${parentId}`))
+      catchError((error: HttpErrorResponse) => {
+        console.warn(`Failed to fetch posts for parent ${parentId}:`, error.message);
+        return from([]);
+      })
     );
   }
 
   getSubcategoriesByCategoryId(categoryId: number): Observable<any[]> {
     const subcategoriesUrl = `${this.baseUrl}/categories?parent=${categoryId}`;
     return this.http.get<any[]>(subcategoriesUrl).pipe(
-      // catchError(error => this.handleError(error, `fetch subcategories for category ${categoryId}`))
+      catchError((error: HttpErrorResponse) => {
+        console.warn(`Failed to fetch subcategories for category ${categoryId}:`, error.message);
+        return from([]);
+      })
     );
   }
 
   returnFeatureImage(categoryId: number): Observable<WPMedia> {
     const postsUrl = `${this.baseUrl}/media/${categoryId}`;
     return this.http.get<WPMedia>(postsUrl).pipe(
-      // catchError(error => this.handleError(error, `fetch media ${categoryId}`))
+      catchError((error: HttpErrorResponse) => {
+        console.warn(`Failed to fetch media ${categoryId}:`, error.message);
+        return from([{} as WPMedia]);
+      })
     );
   }
 
   getMedia(mediaId: number): Observable<string | undefined> {
     const mediaUrl = `${this.baseUrl}/media/${mediaId}`;
     return this.http.get<WPMedia>(mediaUrl).pipe(
-      map((media: WPMedia) => media?.source_url)
+      map((media: WPMedia) => media?.source_url),
+      catchError((error: HttpErrorResponse) => {
+        console.warn(`Failed to fetch media URL for ${mediaId}:`, error.message);
+        return from([undefined]);
+      })
     );
   }
 

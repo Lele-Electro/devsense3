@@ -9,6 +9,8 @@
     "skipLibCheck": true
   },
   "files": [
-    "server.ts"
+    "server.ts",
+    "server/email-templates.ts",
+    "server/nodemailer.d.ts"
   ]
 }

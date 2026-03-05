@@ -1,108 +1,128 @@
-<div class="section-full mobile-page-padding bg-white sx-bg-none p-t100 p-b70 bg-no-repeat bg-bottom-right"  style="background-image:url(assets/images/background/dot-corner.png);">
+<div class="section-full mobile-page-padding bg-white sx-bg-none p-t100 p-b70 bg-no-repeat bg-bottom-right"
+    style="background-image:url(assets/images/background/dot-corner.png);">
     <div class="container">
-       
-      <!-- TITLE START -->
-       <div class="section-head">
-           <div class="sx-separator-outer separator-center">
-               <div class="sx-separator" data-title="07">
-                   <h2 class="sep-line-one typewrite" data-period="2000" attr.data-type='[ "{{data().title}}"]' ><span class="wrap"></span>{{data().title}}</h2>
-               </div>
-           </div>
 
-       </div>                   
-       <!-- TITLE END --> 
-       <div class="section-contentget-in-touch-form">
-           <div class="row d-flex align-items-center">
-               <div class="col-lg-5 col-md-12 col-sm-12">
-                   <div class="contact-home1-left m-b30">
-                       <h3 class="sx-tilte">{{data().description1}} </h3>
-                       <p>{{data().description2}} </p>
-                       <ul class="list-unstyled line-list-style">
-                           <li>{{data().address}}</li>
-                           <li>{{data().emails}} </li>
-                           <li>{{data().numbers}} </li>
-                           
-                       </ul>
-                   </div>
-               </div> 
-               
-               <div class="col-lg-7 col-md-12 col-sm-12">
-                   <div class="contact-home1-right">
-                       <div class="contact-home-1-form  bg-white">
-                           <form class="cons-contact-form2 form-transparent" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+        <!-- TITLE START -->
+        <div class="section-head">
+            <div class="sx-separator-outer separator-center">
+                <div class="sx-separator" data-title="07">
+                    <h2 class="sep-line-one typewrite" data-period="2000" attr.data-type='[ "{{data().title}}"]'><span
+                            class="wrap"></span>{{data().title}}</h2>
+                </div>
+            </div>
 
-                               <!-- Success Message -->
-                               <div *ngIf="submitSuccess" class="alert alert-success" role="alert">
-                                   Thank you! Your message has been sent successfully.
-                               </div>
+        </div>
+        <!-- TITLE END -->
+        <div class="section-contentget-in-touch-form">
+            <div class="row d-flex align-items-center">
+                <div class="col-lg-5 col-md-12 col-sm-12">
+                    <div class="contact-home1-left m-b30">
+                        <h3 class="sx-tilte">{{data().description1}} </h3>
+                        <p>{{data().description2}} </p>
+                        <ul class="list-unstyled line-list-style">
+                            <li>{{data().address}}</li>
+                            <li>{{data().emails}} </li>
+                            <li>{{data().numbers}} </li>
 
-                               <!-- Error Message -->
-                               <div *ngIf="submitError" class="alert alert-danger" role="alert">
-                                   Oops! Something went wrong. Please try again.
-                               </div>
+                        </ul>
+                    </div>
+                </div>
 
-                               <div class="input input-animate">
-                                   <label for="name">Your Name *</label>
-                                   <input type="text" formControlName="username" id="name">
-                                   <span class="spin"></span>
-                                   <div *ngIf="hasError('username', 'required')" class="text-danger small mt-1">
-                                       Name is required
-                                   </div>
-                                   <div *ngIf="hasError('username', 'minlength')" class="text-danger small mt-1">
-                                       Name must be at least 2 characters
-                                   </div>
-                               </div>
+                <div class="col-lg-7 col-md-12 col-sm-12">
+                    <div class="contact-home1-right">
+                        <div class="contact-home-1-form  bg-white">
+                            <form class="cons-contact-form2 form-transparent" [formGroup]="contactForm"
+                                (ngSubmit)="onSubmit()">
 
-                               <div class="input input-animate">
-                                   <label for="email">Your Email *</label>
-                                   <input type="email" formControlName="email" id="email">
-                                   <span class="spin"></span>
-                                   <div *ngIf="hasError('email', 'required')" class="text-danger small mt-1">
-                                       Email is required
-                                   </div>
-                                   <div *ngIf="hasError('email', 'email')" class="text-danger small mt-1">
-                                       Please enter a valid email
-                                   </div>
-                               </div> 
+                                <!-- Success Message -->
+                                <div *ngIf="submitSuccess" class="alert alert-success" role="alert">
+                                    Thank you! Your message has been sent successfully.
+                                </div>
 
-                               <div class="input input-animate">
-                                   <label for="Phone">Phone Number*</label>
-                                   <input type="text" formControlName="phone" id="Phone">
-                                   <span class="spin"></span>
-                                   <div *ngIf="hasError('phone', 'required')" class="text-danger small mt-1">
-                                       Phone number is required
-                                   </div>
-                                   <div *ngIf="hasError('phone', 'pattern')" class="text-danger small mt-1">
-                                       Please enter a valid phone number
-                                   </div>
-                               </div>   
+                                <!-- Error Message -->
+                                <div *ngIf="submitError" class="alert alert-danger" role="alert">
+                                    Oops! Something went wrong. Please try again.
+                                </div>
 
-                               <div class="input input-animate">
-                                   <label for="message">Your Message*</label>
-                                   <textarea formControlName="message" id="message"></textarea>
-                                   <span class="spin"></span>
-                                   <div *ngIf="hasError('message', 'required')" class="text-danger small mt-1">
-                                       Message is required
-                                   </div>
-                                   <div *ngIf="hasError('message', 'minlength')" class="text-danger small mt-1">
-                                       Message must be at least 10 characters
-                                   </div>
-                               </div>
+                                <div class="input input-animate">
+                                    <label for="name">Your Name *</label>
+                                    <input type="text" formControlName="username" id="name">
+                                    <span class="spin"></span>
+                                    <div *ngIf="hasError('username', 'required')" class="text-danger small mt-1">
+                                        Name is required
+                                    </div>
+                                    <div *ngIf="hasError('username', 'minlength')" class="text-danger small mt-1">
+                                        Name must be at least 2 characters
+                                    </div>
+                                </div>
 
-                               <div class="text-left p-t10">
-                                   <button type="submit" class="site-button-secondry btn-half outline m-r15" [disabled]="isSubmitting">
-                                       {{ isSubmitting ? 'Sending...' : 'Send Message' }} 
-                                       <span class="sx-bg-primary"></span>
-                                   </button>
-                               </div>    
-                           </form>
-                           <span class="bold-bottom-title">Contact Us</span>
-                       </div>
-                   </div>
-               </div> 
-               
-           </div>
-       </div>
-   </div>
-     
+                                <div class="input input-animate">
+                                    <label for="email">Your Email *</label>
+                                    <input type="email" formControlName="email" id="email">
+                                    <span class="spin"></span>
+                                    <div *ngIf="hasError('email', 'required')" class="text-danger small mt-1">
+                                        Email is required
+                                    </div>
+                                    <div *ngIf="hasError('email', 'email')" class="text-danger small mt-1">
+                                        Please enter a valid email
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="Phone">Phone Number*</label>
+                                    <div class="phone-input-wrapper">
+                                        <ngx-intl-tel-input [cssClass]="'custom-tel-input'"
+                                            [preferredCountries]="preferredCountries" [enableAutoCountrySelect]="true"
+                                            [enablePlaceholder]="true" [searchCountryFlag]="true"
+                                            [searchCountryField]="[SearchCountryField.Iso2, SearchCountryField.Name]"
+                                            [selectFirstCountry]="false" [selectedCountryISO]="CountryISO.SouthAfrica"
+                                            [maxLength]="15" [phoneValidation]="true" [separateDialCode]="true"
+                                            [numberFormat]="PhoneNumberFormat.National" name="phone" formControlName="phone"
+                                            id="Phone">
+                                        </ngx-intl-tel-input>
+                                        <span class="spin"></span>
+                                    </div>
+                                    <div *ngIf="hasError('phone', 'required')" class="text-danger small mt-1">
+                                        Phone number is required
+                                    </div>
+                                    <div *ngIf="contactForm.get('phone')?.touched && contactForm.get('phone')?.invalid && !hasError('phone', 'required')"
+                                        class="text-danger small mt-1">
+                                        Please enter a valid phone number
+                                    </div>
+                                </div>
+
+                                <!-- Honeypot field (hidden from users, bot trap) -->
+                                <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                                    <input type="text" formControlName="website" tabindex="-1" autocomplete="off" />
+                                </div>
+
+                                <div class="input input-animate">
+                                    <label for="message">Your Message*</label>
+                                    <textarea formControlName="message" id="message"></textarea>
+                                    <span class="spin"></span>
+                                    <div *ngIf="hasError('message', 'required')" class="text-danger small mt-1">
+                                        Message is required
+                                    </div>
+                                    <div *ngIf="hasError('message', 'minlength')" class="text-danger small mt-1">
+                                        Message must be at least 10 characters
+                                    </div>
+                                </div>
+
+                                <div class="text-left p-t10">
+                                    <button type="submit" class="site-button-secondry btn-half outline m-r15"
+                                        [disabled]="isSubmitting">
+                                        {{ isSubmitting ? 'Sending...' : 'Send Message' }}
+                                        <span class="sx-bg-primary"></span>
+                                    </button>
+                                </div>
+                            </form>
+                            <span class="bold-bottom-title">Contact Us</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
 </div>

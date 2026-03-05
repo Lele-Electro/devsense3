@@ -18,7 +18,13 @@
     "importHelpers": true,
     "target": "ES2022",
     "module": "es2020",
-    "useDefineForClassFields": false
+    "useDefineForClassFields": false,
+    "paths": {
+      "@devsense/services": ["src/app/services/index.ts"],
+      "@devsense/sections": ["src/app/sections/index.ts"],
+      "@devsense/pages": ["src/app/pages/index.ts"],
+      "@devsense/pipes": ["src/app/pipes/index.ts"]
+    }
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
