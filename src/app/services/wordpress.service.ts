@@ -2,7 +2,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable, WritableSignal, inject, signal } from '@angular/core';
 import { catchError, concatMap, filter, from, map, Observable, throwError, toArray } from 'rxjs';
 import { WPMedia, WPPost } from '../interfaces/wordpress';
-import { PortfolioProjects, WebsiteContent } from '../interfaces/website-content';
+import { PortfolioProjects, serviceCardClass, servicesIntro, WebsiteContent } from '../interfaces/website-content';
 
 // import { AlertService } from '../alert/alert.service';
 
@@ -11,9 +11,10 @@ export class WordpressService {
   websiteContent: WritableSignal<Record<string, any>> = signal({});
   isLoading: WritableSignal<boolean> = signal(true);
   private http = inject(HttpClient);
-  private baseUrl = 'https://devsense.co.za/wp/wp-json/wp/v2';
+  private baseUrl = 'https://devsense.co.za/wp3/wp-json/wp/v2';
   public uncategorizedPosts: WritableSignal<WPPost[]> = signal<WPPost[]>([]);
   public portfolioProjects: WritableSignal<PortfolioProjects> = signal<PortfolioProjects>({ categories: [], items: [] });
+  public services: WritableSignal<{ serviceCard: serviceCardClass[], serviceIntro: servicesIntro }> = signal<{ serviceCard: serviceCardClass[], serviceIntro: servicesIntro }>({ serviceCard: [], serviceIntro: { title: '', paragraph: '' } });
 
   /** Inserted by Angular inject() migration for backwards compatibility */
   constructor(...args: unknown[]);

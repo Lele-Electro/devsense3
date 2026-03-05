@@ -1,4 +1,5 @@
 export interface WPPost {
+    acf?: { number: number, fa_icon: string };
     id: number;
     date: string;
     date_gmt: string;

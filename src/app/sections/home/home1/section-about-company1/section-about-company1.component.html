@@ -8,7 +8,7 @@
                     <div class="col-lg-6 col-md-12">
                         <div class="a-about">
                             <div class="sx-media">
-                                <img src="{{data().image}}" alt="">
+                                <img src="{{aboutUs.image}}" alt="">
                             </div>
                             <div class="dot-corner"><img src="assets/images/background/r-corner.png" alt=""></div>
                         </div>
@@ -20,22 +20,22 @@
                             <div class="section-head">
                                 <div class="sx-separator-outer separator-left">
                                     <div class="sx-separator" data-title="01">
-                                        <h2  class="sep-line-one typewrite" data-period="2000" attr.data-type='[ "{{data().title}}"]'><span class="wrap">{{data().title}}</span></h2>
+                                        <h2  class="sep-line-one typewrite" data-period="2000" [attr.data-type]="'[ &quot;' + aboutUs.title + '&quot;]'"><span class="wrap" [innerHTML]="aboutUs.title"></span></h2>
                                     </div>
                                 </div>
-                                <p>{{data().description}}</p>
+                                <p [innerHTML]="aboutUs.description"></p>
                             </div>                   
                             <!-- TITLE END --> 
                             
                             <div class="year-ex">
                                 <div class="year-ex-info sx-bg-light">
-                                    <div class="year-ex-count"><span class="text-outline">{{data().experience}}</span></div>
-                                    <div class="year-ex-content"><span class="info1 sx-text-black">Years Experience</span><span class="info2 sx-text-primary">Established {{data().established}}</span></div>
+                                    <div class="year-ex-count"><span class="text-outline">0<span [innerHTML]="aboutUs.experience"></span></span></div>
+                                    <div class="year-ex-content"><span class="info1 sx-text-black">Years Experience</span><span class="info2 sx-text-primary">Established <span [innerHTML]="aboutUs.established"></span></span></div>
                                     <div class="dot-corner"><img src="assets/images/background/r-corner.png" alt=""></div>
                                 </div>
                             </div>
                             
-                            <h3 class="sx-tilte">{{data().description2}} 
+                            <h3 class="sx-tilte" [innerHTML]="aboutUs.description2"> 
                                 </h3>
                             <a routerLink="/about/company" class="site-button-secondry btn-half outline ">Read More <span class="sx-bg-primary"></span></a>
                        </div>                                  
