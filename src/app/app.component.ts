@@ -1,10 +1,10 @@
-import { AfterViewInit, Component, inject, DOCUMENT, OnInit, signal, WritableSignal, PLATFORM_ID, effect } from '@angular/core';
+import { AfterViewInit, Component, inject, DOCUMENT, OnInit, PLATFORM_ID, effect } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { NavigationEnd, Router, Event, RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { WordpressService } from './services/wordpress.service';
 import { WPPost } from './interfaces/wordpress';
-import { PortfolioProjects, WebsiteContent, websiteContentExpertise } from './interfaces/website-content';
+import { DEFAULT_PORTFOLIO_PROJECTS, PortfolioProjects, WebsiteContent, serviceCard } from './interfaces/website-content';
 import { HelperService } from './services/helper.service';
 import { catchError, concatMap, forkJoin, map, of } from 'rxjs';
 import { LoaderComponent } from './elements/loader/loader.component';
@@ -29,17 +29,9 @@ export class AppComponent implements OnInit, AfterViewInit {
   protected wpService = inject(WordpressService);
   private helperService = inject(HelperService);
 
-  aboutUsOne: WPPost | undefined = {} as WPPost;
-
-
   title = 'devsense';
 
-  /** Inserted by Angular inject() migration for backwards compatibility */
-  constructor(...args: unknown[]);
-
-  constructor() {
-
-  }
+  constructor() { }
   ngOnInit(): void {
     this.wpService.getAllPosts().pipe(
       concatMap((posts: WPPost[]) => {
@@ -58,13 +50,13 @@ export class AppComponent implements OnInit, AfterViewInit {
 
 
       this.helperService.log(this.wpService.uncategorizedPosts(), 'All uncategorized posts:', 'yellow', 'green', 'black');
-      this.wpService.getSubcategoriesByCategoryId(2).subscribe(subcategories => {
+      this.wpService.getSubcategoriesByCategoryId(3).subscribe(subcategories => {
         const content = this.wpService.websiteContent();
         subcategories.forEach(subcategory => {
           content[this.helperService.hyphenToCamel(subcategory.slug) as keyof WebsiteContent] = { parentCategory: subcategory.id } as WPPost & any;
         });
         this.wpService.websiteContent.set(content);
-        this.assignPostsToWebsiteContent(this.wpService.uncategorizedPosts());
+        // this.assignPostsToWebsiteContent(this.wpService.uncategorizedPosts());
         this.assignSubcategoryPostsToWebsiteContent(subcategories, this.wpService.uncategorizedPosts());
       });
     }
@@ -104,7 +96,9 @@ export class AppComponent implements OnInit, AfterViewInit {
     });
 
     this.wpService.websiteContent.set(content);
-    this.wpService.isLoading.set(false);
+    setTimeout(() => {
+      this.wpService.isLoading.set(false);
+    }, 5000);
     this.helperService.log(this.wpService.websiteContent(), 'websiteContent after assigning subcategory posts', 'green', 'lightgreen', 'black');
   }
   ngAfterViewInit(): void {
@@ -152,166 +146,35 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
 
 
-  projects: PortfolioProjects = {
-    categories: [
-      {
-        category: "*",
-        title: "All",
-        count: "12"
-      }, {
-        category: "cat-1",
-        title: "Artwork",
-        count: "3"
-      }, {
-        category: "cat-2",
-        title: "Brandng",
-        count: "2"
-      }, {
-        category: "cat-3",
-        title: "Mockup",
-        count: "2"
-      }, {
-        category: "cat-4",
-        title: "Motion",
-        count: "4"
-      }, {
-        category: "cat-5",
-        title: "Package",
-        count: "1"
-      }
-    ],
-    items: [
-      {
-        category: "cat-1",
-        image: "assets/images/projects/portrait/port-1.jpg",
-        title: "Photography",
-        subtitle: "Graphic Studio",
-        image2: "assets/images/projects/portrait/port-1.jpg",
-        title2: "Toni Test",
-        subtitle2: "Regulatory Compliance System",
-        author: "someone",
-        thumb: "assets/images/projects/portrait/port-1.jpg"
-      }, {
-        category: "cat-2",
-        image: "assets/images/projects/portrait/port-2.jpg",
-        title: "Branding",
-        subtitle: "Branding, Print",
-        image2: "assets/images/projects/portrait/port-2.jpg",
-        title2: "Toni Test",
-        subtitle2: "Regulatory Compliance System",
-        author: "someone",
-        thumb: "assets/images/projects/portrait/port-2.jpg"
-      }, {
-        category: "cat-3",
-        image: "assets/images/projects/portrait/port-3.jpg",
-        title: "Ui/Ux & interaction",
-        subtitle: "Print, Packaging",
-        image2: "assets/images/projects/portrait/port-3.jpg",
-        title2: "Toni Test",
-        subtitle2: "Regulatory Compliance System",
-        author: "someone",
-        thumb: "assets/images/projects/portrait/port-3.jpg"
-      }, {
-        category: "cat-4",
-        image: "assets/images/projects/portrait/port-4.jpg",
-        title: "Graphic design",
-        subtitle: "Advetising",
-        image2: "assets/images/projects/portrait/port-4.jpg",
-        title2: "Toni Test",
-        subtitle2: "Regulatory Compliance System",
-        author: "someone",
-        thumb: "assets/images/projects/portrait/port-4.jpg"
-      }, {
-        category: "cat-5",
-        image: "assets/images/projects/portrait/port-5.jpg",
-        title: "Animation & motion",
-        subtitle: "Media Marketing",
-        image2: "assets/images/projects/portrait/port-5.jpg",
-        title2: "Toni Test",
-        subtitle2: "Regulatory Compliance System",
-        author: "someone",
-        thumb: "assets/images/projects/portrait/port-5.jpg"
-      }, {
-        category: "cat-4",
-        image: "assets/images/projects/portrait/port-6.jpg",
-        title: "Development",
-        subtitle: "Game Development",
-        image2: "assets/images/projects/portrait/port-6.jpg",
-        title2: "Toni Test",
-        subtitle2: "Regulatory Compliance System",
-        author: "someone",
-        thumb: "assets/images/projects/portrait/port-6.jpg"
-      }, {
-        category: "cat-3",
-        image: "assets/images/projects/portrait/port-7.jpg",
-        title: "Web Design",
-        subtitle: "Project Design",
-        image2: "assets/images/projects/portrait/port-7.jpg",
-        title2: "Toni Test",
-        subtitle2: "Regulatory Compliance System",
-        author: "someone",
-        thumb: "assets/images/projects/portrait/port-7.jpg"
-      }, {
-        category: "cat-2",
-        image: "assets/images/projects/portrait/port-8.jpg",
-        title: "Web Design",
-        subtitle: "Project Design",
-        image2: "assets/images/projects/portrait/port-8.jpg",
-        title2: "Toni Test",
-        subtitle2: "Regulatory Compliance System",
-        author: "someone",
-        thumb: "assets/images/projects/portrait/port-8.jpg"
-      }, {
-        category: "cat-1",
-        image: "assets/images/projects/portrait/port-9.jpg",
-        title: "Development",
-        subtitle: "Game Development",
-        image2: "assets/images/projects/portrait/port-9.jpg",
-        title2: "Toni Test",
-        subtitle2: "Regulatory Compliance System",
-        author: "someone",
-        thumb: "assets/images/projects/portrait/port-9.jpg"
-      }, {
-        category: "cat-3",
-        image: "assets/images/projects/portrait/port-10.jpg",
-        title: "Development",
-        subtitle: "Game Development",
-        image2: "assets/images/projects/portrait/port-10.jpg",
-        title2: "Toni Test",
-        subtitle2: "Regulatory Compliance System",
-        author: "someone",
-        thumb: "assets/images/projects/portrait/port-10.jpg"
-      }, {
-        category: "cat-2",
-        image: "assets/images/projects/portrait/port-11.jpg",
-        title: "Development",
-        subtitle: "Game Development",
-        image2: "assets/images/projects/portrait/port-11.jpg",
-        title2: "Toni Test",
-        subtitle2: "Regulatory Compliance System",
-        author: "someone",
-        thumb: "assets/images/projects/portrait/port-11.jpg"
-      }, {
-        category: "cat-1",
-        image: "assets/images/projects/portrait/port-12.jpg",
-        title: "Development",
-        subtitle: "Game Development",
-        image2: "assets/images/projects/portrait/port-12.jpg",
-        title2: "Toni Test",
-        subtitle2: "Regulatory Compliance System",
-        author: "someone",
-        thumb: "assets/images/projects/portrait/port-12.jpg"
-      }
-    ]
-  }
+  projects: PortfolioProjects = { ...DEFAULT_PORTFOLIO_PROJECTS }
 
   private uncategorizedPostsEffect = effect(() => {
     const wpPosts = this.wpService.uncategorizedPosts();
     const data = this.wpService.fetchPostsUnderCategory(wpPosts, 'category-portfolio');
+    const allServices = this.wpService.fetchPostsUnderCategory(wpPosts, 'category-services');
 
     const posts = (data as Array<WPPost | WPPost[]>).flatMap((entry) =>
       Array.isArray(entry) ? entry : [entry]
     );
+
+    const serviceCards: serviceCard[] = allServices.map((service: any) => ({
+      icon: service.acf?.fa_icon ?? '',
+      title: service.title.rendered,
+      description: service.content.rendered,
+      number: service.acf?.number,
+      image: service.featured_media_src_url ?? ''
+    }));
+    const servicesIntroRaw = serviceCards.find(service => service.number === 7);
+    const introDescription = servicesIntroRaw?.description ?? '';
+    const serviceIntro = {
+      title: this.helperService.getParagraphText(introDescription, 0) || servicesIntroRaw?.title || '',
+      paragraph: this.helperService.getParagraphText(introDescription, 1) || ''
+    };
+    const filteredCards = serviceCards.filter(card => card.number !== 7);
+
+    this.wpService.services.set({ serviceCard: filteredCards, serviceIntro });
+
+    this.assignPostsToWebsiteContent(posts);
 
     this.projects.items = posts.map((post) => {
       const html = post.content?.rendered ?? '';
@@ -336,6 +199,8 @@ export class AppComponent implements OnInit, AfterViewInit {
     });
 
     this.wpService.portfolioProjects.set(this.projects);
+
+    this.helperService.log(filteredCards, 'Our Services Cards:', 'cyan', '#2196F3', '#fff');
 
     this.helperService.log(this.projects.items, 'Portfolio Items', 'red', 'blue', 'white');
   });
