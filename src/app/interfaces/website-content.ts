@@ -20,6 +20,28 @@ export interface ProjectCategory {
 }
 
 
+export interface PortfolioProjects2 {
+    title: string;
+    categories: PortfolioCategory2[];
+    projects: PortfolioItem2[];
+}
+
+export class PortfolioCategory2 {
+    class: string = '';
+    title: string = '';
+}
+
+export class PortfolioItem2 {
+    category: string = '';
+    image: string = '';
+    title: string = '';
+    subtitle: string = '';
+    title2: string = '';
+    subtitle2: string = '';
+    author: string = '';
+    thumb: string = '';
+}
+
 export interface websiteContentExpertise {
     webApplicationDevelopment: Signal<WPPost>;
     mobileApplicationDevelopment: Signal<WPPost>;
@@ -70,6 +92,12 @@ export class serviceCardClass {
     description: string | undefined;
     number?: number;
     image?: string;
+}
+
+export interface PortfolioCategory {
+    class: string;
+    title: string;
+    count: string;
 }
 
 export const DEFAULT_PORTFOLIO_PROJECTS: PortfolioProjects = {

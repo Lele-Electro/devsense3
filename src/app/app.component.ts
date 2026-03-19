@@ -4,7 +4,7 @@ import { NavigationEnd, Router, Event, RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { WordpressService } from './services/wordpress.service';
 import { WPPost } from './interfaces/wordpress';
-import { DEFAULT_PORTFOLIO_PROJECTS, PortfolioProjects, WebsiteContent, serviceCard } from './interfaces/website-content';
+import { DEFAULT_PORTFOLIO_PROJECTS, PortfolioProjects, WebsiteContent, PortfolioCategory2 } from './interfaces/website-content';
 import { HelperService } from './services/helper.service';
 import { catchError, concatMap, forkJoin, map, of } from 'rxjs';
 import { LoaderComponent } from './elements/loader/loader.component';
@@ -151,29 +151,10 @@ export class AppComponent implements OnInit, AfterViewInit {
   private uncategorizedPostsEffect = effect(() => {
     const wpPosts = this.wpService.uncategorizedPosts();
     const data = this.wpService.fetchPostsUnderCategory(wpPosts, 'category-portfolio');
-    const allServices = this.wpService.fetchPostsUnderCategory(wpPosts, 'category-services');
 
     const posts = (data as Array<WPPost | WPPost[]>).flatMap((entry) =>
       Array.isArray(entry) ? entry : [entry]
     );
-
-    const serviceCards: serviceCard[] = allServices.map((service: any) => ({
-      icon: service.acf?.fa_icon ?? '',
-      title: service.title.rendered,
-      description: service.content.rendered,
-      number: service.acf?.number,
-      image: service.featured_media_src_url ?? ''
-    }));
-    const servicesIntroRaw = serviceCards.find(service => service.number === 7);
-    const introDescription = servicesIntroRaw?.description ?? '';
-    const serviceIntro = {
-      title: this.helperService.getParagraphText(introDescription, 0) || servicesIntroRaw?.title || '',
-      paragraph: this.helperService.getParagraphText(introDescription, 1) || ''
-    };
-    const filteredCards = serviceCards.filter(card => card.number !== 7);
-
-    this.wpService.services.set({ serviceCard: filteredCards, serviceIntro });
-
     this.assignPostsToWebsiteContent(posts);
 
     this.projects.items = posts.map((post) => {
@@ -186,7 +167,7 @@ export class AppComponent implements OnInit, AfterViewInit {
       const imageUrl = post.featured_media_src_url ?? '';
 
       return {
-        category: paragraphOne,
+        category: post.acf?.fieldone ?? '',
         image: imageUrl ?? null,
         title: paragraphOne,
         subtitle: paragraphTwo,
@@ -200,10 +181,57 @@ export class AppComponent implements OnInit, AfterViewInit {
 
     this.wpService.portfolioProjects.set(this.projects);
 
-    this.helperService.log(filteredCards, 'Our Services Cards:', 'cyan', '#2196F3', '#fff');
+    // Update portfolioProjectsAlternateLayout categories
+    const categories = this.projects.items.map(item => item.category);
+    // const alternateCategories = categories.map((category, index) => {
+    //   const cat = new PortfolioCategory2();
+    //   cat.title = category;
 
+    //   cat.class = `.col-${['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten'][index - 1] || 'one'}`;
+
+    //   return cat;
+    // });
+    const currentAlternate = this.wpService.portfolioProjectsAlternateLayout();
+
+    // currentAlternate.projects = this.projects.items.map((item, index) => {
+    //   const words = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten'];
+    //   return { ...item, category: `col-${words[index % 10]}` };
+    // });
+
+
+    this.wpService.portfolioProjectsAlternateLayout.set(currentAlternate);
+
+    this.importPortfolioCategories(this.wpService.uncategorizedPosts());
+    // this.helperService.log(alternateCategories, 'Portfolio Alternate Categories', 'blue', 'yellow', 'black');
+    this.helperService.log(currentAlternate.projects, 'Portfolio Alternate Projects', 'blue', 'yellow', 'black');
     this.helperService.log(this.projects.items, 'Portfolio Items', 'red', 'blue', 'white');
   });
+
+
+  importPortfolioCategories(posts: WPPost[]) {
+    const categoriesPost = this.wpService.fetchPostsUnderCategory(posts, 'category-pcategories');
+    const categoryPosts = (categoriesPost as Array<WPPost | WPPost[]>).flatMap((entry) =>
+      Array.isArray(entry) ? entry : [entry]
+    );
+
+    const allProjectsCat = new PortfolioCategory2();
+    allProjectsCat.title = 'All Projects';
+    allProjectsCat.class = '*';
+
+    const portfolioCategories = categoryPosts.map((post) => {
+      const cat = new PortfolioCategory2();
+      cat.class = post.acf?.fieldone ?? '';
+      cat.title = post.title?.rendered ?? '';
+      return cat;
+    });
+
+    const currentAlternate = this.wpService.portfolioProjectsAlternateLayout();
+    currentAlternate.categories = [allProjectsCat, ...portfolioCategories];
+    this.wpService.portfolioProjectsAlternateLayout.set(currentAlternate);
+
+    this.helperService.log(this.wpService.portfolioProjectsAlternateLayout(), 'Portfolio Categories', 'hotpink', 'lightblue', 'yellow');
+  }
+
 
 
 }
