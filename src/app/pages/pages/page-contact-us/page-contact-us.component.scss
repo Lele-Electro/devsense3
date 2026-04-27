@@ -34,7 +34,7 @@
 
   .input-phone .iti input.iti__tel-input,
   .input-phone .iti input.iti__tel-input[type="tel"],
-  .input-phone .iti input.form-control {
+  .input-phone .iti input.iti__tel-input.form-control {
     position: relative;
     height: 44px !important;
     line-height: 44px;
@@ -95,11 +95,40 @@
   }
 
   .input-phone .iti__search-input {
-    font-size: 14px;
-    border: none;
-    border-bottom: 1px solid #efefef;
-    border-radius: 0;
-    padding: 10px 14px;
+    position: static !important;
+    display: block !important;
+    top: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 10px 14px !important;
+    font-size: 14px !important;
+    border: none !important;
+    border-bottom: 1px solid #efefef !important;
+    border-radius: 0 !important;
+    background: #fff !important;
+    box-sizing: border-box !important;
+  }
+
+  .input-phone .iti__dropdown-content .iti__search-input,
+  .input-phone .iti--inline-dropdown .iti__dropdown-content .iti__search-input {
+    left: 0 !important;
+    width: 100% !important;
+  }
+
+  // Fallback reset: prevent global .input-animate input rules from affecting dropdown inputs
+  .iti__dropdown-content input,
+  .iti--inline-dropdown .iti__dropdown-content input {
+    position: static !important;
+    left: 0 !important;
+    right: auto !important;
+    width: 100% !important;
+    top: auto !important;
+    margin: 0 !important;
+    transform: none !important;
   }
 
   .input-phone .iti__country-list {
