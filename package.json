@@ -35,7 +35,7 @@
     "helmet": "^8.0.0",
     "intl-tel-input": "^19.5.7",
     "libphonenumber-js": "^1.12.36",
-    "mjml": "^4.18.0",
+    "mjml": "5.1.0",
     "ngx-intl-tel-input": "^17.0.0",
     "nodemailer": "^8.0.1",
     "rxjs": "~7.5.0",
