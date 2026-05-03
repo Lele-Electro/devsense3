@@ -1,13 +1,17 @@
 import { Component, OnInit, input } from '@angular/core';
-import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, ReactiveFormsModule, AbstractControl, ValidationErrors } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { finalize } from 'rxjs/operators';
+import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
+import { SearchCountryField, CountryISO, PhoneNumberFormat } from 'ngx-intl-tel-input';
+import { ContactService, ContactResponse } from '@devsense/services';
 
 @Component({
     selector: 'app-section-contact1',
     templateUrl: './section-contact1.component.html',
     styleUrls: ['./section-contact1.component.scss'],
     standalone: true,
-    imports: [CommonModule, ReactiveFormsModule]
+    imports: [CommonModule, ReactiveFormsModule, NgxIntlTelInputModule]
 })
 export class SectionContact1Component implements OnInit {
 
@@ -17,14 +21,21 @@ export class SectionContact1Component implements OnInit {
   submitSuccess = false;
   submitError = false;
 
-  constructor(private fb: FormBuilder) { }
+  // Country selector config
+  SearchCountryField = SearchCountryField;
+  CountryISO = CountryISO;
+  PhoneNumberFormat = PhoneNumberFormat;
+  preferredCountries: CountryISO[] = [CountryISO.SouthAfrica, CountryISO.UnitedStates, CountryISO.UnitedKingdom];
+
+  constructor(private fb: FormBuilder, private contactService: ContactService) { }
 
   ngOnInit(): void {
     this.contactForm = this.fb.group({
-      username: ['', [Validators.required, Validators.minLength(2)]],
+      username: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(100)]],
       email: ['', [Validators.required, Validators.email]],
-      phone: ['', [Validators.required, Validators.pattern(/^[0-9+\-\s()]+$/)]],
-      message: ['', [Validators.required, Validators.minLength(10)]]
+      phone: ['', [Validators.required]],
+      message: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(5000)]],
+      website: [''] // Honeypot: should remain empty
     });
   }
 
@@ -40,18 +51,28 @@ export class SectionContact1Component implements OnInit {
     this.submitSuccess = false;
     this.submitError = false;
 
-    // For now, simulate a successful submission
-    setTimeout(() => {
-      console.log('Form submitted:', this.contactForm.value);
-      this.submitSuccess = true;
-      this.isSubmitting = false;
-      this.contactForm.reset();
+    const payload = this.contactForm.getRawValue();
 
-      // Reset success message after 5 seconds
-      setTimeout(() => {
-        this.submitSuccess = false;
-      }, 5000);
-    }, 1000);
+    this.contactService.submitContactForm(payload)
+      .pipe(finalize(() => {
+        this.isSubmitting = false;
+      }))
+      .subscribe({
+        next: (response: ContactResponse) => {
+          if (response.ok) {
+            this.submitSuccess = true;
+            this.contactForm.reset();
+            setTimeout(() => {
+              this.submitSuccess = false;
+            }, 5000);
+          } else {
+            this.submitError = true;
+          }
+        },
+        error: () => {
+          this.submitError = true;
+        }
+      });
   }
 
   // Helper method to check if a field has an error

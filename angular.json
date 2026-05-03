@@ -36,6 +36,7 @@
               "src/assets/css/magic-mouse.scss",
               "src/assets/css/swiper-bundle.min.scss",
               "src/assets/css/style.scss",
+              "node_modules/intl-tel-input/build/css/intlTelInput.css",
               {
                 "input": "src/assets/css/skin/skin-1.scss",
                 "bundleName": "skin-1",
