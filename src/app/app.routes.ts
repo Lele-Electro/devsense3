@@ -2,9 +2,9 @@ import { Routes } from '@angular/router';
 
 export const routes: Routes = [
   // Home routes
-  { path: '', loadComponent: () => import('./pages/home/page-home1/page-home1.component').then(m => m.PageHome1Component), data: { title: 'DevSense - Software Development Agency' } },
-  { path: 'home', loadComponent: () => import('./pages/home/page-home1/page-home1.component').then(m => m.PageHome1Component) },
-  { path: 'index', loadComponent: () => import('./pages/home/page-home1/page-home1.component').then(m => m.PageHome1Component) },
+  { path: '', loadComponent: () => import('./pages/home/page-home2/page-home2.component').then(m => m.PageHome2Component), data: { title: 'DevSense - Software Development Agency' } },
+  { path: 'home', loadComponent: () => import('./pages/home/page-home2/page-home2.component').then(m => m.PageHome2Component) },
+  { path: 'index', loadComponent: () => import('./pages/home/page-home2/page-home2.component').then(m => m.PageHome2Component) },
   { path: 'index2', loadComponent: () => import('./pages/home/page-home2/page-home2.component').then(m => m.PageHome2Component) },
   { path: 'home2', loadComponent: () => import('./pages/home/page-home2/page-home2.component').then(m => m.PageHome2Component) },
 

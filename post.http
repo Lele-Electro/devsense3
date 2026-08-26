@@ -1,0 +1,100 @@
+# Requires the VS Code REST Client extension. Keep credentials in a local .env file.
+# WP_API_URL must be the REST API root, for example: https://example.com/wp-json/wp/v2
+@apiUrl = {{$dotenv WP_API_URL}}
+@wpUsername = {{$dotenv WP_USERNAME}}
+@wpAppPassword = {{$dotenv WP_APP_PASSWORD}}
+@auth = Basic {{wpUsername}}:{{wpAppPassword}}
+
+# Set these after creating or locating the resources to edit.
+@postId = 1
+@categoryId = 1
+
+### Verify credentials and API access
+GET {{apiUrl}}/users/me?context=edit
+Authorization: {{auth}}
+Accept: application/json
+
+### List posts, including drafts and private posts visible to this user
+GET {{apiUrl}}/posts?context=edit&per_page=20&page=1&orderby=date&order=desc
+Authorization: {{auth}}
+Accept: application/json
+
+### Get one post for editing
+GET {{apiUrl}}/posts/{{postId}}?context=edit
+Authorization: {{auth}}
+Accept: application/json
+
+### Create a draft post
+# Replace the title, content, excerpt, categories, and featured_media values with extracted document data.
+POST {{apiUrl}}/posts
+Authorization: {{auth}}
+Content-Type: application/json
+Accept: application/json
+
+{
+  "title": "Draft post title",
+  "content": "<p>Draft content extracted from a source document.</p>",
+  "excerpt": "A concise summary for listings and search results.",
+  "status": "draft",
+  "categories": [{{categoryId}}],
+  "featured_media": 0
+}
+
+### Update a post
+POST {{apiUrl}}/posts/{{postId}}
+Authorization: {{auth}}
+Content-Type: application/json
+Accept: application/json
+
+{
+  "title": "Updated post title",
+  "content": "<p>Updated content.</p>",
+  "excerpt": "Updated excerpt.",
+  "status": "draft"
+}
+
+### Publish a post
+POST {{apiUrl}}/posts/{{postId}}
+Authorization: {{auth}}
+Content-Type: application/json
+Accept: application/json
+
+{
+  "status": "publish"
+}
+
+### Move a post to the WordPress trash (recoverable)
+DELETE {{apiUrl}}/posts/{{postId}}
+Authorization: {{auth}}
+Accept: application/json
+
+### Permanently delete a trashed post (irreversible)
+DELETE {{apiUrl}}/posts/{{postId}}?force=true
+Authorization: {{auth}}
+Accept: application/json
+
+### List categories to find IDs for post payloads
+GET {{apiUrl}}/categories?context=edit&per_page=100&orderby=name&order=asc
+Authorization: {{auth}}
+Accept: application/json
+
+### Create a category
+POST {{apiUrl}}/categories
+Authorization: {{auth}}
+Content-Type: application/json
+Accept: application/json
+
+{
+  "name": "New category",
+  "description": ""
+}
+
+### Upload a featured image or document asset
+# Replace the file path and MIME type. Run this request before assigning its returned id to featured_media.
+POST {{apiUrl}}/media
+Authorization: {{auth}}
+Content-Disposition: attachment; filename="source-image.jpg"
+Content-Type: image/jpeg
+Accept: application/json
+
+< ./path/to/source-image.jpg

@@ -6,14 +6,14 @@ import { SectionAwardsComponent } from '../../../sections/about/company/section-
 import { SectionDesignComponent } from '../../../sections/about/company/section-design/section-design.component';
 import { SectionAboutUsComponent } from '../../../sections/about/company/section-about-us/section-about-us.component';
 import { BannerComponent } from '../../../sections/banner/banner.component';
-import { Header1Component } from '../../../sections/header/header1/header1.component';
+import { Header2Component } from '../../../sections/header/header2/header2.component';
 import { WordpressService } from '../../../services/wordpress.service';
 
 @Component({
   selector: 'app-page-about-company',
   templateUrl: './page-about-company.component.html',
   styleUrls: ['./page-about-company.component.scss'],
-  imports: [Header1Component, BannerComponent, SectionAboutUsComponent, SectionDesignComponent, SectionAwardsComponent, SectionExperienceComponent, SectionTestimonials2Component, Footer1Component]
+  imports: [Header2Component, BannerComponent, SectionAboutUsComponent, SectionDesignComponent, SectionAwardsComponent, SectionExperienceComponent, SectionTestimonials2Component, Footer1Component]
 })
 export class PageAboutCompanyComponent implements OnInit {
   protected readonly wpService = inject(WordpressService);

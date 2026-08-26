@@ -4,13 +4,13 @@ import { SectionBlogSidebarComponent } from '../../../sections/blogs/section-blo
 import { SectionBlogCommentsComponent } from '../../../sections/blogs/section-blog-comments/section-blog-comments.component';
 import { SectionBlogAreaComponent } from '../../../sections/blogs/section-blog-area/section-blog-area.component';
 import { BannerComponent } from '../../../sections/banner/banner.component';
-import { Header1Component } from '../../../sections/header/header1/header1.component';
+import { Header2Component } from '../../../sections/header/header2/header2.component';
 
 @Component({
     selector: 'app-page-blog-with-sidebar',
     templateUrl: './page-blog-with-sidebar.component.html',
     styleUrls: ['./page-blog-with-sidebar.component.scss'],
-    imports: [Header1Component, BannerComponent, SectionBlogAreaComponent, SectionBlogCommentsComponent, SectionBlogSidebarComponent, Footer1Component]
+    imports: [Header2Component, BannerComponent, SectionBlogAreaComponent, SectionBlogCommentsComponent, SectionBlogSidebarComponent, Footer1Component]
 })
 export class PageBlogWithSidebarComponent implements OnInit {
 

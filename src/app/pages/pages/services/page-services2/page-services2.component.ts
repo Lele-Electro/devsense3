@@ -4,13 +4,13 @@ import { SectionCounter2Component } from '../../../../sections/services/section-
 import { SectionAwards1Component } from '../../../../sections/home/home2/section-awards1/section-awards1.component';
 import { SectionOurServices1Component } from '../../../../sections/home/home2/section-our-services1/section-our-services1.component';
 import { BannerComponent } from '../../../../sections/banner/banner.component';
-import { Header1Component } from '../../../../sections/header/header1/header1.component';
+import { Header2Component } from '../../../../sections/header/header2/header2.component';
 
 @Component({
     selector: 'app-page-services2',
     templateUrl: './page-services2.component.html',
     styleUrls: ['./page-services2.component.scss'],
-    imports: [Header1Component, BannerComponent, SectionOurServices1Component, SectionAwards1Component, SectionCounter2Component, Footer1Component]
+    imports: [Header2Component, BannerComponent, SectionOurServices1Component, SectionAwards1Component, SectionCounter2Component, Footer1Component]
 })
 export class PageServices2Component implements OnInit {
 

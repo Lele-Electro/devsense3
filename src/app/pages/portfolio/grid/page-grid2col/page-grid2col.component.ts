@@ -2,14 +2,14 @@ import { Component, inject, OnInit } from '@angular/core';
 import { Footer1Component } from '../../../../sections/footer/footer1/footer1.component';
 import { RouterLink } from '@angular/router';
 import { BannerComponent } from '../../../../sections/banner/banner.component';
-import { Header1Component } from '../../../../sections/header/header1/header1.component';
+import { Header2Component } from '../../../../sections/header/header2/header2.component';
 import { WordpressService } from 'src/app/services/wordpress.service';
 
 @Component({
   selector: 'app-page-grid2col',
   templateUrl: './page-grid2col.component.html',
   styleUrls: ['./page-grid2col.component.scss'],
-  imports: [Header1Component, BannerComponent, RouterLink, Footer1Component]
+  imports: [Header2Component, BannerComponent, RouterLink, Footer1Component]
 })
 export class PageGrid2colComponent implements OnInit {
   wpService = inject(WordpressService);

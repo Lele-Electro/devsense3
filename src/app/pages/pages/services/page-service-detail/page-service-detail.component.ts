@@ -3,13 +3,13 @@ import { Footer1Component } from '../../../../sections/footer/footer1/footer1.co
 import { SectionServicesSidebarComponent } from '../../../../sections/services/section-services-sidebar/section-services-sidebar.component';
 import { SectionServiceDetailAreaComponent } from '../../../../sections/services/section-service-detail-area/section-service-detail-area.component';
 import { BannerComponent } from '../../../../sections/banner/banner.component';
-import { Header1Component } from '../../../../sections/header/header1/header1.component';
+import { Header2Component } from '../../../../sections/header/header2/header2.component';
 
 @Component({
     selector: 'app-page-service-detail',
     templateUrl: './page-service-detail.component.html',
     styleUrls: ['./page-service-detail.component.scss'],
-    imports: [Header1Component, BannerComponent, SectionServiceDetailAreaComponent, SectionServicesSidebarComponent, Footer1Component]
+    imports: [Header2Component, BannerComponent, SectionServiceDetailAreaComponent, SectionServicesSidebarComponent, Footer1Component]
 })
 export class PageServiceDetailComponent implements OnInit {
 

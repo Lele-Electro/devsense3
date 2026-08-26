@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Content to WordPress Workflow</title>
+  <style>
+    :root {
+      --ink: #17324d;
+      --muted: #5d7082;
+      --paper: #f5f7f8;
+      --panel: #ffffff;
+      --line: #bed0d8;
+      --teal: #007c7a;
+      --teal-soft: #d9f0ec;
+      --orange: #c95e24;
+      --orange-soft: #fce7da;
+      --gold: #ad7600;
+      --gold-soft: #fff1c7;
+      --green: #237449;
+      --green-soft: #daf1e0;
+      --shadow: 0 12px 32px rgb(34 60 80 / 10%);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-width: 320px;
+      color: var(--ink);
+      background:
+        linear-gradient(90deg, rgb(23 50 77 / 4%) 1px, transparent 1px),
+        linear-gradient(rgb(23 50 77 / 4%) 1px, transparent 1px),
+        var(--paper);
+      background-size: 28px 28px;
+      font-family: Georgia, "Times New Roman", serif;
+    }
+
+    .page {
+      width: min(1440px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 54px 0 72px;
+    }
+
+    header { max-width: 830px; margin-bottom: 44px; }
+
+    .eyebrow {
+      margin: 0 0 12px;
+      color: var(--teal);
+      font-family: "Trebuchet MS", sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    h1 { margin: 0; font-size: clamp(34px, 5vw, 64px); font-weight: 500; line-height: 1.02; }
+    .intro { max-width: 700px; margin: 18px 0 0; color: var(--muted); font: 18px/1.55 "Trebuchet MS", sans-serif; }
+
+    .diagram {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(185px, 1fr));
+      gap: 20px;
+      align-items: start;
+      overflow-x: auto;
+      padding: 4px 4px 24px;
+    }
+
+    .stage { min-width: 185px; position: relative; }
+    .stage:not(:last-child)::after {
+      position: absolute;
+      z-index: 2;
+      top: 111px;
+      right: -17px;
+      width: 14px;
+      height: 14px;
+      border-top: 2px solid var(--teal);
+      border-right: 2px solid var(--teal);
+      content: "";
+      transform: rotate(45deg);
+    }
+
+    .stage-label { margin: 0 0 10px; color: var(--muted); font: 700 11px/1.2 "Trebuchet MS", sans-serif; letter-spacing: .11em; text-transform: uppercase; }
+    .node { min-height: 165px; padding: 21px 18px; border: 1px solid var(--line); border-top: 5px solid var(--teal); border-radius: 6px; background: var(--panel); box-shadow: var(--shadow); }
+    .node.prompt { border-top-color: var(--orange); background: var(--orange-soft); }
+    .node.http { border-top-color: var(--gold); background: var(--gold-soft); }
+    .node.cms { border-top-color: var(--green); background: var(--green-soft); }
+    .node h2 { margin: 0; font-size: 22px; font-weight: 500; line-height: 1.1; }
+    .node p { margin: 12px 0 0; color: var(--muted); font: 14px/1.45 "Trebuchet MS", sans-serif; }
+
+    .detail-grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: 24px; margin-top: 18px; }
+    .panel { border: 1px solid var(--line); border-radius: 6px; background: var(--panel); box-shadow: var(--shadow); }
+    .panel h2 { margin: 0; padding: 18px 20px; border-bottom: 1px solid var(--line); font-size: 20px; font-weight: 500; }
+
+    .touchpoints { display: grid; gap: 0; }
+    .touchpoint { display: grid; grid-template-columns: 40px 1fr; gap: 12px; padding: 15px 20px; border-bottom: 1px solid #e0e8eb; }
+    .touchpoint:last-child { border-bottom: 0; }
+    .number { display: grid; width: 28px; height: 28px; place-items: center; border-radius: 50%; background: var(--teal-soft); color: var(--teal); font: 700 13px "Trebuchet MS", sans-serif; }
+    .touchpoint strong { font: 700 14px "Trebuchet MS", sans-serif; }
+    .touchpoint span { display: block; margin-top: 4px; color: var(--muted); font: 13px/1.4 "Trebuchet MS", sans-serif; }
+
+    .request-list { padding: 8px 20px 18px; }
+    .request { padding: 13px 0; border-bottom: 1px solid #e0e8eb; }
+    .request:last-child { border-bottom: 0; }
+    code { color: #7e3e00; font: 700 12px/1.35 Consolas, monospace; }
+    .request span { display: block; margin-top: 4px; color: var(--muted); font: 13px/1.4 "Trebuchet MS", sans-serif; }
+
+    .handoff { margin-top: 24px; padding: 22px 24px; border-left: 5px solid var(--orange); background: #fff8f3; font: 15px/1.55 "Trebuchet MS", sans-serif; }
+    .handoff strong { color: var(--orange); }
+
+    @media (max-width: 900px) {
+      .diagram { grid-template-columns: repeat(5, 210px); }
+      .detail-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 600px) {
+      .page { width: min(100% - 28px, 1440px); padding-top: 34px; }
+      .intro { font-size: 16px; }
+      .diagram { margin-right: -14px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header>
+      <p class="eyebrow">Editorial publishing workflow</p>
+      <h1>HTML/PDF content to WordPress</h1>
+      <p class="intro">A human-reviewed prompt prepares document content, then <code>post.http</code> carries the approved data into the WordPress REST API.</p>
+    </header>
+
+    <section class="diagram" aria-label="Content publishing flow">
+      <article class="stage">
+        <p class="stage-label">1. Source</p>
+        <div class="node"><h2>HTML or PDF</h2><p>Original document, images, headings, links, and metadata.</p></div>
+      </article>
+      <article class="stage">
+        <p class="stage-label">2. Extract</p>
+        <div class="node"><h2>Readable content</h2><p>Convert the source into clean text, image files, and document context.</p></div>
+      </article>
+      <article class="stage">
+        <p class="stage-label">3. Prompt</p>
+        <div class="node prompt"><h2>Prepare content</h2><p>Generate a title, WordPress-safe HTML, excerpt, category recommendation, and media selection.</p></div>
+      </article>
+      <article class="stage">
+        <p class="stage-label">4. API handoff</p>
+        <div class="node http"><h2><code>post.http</code></h2><p>Map approved fields to authenticated REST API requests and create a draft.</p></div>
+      </article>
+      <article class="stage">
+        <p class="stage-label">5. CMS</p>
+        <div class="node cms"><h2>WordPress</h2><p>Review the stored draft, revise if needed, and publish when editorial approval is complete.</p></div>
+      </article>
+    </section>
+
+    <div class="detail-grid">
+      <section class="panel">
+        <h2>Prompt-to-payload touchpoints</h2>
+        <div class="touchpoints">
+          <div class="touchpoint"><div class="number">1</div><div><strong>Extract source material</strong><span>Preserve the readable text, images, attribution, and source metadata.</span></div></div>
+          <div class="touchpoint"><div class="number">2</div><div><strong>Prepare and review prompt output</strong><span>Approve the title, HTML body, excerpt, taxonomy recommendation, and media before it reaches the CMS.</span></div></div>
+          <div class="touchpoint"><div class="number">3</div><div><strong>Map values into the draft payload</strong><span>Use the approved values as <code>title</code>, <code>content</code>, <code>excerpt</code>, <code>categories</code>, and <code>featured_media</code>.</span></div></div>
+          <div class="touchpoint"><div class="number">4</div><div><strong>Publish only after CMS review</strong><span>The initial API request uses <code>status: draft</code>; publishing is a separate approved action.</span></div></div>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2><code>post.http</code> request sequence</h2>
+        <div class="request-list">
+          <div class="request"><code>GET /users/me?context=edit</code><span>Verify credentials and author permissions from the local <code>.env</code> file.</span></div>
+          <div class="request"><code>GET /categories?context=edit</code><span>Find the category ID, or <code>POST /categories</code> to create it.</span></div>
+          <div class="request"><code>POST /media</code><span>Upload an optional image or source asset and retain the returned media ID.</span></div>
+          <div class="request"><code>POST /posts</code><span>Create the reviewed content as a WordPress draft.</span></div>
+          <div class="request"><code>POST /posts/{postId}</code><span>Update editorial changes, then send <code>status: publish</code> when approved.</span></div>
+        </div>
+      </section>
+    </div>
+
+    <aside class="handoff"><strong>Key handoff:</strong> the approved prompt output becomes the JSON body in <code>POST /posts</code>. The WordPress API receives a draft first; CMS review controls publication.</aside>
+  </main>
+</body>
+</html>

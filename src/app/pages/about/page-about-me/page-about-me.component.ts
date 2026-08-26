@@ -6,13 +6,13 @@ import { SectionWhatWeDo1Component } from '../../../sections/home/home2/section-
 import { SectionProjects2Component } from '../../../sections/about/me/section-projects2/section-projects2.component';
 import { SectionAboutCompany2Component } from '../../../sections/home/home2/section-about-company2/section-about-company2.component';
 import { BannerComponent } from '../../../sections/banner/banner.component';
-import { Header1Component } from '../../../sections/header/header1/header1.component';
+import { Header2Component } from '../../../sections/header/header2/header2.component';
 
 @Component({
   selector: 'app-page-about-me',
   templateUrl: './page-about-me.component.html',
   styleUrls: ['./page-about-me.component.scss'],
-  imports: [Header1Component, BannerComponent, SectionAboutCompany2Component, SectionProjects2Component, SectionWhatWeDo1Component, SectionCounter1Component, SectionOurTeam1Component, Footer1Component]
+  imports: [Header2Component, BannerComponent, SectionAboutCompany2Component, SectionProjects2Component, SectionWhatWeDo1Component, SectionCounter1Component, SectionOurTeam1Component, Footer1Component]
 })
 export class PageAboutMeComponent implements OnInit {
 

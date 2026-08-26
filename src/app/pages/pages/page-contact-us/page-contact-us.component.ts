@@ -4,14 +4,14 @@ import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angula
 import { finalize } from 'rxjs/operators';
 import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
 import { SearchCountryField, CountryISO, PhoneNumberFormat } from 'ngx-intl-tel-input';
-import { Footer1Component, Header1Component, BannerComponent } from '@devsense/sections';
+import { Footer1Component, Header2Component, BannerComponent } from '@devsense/sections';
 import { ContactService, ContactResponse } from '@devsense/services';
 
 @Component({
     selector: 'app-page-contact-us',
     templateUrl: './page-contact-us.component.html',
     styleUrls: ['./page-contact-us.component.scss'],
-    imports: [CommonModule, ReactiveFormsModule, NgxIntlTelInputModule, Header1Component, BannerComponent, Footer1Component]
+    imports: [CommonModule, ReactiveFormsModule, NgxIntlTelInputModule, Header2Component, BannerComponent, Footer1Component]
 })
 export class PageContactUsComponent implements OnInit {
 
