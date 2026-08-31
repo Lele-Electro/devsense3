@@ -6,7 +6,6 @@ import { WordpressService } from './services/wordpress.service';
 import { WPPost } from './interfaces/wordpress';
 import { DEFAULT_PORTFOLIO_PROJECTS, PortfolioProjects, WebsiteContent, PortfolioCategory2 } from './interfaces/website-content';
 import { HelperService } from './services/helper.service';
-import { catchError, concatMap, forkJoin, map, of } from 'rxjs';
 import { LoaderComponent } from './elements/loader/loader.component';
 
 
@@ -33,19 +32,10 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   constructor() { }
   ngOnInit(): void {
-    this.wpService.getAllPosts().pipe(
-      concatMap((posts: WPPost[]) => {
-        const enriched$ = posts.map(post =>
-          post.featured_media
-            ? this.wpService.getMedia(post.featured_media).pipe(
-              map(url => { post.imageUrl = url ?? undefined; return post; }),
-              catchError(() => { post.imageUrl = undefined; return of(post); })
-            )
-            : of(post)
-        );
-        return enriched$.length ? forkJoin(enriched$) : of([]);
-      })
-    ).subscribe(posts => {
+    this.wpService.getAllPosts().subscribe(posts => {
+      posts.forEach(post => {
+        post.imageUrl = post.featured_media_src_url ?? undefined;
+      });
       this.wpService.uncategorizedPosts.set(posts);
 
 

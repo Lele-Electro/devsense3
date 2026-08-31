@@ -1,4 +1,4 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Footer1Component } from '../../../sections/footer/footer1/footer1.component';
 import { SectionTestimonials2Component } from '../../../sections/home/home2/section-testimonials2/section-testimonials2.component';
 import { SectionExperienceComponent } from '../../../sections/about/company/section-experience/section-experience.component';
@@ -15,16 +15,11 @@ import { WordpressService } from '../../../services/wordpress.service';
   styleUrls: ['./page-about-company.component.scss'],
   imports: [Header2Component, BannerComponent, SectionAboutUsComponent, SectionDesignComponent, SectionAwardsComponent, SectionExperienceComponent, SectionTestimonials2Component, Footer1Component]
 })
-export class PageAboutCompanyComponent implements OnInit {
+export class PageAboutCompanyComponent {
   protected readonly wpService = inject(WordpressService);
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
   banner = {
-    background: "assets/images/banner/1.jpg",
+    background: "https://devsense.co.za/wp3/wp-content/uploads/2026/08/devsense-team-office-768x576.png",
     title: "About Company",
     currentPage: "About Company",
     description: "The essence of interior design will always be about people and how they live. It is about the realities of what makes for an attractive, civilized."

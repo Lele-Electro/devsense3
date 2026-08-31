@@ -1,7 +1,8 @@
 import { DOCUMENT, isPlatformBrowser } from '@angular/common';
-import { AfterViewInit, Component, OnDestroy, PLATFORM_ID, inject, input } from '@angular/core';
+import { AfterViewInit, Component, OnDestroy, PLATFORM_ID, effect, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { WordpressService } from 'src/app/services/wordpress.service';
+import { HelperService } from 'src/app/services/helper.service';
 
 declare const sx_home_bnr_2: () => void;
 
@@ -13,13 +14,49 @@ declare const sx_home_bnr_2: () => void;
 })
 export class SectionSlider2Component implements AfterViewInit, OnDestroy {
   wpService = inject(WordpressService);
+  private helperService = inject(HelperService);
   private platformId = inject(PLATFORM_ID);
   private document = inject(DOCUMENT);
   private sliderReinitTimer: ReturnType<typeof setTimeout> | null = null;
 
-  readonly data = input<any>();
+  hero = {
+    badge: '',
+    title: '',
+    description: '',
+    cta: '',
+  };
+  secondaryHero = {
+    badge: '',
+    title: '',
+    description: '',
+    cta: '',
+  };
 
-  constructor() { }
+  private readonly heroEffect = effect(() => {
+    const posts = this.wpService.uncategorizedPosts();
+    const heroPost = posts.find(post => post.slug === 'home-hero');
+    const secondaryHeroPost = posts.find(post => post.slug === 'home-hero-ai');
+
+    if (!heroPost) {
+      return;
+    }
+
+    this.hero = {
+      badge: this.helperService.getParagraphText(heroPost.content.rendered, 0),
+      title: heroPost.title.rendered,
+      description: this.helperService.getFirstSentence(heroPost.excerpt.rendered),
+      cta: this.helperService.getParagraphText(heroPost.content.rendered, 1),
+    };
+
+    if (secondaryHeroPost) {
+      this.secondaryHero = {
+        badge: this.helperService.getParagraphText(secondaryHeroPost.content.rendered, 0),
+        title: secondaryHeroPost.title.rendered,
+        description: this.helperService.getFirstSentence(secondaryHeroPost.excerpt.rendered),
+        cta: this.helperService.getParagraphText(secondaryHeroPost.content.rendered, 1),
+      };
+    }
+  });
 
   ngAfterViewInit(): void {
     if (!isPlatformBrowser(this.platformId)) {
@@ -45,6 +82,14 @@ export class SectionSlider2Component implements AfterViewInit, OnDestroy {
     this.playVideo(video);
   }
 
+  onVideoPaused(event: Event): void {
+    const video = event.target as HTMLVideoElement | null;
+
+    if (video?.isConnected && !video.ended) {
+      this.playVideo(video);
+    }
+  }
+
   private initializeSliderAndVideoPlayback(retriesLeft = 12): void {
     this.sliderReinitTimer = setTimeout(() => {
       const sliderContainer = this.document.querySelector('.home-2-slider') as any;
@@ -57,8 +102,10 @@ export class SectionSlider2Component implements AfterViewInit, OnDestroy {
       }
 
       this.reinitializeHomeTwoSwiper();
-      this.attachVideoHandlers(sliderContainer);
-      this.playActiveSlideVideo(sliderContainer);
+      const video = sliderContainer.querySelector(':scope > .banner-video') as HTMLVideoElement | null;
+      if (video) {
+        this.playVideo(video);
+      }
     }, 300);
   }
 
@@ -72,43 +119,6 @@ export class SectionSlider2Component implements AfterViewInit, OnDestroy {
     if (typeof sx_home_bnr_2 === 'function') {
       sx_home_bnr_2();
     }
-  }
-
-  private attachVideoHandlers(sliderContainer: any): void {
-    const swiper = sliderContainer?.swiper;
-
-    if (!swiper || sliderContainer.dataset.videoHandlersAttached === 'true') {
-      return;
-    }
-
-    swiper.on('slideChangeTransitionStart', () => {
-      this.pauseAllVideos(sliderContainer);
-    });
-
-    swiper.on('slideChangeTransitionEnd', () => {
-      this.playActiveSlideVideo(sliderContainer);
-    });
-
-    sliderContainer.dataset.videoHandlersAttached = 'true';
-  }
-
-  private playActiveSlideVideo(sliderContainer: Element): void {
-    const activeSlide = sliderContainer.querySelector('.swiper-slide-active') as HTMLElement | null;
-    const activeVideo = activeSlide?.querySelector('video') as HTMLVideoElement | null;
-
-    if (!activeVideo) {
-      return;
-    }
-
-    this.playVideo(activeVideo);
-  }
-
-  private pauseAllVideos(sliderContainer: Element): void {
-    const videos = sliderContainer.querySelectorAll('video');
-    videos.forEach((videoElement) => {
-      const video = videoElement as HTMLVideoElement;
-      video.pause();
-    });
   }
 
   private playVideo(video: HTMLVideoElement): void {

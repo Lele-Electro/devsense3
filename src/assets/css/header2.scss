@@ -1,4 +1,4 @@
-@use '../variables' as *;
+@use 'variables' as *;
 /*======================================
 HEADER (top part of page)
 ======================================*/
@@ -431,6 +431,7 @@ HEADER (top part of page)
 @media only screen and (max-width: 480px) {
 	.header-style2 .main-bar {	padding-left: 0px;	padding-right: 0px;	}
 	.header-style2 .logo-header {width: 100px;}
+	.header-style2 .logo-header-inner img {max-width: 150px;}
 	.header-style2 .header-style2 .navbar-toggler {margin-left: 5px;}
 	.header-style2 .extra-nav .extra-cell {margin-left: 0px;padding-left:10px;}
 }

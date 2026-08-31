@@ -1,59 +1,72 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, effect, inject, signal } from '@angular/core';
+import { ActivatedRoute, RouterLink } from '@angular/router';
+import { toSignal } from '@angular/core/rxjs-interop';
+import { distinctUntilChanged, map } from 'rxjs';
 import { Footer1Component } from '../../../../sections/footer/footer1/footer1.component';
-import { SectionServicesSidebarComponent } from '../../../../sections/services/section-services-sidebar/section-services-sidebar.component';
 import { SectionServiceDetailAreaComponent } from '../../../../sections/services/section-service-detail-area/section-service-detail-area.component';
 import { BannerComponent } from '../../../../sections/banner/banner.component';
 import { Header2Component } from '../../../../sections/header/header2/header2.component';
+import { WPPost } from '../../../../interfaces/wordpress';
+import { WordpressService } from '../../../../services/wordpress.service';
 
 @Component({
-    selector: 'app-page-service-detail',
-    templateUrl: './page-service-detail.component.html',
-    styleUrls: ['./page-service-detail.component.scss'],
-    imports: [Header2Component, BannerComponent, SectionServiceDetailAreaComponent, SectionServicesSidebarComponent, Footer1Component]
+  selector: 'app-page-service-detail',
+  templateUrl: './page-service-detail.component.html',
+  styleUrls: ['./page-service-detail.component.scss'],
+  imports: [Header2Component, BannerComponent, SectionServiceDetailAreaComponent, RouterLink, Footer1Component]
 })
-export class PageServiceDetailComponent implements OnInit {
+export class PageServiceDetailComponent {
+  private readonly route = inject(ActivatedRoute);
+  private readonly wordpress = inject(WordpressService);
+  private readonly slug = toSignal(
+    this.route.paramMap.pipe(
+      map(params => params.get('slug') ?? ''),
+      distinctUntilChanged()
+    ),
+    { initialValue: '' }
+  );
 
-  constructor() { }
+  readonly service = signal<WPPost | null>(null);
+  readonly detail = signal<WPPost | null>(null);
+  readonly isLoading = signal(true);
 
-  ngOnInit(): void {
-  }
-
-  banner = {
+  readonly banner = signal({
     background: "assets/images/banner/1.jpg",
     title: "Service Details",
-    currentPage: "Service detail",
-    description: "The essence of interior design will always be about people and how they live. It is about the realities of what makes for an attractive, civilized."
-  }
+    currentPage: "Services",
+    description: ""
+  });
 
-  service = {
-    image: "assets/images/gallery/6.jpg",
-    title: "We will help you to ideate, design and implement your product from conception to iterative.",
-    description: "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p><p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi.</p>",
-    otherskills: {
-      title: "Unlimited skills for super projects.",
-      skills: [
-        "We provide free initial consultation and support.",
-        "We work with some of the most successful businesses.",
-        "We have the professional designers team."
-      ]
-    }
-  }
+  private readonly serviceDetailEffect = effect(() => {
+    const slug = this.slug();
+    const posts = this.wordpress.uncategorizedPosts();
 
-  sidebar = {
-    offer: {
-      title: "GET 10% OFF TODAY",
-      description: "A Completely Safe and Advanced Cleaning Solution for both Petrol and Diesel Engines"
-    },
-    plan: {
-      type: "Pro Plan",
-      price: "$39",
-      tenure: "Month",
-      features: [
-        "SEO Optimization",
-        "Professional Support",
-        "Software Updating",
-        "Lifetime Features"
-      ]
+    if (!slug || !posts.length) {
+      this.isLoading.set(true);
+      return;
     }
-  }
+
+    const service = posts.find(post => post.slug === slug) ?? null;
+    const detailPost = service?.acf?.detail_post;
+    const detailPostId = typeof detailPost === 'number' ? detailPost : detailPost?.id;
+    const cachedDetail = posts.find(post => detailPostId
+      ? post.id === detailPostId
+      : post.slug === `${slug}-detail`);
+    const detail = cachedDetail
+      ?? (detailPost && typeof detailPost !== 'number' && detailPost.content ? detailPost : null);
+
+    this.service.set(service);
+    this.detail.set(detail);
+
+    if (service && detail) {
+      this.banner.set({
+        background: detail.featured_media_src_url ?? "assets/images/banner/1.jpg",
+        title: service.title.rendered,
+        currentPage: service.title.rendered,
+        description: service.excerpt.rendered
+      });
+    }
+
+    this.isLoading.set(false);
+  });
 }

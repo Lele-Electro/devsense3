@@ -7,10 +7,10 @@ import { BannerComponent } from '../../../../sections/banner/banner.component';
 import { Header2Component } from '../../../../sections/header/header2/header2.component';
 
 @Component({
-    selector: 'app-page-services2',
-    templateUrl: './page-services2.component.html',
-    styleUrls: ['./page-services2.component.scss'],
-    imports: [Header2Component, BannerComponent, SectionOurServices1Component, SectionAwards1Component, SectionCounter2Component, Footer1Component]
+  selector: 'app-page-services2',
+  templateUrl: './page-services2.component.html',
+  styleUrls: ['./page-services2.component.scss'],
+  imports: [Header2Component, BannerComponent, SectionOurServices1Component, SectionAwards1Component, SectionCounter2Component, Footer1Component]
 })
 export class PageServices2Component implements OnInit {
 
@@ -20,8 +20,8 @@ export class PageServices2Component implements OnInit {
   }
 
   banner = {
-    background: "assets/images/banner/1.jpg",
-    title: "Service Style Two",
+    background: "assets/images/banner/services-banner.png",
+    title: "Our Services",
     currentPage: "Service 2",
     description: "The essence of interior design will always be about people and how they live. It is about the realities of what makes for an attractive, civilized."
   }
@@ -45,7 +45,7 @@ export class PageServices2Component implements OnInit {
         image: "assets/images/services/service-2/port-3.jpg",
         title: "2D & 3D animation",
         description: "Project management is the process by which our team plans and executes your project. We will develop it..."
-      },{
+      }, {
         image: "assets/images/services/service-2/port-4.jpg",
         title: "Front & Back-end development",
         description: "Project management is the process by which our team plans and executes your project. We will develop it..."

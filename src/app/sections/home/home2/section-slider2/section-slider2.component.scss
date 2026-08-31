@@ -1,9 +1,21 @@
-    .sx-bnr-2-wrap {
+    .sx-bnr-2-description {
+        max-width: 700px;
+        margin: 20px 0 28px;
+        color: #fff;
+        font-size: clamp(16px, 1.5vw, 20px);
+        line-height: 1.6;
+    }
+
+    .sx-bnr-2-description ::ng-deep p {
+        margin: 0;
+    }
+
+    :host .home-2-slider {
         position: relative;
         overflow: hidden;
     }
-    
-    .sx-bnr-2-wrap .banner-video {
+
+    :host .home-2-slider > .banner-video {
         position: absolute;
         top: 50%;
         left: 50%;
@@ -15,9 +27,10 @@
         opacity: 1;
         transition: opacity 1.2s ease-in-out;
     }
-    
-    .sx-bnr-2-wrap .banner-video.loaded {
-        opacity: 1;
+
+    :host .home-2-slider > .swiper-wrapper {
+        position: relative;
+        z-index: 2;
     }
 
 
@@ -34,6 +47,7 @@ position: absolute;
   background-size: 6px 6px;
   background-position: 0 0, 3px 3px;
           z-index: 1;
+          pointer-events: none;
 }
 .sx-bnr-2-content-wrap,
 .sx-bnr-2-small-title,
@@ -51,4 +65,10 @@ position: absolute;
 .sx-bnr-images div {
     /* position: relative; */
     z-index: 2;
+}
+
+@media only screen and (max-width: 767px) {
+    .sld-bld-text-wrap .sld-bld-text {
+        font-size: 12px;
+    }
 }

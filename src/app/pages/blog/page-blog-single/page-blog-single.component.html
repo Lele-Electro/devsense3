@@ -1,45 +1,34 @@
-<div class="page-wraper"> 
-       	
-    <!-- HEADER START -->
-    <!-- <app-header1></app-header1> -->
-<app-header2></app-header2>
-    <!-- HEADER END -->
-    
-    <!-- CONTENT START -->
-    <div class="page-content">
-    
-        <!-- INNER PAGE BANNER -->
-        <app-banner [data]="banner"></app-banner>
-        <!-- INNER PAGE BANNER END -->
-        
-        <!-- SECTION CONTENT START -->
-        <div class="section-full p-t100 p-b70 mobile-page-padding">
-            <div class="container">
-                    <div class="blog-single-space max-w700 ml-auto mr-auto">
-                        <!-- BLOG START --> 
-                        <app-section-blog-area [blog]="blog" padding="0"></app-section-blog-area>  
-                    </div>
-            </div>
-        </div>
-        <!-- SECTION CONTENT END -->
+<div class="page-wraper">
+  <app-header2></app-header2>
 
-        <!-- SECTION CONTENT START -->
-        <div class="section-full p-t100 p-b100 mobile-page-padding sx-bg-light">
-            <div class="container">
-             
-                <div class="clear max-w700 ml-auto mr-auto comment-section-outer" id="comment-list">
-                    <app-section-blog-comments [data]="commentslist"></app-section-blog-comments>
-                </div>
-                   
+  <div class="page-content">
+    <app-banner [data]="banner"></app-banner>
+
+    <div class="section-full p-t100 p-b100 mobile-page-padding">
+      <div class="container">
+        <div class="blog-single-space max-w700 ml-auto mr-auto">
+          @if (isLoading) {
+            <p class="article-state">Loading insight...</p>
+          } @else if (post) {
+            <article class="wordpress-article">
+              <div class="article-meta">{{ publishedDate }} <span>Devsense</span></div>
+              @if (post.featured_media_src_url) {
+                <img class="article-image" [src]="post.featured_media_src_url" [alt]="post.title.rendered" width="1200" height="760" decoding="async">
+              }
+              <div class="article-content" [innerHTML]="post.content.rendered"></div>
+              <a routerLink="/blog" class="site-button-secondry btn-half outline">All insights <span class="sx-bg-primary"></span></a>
+            </article>
+          } @else {
+            <div class="article-state">
+              <h2>Insight unavailable</h2>
+              <p>This article could not be found.</p>
+              <a routerLink="/blog" class="site-button btn-half">View insights</a>
             </div>
+          }
         </div>
-        <!-- SECTION CONTENT END --> 
-        
+      </div>
     </div>
-    <!-- CONTENT END -->
-    
-    <!-- FOOTER START -->
-    <app-footer1></app-footer1>
-    <!-- FOOTER END -->
+  </div>
 
+  <app-footer1></app-footer1>
 </div>

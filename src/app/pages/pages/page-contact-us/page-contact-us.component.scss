@@ -1,3 +1,93 @@
+@use '../../../../assets/css/variables' as *;
+
+.gmap-outline {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba($cyber_grape, 0.18);
+}
+
+.contact-map {
+  width: 100%;
+  height: 460px;
+  background: #d2d4d6;
+}
+
+.map-directions {
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
+  z-index: 1000;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border: 0;
+  background: $verdigris;
+  color: #fff;
+  font-weight: 600;
+}
+
+.map-directions-icon {
+  position: relative;
+  z-index: 1;
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+
+.map-directions.btn-half span {
+  color: #fff;
+}
+
+:host ::ng-deep .leaflet-control-zoom {
+  border: 1px solid rgba($cyber_grape, 0.18);
+  box-shadow: none;
+}
+
+:host ::ng-deep .leaflet-control-zoom a:hover {
+  background-color: rgba($deep_champagne, 0.45);
+}
+
+:host ::ng-deep .leaflet-popup-content-wrapper {
+  border-top: 3px solid $chinese_pink;
+  border-radius: 0;
+  color: $cyber_grape;
+}
+
+:host ::ng-deep .contact-map-marker {
+  background: transparent;
+  border: 0;
+}
+
+:host ::ng-deep .contact-map-marker::before {
+  content: '';
+  position: absolute;
+  top: 1px;
+  left: 2px;
+  width: 26px;
+  height: 26px;
+  border-radius: 50% 50% 50% 0;
+  background: $chinese_pink;
+  box-shadow: 0 2px 5px rgba($cyber_grape, 0.28);
+  transform: rotate(-45deg);
+}
+
+:host ::ng-deep .contact-map-marker::after {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 9px;
+  width: 12px;
+  height: 12px;
+  border: 3px solid #fff;
+  border-radius: 50%;
+}
+
+.cons-contact-form2 .input-animate input,
+.cons-contact-form2 .input-animate textarea {
+  background: #f4f5f7;
+}
+
 .input.input-animate.input-phone {
   height: auto;
   min-height: 44px;
@@ -41,7 +131,7 @@
     top: 0;
     border: none !important;
     border-radius: 0 !important;
-    background: #fcf9f0 !important;
+    background: #f4f5f7 !important;
     width: calc(100% - 140px) !important;
     left: 140px !important;
     padding: 0 20px 0 92px !important;
@@ -50,6 +140,7 @@
     font-weight: 600;
     box-shadow: none !important;
     outline: none !important;
+    appearance: none;
     -webkit-appearance: none;
   }
 
@@ -146,6 +237,11 @@
 }
 
 @media only screen and (max-width: 480px) {
+  .map-directions {
+    top: 12px;
+    bottom: auto;
+  }
+
   .input.input-animate.input-phone {
     height: auto;
     margin-bottom: 10px;

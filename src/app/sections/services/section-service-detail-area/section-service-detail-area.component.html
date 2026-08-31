@@ -1,24 +1,24 @@
 <div class="section-content">
   <div class="service-single-block m-b30">
-    <div class="sx-media">
-      <img src="{{data().image}}" alt="">
-    </div>
+    @if (data().image) {
+      <div class="sx-media">
+        <img [src]="data().image" [alt]="data().title">
+      </div>
+    }
     <h3 class="m-t30 sx-tilte">{{data().title}} </h3>
 
     <div [innerHTML]="data().description"></div>
 
-    <h3 class="m-t30 sx-tilte">{{data().otherskills.title}}</h3>
-    <div class="single-service-list">
-
-      <ul class="list-angle-right anchor-line">
-        @for (object of data().otherskills.skills; track $index) {
-          <li>
-            {{object}}
-          </li>
-        }
-      </ul>
-
-    </div>
+    @if (data().otherskills?.skills?.length) {
+      <h3 class="m-t30 sx-tilte">{{data().otherskills.title}}</h3>
+      <div class="single-service-list">
+        <ul class="list-angle-right anchor-line">
+          @for (object of data().otherskills.skills; track $index) {
+            <li>{{object}}</li>
+          }
+        </ul>
+      </div>
+    }
 
   </div>
 </div>

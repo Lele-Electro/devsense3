@@ -1,4 +1,4 @@
-@use '../variables' as *;
+@use 'variables' as *;
 
 header-style1{padding: auto;}
 
@@ -38,7 +38,7 @@ HEADER (top part of page)
 }
 
 .header-style1 .logo-header-inner {display: table-cell;vertical-align: middle;height: 100%;}
-.header-style1 .logo-header-inner img {max-width: 300px;max-height: 100%;}
+.header-style1 .logo-header-inner img {max-width: 170px !important;max-height: 100%;}
 
 /*-------------------------------------
 	eamil-phone (left)
@@ -441,7 +441,6 @@ HEADER (top part of page)
 @media only screen and (max-width:540px){
 	.header-style1 .e-p-bx li:last-child{display: none;}
 	.header-style1.nav-transparent .top-bar .social-bx li a{width: 30px;}
-	.header-style1 .e-p-bx li{padding-right: 15px; font-size: 14px;}
 	.header-style1 .e-p-bx li:after {
 		display: none;
 	}

@@ -17,7 +17,8 @@ export const routes: Routes = [
   { path: 'services', loadComponent: () => import('./pages/pages/services/page-services1/page-services1.component').then(m => m.PageServices1Component) },
   { path: 'services/services1', loadComponent: () => import('./pages/pages/services/page-services1/page-services1.component').then(m => m.PageServices1Component) },
   { path: 'services/services2', loadComponent: () => import('./pages/pages/services/page-services2/page-services2.component').then(m => m.PageServices2Component) },
-  { path: 'services/detail', loadComponent: () => import('./pages/pages/services/page-service-detail/page-service-detail.component').then(m => m.PageServiceDetailComponent) },
+  { path: 'services/detail', pathMatch: 'full', redirectTo: 'services' },
+  { path: 'services/:slug', loadComponent: () => import('./pages/pages/services/page-service-detail/page-service-detail.component').then(m => m.PageServiceDetailComponent) },
 
   // Team routes
   { path: 'team', loadComponent: () => import('./pages/pages/team/page-team1/page-team1.component').then(m => m.PageTeam1Component) },
@@ -73,8 +74,9 @@ export const routes: Routes = [
   { path: 'blog/listing', loadComponent: () => import('./pages/blog/page-blog-listing/page-blog-listing.component').then(m => m.PageBlogListingComponent) },
   { path: 'blog/listing2', loadComponent: () => import('./pages/blog/page-blog-listing2/page-blog-listing2.component').then(m => m.PageBlogListing2Component) },
   { path: 'blog/masonry', loadComponent: () => import('./pages/blog/page-blog-masonry/page-blog-masonry.component').then(m => m.PageBlogMasonryComponent) },
-  { path: 'blog/single', loadComponent: () => import('./pages/blog/page-blog-single/page-blog-single.component').then(m => m.PageBlogSingleComponent) },
+  { path: 'blog/single', pathMatch: 'full', redirectTo: 'blog' },
   { path: 'blog/blog-with-sidebar', loadComponent: () => import('./pages/blog/page-blog-with-sidebar/page-blog-with-sidebar.component').then(m => m.PageBlogWithSidebarComponent) },
+  { path: 'blog/:slug', loadComponent: () => import('./pages/blog/page-blog-single/page-blog-single.component').then(m => m.PageBlogSingleComponent) },
 
   // Error/404 routes
   { path: '404', loadComponent: () => import('./pages/pages/page-error404/page-error404.component').then(m => m.PageError404Component) },

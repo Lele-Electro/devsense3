@@ -9,6 +9,52 @@
 @postId = 1
 @categoryId = 1
 
+### Create the Homepage category
+POST {{apiUrl}}/categories
+Authorization: {{auth}}
+Content-Type: application/json
+Accept: application/json
+
+{
+  "name": "Homepage",
+  "slug": "homepage",
+  "description": "Content used by visible sections of the active Devsense homepage."
+}
+
+### Create homepage hero
+# Set categoryId to the Homepage category returned above before running.
+POST {{apiUrl}}/posts
+Authorization: {{auth}}
+Content-Type: application/json
+Accept: application/json
+
+{
+  "title": "Software for the systems your business cannot afford to lose.",
+  "slug": "home-hero",
+  "content": "<p>Now live - Devsense AI &amp; Tech-BPO</p><p>Book a discovery call</p>",
+  "excerpt": "A Pretoria engineering partner for financial services, retail and the public sector. We design, build and run the platforms your operations depend on - then keep them intelligent and staffed through our AI and Tech-BPO divisions.",
+  "status": "publish",
+  "categories": [{{categoryId}}]
+}
+
+### Create homepage AI hero slide
+# Set categoryId to Homepage and featuredMediaId to the uploaded slide image before running.
+@featuredMediaId = 0
+POST {{apiUrl}}/posts
+Authorization: {{auth}}
+Content-Type: application/json
+Accept: application/json
+
+{
+  "title": "AI that survives contact with your business",
+  "slug": "home-hero-ai",
+  "content": "<p>AI engineering &amp; AI-as-a-Service</p><p>Explore AI at Devsense</p>",
+  "excerpt": "We build AI into the processes that actually cost you money, measure whether it works, and then run it.",
+  "status": "publish",
+  "categories": [{{categoryId}}],
+  "featured_media": {{featuredMediaId}}
+}
+
 ### Verify credentials and API access
 GET {{apiUrl}}/users/me?context=edit
 Authorization: {{auth}}
@@ -38,6 +84,158 @@ Accept: application/json
   "status": "draft",
   "categories": [{{categoryId}}],
   "featured_media": 0
+}
+
+### Create service 1: Custom software engineering
+POST {{apiUrl}}/posts
+Authorization: {{auth}}
+Content-Type: application/json
+Accept: application/json
+
+{
+  "title": "Custom Software Engineering",
+  "content": "<p>Bespoke enterprise systems built around how your business actually works - not around the limits of an off-the-shelf package you are still paying to customise.</p><p>A national insurer needs claims assessors to work from a single queue instead of four systems and a spreadsheet. We map the process, model the data, build the platform and integrate the legacy policy admin system behind it.</p><h2>What this includes</h2><ul><li>Enterprise line-of-business applications</li><li>CRM, ERP and workflow platforms</li><li>API design, integration and middleware</li><li>Legacy modernisation and re-platforming</li><li>Process automation and internal tooling</li></ul>",
+  "excerpt": "Bespoke enterprise systems built around how your business actually works.",
+  "status": "draft",
+  "categories": [4],
+  "featured_media": 0,
+  "acf": {
+    "number": 1,
+    "fa_icon": "fa fa-code"
+  }
+}
+
+### Create service 2: SaaS product development
+POST {{apiUrl}}/posts
+Authorization: {{auth}}
+Content-Type: application/json
+Accept: application/json
+
+{
+  "title": "SaaS Product Development",
+  "content": "<p>Turning a proposition into a product people pay a subscription for - including all the unglamorous machinery that decides whether it is a business or a demo.</p><p>We build the first commercial version, instrument it so you can see which features drive retention, and structure the codebase so a second engineering team can be added without a rewrite.</p><h2>What this includes</h2><ul><li>Multi-tenant architecture and tenant isolation</li><li>Subscription billing, metering and entitlements</li><li>Self-service onboarding and trial flows</li><li>Product analytics, telemetry and churn signals</li><li>Role-based access, audit logging and SSO</li></ul>",
+  "excerpt": "Subscription products engineered for commercial scale and sustainable growth.",
+  "status": "draft",
+  "categories": [4],
+  "featured_media": 0,
+  "acf": {
+    "number": 2,
+    "fa_icon": "fa fa-cubes"
+  }
+}
+
+### Create service 3: Web application development
+POST {{apiUrl}}/posts
+Authorization: {{auth}}
+Content-Type: application/json
+Accept: application/json
+
+{
+  "title": "Web Application Development",
+  "content": "<p>Responsive, accessible web platforms that hold up under real transaction volume - and keep holding up when your traffic triples.</p><p>Performance budgets, automated Lighthouse checks and load testing are part of the delivery, not an optional extra quoted afterwards.</p><h2>What this includes</h2><ul><li>React, Next.js and Angular front ends</li><li>Server-side rendering and edge delivery</li><li>Design-system-driven component libraries</li><li>WCAG-conscious, keyboard-navigable interfaces</li><li>Headless CMS with hardened REST APIs</li></ul>",
+  "excerpt": "Responsive, accessible web platforms engineered for real transaction volume.",
+  "status": "draft",
+  "categories": [4],
+  "featured_media": 0,
+  "acf": {
+    "number": 3,
+    "fa_icon": "fa fa-globe"
+  }
+}
+
+### Create service 4: Mobile application development
+POST {{apiUrl}}/posts
+Authorization: {{auth}}
+Content-Type: application/json
+Accept: application/json
+
+{
+  "title": "Mobile Application Development",
+  "content": "<p>Native and cross-platform apps for iOS and Android, designed for the conditions your users are actually in - including no signal.</p><p>For field teams in mining and logistics, offline capability is the requirement, not a nice-to-have. We design the sync model before the screens.</p><h2>What this includes</h2><ul><li>Swift and Kotlin native development</li><li>Flutter and React Native cross-platform builds</li><li>Offline-first sync and conflict resolution</li><li>Push notification and deep-link architecture</li><li>App Store and Play Store release management</li></ul>",
+  "excerpt": "Native and cross-platform apps designed for real-world operating conditions.",
+  "status": "draft",
+  "categories": [4],
+  "featured_media": 0,
+  "acf": {
+    "number": 4,
+    "fa_icon": "fa fa-mobile"
+  }
+}
+
+### Create service 5: Cloud, hosting and DevOps
+POST {{apiUrl}}/posts
+Authorization: {{auth}}
+Content-Type: application/json
+Accept: application/json
+
+{
+  "title": "Cloud, Hosting & DevOps",
+  "content": "<p>Infrastructure you can reason about: reproducible, monitored, and cheap enough that nobody is afraid to spin up a staging environment.</p><p>All three major providers run South African regions, so data can stay in-country where POPIA or a tender requires it - while international clients deploy into EU or UK regions.</p><h2>What this includes</h2><ul><li>AWS, Microsoft Azure and Google Cloud</li><li>Containerised deployment with Docker and Kubernetes</li><li>CI/CD pipelines and infrastructure-as-code</li><li>Managed application and business email hosting</li><li>Observability, alerting and disaster recovery</li></ul>",
+  "excerpt": "Reproducible, monitored cloud infrastructure and dependable application operations.",
+  "status": "draft",
+  "categories": [4],
+  "featured_media": 0,
+  "acf": {
+    "number": 5,
+    "fa_icon": "fa fa-cloud"
+  }
+}
+
+### Create service 6: Data and database architecture
+POST {{apiUrl}}/posts
+Authorization: {{auth}}
+Content-Type: application/json
+Accept: application/json
+
+{
+  "title": "Data & Database Architecture",
+  "content": "<p>The layer everything else depends on. Modelled properly at the start, it is invisible; modelled badly, it is the reason the rewrite gets quoted three years later.</p><p>Database design and administration is one of our deepest competencies - across SQL, NoSQL and event-driven models.</p><h2>What this includes</h2><ul><li>Relational design on PostgreSQL and MySQL</li><li>Document and NoSQL stores - MongoDB, Cosmos DB, Firebase</li><li>Event-driven and streaming architectures</li><li>Reporting layers, warehousing and BI feeds</li><li>Migration, cleansing and de-duplication</li></ul>",
+  "excerpt": "Database architecture and administration across SQL, NoSQL and event-driven models.",
+  "status": "draft",
+  "categories": [4],
+  "featured_media": 0,
+  "acf": {
+    "number": 6,
+    "fa_icon": "fa fa-database"
+  }
+}
+
+### Create service 7: AI integration and automation
+POST {{apiUrl}}/posts
+Authorization: {{auth}}
+Content-Type: application/json
+Accept: application/json
+
+{
+  "title": "AI Integration & Automation",
+  "content": "<p>Practical AI applied to a specific, measurable job. No pilots that never leave the innovation team.</p><p>We start from the process that is costing you hours, not from the model. If a rules engine solves it more cheaply and predictably, we will tell you so.</p><h2>What this includes</h2><ul><li>Assistants grounded in your own documents</li><li>Document extraction and intelligent data capture</li><li>Forecasting, scoring and anomaly detection</li><li>Workflow automation with a human in the loop</li><li>Evaluation harnesses so quality is measurable</li></ul>",
+  "excerpt": "Practical AI and automation applied to specific, measurable business work.",
+  "status": "draft",
+  "categories": [4],
+  "featured_media": 0,
+  "acf": {
+    "number": 7,
+    "fa_icon": "fa fa-magic"
+  }
+}
+
+### Create service 8: UI/UX design and digital strategy
+POST {{apiUrl}}/posts
+Authorization: {{auth}}
+Content-Type: application/json
+Accept: application/json
+
+{
+  "title": "UI/UX Design & Digital Strategy",
+  "content": "<p>Research, interface design and the transformation roadmap that turns a backlog of requests into a sequenced plan your board can sign off.</p><p>Every engagement can start with a paid discovery sprint. You keep the architecture, scope and costed options whether or not you build with us.</p><h2>What this includes</h2><ul><li>Discovery workshops and stakeholder interviews</li><li>Journey mapping and information architecture</li><li>Interface design and design systems</li><li>Usability testing and accessibility review</li><li>Technology roadmaps and build-versus-buy analysis</li></ul>",
+  "excerpt": "Research, interface design and a transformation roadmap that makes delivery decisions clear.",
+  "status": "draft",
+  "categories": [4],
+  "featured_media": 0,
+  "acf": {
+    "number": 8,
+    "fa_icon": "fa fa-pencil"
+  }
 }
 
 ### Update a post
@@ -98,3 +296,210 @@ Content-Type: image/jpeg
 Accept: application/json
 
 < ./path/to/source-image.jpg
+
+### Create the Our Process category
+POST {{apiUrl}}/categories
+Authorization: {{auth}}
+Content-Type: application/json
+Accept: application/json
+
+{
+  "name": "Our Process",
+  "slug": "our-process",
+  "description": "The four stages used to launch and run a Devsense Tech-BPO team."
+}
+
+### Our Process resource IDs
+# Set these values from the category and media responses before creating the posts.
+@ourProcessCategoryId = 13
+@scopeProcessMediaId = 283
+@teamOnboardingMediaId = 291
+@shadowPilotMediaId = 287
+@liveReportingMediaId = 289
+@happyClientMediaId = 292
+
+### Upload Our Process image 1: Scope and process capture
+POST {{apiUrl}}/media
+Authorization: {{auth}}
+Content-Disposition: attachment; filename="scope-process-capture.jpg"
+Content-Type: image/jpeg
+Accept: application/json
+
+< ./src/assets/images/our-process/scope-process-capture.jpg
+
+### Add metadata to Our Process image 1
+POST {{apiUrl}}/media/{{scopeProcessMediaId}}
+Authorization: {{auth}}
+Content-Type: application/json
+Accept: application/json
+
+{
+  "title": "Scope and process capture",
+  "alt_text": "A team member mapping a process with notes on a workshop table",
+  "caption": "Photo by Brands&People on Unsplash",
+  "description": "Source: https://unsplash.com/photos/Ax8IA8GAjVg. Free to use under the Unsplash License."
+}
+
+### Upload Our Process image 2: Team selection and onboarding
+POST {{apiUrl}}/media
+Authorization: {{auth}}
+Content-Disposition: attachment; filename="team-onboarding-south-africa.jpg"
+Content-Type: image/jpeg
+Accept: application/json
+
+< ./src/assets/images/our-process/team-onboarding-south-africa.jpg
+
+### Add metadata to Our Process image 2
+POST {{apiUrl}}/media/{{teamOnboardingMediaId}}
+Authorization: {{auth}}
+Content-Type: application/json
+Accept: application/json
+
+{
+  "title": "South African team planning session",
+  "alt_text": "Team members reviewing charts together during a planning session",
+  "caption": "Photo by Monstera Production on Pexels",
+  "description": "Source: https://www.pexels.com/photo/crop-unrecognizable-black-guys-analyzing-diagrams-9430883/. Free to use under the Pexels License."
+}
+
+### Upload Our Process image 3: Shadow and pilot
+POST {{apiUrl}}/media
+Authorization: {{auth}}
+Content-Disposition: attachment; filename="shadow-pilot.jpg"
+Content-Type: image/jpeg
+Accept: application/json
+
+< ./src/assets/images/our-process/shadow-pilot.jpg
+
+### Add metadata to Our Process image 3
+POST {{apiUrl}}/media/{{shadowPilotMediaId}}
+Authorization: {{auth}}
+Content-Type: application/json
+Accept: application/json
+
+{
+  "title": "Shadow and pilot",
+  "alt_text": "Two software professionals working side by side at their computers",
+  "caption": "Photo by Tim van der Kuip on Unsplash",
+  "description": "Source: https://unsplash.com/photos/CPs2X8JYmS8. Free to use under the Unsplash License."
+}
+
+### Upload Our Process image 4: Live, measured and reported
+POST {{apiUrl}}/media
+Authorization: {{auth}}
+Content-Disposition: attachment; filename="live-reporting.jpg"
+Content-Type: image/jpeg
+Accept: application/json
+
+< ./src/assets/images/our-process/live-reporting.jpg
+
+### Add metadata to Our Process image 4
+POST {{apiUrl}}/media/{{liveReportingMediaId}}
+Authorization: {{auth}}
+Content-Type: application/json
+Accept: application/json
+
+{
+  "title": "Live, measured and reported",
+  "alt_text": "Two colleagues reviewing performance data on a laptop",
+  "caption": "Photo by Vitaly Gariev on Unsplash",
+  "description": "Source: https://unsplash.com/photos/1FzEg5g7vt0. Free to use under the Unsplash License."
+}
+
+### Upload the closing happy-client handshake image
+POST {{apiUrl}}/media
+Authorization: {{auth}}
+Content-Disposition: attachment; filename="happy-client-handshake.jpg"
+Content-Type: image/jpeg
+Accept: application/json
+
+< ./src/assets/images/our-process/happy-client-handshake.jpg
+
+### Add metadata to the closing happy-client handshake image
+POST {{apiUrl}}/media/{{happyClientMediaId}}
+Authorization: {{auth}}
+Content-Type: application/json
+Accept: application/json
+
+{
+  "title": "Happy client handshake",
+  "alt_text": "Two African professionals shaking hands after reaching an agreement",
+  "caption": "Photo by Cytonn Photography on Unsplash",
+  "description": "Source: https://unsplash.com/photos/vWchRczcQwM. Photographed in Nairobi, Kenya. Free to use under the Unsplash License."
+}
+
+### Create Our Process stage 1: Scope and process capture
+POST {{apiUrl}}/posts
+Authorization: {{auth}}
+Content-Type: application/json
+Accept: application/json
+
+{
+  "title": "Scope and process capture",
+  "slug": "scope-and-process-capture",
+  "content": "<p>We document the work as it is done today &mdash; volumes, tools, SLAs, escalation rules and the edge cases your current team keeps in their heads.</p>",
+  "excerpt": "We document the work as it is done today &mdash; volumes, tools, SLAs, escalation rules and the edge cases your current team keeps in their heads.",
+  "status": "publish",
+  "categories": [{{ourProcessCategoryId}}],
+  "featured_media": {{scopeProcessMediaId}},
+  "acf": {
+    "number": 1
+  }
+}
+
+### Create Our Process stage 2: Team selection and onboarding
+POST {{apiUrl}}/posts
+Authorization: {{auth}}
+Content-Type: application/json
+Accept: application/json
+
+{
+  "title": "Team selection and onboarding",
+  "slug": "team-selection-and-onboarding",
+  "content": "<p>We recruit or assign against your profile, run security and reference checks, and train the team on your systems with your material.</p>",
+  "excerpt": "We recruit or assign against your profile, run security and reference checks, and train the team on your systems with your material.",
+  "status": "publish",
+  "categories": [{{ourProcessCategoryId}}],
+  "featured_media": {{teamOnboardingMediaId}},
+  "acf": {
+    "number": 2
+  }
+}
+
+### Create Our Process stage 3: Shadow and pilot
+POST {{apiUrl}}/posts
+Authorization: {{auth}}
+Content-Type: application/json
+Accept: application/json
+
+{
+  "title": "Shadow and pilot",
+  "slug": "shadow-and-pilot",
+  "content": "<p>The team works alongside yours on live volume with every output reviewed, until quality metrics hold steady for a full cycle.</p>",
+  "excerpt": "The team works alongside yours on live volume with every output reviewed, until quality metrics hold steady for a full cycle.",
+  "status": "publish",
+  "categories": [{{ourProcessCategoryId}}],
+  "featured_media": {{shadowPilotMediaId}},
+  "acf": {
+    "number": 3
+  }
+}
+
+### Create Our Process stage 4: Live, measured and reported
+POST {{apiUrl}}/posts
+Authorization: {{auth}}
+Content-Type: application/json
+Accept: application/json
+
+{
+  "title": "Live, measured and reported",
+  "slug": "live-measured-and-reported",
+  "content": "<p>Full handover against agreed SLAs, with a named account lead, a monthly performance report and a quarterly review of what to automate next.</p>",
+  "excerpt": "Full handover against agreed SLAs, with a named account lead, a monthly performance report and a quarterly review of what to automate next.",
+  "status": "publish",
+  "categories": [{{ourProcessCategoryId}}],
+  "featured_media": {{liveReportingMediaId}},
+  "acf": {
+    "number": 4
+  }
+}

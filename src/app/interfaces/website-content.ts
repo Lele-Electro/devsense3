@@ -85,6 +85,8 @@ export interface serviceCard {
     description: string;
     number?: number;
     image?: string;
+    slug?: string;
+    detailPostId?: number;
 }
 export class serviceCardClass {
     icon: string | undefined;

@@ -1,6 +1,6 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable, WritableSignal, inject, signal } from '@angular/core';
-import { catchError, concatMap, filter, from, map, Observable, throwError, toArray } from 'rxjs';
+import { catchError, concatMap, filter, from, map, Observable, of, throwError, toArray } from 'rxjs';
 import { WPMedia, WPPost } from '../interfaces/wordpress';
 import { PortfolioCategory2, PortfolioItem2, PortfolioProjects, PortfolioProjects2, serviceCardClass, servicesIntro, WebsiteContent } from '../interfaces/website-content';
 
@@ -45,6 +45,25 @@ export class WordpressService {
       catchError((error: HttpErrorResponse) => {
         console.warn(`Failed to fetch all posts:`, error.message);
         return from([]);
+      })
+    );
+  }
+
+  getPostBySlug(slug: string): Observable<WPPost | null> {
+    return this.http.get<WPPost[]>(`${this.baseUrl}/posts?slug=${encodeURIComponent(slug)}&per_page=1`).pipe(
+      map(posts => posts[0] ?? null),
+      catchError((error: HttpErrorResponse) => {
+        console.warn(`Failed to fetch post with slug ${slug}:`, error.message);
+        return of(null);
+      })
+    );
+  }
+
+  getPostById(postId: number): Observable<WPPost | null> {
+    return this.http.get<WPPost>(`${this.baseUrl}/posts/${postId}`).pipe(
+      catchError((error: HttpErrorResponse) => {
+        console.warn(`Failed to fetch post ${postId}:`, error.message);
+        return of(null);
       })
     );
   }

@@ -50,6 +50,7 @@ All JavaScript fuctions Start
 				clickable: true,
 				},
 				parallax: true,
+				focusableElements: 'input, select, option, textarea, button, label',
 				autoplay: {
 					delay: 7000,
 					disableOnInteraction: false,

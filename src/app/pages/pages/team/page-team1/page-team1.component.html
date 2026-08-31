@@ -23,8 +23,17 @@
             @for (object of team; track $index) {
               <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
                 <div class="our-team-2">
-                  <div class="profile-image">
-                    <img src="{{object.image}}" alt="" />
+                  <div
+                    class="profile-image"
+                    [class.profile-image--crossfade]="object.hoverImage"
+                    [class.profile-image--active]="object.isHovered"
+                    [class.profile-image--subtle-zoom]="object.subtleHoverZoom"
+                    (mouseover)="object.isHovered = !!object.hoverImage"
+                    (mouseleave)="object.isHovered = false">
+                    <img class="profile-image__base" [src]="object.image" [alt]="object.name" />
+                    @if (object.hoverImage) {
+                      <img class="profile-image__hover" [src]="object.hoverImage" alt="" aria-hidden="true" />
+                    }
                     <div class="icons">
                       <a href="https://www.facebook.com/"><span>Fb</span><i class="fa fa-facebook"></i></a>
                       <a href="https://twitter.com/"><span>Tw</span><i class="fa fa-twitter"></i></a>

@@ -9,7 +9,7 @@
     <div class="page-content">
     
         <!-- INNER PAGE BANNER -->
-        <app-banner [data]="banner"></app-banner>
+        <app-banner [data]="banner()"></app-banner>
         <!-- INNER PAGE BANNER END -->
         
         <!-- SECTION CONTENT START -->
@@ -19,13 +19,31 @@
                 <!-- GALLERY CONTENT START -->
                  <div class="row">
 
-                    <div class="col-lg-8 col-md-12">
-                        <app-section-service-detail-area [data]="service"></app-section-service-detail-area>
-                    </div>
+                    @if (isLoading()) {
+                        <div class="col-12"><p>Loading service details...</p></div>
+                    } @else if (detail()) {
+                        <div class="col-lg-8 col-md-12">
+                            <app-section-service-detail-area [data]="{
+                                image: detail()!.featured_media_src_url,
+                                title: detail()!.title.rendered,
+                                description: detail()!.content.rendered
+                            }"></app-section-service-detail-area>
+                        </div>
 
-                    <div class="col-lg-4 col-md-12 sticky_column">
-                        <app-section-services-sidebar [data]="sidebar"></app-section-services-sidebar>
-                    </div>  
+                        <aside class="col-lg-4 col-md-12 sticky_column">
+                            <div class="about4-section bg-gray p-a30">
+                                <h4>Discuss <span [innerHTML]="service()?.title?.rendered"></span></h4>
+                                <p>Tell us what you need to achieve. We will help you decide whether to build, buy or improve what you already have.</p>
+                                <a routerLink="/pages/contact-us" class="site-button-link">Book a discovery call</a>
+                            </div>
+                        </aside>
+                    } @else {
+                        <div class="col-12">
+                            <h3 class="sx-tilte">Service details are unavailable</h3>
+                            <p>This service does not yet have a published detail page.</p>
+                            <a routerLink="/services" class="site-button-link">Return to services</a>
+                        </div>
+                    }
 
                  </div>   
                 <!-- GALLERY CONTENT END -->

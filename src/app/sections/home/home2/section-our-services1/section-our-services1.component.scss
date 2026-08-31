@@ -1,0 +1,27 @@
+@use '../../../../../assets/css/variables' as *;
+
+.sx-service2-box:not(.sx-service2-box--no-image) .sx-service2-inner {
+	aspect-ratio: 0.97;
+}
+
+.sx-service2-box:not(.sx-service2-box--no-image) .sx-service2-inner > img {
+	height: 100%;
+	object-fit: cover;
+}
+
+.sx-service2-box--no-image .sx-service2-inner {
+	min-height: 256px;
+}
+
+.sx-service2-box--no-image .figcaption {
+	background: #1f1f1f;
+}
+
+.sx-service2-box .sx-service2-inner > .figcaption > h4.sx-title {
+	transition: background-color 0.35s ease;
+}
+
+.sx-service2-box:hover .sx-service2-inner > .figcaption > h4.sx-title {
+	background-color: $verdigris;
+	cursor: pointer;
+}

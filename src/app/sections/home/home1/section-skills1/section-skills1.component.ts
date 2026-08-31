@@ -21,13 +21,19 @@ export class SectionSkills1Component {
 
   private uncategorizedPostsEffect = effect(() => {
     const allServices = this.wpService.fetchPostsUnderCategory(this.wpService.uncategorizedPosts(), 'category-services');
-    this.serviceCards = allServices.map((service: any) => ({
+    const currentServicePosts = allServices
+      .filter((service: any) => service.slug !== 'services-intro' && service.acf?.number >= 1 && service.acf?.number <= 8)
+      .sort((first: any, second: any) => Date.parse(second.date) - Date.parse(first.date))
+      .filter((service: any, index: number, services: any[]) =>
+        services.findIndex(candidate => candidate.acf?.number === service.acf?.number) === index
+      );
+    this.serviceCards = currentServicePosts.map((service: any) => ({
       icon: service.acf?.fa_icon ?? '',
       title: service.title.rendered,
       description: service.content.rendered,
-      number: service.acf?.number
+      number: service.acf?.number,
+      slug: service.slug
     }));
-    this.serviceCards = this.serviceCards.filter(card => card.number !== 7);
     this.helperService.log(this.serviceCards, 'Final Service Cards:', 'hotpink', '#764ba2', '#fff');
   });
 

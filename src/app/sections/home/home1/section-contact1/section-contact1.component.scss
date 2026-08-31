@@ -1,3 +1,5 @@
+@use '../../../../../assets/css/variables' as *;
+
 .input.input-animate.input-phone {
   height: auto;
   min-height: 44px;
@@ -41,7 +43,7 @@
     top: 0;
     border: none !important;
     border-radius: 0 !important;
-    background: #fcf9f0 !important;
+    background: $deep_champagne !important;
     width: calc(100% - 140px) !important;
     left: 140px !important;
     padding: 0 20px 0 92px !important;

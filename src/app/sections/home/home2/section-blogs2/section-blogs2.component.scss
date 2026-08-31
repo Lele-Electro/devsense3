@@ -1,0 +1,39 @@
+@use '../../../../../assets/css/variables' as *;
+
+.insights-eyebrow {
+	display: block;
+	margin-bottom: 12px;
+	color: $verdigris ;
+	font-size: 14px;
+	font-weight: 700;
+	letter-spacing: 0;
+	text-transform: uppercase;
+}
+
+.sx-post-media {
+	min-height: 240px;
+	background: #1b1d22;
+}
+
+.sx-post-media img {
+	width: 100%;
+	height: 240px;
+	object-fit: cover;
+}
+
+.sx-post-detail {
+	display: -webkit-box;
+	overflow: hidden;
+	min-height: 72px;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 3;
+}
+
+.sx-post-detail ::ng-deep p {
+	margin: 0;
+}
+
+.insights-action {
+	margin-top: 18px;
+	text-align: center;
+}

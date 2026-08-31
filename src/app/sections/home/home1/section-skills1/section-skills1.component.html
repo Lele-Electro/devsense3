@@ -78,7 +78,7 @@
                           }
                           <div class="card-content" [innerHTML]="object.description"></div>
                         <div class="text-left">
-                          <a routerLink="/services/detail" class="site-button-link">Learn
+                          <a [routerLink]="['/services', object.slug]" class="site-button-link">Learn
                           More</a>
                         </div>
                         </div>

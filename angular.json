@@ -26,6 +26,8 @@
               "src/assets/sitemap.xml"
             ],
             "styles": [
+              "node_modules/@fontsource/oxanium/400.css",
+              "node_modules/@fontsource/oxanium/800.css",
               "src/assets/css/bootstrap.min.scss",
               "src/assets/css/fontawesome/css/font-awesome.min.scss",
               "src/assets/css/owl.carousel.min.scss",
@@ -36,6 +38,7 @@
               "src/assets/css/magic-mouse.scss",
               "src/assets/css/swiper-bundle.min.scss",
               "src/assets/css/style.scss",
+              "node_modules/leaflet/dist/leaflet.css",
               "node_modules/intl-tel-input/build/css/intlTelInput.css",
               {
                 "input": "src/assets/css/skin/skin-1.scss",
@@ -143,6 +146,11 @@
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
+            },
+            "github-pages": {
+              "baseHref": "/devsense3/",
+              "prerender": false,
+              "ssr": false
             }
           },
           "defaultConfiguration": "production"
@@ -169,9 +177,11 @@
           "builder": "@angular/build:karma",
           "options": {
             "main": "src/test.ts",
-            "polyfills": "src/polyfills.ts",
+            "polyfills": [
+              "src/polyfills.ts"
+            ],
             "tsConfig": "tsconfig.spec.json",
-            "karmaConfig": "karma.conf.js",
+            "karmaConfig": "karma.conf.cjs",
             "assets": [
               "src/favicon.ico",
               "src/assets"

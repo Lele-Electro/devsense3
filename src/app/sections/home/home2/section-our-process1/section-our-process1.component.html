@@ -1,40 +1,23 @@
-<div class="section-full mobile-page-padding bg-white p-t100 p-b100 ">
+<section class="process-section section-full mobile-page-padding bg-white p-t100 p-b100">
   <div class="container">
-
-    <!-- TITLE START -->
-    <div class="section-head-two center">
-      <div class="section-head-two center">
-        <h2 class="sx-title-two">{{data().title}}</h2>
-      </div>
+    <div class="process-heading section-head-two center">
+      <span class="process-eyebrow" [innerHTML]="eyebrow"></span>
+      <h2 class="sx-title-two" [innerHTML]="title"></h2>
+      <div class="process-description" [innerHTML]="description"></div>
     </div>
-    <!-- TITLE END -->
 
-  </div>
+    <div class="process-steps">
+      @for (step of steps; track step.number) {
+        <article class="process-step">
+          <span class="process-number">{{ step.number }}</span>
+          <h3 [innerHTML]="step.title"></h3>
+          <div [innerHTML]="step.description"></div>
+        </article>
+      }
+    </div>
 
-  <div class="container-fluid">
-    <div class="section-content ">
-      <div class="our-history">
-        <div class="row no-gutters sx-bg-white">
-          @for (object of data().projects; track $index) {
-            <div class="col-xl-4 col-lg-4 col-md-12">
-              @if (object.type == 'image') {
-                <div class="our-history-pic bg-no-repeat bg-center bg-cover"  style="background-image:url({{object.image}});">
-                </div>
-              }
-              @if (object.type == 'content') {
-                <div class="our-history-content   pic-bg-border">
-                  <div class="large-title">
-                    <h3 class="m-t0 sx-title" data-title="{{object.serial}}">{{object.title}}</h3>
-                  </div>
-                  <p>{{object.description}}</p>
-                  <a routerLink="/services/detail" class="site-button-secondry btn-half outline m-r15">Read More <span class="sx-bg-primary"></span></a>
-                </div>
-              }
-            </div>
-          }
-        </div>
-      </div>
+    <div class="process-action">
+      <a routerLink="/pages/contact-us" class="site-button-secondry btn-half outline">Start with discovery <span class="sx-bg-primary"></span></a>
     </div>
   </div>
-
-</div>
+</section>

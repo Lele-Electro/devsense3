@@ -28,21 +28,25 @@
       <div class="row">
 
         <!-- Block one -->
-        @for (object of serviceCards | sortBy:'number'; track $index) {
-          @if($index <= 5) {
-                      <div class="col-lg-4 col-md-6 col-sm-12 m-b30">
-            <div class="sx-service2-box">
+        @for (object of serviceCards | sortBy:'number'; track object.slug) {
+          <div class="col-lg-4 col-md-6 col-sm-12 m-b30">
+            <div class="sx-service2-box" [class.sx-service2-box--no-image]="!object.image">
               <div class="sx-service2-inner">
-                <img src="{{object.image}}" alt=""/>
+                @if (object.image) {
+                  <img [src]="object.image" alt=""/>
+                }
                 <div class="figcaption">
-                  <h4 class="sx-title" [innerHTML]="object.title"></h4>
+                  <h4
+                    class="sx-title site-button btn-half"
+                    [routerLink]="['/services', object.slug]">
+                    <span [innerHTML]="object.title"></span>
+                  </h4>
                   <div [innerHTML]="object.description"></div>
-                  <a routerLink="/services/detail" class="site-button-link white">View more</a>
+                  <a [routerLink]="['/services', object.slug]" class="site-button-link white">View more</a>
                 </div>
               </div>
             </div>
           </div>
-          }
         }
 
       </div>

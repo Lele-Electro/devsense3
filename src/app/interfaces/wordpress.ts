@@ -1,5 +1,10 @@
 export interface WPPost {
-    acf?: { number: number, fa_icon: string, fieldone: string };
+    acf?: {
+        number: number;
+        fa_icon: string;
+        fieldone: string;
+        detail_post?: number | WPPost | null;
+    };
     id: number;
     date: string;
     date_gmt: string;

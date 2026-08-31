@@ -31,12 +31,9 @@
                     <div
                       class="our-history-content pic-bg-border">
                       <div class="large-title">
-                        <h3 class="m-t0 sx-title" attr.data-title="{{object.serial}}">{{object.title}}</h3>
+                        <h3 class="m-t0 sx-title" attr.data-title="{{object.serial}}" [innerHTML]="object.title"></h3>
                       </div>
-                      <p>{{object.description}}</p>
-                      <a routerLink="/services/detail"
-                        class="site-button-secondry btn-half outline m-r15">Read More <span
-                      class="sx-bg-primary"></span></a>
+                      <div [innerHTML]="object.description"></div>
                     </div>
                   }
                 </div>

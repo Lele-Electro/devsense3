@@ -7,7 +7,7 @@ Version: 1.0
 
 @use 'header';
 @use 'header2';
-@use '../variables' as *;
+@use 'variables' as *;
 
 /*____GENERAL
 ======================================*/
@@ -1752,7 +1752,7 @@ ol.list-num-count.list-outline-none>li:before {
 }
 
 .sx-bg-light {
-	background-color: #fcf9f0;
+	background-color: $verdigrisOpacity2;
 }
 
 .sx-bg-white {
@@ -5512,11 +5512,11 @@ ol.comment-list li.comment .comment-respond .comment-form p {
 }
 
 .logo-footer {
-	display: table;
+	// display: table;
 	width: 170px;
 	height: 70px;
 	vertical-align: middle;
-	padding: 0px 0px 15px 0px;
+	// padding: 0px 0px 15px 0px;
 	font-size: 36px;
 	color: $verdigris;
 	margin-top: 0;
@@ -8161,7 +8161,7 @@ INPUT ANIMATION
 
 .input-animate.input input,
 .input-animate.input textarea {
-	background: #fcf9f0;
+	background: $deep_champagne;
 	width: calc(100% - 140px);
 	left: 140px;
 	padding: 0px 20px;
@@ -9804,7 +9804,7 @@ line-list-style
 	line-height: 1;
 	font-size: 14px;
 	margin-bottom: 10px;
-	background-color: #fcf9f0;
+	background-color: $deep_champagne;
 	padding: 10px;
 }
 
@@ -10301,7 +10301,7 @@ line-list-style
 	white-space: nowrap;
 	font-size: 200px;
 	line-height: 0.75;
-	font-weight: 800;
+	font-weight: 300;
 	letter-spacing: 10px;
 	color: #fff;
 	display: inline-block;
@@ -10546,17 +10546,19 @@ line-list-style
   transform: none;
 }
 
-.home-2-slider .sld-bld-text-wrap{position: absolute; right: 0px; bottom: 0px; z-index: 1;}
+.home-2-slider .sld-bld-text-wrap{position: absolute; right: 0px; bottom: 40px; z-index: 1;}
 .home-2-slider .sld-bld-text-wrap .sld-bld-text{
 	opacity: 0;
 	transform: translateX(200px);
 	transition: all 1s;
 	white-space: nowrap;
-	font-size: 200px;
+	font-size: 140px;
 	line-height: 0.75;
 	font-weight: 800;
 	letter-spacing: 10px;
-	color: #fff;
+	color: transparent;
+	-webkit-text-fill-color: transparent;
+	-webkit-text-stroke: 1px #fff;
 	display: inline-block;
 	text-transform: uppercase;
 	text-shadow:0px 15px 30px rgba(0, 0, 0, 0.15);
