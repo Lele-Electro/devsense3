@@ -260,9 +260,11 @@ All JavaScript fuctions Start
 		}
 	//________Mobile side drawer function by = custom.js________//
 		function mobile_side_drawer(){
-			jQuery('#mobile-side-drawer').on('click', function () { 
-				jQuery('.mobile-sider-drawer-menu').toggleClass('active');
-			});
+			jQuery(document)
+				.off('click.mobileSideDrawer', '#mobile-side-drawer')
+				.on('click.mobileSideDrawer', '#mobile-side-drawer', function () {
+					jQuery(this).closest('.mobile-sider-drawer-menu').toggleClass('active');
+				});
 		}	
 
 	//________Home page testimonial function by = owl.carousel.js________//	

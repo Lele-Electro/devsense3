@@ -65,7 +65,7 @@ export class PageOurProcessComponent {
   private readonly wordpress = inject(WordpressService);
 
   banner = {
-    background: "assets/images/banner/1.jpg",
+    background: "assets/images/banner/our-process-banner.webp",
     title: "Our Process",
     currentPage: "Our Process",
     description: "From the first call to a live team, every stage is scoped, measured and accountable."

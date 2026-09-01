@@ -4,10 +4,10 @@ import { BannerComponent } from '../../../sections/banner/banner.component';
 import { Header2Component } from '../../../sections/header/header2/header2.component';
 
 @Component({
-    selector: 'app-page-faq',
-    templateUrl: './page-faq.component.html',
-    styleUrls: ['./page-faq.component.scss'],
-    imports: [Header2Component, BannerComponent, Footer1Component]
+  selector: 'app-page-faq',
+  templateUrl: './page-faq.component.html',
+  styleUrls: ['./page-faq.component.scss'],
+  imports: [Header2Component, BannerComponent, Footer1Component]
 })
 export class PageFaqComponent implements OnInit {
 
@@ -17,7 +17,7 @@ export class PageFaqComponent implements OnInit {
   }
 
   banner = {
-    background: "assets/images/banner/1.jpg",
+    background: "assets/images/banner/faq-banner.webp",
     title: "FAQ's",
     currentPage: "Faq",
     description: "The essence of interior design will always be about people and how they live. It is about the realities of what makes for an attractive, civilized."

@@ -23,7 +23,7 @@
             <div class="masonry-item  col-lg-4 col-md-6 col-sm-12">
               <div class="blog-post blog-grid date-style-2">
                 <div class="sx-post-media sx-img-effect img-reflection">
-                  <a routerLink="/blog/single"><img src="{{object.image}}" alt=""></a>
+                  <a routerLink="/blog/single"><img [src]="object.image" [alt]="object.title"></a>
                 </div>
                 <div class="sx-post-info p-t30">
                   <div class="sx-post-meta ">

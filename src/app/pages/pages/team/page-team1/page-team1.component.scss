@@ -1,3 +1,5 @@
+@use '../../../../../assets/css/variables' as *;
+
 .profile-image--crossfade {
 	aspect-ratio: 990 / 1160;
 	overflow: hidden;
@@ -33,4 +35,67 @@
 
 .our-team-2 .profile-image--crossfade.profile-image--active.profile-image--subtle-zoom .profile-image__hover {
 	transform: scale(1.02);
+}
+
+.profile-image__text {
+	position: absolute;
+	left: 30px;
+	right: 30px;
+	bottom: 100px;
+	z-index: 2;
+	color: #fff;
+	font-size: 18px;
+	font-weight: 600;
+	text-align: center;
+	opacity: 0;
+	transform: translate3d(0, 100px, 0);
+	transition: opacity 0.35s, transform 0.35s;
+}
+
+.team-card--active .profile-image__text {
+	opacity: 1;
+	transform: translate3d(0, 0, 0);
+}
+
+.our-team-2 .icons {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+	transition: opacity 0.35s linear;
+}
+
+.our-team-2 .icons > a,
+.our-team-2 .icons > .social-link {
+	margin: 0;
+}
+
+.our-team-2 .icons > a {
+	display: inline-block;
+	transition: transform 0.2s ease;
+}
+
+.our-team-2 .icons > a:hover {
+	transform: rotate(-5deg);
+}
+
+.team-card--active .icons {
+	opacity: 1;
+}
+
+.team-card--active .icons > a i {
+	animation-duration: 0.85s;
+	transition-duration: 0.45s;
+}
+
+.our-team-2 .icons > a:hover i {
+	color: #fff;
+	background-color: $verdigrisOpacity;
+}
+
+.our-team-2 .icons .social-link--disabled i,
+.our-team-2 .icons .social-link--disabled i:hover {
+	color: #fff;
+	background-color: #c7c4c4;
+	cursor: not-allowed;
 }

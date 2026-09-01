@@ -5,10 +5,10 @@ import { BannerComponent } from '../../../sections/banner/banner.component';
 import { Header2Component } from '../../../sections/header/header2/header2.component';
 
 @Component({
-    selector: 'app-page-blog-masonry',
-    templateUrl: './page-blog-masonry.component.html',
-    styleUrls: ['./page-blog-masonry.component.scss'],
-    imports: [Header2Component, BannerComponent, RouterLink, Footer1Component]
+  selector: 'app-page-blog-masonry',
+  templateUrl: './page-blog-masonry.component.html',
+  styleUrls: ['./page-blog-masonry.component.scss'],
+  imports: [Header2Component, BannerComponent, RouterLink, Footer1Component]
 })
 export class PageBlogMasonryComponent implements OnInit {
 
@@ -18,7 +18,7 @@ export class PageBlogMasonryComponent implements OnInit {
   }
 
   banner = {
-    background: "assets/images/banner/1.jpg",
+    background: "assets/images/banner/blog-masonry-banner.webp",
     title: "Blog Masonary Style",
     currentPage: "Blog Masonary",
     description: "The essence of interior design will always be about people and how they live. It is about the realities of what makes for an attractive, civilized."
@@ -72,7 +72,7 @@ export class PageBlogMasonryComponent implements OnInit {
       comments: "2",
       title: "Online marketing education that just clicks. Guaranteed.",
       description: "Lorem ipsum dolor amet, consectetur adipiscing . Suspendisse pretium nibh lacus interdum tincidunt. Phasellus vehicula neque tortor."
-    },{
+    }, {
       image: "assets/images/blog/portrait/pic3.jpg",
       date: "24.03.21",
       author: "Admin",
@@ -89,7 +89,7 @@ export class PageBlogMasonryComponent implements OnInit {
       description: "Lorem ipsum dolor amet, consectetur adipiscing . Suspendisse pretium nibh lacus interdum tincidunt. Phasellus vehicula neque tortor."
     },
     {
-      image: "",
+      image: "assets/images/blog/blog-grid/pic9.jpg",
       date: "28.03.21",
       author: "Admin",
       comments: "3",

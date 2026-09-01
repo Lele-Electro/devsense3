@@ -5,6 +5,8 @@
 <app-header2></app-header2>
   <!-- HEADER END -->
 
+
+
   <!-- CONTENT START -->
   <div class="page-content">
 
@@ -12,9 +14,17 @@
     <app-banner [data]="banner"></app-banner>
     <!-- INNER PAGE BANNER END -->
 
+
     <!-- OUR Team START -->
     <div class="section-full p-t100 p-b70 mobile-page-padding">
       <div class="container-fluid">
+
+                  <!-- TITLE START -->
+    <div class="section-head-two left">
+      <h2 class="sx-title-two">Devsense Team</h2>
+    </div>
+    <!-- TITLE END -->
+
 
         <!-- IMAGE CAROUSEL START -->
         <div class="section-content">
@@ -22,22 +32,26 @@
 
             @for (object of team; track $index) {
               <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
-                <div class="our-team-2">
+                <div
+                  #teamCard
+                  class="our-team-2"
+                  [class.team-card--active]="object.isHovered || object.isInView"
+                  (mouseenter)="setHovered(object, true)"
+                  (mouseleave)="setHovered(object, false)">
                   <div
                     class="profile-image"
                     [class.profile-image--crossfade]="object.hoverImage"
-                    [class.profile-image--active]="object.isHovered"
-                    [class.profile-image--subtle-zoom]="object.subtleHoverZoom"
-                    (mouseover)="object.isHovered = !!object.hoverImage"
-                    (mouseleave)="object.isHovered = false">
+                    [class.profile-image--active]="object.isHovered || object.isInView"
+                    [class.profile-image--subtle-zoom]="object.subtleHoverZoom">
                     <img class="profile-image__base" [src]="object.image" [alt]="object.name" />
                     @if (object.hoverImage) {
                       <img class="profile-image__hover" [src]="object.hoverImage" alt="" aria-hidden="true" />
                     }
+                    <div class="profile-image__text">"{{object.introduction}}"</div>
                     <div class="icons">
-                      <a href="https://www.facebook.com/"><span>Fb</span><i class="fa fa-facebook"></i></a>
-                      <a href="https://twitter.com/"><span>Tw</span><i class="fa fa-twitter"></i></a>
-                      <a href="https://www.instagram.com/"><span>In</span><i class="fa fa-instagram"></i></a>
+                      <a href="https://www.linkedin.com/" aria-label="LinkedIn"><i class="fa fa-linkedin"></i></a>
+                      <span class="social-link social-link--disabled" aria-label="Facebook unavailable" aria-disabled="true"><i class="fa fa-facebook"></i></span>
+                      <span class="social-link social-link--disabled" aria-label="Instagram unavailable" aria-disabled="true"><i class="fa fa-instagram"></i></span>
                     </div>
                   </div>
                   <div class="figcaption text-black">
