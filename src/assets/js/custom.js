@@ -420,6 +420,7 @@ All JavaScript fuctions Start
 			centeredSlides: true,
 			freeMode: false,
 			loop: true,
+			loopAdditionalSlides: 6,
 			slidesPerView: 'auto',
 			coverflowEffect: {
 			rotate: 50,
@@ -429,10 +430,6 @@ All JavaScript fuctions Start
             observeParents: true,
 			modifier: 1,
 			slideShadows: true,
-			},
-			autoplay: {
-			delay: 2500,
-			disableOnInteraction: true,
 			},
 			autoplay: false,
 			pagination: {

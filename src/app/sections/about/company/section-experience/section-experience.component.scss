@@ -1,0 +1,110 @@
+// Make room for the bio beneath the position element (scoped to this section only)
+.sx-experience-introduction {
+  max-width: 720px;
+  margin: 5px auto 0;
+}
+
+// Override the global 60px title spacing so the intro paragraph sits close beneath it
+.section-head-two.center .sx-title-two {
+  margin-bottom: 5px;
+}
+
+.our-team-3 .our-team-info img {
+  aspect-ratio: 990 / 1100;
+  height: auto;
+  object-fit: cover;
+}
+
+.our-team-3 .our-team-info .our-team-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 20px;
+}
+
+// Developer avatar shown above the project title, hidden until hover
+.sx-developer-avatar {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  position: relative;
+  z-index: 1;
+  opacity: 0;
+  -webkit-transition: -webkit-transform 0.35s, opacity 0.35s;
+  transition: transform 0.35s, opacity 0.35s;
+  -webkit-transform: translate3d(200%, 0, 0);
+  transform: translate3d(200%, 0, 0);
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    // Face photos are portrait shots with the head near the top of the frame; zoom in on that point
+    object-position: center 0%;
+    transform: scale(2.1);
+    transform-origin: center 15%;
+  }
+
+  .fa-user-circle {
+    font-size: 90px;
+    line-height: 1;
+    color: #ccc;
+  }
+}
+
+// Per-person crop nudges, since faces sit slightly differently within each source photo
+.sx-developer-avatar--george img {
+  object-position: center 4%;
+}
+
+.sx-developer-avatar--marothi img {
+  object-position: center -4%;
+}
+
+// Override the global .our-team-info:hover img dim rule, which also matches this avatar's <img>
+.our-team-info:hover .sx-developer-avatar img {
+  opacity: 1;
+}
+
+.our-team-info:hover .sx-developer-avatar {
+  opacity: 1;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+.our-team-info .sx-team-name,
+.our-team-info .sx-team-position,
+.our-team-info .sx-team-bio {
+  position: relative;
+  inset: auto;
+  flex: 0 0 auto;
+}
+
+// Bio follows the same slide-in reveal logic as name/position
+.our-team-info .sx-team-bio {
+  margin: 0;
+  float: none;
+  clear: none;
+  color: #fff;
+  font-size: 13px;
+  line-height: 1.5;
+  text-align: left;
+  -webkit-transition: -webkit-transform 0.35s;
+  transition: transform 0.35s;
+  -webkit-transition-delay: 0.05s;
+  transition-delay: 0.05s;
+  -webkit-transform: translate3d(200%, 0, 0);
+  transform: translate3d(200%, 0, 0);
+}
+
+.our-team-info:hover .sx-team-bio {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}

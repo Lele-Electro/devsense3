@@ -20,20 +20,14 @@
         }
         <!-- ABOUT COMPANY END -->
 
-        <!-- ABOUT COMPANY SECTION START -->
-        @defer (on viewport(designViewport); when !wpService.isLoading()) {
-            <app-section-design [data]="design"></app-section-design>
-        } @placeholder {
-            <div #designViewport></div>
-        }
-        <!-- ABOUT COMPANY SECTION END -->            
+
 
         <!-- OUR AWARDS SECTION START -->
-        @defer (on viewport(awardsViewport); when !wpService.isLoading()) {
+        <!-- @defer (on viewport(awardsViewport); when !wpService.isLoading()) {
             <app-section-awards [data]="awards"></app-section-awards>
         } @placeholder {
             <div #awardsViewport></div>
-        }
+        } -->
         <!-- OUR AWARDS SECTION END -->  
 
         <!-- OUR EXPERTS SECTION START -->
@@ -45,12 +39,20 @@
         <!-- OUR EXPERTS SECTION END -->
         
         <!-- TESTIMONIAL START -->
-        @defer (on viewport(testimonialsViewport); when !wpService.isLoading()) {
+        <!-- @defer (on viewport(testimonialsViewport); when !wpService.isLoading()) {
             <app-section-testimonials2 [data]="testimonials"></app-section-testimonials2>
         } @placeholder {
             <div #testimonialsViewport></div>
+        } -->
+        <!-- TESTIMONIAL  END -->
+
+                <!-- ABOUT COMPANY SECTION START -->
+        @defer (on viewport(designViewport); when !wpService.isLoading()) {
+            <app-section-design [data]="design"></app-section-design>
+        } @placeholder {
+            <div #designViewport></div>
         }
-        <!-- TESTIMONIAL  END -->                          
+        <!-- ABOUT COMPANY SECTION END -->
         
     </div>
     <!-- CONTENT END -->

@@ -82,7 +82,7 @@ export class PageAboutCompanyComponent {
   }
 
   design = {
-    image: "assets/images/our-history/1.jpg",
+    image: "https://devsense.co.za/wp3/wp-content/uploads/2026/09/our-process-office-team.png",
     title: "Design the Details.",
     description: "Fantastic service from start to finish. After our ceiling collapsed we never thought our damaged floor would look so good again. These guys worked in a tight time frame and were very accommodating."
   }
@@ -128,47 +128,77 @@ export class PageAboutCompanyComponent {
   }
 
   experience = {
-    title: "Providing a customized experience",
-    team: [
+    title: "Experience on the DevSense Team",
+    projects: [
       {
-        image: "assets/images/our-team5/1.jpg",
-        name: "Johnny Jackman",
-        designation: "Architect"
+        teamMember: "Antonio Ribeiro",
+        title: "Digital Sales Platform (Testdrive) - BMW Group",
+        description: "Connecting premium automotive retail with intuitive digital experiences. Antonio helped deliver BMW's Rockar 2.0 Digital Sales Platform and co-built its Test-Drive booking application, bringing our company experience creating polished sales and booking journeys backed by reusable components and comprehensive testing.",
+        dateRange: "July 2024 – April 2026",
+        imageUrl: "https://devsense.co.za/wp3/wp-content/uploads/2026/09/experience-bmw.webp",
+        imageAlt: "BMW Group South Africa headquarters in Menlyn",
+        developerImageUrl: "",
+        developerImageAlt: "Antonio Ribeiro"
       },
       {
-        image: "assets/images/our-team5/2.jpg",
-        name: "Daniel Rickman",
-        designation: "Architect"
+        teamMember: "Antonio Ribeiro",
+        title: "Enterprise Application Development - LabourNet",
+        description: "Making complex enterprise applications clearer, more consistent and easier to use. Antonio delivered Angular features, refined user interfaces and strengthened shared application modules, bringing our company practical experience in scalable frontend development and dependable software quality.",
+        dateRange: "December 2022 – April 2024",
+        imageUrl: "https://devsense.co.za/wp3/wp-content/uploads/2026/09/experience-labournet.webp",
+        imageAlt: "LabourNet team gathered outside the company office",
+        developerImageUrl: "",
+        developerImageAlt: "Antonio Ribeiro"
       },
       {
-        image: "assets/images/our-team5/3.jpg",
-        name: "Mark Norwich",
-        designation: "Architect"
+        teamMember: "Antonio Ribeiro",
+        title: "Insurance Platforms (Fleetsure & Hollsure) - Askari",
+        description: "Bringing insurance workflows to life through responsive digital platforms. Antonio led frontend development for Fleetsure and Hollsure, delivering Angular interfaces with integrated reporting, PDF invoicing and backend services. He brings our company the ability to turn complex operational requirements into connected digital experiences.",
+        dateRange: "September 2021 – November 2022",
+        imageUrl: "https://devsense.co.za/wp3/wp-content/uploads/2026/09/experience-askari.webp",
+        imageAlt: "Askari company premises or team",
+        developerImageUrl: "",
+        developerImageAlt: "Antonio Ribeiro"
       },
       {
-        image: "assets/images/our-team5/4.jpg",
-        name: "Johnny Jackman",
-        designation: "Architect"
+        teamMember: "Antonio Ribeiro",
+        title: "Healthcare Website & Web Applications - Bestmed",
+        description: "Strengthening the digital foundations of an established healthcare brand. Antonio enhanced Bestmed's web applications and contributed to its website rebuild alongside specialist partners, bringing our company experience improving existing platforms, integrating services and supporting reliable digital operations.",
+        dateRange: "2018 – November 2022",
+        imageUrl: "https://devsense.co.za/wp3/wp-content/uploads/2026/09/bestmed-1.webp",
+        imageAlt: "Bestmed head office entrance in Pretoria",
+        developerImageUrl: "",
+        developerImageAlt: "Antonio Ribeiro"
       },
       {
-        image: "assets/images/our-team5/5.jpg",
-        name: "Daniel Rickman",
-        designation: "Architect"
+        teamMember: "Che Ribeiro",
+        title: "Test Card - Lorem Ipsum Project",
+        description: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.",
+        dateRange: "Lorem Ipsum – Dolor Sit",
+        imageUrl: null,
+        imageAlt: "Team planning session, faces not shown",
+        developerImageUrl: "",
+        developerImageAlt: "Che Ribeiro"
       },
       {
-        image: "assets/images/our-team5/6.jpg",
-        name: "Mark Norwich",
-        designation: "Architect"
+        teamMember: "George Mathew",
+        title: "Test Card - Lorem Ipsum Project",
+        description: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
+        dateRange: "Lorem Ipsum – Dolor Sit",
+        imageUrl: null,
+        imageAlt: "Team planning session, faces not shown",
+        developerImageUrl: "",
+        developerImageAlt: "George Mathew"
       },
       {
-        image: "assets/images/our-team5/7.jpg",
-        name: "Johnny Jackman",
-        designation: "Architect"
-      },
-      {
-        image: "assets/images/our-team5/8.jpg",
-        name: "Daniel Rickman",
-        designation: "Architect"
+        teamMember: "Marothi Mahlake",
+        title: "Test Card - Lorem Ipsum Project",
+        description: "Sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium.",
+        dateRange: "Lorem Ipsum – Dolor Sit",
+        imageUrl: null,
+        imageAlt: "Team planning session, faces not shown",
+        developerImageUrl: "",
+        developerImageAlt: "Marothi Mahlake"
       }
     ]
   }
