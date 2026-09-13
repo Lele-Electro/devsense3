@@ -503,3 +503,136 @@ Accept: application/json
     "number": 4
   }
 }
+
+### Experience section project images (already uploaded, kept for reference/re-upload)
+# id 314: https://devsense.co.za/wp3/wp-content/uploads/2026/09/experience-default-team-planning.jpg
+# Default fallback image used when a project has no imageUrl (team planning, faces intentionally not visible)
+@defaultTeamExperienceMediaId = 314
+POST {{apiUrl}}/media
+Authorization: {{auth}}
+Content-Disposition: attachment; filename="experience-default-team-planning.jpg"
+Content-Type: image/jpeg
+Accept: application/json
+
+< ./src/assets/images/our-process/scope-process-capture.jpg
+
+### Add metadata to the default experience fallback image
+POST {{apiUrl}}/media/{{defaultTeamExperienceMediaId}}
+Authorization: {{auth}}
+Content-Type: application/json
+Accept: application/json
+
+{
+  "title": "Default team planning - faces not shown",
+  "alt_text": "Team planning session with sticky notes on a whiteboard, faces not visible"
+}
+
+### app-section-design (About Company page) office team photo
+# id 315: https://devsense.co.za/wp3/wp-content/uploads/2026/09/our-process-office-team.png
+@ourProcessOfficeTeamMediaId = 315
+POST {{apiUrl}}/media
+Authorization: {{auth}}
+Content-Disposition: attachment; filename="our-process-office-team.png"
+Content-Type: image/png
+Accept: application/json
+
+< ./exec-036944ac-ca87-4966-8040-af924c14c106.png
+
+### Add metadata to the office team photo
+POST {{apiUrl}}/media/{{ourProcessOfficeTeamMediaId}}
+Authorization: {{auth}}
+Content-Type: application/json
+Accept: application/json
+
+{
+  "title": "Devsense office team",
+  "alt_text": "Devsense team member in the office with colleagues relaxing in the background"
+}
+
+### Experience section project images (already uploaded, kept for reference/re-upload)
+# id 307: https://devsense.co.za/wp3/wp-content/uploads/2026/09/bestmed-1.webp
+@bestmedExperienceMediaId = 307
+POST {{apiUrl}}/media
+Authorization: {{auth}}
+Content-Disposition: attachment; filename="bestmed.webp"
+Content-Type: image/webp
+Accept: application/json
+
+< ./bestmed.webp
+
+### Add metadata to the Bestmed experience image
+POST {{apiUrl}}/media/{{bestmedExperienceMediaId}}
+Authorization: {{auth}}
+Content-Type: application/json
+Accept: application/json
+
+{
+  "title": "Bestmed head office",
+  "alt_text": "Bestmed head office entrance in Pretoria"
+}
+
+### Upload BMW experience image
+# id 311: https://devsense.co.za/wp3/wp-content/uploads/2026/09/experience-bmw.webp
+@bmwExperienceMediaId = 311
+POST {{apiUrl}}/media
+Authorization: {{auth}}
+Content-Disposition: attachment; filename="experience-bmw.webp"
+Content-Type: image/webp
+Accept: application/json
+
+< ./bmw.webp
+
+### Add metadata to the BMW experience image
+POST {{apiUrl}}/media/{{bmwExperienceMediaId}}
+Authorization: {{auth}}
+Content-Type: application/json
+Accept: application/json
+
+{
+  "title": "BMW Group South Africa - Menlyn location",
+  "alt_text": "BMW Group South Africa headquarters in Menlyn"
+}
+
+### Upload LabourNet experience image
+# id 312: https://devsense.co.za/wp3/wp-content/uploads/2026/09/experience-labournet.webp
+@labournetExperienceMediaId = 312
+POST {{apiUrl}}/media
+Authorization: {{auth}}
+Content-Disposition: attachment; filename="experience-labournet.webp"
+Content-Type: image/webp
+Accept: application/json
+
+< ./labournet.webp
+
+### Add metadata to the LabourNet experience image
+POST {{apiUrl}}/media/{{labournetExperienceMediaId}}
+Authorization: {{auth}}
+Content-Type: application/json
+Accept: application/json
+
+{
+  "title": "LabourNet",
+  "alt_text": "LabourNet team gathered outside the company office"
+}
+
+### Upload Askari experience image
+# id 310: https://devsense.co.za/wp3/wp-content/uploads/2026/09/experience-askari.webp
+@askariExperienceMediaId = 310
+POST {{apiUrl}}/media
+Authorization: {{auth}}
+Content-Disposition: attachment; filename="experience-askari.webp"
+Content-Type: image/webp
+Accept: application/json
+
+< ./askari.webp
+
+### Add metadata to the Askari experience image
+POST {{apiUrl}}/media/{{askariExperienceMediaId}}
+Authorization: {{auth}}
+Content-Type: application/json
+Accept: application/json
+
+{
+  "title": "Askari",
+  "alt_text": "Askari company premises or team"
+}

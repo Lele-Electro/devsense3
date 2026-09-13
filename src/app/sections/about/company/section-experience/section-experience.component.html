@@ -3,7 +3,8 @@
 
     <!-- TITLE START -->
     <div class="section-head-two center">
-      <h2 class="sx-title-two">{{data().title}}</h2>
+      <h2 class="sx-title-two">{{data()?.title}}</h2>
+      <p class="sx-experience-introduction">The Devsense team is made up of experienced, dedicated professionals who came together with a shared vision, partnering their diverse skills and expertise to deliver considered, reliable software for the businesses that depend on us.</p>
     </div>
     <!-- TITLE END -->
   </div>
@@ -15,21 +16,22 @@
       <div class="sx-team2-swiper swiper-container">
         <div class="swiper-wrapper">
 
-          <!--1 block-->
-          @for (object of data().team; track $index) {
+          @for (project of data()?.projects ?? []; track project.title) {
             <div class="swiper-slide">
               <div class="our-team-3">
-                <div class="our-team-info ">
-                  <img src="{{object.image}}" alt=""/>
+                <div class="our-team-info">
+                  <img [src]="project.imageUrl || 'https://devsense.co.za/wp3/wp-content/uploads/2026/09/experience-default-team-planning.jpg'" [alt]="project.imageAlt" width="990" height="1100" />
                   <div class="our-team-content">
-                    <h4 class="sx-team-name"><a routerLink="/team/detail" class="sx-text-white">{{object.name}}</a></h4>
-                    <span class="sx-team-position">{{object.designation}}</span>
-                    <p>
-                      <a href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a>
-                      <a href="https://twitter.com/"><i class="fa fa-twitter"></i></a>
-                      <a href="https://www.instagram.com/"><i class="fa fa-instagram"></i></a>
-                      <a href="https://www.linkedin.com/"><i class="fa fa-linkedin"></i></a>
-                    </p>
+                    <div class="sx-developer-avatar" [class]="developerAvatarClass(project)">
+                      @if (developerAvatarFor(project); as avatarUrl) {
+                        <img [src]="avatarUrl" [alt]="project.developerImageAlt" width="90" height="90" />
+                      } @else {
+                        <i class="fa fa-user-circle" aria-hidden="true"></i>
+                      }
+                    </div>
+                    <h4 class="sx-team-name"><a routerLink="/team/detail" class="sx-text-white">{{project.title}}</a></h4>
+                    <span class="sx-team-position">{{project.dateRange}}</span>
+                    <p class="sx-team-bio">{{project.description}}</p>
                   </div>
                 </div>
               </div>
