@@ -19,7 +19,7 @@ export class PageAboutCompanyComponent {
   protected readonly wpService = inject(WordpressService);
 
   banner = {
-    background: "https://devsense.co.za/wp3/wp-content/uploads/2026/08/devsense-team-office-768x576.png",
+    background: "assets/images/professional-team-warm-mabutho.webp",
     title: "About Company",
     currentPage: "About Company",
     description: "The essence of interior design will always be about people and how they live. It is about the realities of what makes for an attractive, civilized."
@@ -83,8 +83,8 @@ export class PageAboutCompanyComponent {
 
   design = {
     image: "https://devsense.co.za/wp3/wp-content/uploads/2026/09/our-process-office-team.png",
-    title: "Design the Details.",
-    description: "Fantastic service from start to finish. After our ceiling collapsed we never thought our damaged floor would look so good again. These guys worked in a tight time frame and were very accommodating."
+    title: "The Perfect Start Up",
+    description: "Our mission is simple: build dependable technology and deliver exceptional service. Whether you’re recovering from setbacks, scaling your operations, or launching something new, we bring steady hands and sharp minds to every project. Clients trust us because we communicate clearly, work efficiently, and treat every detail like it matters. We believe great tech isn’t just about code — it’s about people, reliability, and the confidence that your project is in capable hands. Your success is the story we’re here to write."
   }
 
   awards = {
@@ -141,6 +141,16 @@ export class PageAboutCompanyComponent {
         developerImageAlt: "Antonio Ribeiro"
       },
       {
+        teamMember: "Che Ribeiro",
+        title: "Test Card - Lorem Ipsum Project",
+        description: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.",
+        dateRange: "Lorem Ipsum – Dolor Sit",
+        imageUrl: null,
+        imageAlt: "Team planning session, faces not shown",
+        developerImageUrl: "",
+        developerImageAlt: "Che Ribeiro"
+      },
+      {
         teamMember: "Antonio Ribeiro",
         title: "Enterprise Application Development - LabourNet",
         description: "Making complex enterprise applications clearer, more consistent and easier to use. Antonio delivered Angular features, refined user interfaces and strengthened shared application modules, bringing our company practical experience in scalable frontend development and dependable software quality.",
@@ -150,6 +160,29 @@ export class PageAboutCompanyComponent {
         developerImageUrl: "",
         developerImageAlt: "Antonio Ribeiro"
       },
+
+      {
+        teamMember: "Antonio Ribeiro",
+        title: "Healthcare Website & Web Applications - Bestmed",
+        description: "Strengthening the digital foundations of an established healthcare brand. Antonio enhanced Bestmed's web applications and contributed to its website rebuild alongside specialist partners, bringing our company experience improving existing platforms, integrating services and supporting reliable digital operations.",
+        dateRange: "2018 – November 2022",
+        imageUrl: "https://devsense.co.za/wp3/wp-content/uploads/2026/09/bestmed-1.webp",
+        imageAlt: "Bestmed head office entrance in Pretoria",
+        developerImageUrl: "",
+        developerImageAlt: "Antonio Ribeiro"
+      },
+
+      {
+        teamMember: "George Mathew",
+        title: "Test Card - Lorem Ipsum Project",
+        description: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
+        dateRange: "Lorem Ipsum – Dolor Sit",
+        imageUrl: null,
+        imageAlt: "Team planning session, faces not shown",
+        developerImageUrl: "",
+        developerImageAlt: "George Mathew"
+      },
+
       {
         teamMember: "Antonio Ribeiro",
         title: "Insurance Platforms (Fleetsure & Hollsure) - Askari",
@@ -161,44 +194,14 @@ export class PageAboutCompanyComponent {
         developerImageAlt: "Antonio Ribeiro"
       },
       {
-        teamMember: "Antonio Ribeiro",
-        title: "Healthcare Website & Web Applications - Bestmed",
-        description: "Strengthening the digital foundations of an established healthcare brand. Antonio enhanced Bestmed's web applications and contributed to its website rebuild alongside specialist partners, bringing our company experience improving existing platforms, integrating services and supporting reliable digital operations.",
-        dateRange: "2018 – November 2022",
-        imageUrl: "https://devsense.co.za/wp3/wp-content/uploads/2026/09/bestmed-1.webp",
-        imageAlt: "Bestmed head office entrance in Pretoria",
-        developerImageUrl: "",
-        developerImageAlt: "Antonio Ribeiro"
-      },
-      {
-        teamMember: "Che Ribeiro",
-        title: "Test Card - Lorem Ipsum Project",
-        description: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.",
-        dateRange: "Lorem Ipsum – Dolor Sit",
-        imageUrl: null,
-        imageAlt: "Team planning session, faces not shown",
-        developerImageUrl: "",
-        developerImageAlt: "Che Ribeiro"
-      },
-      {
-        teamMember: "George Mathew",
-        title: "Test Card - Lorem Ipsum Project",
-        description: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
-        dateRange: "Lorem Ipsum – Dolor Sit",
-        imageUrl: null,
-        imageAlt: "Team planning session, faces not shown",
-        developerImageUrl: "",
-        developerImageAlt: "George Mathew"
-      },
-      {
-        teamMember: "Marothi Mahlake",
+        teamMember: "Mabutho Thwala",
         title: "Test Card - Lorem Ipsum Project",
         description: "Sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium.",
         dateRange: "Lorem Ipsum – Dolor Sit",
         imageUrl: null,
         imageAlt: "Team planning session, faces not shown",
         developerImageUrl: "",
-        developerImageAlt: "Marothi Mahlake"
+        developerImageAlt: "Mabutho Thwala"
       }
     ]
   }

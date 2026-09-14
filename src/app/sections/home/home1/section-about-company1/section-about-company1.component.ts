@@ -11,6 +11,8 @@ import { WordpressService } from 'src/app/services/wordpress.service';
 })
 export class SectionAboutCompany1Component {
 
+  private readonly replacementTeamImage = 'assets/images/professional-team-warm-mabutho.webp';
+
   private helperService = inject(HelperService);
   public wpService = inject(WordpressService);
 
@@ -56,8 +58,9 @@ export class SectionAboutCompany1Component {
     const renderedContent = aboutPost.content?.rendered ?? '';
     const establishedYear = Number(aboutPost.acf?.number ?? aboutPost.number ?? this.data()?.established ?? 0);
     this.yearsExperience = establishedYear > 0 ? currentYear - establishedYear : Number(this.data()?.experience ?? 0);
+    const featuredImage = aboutPost.featured_media_src_url ?? this.data()?.image ?? '';
     this.aboutUs = {
-      image: aboutPost.featured_media_src_url ?? this.data()?.image ?? '',
+      image: featuredImage.includes('devsense-team-office-') ? this.replacementTeamImage : featuredImage,
       title: aboutPost.title?.rendered ?? this.data()?.title ?? '',
       description: this.helperService.getParagraphText(renderedContent, 0) || this.data()?.description || '',
       experience: String(this.yearsExperience || this.data()?.experience || ''),

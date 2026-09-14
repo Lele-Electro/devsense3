@@ -119,7 +119,7 @@ export class PageTeam1Component implements OnInit, AfterViewInit, OnDestroy {
   }
 
   banner = {
-    background: "https://devsense.co.za/wp3/wp-content/uploads/2026/08/devsense-team-office-768x576.png",
+    background: "assets/images/professional-team-warm-mabutho.webp",
     title: "Our Experts",
     currentPage: "Team",
     description: "The essence of interior design will always be about people and how they live. It is about the realities of what makes for an attractive, civilized."
@@ -150,10 +150,10 @@ export class PageTeam1Component implements OnInit, AfterViewInit, OnDestroy {
       introduction: "Interactivity with your idea is what really counts"
     },
     {
-      image: "assets/images/our-team5/marothi-face.webp",
-      hoverImage: "assets/images/our-team5/marothi-face-on-hover.webp",
+      image: "assets/images/our-team5/mabutho-face.webp",
+      hoverImage: "assets/images/our-team5/mabutho-face-on-hover.webp",
       subtleHoverZoom: true,
-      name: "Marothi Mahlake",
+      name: "Mabutho Thwala",
       designation: "Devsense Tech",
       introduction: "Industry leading functionality at your fingertips"
     },
@@ -167,19 +167,19 @@ export class PageTeam1Component implements OnInit, AfterViewInit, OnDestroy {
       image: "assets/images/our-team5/6.jpg",
       name: "Daniel Rickman",
       designation: "CEO, Devsense. Media",
-            introduction: "Lorem ipsum dolor sit amet"
+      introduction: "Lorem ipsum dolor sit amet"
     },
     {
       image: "assets/images/our-team5/7.jpg",
       name: "Mark Norwich",
       designation: "Co-Founder, Devsense. Media",
-            introduction: "Lorem ipsum dolor sit amet"
+      introduction: "Lorem ipsum dolor sit amet"
     },
     {
       image: "assets/images/our-team5/8.jpg",
       name: "Nich Jonas",
       designation: "CEO, Devsense. Media",
-            introduction: "Lorem ipsum dolor sit amet"
+      introduction: "Lorem ipsum dolor sit amet"
     }
   ]
 }

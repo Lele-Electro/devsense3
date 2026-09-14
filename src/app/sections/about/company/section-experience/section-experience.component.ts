@@ -11,7 +11,7 @@ const TEAM_MEMBER_AVATARS: Record<string, string> = {
   lebogang: 'assets/images/our-team5/toni-face.webp',
   che: 'assets/images/our-team5/che-face.webp',
   george: 'assets/images/our-team5/george-face.webp',
-  marothi: 'assets/images/our-team5/marothi-face.webp',
+  mabutho: 'assets/images/our-team5/mabutho-face.webp',
 };
 
 function resolveDeveloperAvatar(teamMember: string): string | null {
