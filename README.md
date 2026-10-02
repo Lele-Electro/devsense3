@@ -8,6 +8,9 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 
 ## Code scaffolding
 
+For reusable canvas animation, see [Particle backgrounds](PARTICLE_BACKGROUND.md)
+for template directive usage and the injectable service API.
+
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
 ## Build

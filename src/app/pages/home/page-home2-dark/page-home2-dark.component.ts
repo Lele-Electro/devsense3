@@ -125,7 +125,7 @@ export class PageHome2DarkComponent implements OnInit {
       {
         type: "content",
         image: "",
-        title: "The Perfect Start Up",
+        title: "The Ideal Start Up",
         description: "Our mission is simple: build dependable technology and deliver exceptional service. Whether you’re recovering from setbacks, scaling your operations, or launching something new, we bring steady hands and sharp minds to every project. Clients trust us because we communicate clearly, work efficiently, and treat every detail like it matters. We believe great tech isn’t just about code — it’s about people, reliability, and the confidence that your project is in capable hands. Your success is the story we’re here to write.",
         serial: "02"
       },

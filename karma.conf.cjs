@@ -33,6 +33,8 @@ module.exports = function (config) {
       ]
     },
     reporters: ['progress', 'kjhtml'],
+    // Global CSS is served under /base, while Angular serves bundled fonts under /media.
+    proxies: { '/base/media/': '/media/' },
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,

@@ -1,9 +1,12 @@
-<header class="header-style2 site-header mobile-sider-drawer-menu full-navbar">
-            
+<header #siteHeader class="header-style2 site-header mobile-sider-drawer-menu full-navbar" [style.background-color]="backgroundColor()" [style.--header-bg]="backgroundColor()">
+
             <div class="sticky-header main-bar-wraper navbar-expand-lg">
                 <div class="main-bar">
             
-                    <div class="container clearfix">
+                    <div class="container clearfix header-particle-container">
+                        @if (particlesEnabled()) {
+                            <canvas [appParticleBackground]="{ color: particleColor() }" class="header-particles"></canvas>
+                        }
                         <div class="logo-header">
                             <div class="logo-header-inner logo-header-one">
                                 <a routerLink="/index">
@@ -54,6 +57,8 @@
                                     </li>
                                     
                                     <li><a routerLink="/services/services2">Services</a></li>
+                                    <li><a routerLink="/pages/our-products">Our Products</a></li>
+                                    <li><a routerLink="/pages/industries">Industries</a></li>
                                     <li><a routerLink="/team/team1">Team</a></li>
                                     <li><a routerLink="/pages/our-process">Our Processes</a></li>
                                     <li><a routerLink="/blog/masonry">Blog</a></li>

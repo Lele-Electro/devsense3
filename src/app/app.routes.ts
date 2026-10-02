@@ -28,6 +28,8 @@ export const routes: Routes = [
 
   // Pages routes
   { path: 'pages/our-process', loadComponent: () => import('./pages/pages/page-our-process/page-our-process.component').then(m => m.PageOurProcessComponent) },
+  { path: 'pages/our-products', loadComponent: () => import('./pages/pages/page-our-products/page-our-products.component').then(m => m.PageOurProductsComponent) },
+  { path: 'pages/industries', loadComponent: () => import('./pages/pages/page-industries/page-industries.component').then(m => m.PageIndustriesComponent) },
   { path: 'pages/fonts-icons', loadComponent: () => import('./pages/pages/page-fonts-icons/page-fonts-icons.component').then(m => m.PageFontsIconsComponent) },
   { path: 'pages/error404', loadComponent: () => import('./pages/pages/page-error404/page-error404.component').then(m => m.PageError404Component) },
   { path: 'pages/faq', loadComponent: () => import('./pages/pages/page-faq/page-faq.component').then(m => m.PageFaqComponent) },

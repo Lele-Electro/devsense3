@@ -1,4 +1,5 @@
-import { AfterViewInit, Component, inject, DOCUMENT, OnInit, PLATFORM_ID, effect } from '@angular/core';
+import { AfterViewInit, Component, inject, DOCUMENT, OnInit, PLATFORM_ID, effect, signal } from '@angular/core';
+import { defaultIfEmpty } from 'rxjs';
 import { isPlatformBrowser } from '@angular/common';
 import { NavigationEnd, Router, Event, RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
@@ -25,6 +26,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   private router = inject(Router);
   private document = inject<Document>(DOCUMENT);
   private platformId = inject(PLATFORM_ID);
+  protected readonly loaderComplete = signal(!isPlatformBrowser(this.platformId));
   protected wpService = inject(WordpressService);
   private helperService = inject(HelperService);
 
@@ -32,7 +34,7 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   constructor() { }
   ngOnInit(): void {
-    this.wpService.getAllPosts().subscribe(posts => {
+    this.wpService.getAllPosts().pipe(defaultIfEmpty([])).subscribe(posts => {
       posts.forEach(post => {
         post.imageUrl = post.featured_media_src_url ?? undefined;
       });
@@ -40,7 +42,7 @@ export class AppComponent implements OnInit, AfterViewInit {
 
 
       this.helperService.log(this.wpService.uncategorizedPosts(), 'All uncategorized posts:', 'yellow', 'green', 'black');
-      this.wpService.getSubcategoriesByCategoryId(3).subscribe(subcategories => {
+      this.wpService.getSubcategoriesByCategoryId(3).pipe(defaultIfEmpty([])).subscribe(subcategories => {
         const content = this.wpService.websiteContent();
         subcategories.forEach(subcategory => {
           content[this.helperService.hyphenToCamel(subcategory.slug) as keyof WebsiteContent] = { parentCategory: subcategory.id } as WPPost & any;
@@ -86,9 +88,7 @@ export class AppComponent implements OnInit, AfterViewInit {
     });
 
     this.wpService.websiteContent.set(content);
-    setTimeout(() => {
-      this.wpService.isLoading.set(false);
-    }, 5000);
+    this.wpService.isLoading.set(false);
     this.helperService.log(this.wpService.websiteContent(), 'websiteContent after assigning subcategory posts', 'green', 'lightgreen', 'black');
   }
   ngAfterViewInit(): void {
@@ -101,6 +101,15 @@ export class AppComponent implements OnInit, AfterViewInit {
           this.loadStyle('skin-1');
         }
       });
+    }
+  }
+
+  protected onLoaderComplete(): void {
+    this.loaderComplete.set(true);
+    // The theme scripts first ran on NavigationEnd while the loader hid the page, so the
+    // sticky header had nothing to bind to. Run them again now the page is rendered.
+    if (isPlatformBrowser(this.platformId) && typeof jQuery !== 'undefined') {
+      this.reinitializeThings();
     }
   }
 

@@ -187,6 +187,8 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/@fontsource/oxanium/400.css",
+              "node_modules/@fontsource/oxanium/800.css",
               "src/styles.scss"
             ],
             "scripts": []

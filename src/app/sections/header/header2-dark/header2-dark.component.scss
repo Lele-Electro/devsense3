@@ -1,0 +1,5 @@
+// Match the dark footer. --header-bg also tints the global frosted pane.
+.header-style2-dark {
+  --header-bg: var(--footer-dark-bg, #151515);
+  background-color: var(--header-bg);
+}

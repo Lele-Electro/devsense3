@@ -1752,7 +1752,7 @@ ol.list-num-count.list-outline-none>li:before {
 }
 
 .sx-bg-light {
-	background-color: $deep_champagne_light;
+	background-color: $verdigrisOpacity2;
 }
 
 .sx-bg-white {
@@ -2934,6 +2934,114 @@ btn-half {
 
 .section-head-two.center .sx-title-two {
 	margin-bottom: 60px;
+}
+
+/* Intro heading with a label above and a lede below (Our Products, Industries) */
+.section-head-two .section-head-label {
+	display: block;
+	margin-bottom: 12px;
+	color: $verdigris;
+	font-family: 'Barlow Condensed', sans-serif;
+	font-size: 15px;
+	font-weight: 600;
+	letter-spacing: 3px;
+	text-transform: uppercase;
+}
+
+.section-head-two.section-head-intro .sx-title-two {
+	margin-bottom: 20px;
+}
+
+.section-head-two .section-head-lede {
+	margin-bottom: 60px;
+	color: #777;
+	font-size: 18px;
+	line-height: 1.6;
+}
+
+/* Content card with a tag, title and paragraphs (About, Industries).
+   Place it in a grid column; it fills the column's height. */
+.sx-info-card {
+	position: relative;
+	height: 100%;
+	padding: 34px 32px 26px;
+	border: 1px solid rgba(0, 0, 0, 0.07);
+	border-radius: 14px;
+	background: #fff;
+	transition: transform 0.3s ease-out, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+/* A short accent line that stretches across the top on hover */
+.sx-info-card:before {
+	content: '';
+	position: absolute;
+	top: -1px;
+	left: 32px;
+	width: 40px;
+	height: 3px;
+	border-radius: 0 0 3px 3px;
+	background-color: $verdigris;
+	transition: width 0.35s ease-out;
+}
+
+.sx-info-card:hover {
+	transform: translateY(-4px);
+	border-color: rgba($verdigris, 0.35);
+	box-shadow: 0 26px 50px -30px rgba(0, 0, 0, 0.35);
+}
+
+.sx-info-card:hover:before {
+	width: calc(100% - 64px);
+}
+
+.sx-info-card p {
+	margin-bottom: 12px;
+	line-height: 1.7;
+}
+
+.sx-info-card p:last-child {
+	margin-bottom: 0;
+}
+
+.sx-info-card__tag {
+	display: block;
+	margin-bottom: 10px;
+	color: $verdigris;
+	font-family: 'Barlow Condensed', sans-serif;
+	font-size: 14px;
+	font-weight: 600;
+	letter-spacing: 2.5px;
+	text-transform: uppercase;
+}
+
+.sx-info-card__title {
+	margin: 0 0 14px;
+	font-size: 26px;
+}
+
+@media only screen and (max-width: 575px) {
+	.sx-info-card {
+		padding: 28px 22px 20px;
+	}
+
+	.sx-info-card:before {
+		left: 22px;
+	}
+
+	.sx-info-card:hover:before {
+		width: calc(100% - 44px);
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.sx-info-card,
+	.sx-info-card:before {
+		transition: none;
+	}
+
+	.sx-info-card:hover {
+		transform: none;
+	}
 }
 
 
@@ -5580,6 +5688,30 @@ ol.comment-list li.comment .comment-respond .comment-form p {
 	}
 }
 
+/* Pages that open with the banner: the header floats over the top of the page and the
+   banner grows by the header's height (published by the header component). Its content
+   stays put and the image fills the extra space behind the frosted header instead of shifting. */
+.page-wraper:has(> .page-content > app-banner:first-child) > app-header2 .header-style2 {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background-color: transparent;
+}
+
+.page-content > app-banner:first-child {
+	display: block;
+	--banner-height: 620px;
+}
+
+.page-content > app-banner:first-child .sx-bnr-inr {
+	height: calc(var(--banner-height) + var(--site-header-height, 125px));
+}
+
+@media only screen and (max-width: 1024px) {
+	.page-content > app-banner:first-child {--banner-height: 400px;}
+}
+
 .sx-bnr-inr .container {
 	display: table;
 	height: 100%;
@@ -6124,7 +6256,7 @@ ol.comment-list li.comment .comment-respond .comment-form p {
 }
 
 .footer-dark .footer-top {
-	background-color: #151515;
+	background-color: $footer_dark_bg;
 }
 
 .footer-dark .footer-bottom {
@@ -10429,7 +10561,8 @@ line-list-style
     position: relative;
 	overflow: hidden;
 	border-style: solid;
-	border-color: #242535;
+	// border-color: #242535;
+	border-color: $cyber_grape_particle_background;
 	border-width: 0px 100px 100px 100px;
 }
 

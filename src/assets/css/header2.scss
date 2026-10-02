@@ -442,9 +442,8 @@ HEADER (top part of page)
 
 
 /*===========================================================================================*/
-.header-style2 .is-fixed .color-fill.main-bar {background: #242535;}
 .header-style2 .navbar-toggler .icon-bar{background-color:#fff;}
-.header-style2{position: relative;width: 100%;left: 0px;top: 0px;background-color: #242535;}
+.header-style2{position: relative;width: 100%;left: 0px;top: 0px;background-color: $cyber_grape_particle_background;}
 .header-style2 .top-bar{border-bottom: 1px solid rgba(0, 0, 0,0.4);}
 .header-style2 .top-bar .social-bx ul{margin-bottom: 0px;display: flex;border-right: 1px solid #dcdcdc;list-style: none;}
 .header-style2 .top-bar .social-bx li{font-size: 12px;margin: 0;position: relative;}
@@ -493,7 +492,42 @@ HEADER (top part of page)
 
 .header-style2 .is-fixed .main-bar {position: fixed;top: 0;left: 0;}
 .header-style2 .is-fixed .extra-nav {padding: 13px 0;}
-.header-style2 .is-fixed .color-fill.main-bar {  background:#141b1f;}
+
+/*-------------------------------------
+	frosted glass pane
+-------------------------------------*/
+
+.header-style2 {
+	// Tint comes from the header's backgroundColor input, else the default header colour.
+	--header-frost-tint: var(--header-bg, #{$cyber_grape_particle_background});
+	--header-frost-opacity: 40%;
+	--header-frost-blur: 28px;
+}
+
+// Keep the pane's negative z-index inside the bar.
+.header-style2 .main-bar {isolation: isolate;}
+
+// The blur lives on a pseudo-element: on .main-bar itself it would trap the
+// fixed mobile drawer and the full-screen search overlay inside the bar.
+.header-style2 .main-bar::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	z-index: -1;
+	pointer-events: none;
+	background-color: color-mix(in srgb, var(--header-frost-tint) var(--header-frost-opacity), transparent);
+	-webkit-backdrop-filter: blur(var(--header-frost-blur)) saturate(160%);
+	backdrop-filter: blur(var(--header-frost-blur)) saturate(160%);
+}
+
+// Without backdrop blur, or when the visitor asks for less transparency, go near-solid.
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+	.header-style2 {--header-frost-opacity: 95%;}
+}
+
+@media (prefers-reduced-transparency: reduce) {
+	.header-style2 {--header-frost-opacity: 95%;}
+}
 
 @media (max-width: 991px) {
 	.header-style2.mobile-sider-drawer-menu .header-nav {
@@ -547,3 +581,25 @@ HEADER (top part of page)
 	  max-height: 100%;
 	}
   }
+
+/*-------------------------------------
+	keep the menu on one line on mid-size desktops
+	(below 992px the mobile drawer takes over)
+-------------------------------------*/
+
+@media only screen and (min-width: 992px) and (max-width: 1439px) {
+	.header-style2 .main-bar .container {padding-left: 30px; padding-right: 30px;}
+	.header-style2 .header-nav .nav>li>a {
+		padding-left: clamp(6px, 0.6vw, 9px);
+		padding-right: clamp(6px, 0.6vw, 9px);
+		font-size: clamp(17px, 1.4vw, 20px);
+	}
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1229px) {
+	.header-style2 .extra-nav .extra-cell:last-child {display: none;}
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1079px) {
+	.header-style2 .logo-header-inner img {max-width: 200px;}
+}

@@ -1,4 +1,15 @@
-import { Component, OnInit, input } from '@angular/core';
+import { Component, input } from '@angular/core';
+
+export interface AboutUsCard {
+  tag: string;
+  title: string;
+  paragraphs: string[];
+}
+
+export interface AboutUsContent {
+  heading: { label: string; title: string; lede: string };
+  cards: AboutUsCard[];
+}
 
 @Component({
   selector: 'app-section-about-us',
@@ -6,13 +17,8 @@ import { Component, OnInit, input } from '@angular/core';
   styleUrls: ['./section-about-us.component.scss'],
   standalone: true
 })
-export class SectionAboutUsComponent implements OnInit {
+export class SectionAboutUsComponent {
 
-  readonly data = input<any>();
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
+  readonly data = input.required<AboutUsContent>();
 
 }

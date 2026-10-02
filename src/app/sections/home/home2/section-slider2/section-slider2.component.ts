@@ -1,6 +1,7 @@
 import { DOCUMENT, isPlatformBrowser } from '@angular/common';
-import { AfterViewInit, Component, OnDestroy, PLATFORM_ID, effect, inject } from '@angular/core';
+import { AfterViewInit, Component, OnDestroy, PLATFORM_ID, effect, inject, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { ParticleBackgroundDirective } from 'src/app/directives/particle-background.directive';
 import { WordpressService } from 'src/app/services/wordpress.service';
 import { HelperService } from 'src/app/services/helper.service';
 
@@ -10,9 +11,12 @@ declare const sx_home_bnr_2: () => void;
   selector: 'app-section-slider2',
   templateUrl: './section-slider2.component.html',
   styleUrls: ['./section-slider2.component.scss'],
-  imports: [RouterLink]
+  imports: [RouterLink, ParticleBackgroundDirective]
 })
 export class SectionSlider2Component implements AfterViewInit, OnDestroy {
+  readonly particleColor = input('var(--cyber-grape-particle-animation, #5C4380)');
+  readonly particlesEnabled = input(true);
+  readonly backgroundColor = input<string>();
   wpService = inject(WordpressService);
   private helperService = inject(HelperService);
   private platformId = inject(PLATFORM_ID);

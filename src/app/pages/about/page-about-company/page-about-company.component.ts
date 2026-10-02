@@ -4,7 +4,7 @@ import { SectionTestimonials2Component } from '../../../sections/home/home2/sect
 import { SectionExperienceComponent } from '../../../sections/about/company/section-experience/section-experience.component';
 import { SectionAwardsComponent } from '../../../sections/about/company/section-awards/section-awards.component';
 import { SectionDesignComponent } from '../../../sections/about/company/section-design/section-design.component';
-import { SectionAboutUsComponent } from '../../../sections/about/company/section-about-us/section-about-us.component';
+import { AboutUsContent, SectionAboutUsComponent } from '../../../sections/about/company/section-about-us/section-about-us.component';
 import { BannerComponent } from '../../../sections/banner/banner.component';
 import { Header2Component } from '../../../sections/header/header2/header2.component';
 import { WordpressService } from '../../../services/wordpress.service';
@@ -25,65 +25,43 @@ export class PageAboutCompanyComponent {
     description: "The essence of interior design will always be about people and how they live. It is about the realities of what makes for an attractive, civilized."
   }
 
-  about = {
-    title: "About Us",
-    description1: "We Cover a large range of creative digital projects, platforms and campaigns to create experiences",
-    description2: "Design pages easily with the Visual Composer drag-and-drop page builder. Highlight interesting facts about you or your business. Accompany this with a selection of icons from five amazing icon packs and style them to fit your site design. Choose from a collection of Pie Charts, Line Graphs and Progress Bars. Style each element and make it your own.",
-    projects: [
-      [
-        {
-          title: "Art direction",
-          image: "assets/images/services/service-2/port-1.jpg"
-        },
-        {
-          title: "Illustration",
-          image: "assets/images/services/service-2/port-2.jpg"
-        },
-        {
-          title: "2D & 3D animation",
-          image: "assets/images/services/service-2/port-3.jpg"
-        },
-        {
-          title: "Sound design",
-          image: "assets/images/services/service-2/port-4.jpg"
-        },
-        {
-          title: "Motion design",
-          image: "assets/images/services/service-2/port-5.jpg"
-        },
-        {
-          title: "Creative development",
-          image: "assets/images/services/service-2/port-6.jpg"
-        }
-      ],
-      [
-        {
-          title: "VR & AR development",
-          image: "assets/images/services/service-2/port-7.jpg"
-        },
-        {
-          title: "App development",
-          image: "assets/images/services/service-2/port-8.jpg"
-        },
-        {
-          title: "Front-end development",
-          image: "assets/images/services/service-2/port-9.jpg"
-        },
-        {
-          title: "Ui/Ux Design",
-          image: "assets/images/services/service-2/port-10.jpg"
-        },
-        {
-          title: "Back-end development",
-          image: "assets/images/services/service-2/port-11.jpg"
-        }
-      ]
+  about: AboutUsContent = {
+    heading: {
+      label: 'About',
+      title: 'Where ideas become reality.',
+      lede: 'A Pretoria engineering company building the systems South African businesses depend on.'
+    },
+    cards: [
+      {
+        tag: 'What we stand for',
+        title: 'Five things we will not trade away',
+        paragraphs: [
+          'Continuously pushing the boundaries of technology to create solutions that make a measurable difference.',
+          'The highest ethical standards in every business practice — including telling a client when they do not need what they asked for.'
+        ]
+      },
+      {
+        tag: 'What we stand for',
+        title: 'The people you will actually deal with',
+        paragraphs: [
+          'Devsense is deliberately small and deliberately senior. On most engagements at least one of these three is directly involved.',
+          'Over ten years across software development and business management. Antonio leads Devsense’s strategy and client relationships, and still reviews architecture on the work that matters most.'
+        ]
+      },
+      {
+        tag: 'What we stand for',
+        title: 'Giving the skills back to where we found them.',
+        paragraphs: [
+          'South Africa does not have a shortage of talent. It has a shortage of access. Devsense commits time and money to narrowing that gap.',
+          'Partnering with local schools to run coding workshops and support scholarships for students who would not otherwise get near a development environment.'
+        ]
+      }
     ]
   }
 
   design = {
     image: "https://devsense.co.za/wp3/wp-content/uploads/2026/09/our-process-office-team.png",
-    title: "The Perfect Start Up",
+    title: "The Ideal Start Up",
     description: "Our mission is simple: build dependable technology and deliver exceptional service. Whether you’re recovering from setbacks, scaling your operations, or launching something new, we bring steady hands and sharp minds to every project. Clients trust us because we communicate clearly, work efficiently, and treat every detail like it matters. We believe great tech isn’t just about code — it’s about people, reliability, and the confidence that your project is in capable hands. Your success is the story we’re here to write."
   }
 

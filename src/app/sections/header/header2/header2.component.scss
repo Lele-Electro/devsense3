@@ -3,3 +3,13 @@
   position: relative;
   z-index: 1001;
 }
+
+.header-particle-container {
+  position: relative;
+  isolation: isolate;
+}
+
+.header-particles {
+  // Keep the animation behind the navigation without clipping its mobile drawer.
+  z-index: -1;
+}

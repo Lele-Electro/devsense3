@@ -1,0 +1,53 @@
+<div class="page-wraper">
+
+  <!-- HEADER START -->
+  <app-header2></app-header2>
+  <!-- HEADER END -->
+
+  <!-- CONTENT START -->
+  <div class="page-content">
+
+    <!-- INNER PAGE BANNER -->
+    <app-banner [data]="banner"></app-banner>
+    <!-- INNER PAGE BANNER END -->
+
+    <!-- INDUSTRIES SECTION START -->
+    <div class="section-full p-t100 p-b70 bg-gray-light inner-page-padding">
+      <div class="container">
+
+        <!-- TITLE START -->
+        <div class="section-head-two center section-head-intro">
+          <span class="section-head-label">{{ content.heading.label }}</span>
+          <h2 class="sx-title-two">{{ content.heading.title }}</h2>
+          <p class="section-head-lede">{{ content.heading.lede }}</p>
+        </div>
+        <!-- TITLE END -->
+
+        <div class="section-content">
+          <div class="row">
+            @for (card of content.cards; track card.title) {
+              <div class="col-lg-6 col-md-12 m-b30">
+                <article class="sx-info-card">
+                  <span class="sx-info-card__tag">{{ card.tag }}</span>
+                  <h3 class="sx-info-card__title">{{ card.title }}</h3>
+                  @for (paragraph of card.paragraphs; track $index) {
+                    <p>{{ paragraph }}</p>
+                  }
+                </article>
+              </div>
+            }
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!-- INDUSTRIES SECTION END -->
+
+  </div>
+  <!-- CONTENT END -->
+
+  <!-- FOOTER START -->
+  <app-footer1></app-footer1>
+  <!-- FOOTER END -->
+
+</div>
