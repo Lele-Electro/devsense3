@@ -1,17 +1,36 @@
-<div class="loading-area">
-    <div class="loading-box"></div>
-    <div class="loading-pic">
-        <div class="cssload-preloader">
-            <div class="cssload-preloader-box">
-                <div>D</div>
-                <div>E</div>
-                <div>V</div>
-                <div>S</div>
-                <div>E</div>
-                <div>N</div>
-                <div>S</div>
-                <div>E</div>
-            </div>
+<div class="loading-area" role="status" [style.--echo-duration]="brandRevealDuration + 'ms'">
+    @if (particlesVisible()) {
+        <canvas class="loader-particles" [appParticleBackground]="particleOptions()"></canvas>
+    }
+    <span class="loading-label">LOADING, PLEASE WAIT.</span>
+    <div class="typing-line" [class.is-transitioning]="isTransitioning()" [class.is-merging]="isMerging()" [class.is-branded]="showBrand()" aria-hidden="true">
+        <span class="brand-word brand-word-left">
+            @for (letter of brandLeft; track $index) {
+                <span class="brand-letter" [style.--letter-order]="brandLeft.length - 1 - $index">{{ letter }}</span>
+            }
+        </span>
+        <span class="bracket-piece bracket-piece-left">
+            <span class="bracket-artwork">
+                <span class="bracket-echo"></span>
+                <img class="bracket" src="assets/images/loader/bracket-left.svg" width="416" height="461" alt="" draggable="false">
+                <span class="bracket-transitioned"></span>
+            </span>
+        </span>
+        <div class="typing-copy">
+            <!-- <span class="iam">{{ prefix() }}</span> -->
+            <span class="text">{{ typedText() }}</span>
         </div>
+        <span class="bracket-piece bracket-piece-right" (transitionend)="onMergeTransitionEnd($event)">
+            <span class="bracket-artwork" (transitionend)="onArtworkPositioned($event)">
+                <span class="bracket-echo"></span>
+                <img class="bracket" src="assets/images/loader/bracket-right.svg" width="416" height="461" alt="" draggable="false">
+                <span class="bracket-transitioned" (transitionend)="onArtworkCrossfaded($event)"></span>
+            </span>
+        </span>
+        <span class="brand-word brand-word-right">
+            @for (letter of brandRight; track $index) {
+                <span class="brand-letter" [style.--letter-order]="$index" (animationend)="onBrandLetterAnimationEnd($event, $index)">{{ letter }}</span>
+            }
+        </span>
     </div>
 </div>

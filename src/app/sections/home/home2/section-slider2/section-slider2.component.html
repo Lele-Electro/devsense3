@@ -1,5 +1,5 @@
 
-<div class="sx-bnr-2-wrap-outer home-2-slider">
+<div #sliderContainer class="sx-bnr-2-wrap-outer home-2-slider" [style.background-color]="backgroundColor()" [style.border-color]="backgroundColor()">
     <video
         muted
         autoplay
@@ -77,3 +77,6 @@
      <div class="swiper-button-next"></div>
      <div class="swiper-button-prev"></div>
 </div>
+@if (particlesEnabled()) {
+    <canvas [appParticleBackground]="{ borderTarget: sliderContainer, color: particleColor() }" class="particles-canvas"></canvas>
+}

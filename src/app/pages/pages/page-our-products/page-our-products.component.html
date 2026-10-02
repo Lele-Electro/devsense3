@@ -1,0 +1,63 @@
+<div class="page-wraper">
+
+  <!-- HEADER START -->
+  <app-header2></app-header2>
+  <!-- HEADER END -->
+
+  <!-- CONTENT START -->
+  <div class="page-content">
+
+    <!-- INNER PAGE BANNER -->
+    <app-banner [data]="banner"></app-banner>
+    <!-- INNER PAGE BANNER END -->
+
+    <!-- OUR PRODUCTS SECTION START -->
+    <div class="section-full p-t100 p-b100 bg-white inner-page-padding">
+      <div class="container">
+
+        <!-- TITLE START -->
+        <div class="section-head-two center section-head-intro">
+          <span class="section-head-label">{{ content.heading.label }}</span>
+          <h2 class="sx-title-two">{{ content.heading.title }}</h2>
+          <p class="section-head-lede">{{ content.heading.lede }}</p>
+        </div>
+        <!-- TITLE END -->
+
+        <div class="section-content">
+          @for (product of content.products; track product.number; let odd = $odd) {
+            <article class="product-case row align-items-center" [class.flex-lg-row-reverse]="odd">
+              <div class="col-lg-6 product-case__txt">
+                <div class="large-title">
+                  <h3 class="sx-title" [attr.data-title]="product.number">{{ product.title }}</h3>
+                </div>
+                <p class="product-case__sub">{{ product.subtitle }}</p>
+                @for (paragraph of product.paragraphs; track $index) {
+                  <p>{{ paragraph }}</p>
+                }
+              </div>
+
+              <div class="col-lg-6">
+                <div class="product-case__pics">
+                  <div class="product-case__frame">
+                    <span class="product-case__bar" aria-hidden="true"><i></i><i></i><i></i></span>
+                    <img [src]="product.siteImage.src" [alt]="product.siteImage.alt" width="1280" height="800" loading="lazy" decoding="async">
+                  </div>
+                  <img class="product-case__app" [src]="product.appImage.src" [alt]="product.appImage.alt" width="1280" height="800" loading="lazy" decoding="async">
+                </div>
+              </div>
+            </article>
+          }
+        </div>
+
+      </div>
+    </div>
+    <!-- OUR PRODUCTS SECTION END -->
+
+  </div>
+  <!-- CONTENT END -->
+
+  <!-- FOOTER START -->
+  <app-footer1></app-footer1>
+  <!-- FOOTER END -->
+
+</div>

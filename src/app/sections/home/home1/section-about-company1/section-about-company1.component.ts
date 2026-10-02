@@ -1,5 +1,6 @@
 import { Component, effect, inject, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { CountUpDirective } from 'src/app/directives/count-up.directive';
 import { HelperService } from 'src/app/services/helper.service';
 import { WordpressService } from 'src/app/services/wordpress.service';
 
@@ -7,7 +8,7 @@ import { WordpressService } from 'src/app/services/wordpress.service';
   selector: 'app-section-about-company1',
   templateUrl: './section-about-company1.component.html',
   styleUrls: ['./section-about-company1.component.scss'],
-  imports: [RouterLink]
+  imports: [RouterLink, CountUpDirective]
 })
 export class SectionAboutCompany1Component {
 

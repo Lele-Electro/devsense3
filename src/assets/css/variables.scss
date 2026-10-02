@@ -18,7 +18,25 @@ $acquamarine        : #64ffda;
 $deep_champagne     : #F7D6A0;
 $deep_champagne_light     : #f9e6c7;
 $cyber_grape        : #5C4380;
+$cyber_grape_particle_animation        : #5C4380;
+// $cyber_grape_particle_animation        : #080808;
+$cyber_grape_particle_two        : #11091a;
+$cyber_grape_particle_background        : #020103;
+// $cyber_grape_particle_background        : #ffffff;
+$cyber_grape_dark        : #1e1629;
 $vivid_tangerine    : #FC9B8F;
+$footer_dark_bg     : #151515;
+
+:root {
+	--cyber-grape-particle-animation: #{$cyber_grape_particle_animation};
+	--cyber-grape-particle-background: #{$cyber_grape_particle_background};
+	--header-particle-animation: #{$verdigris};
+	--chinese-pink: #{$chinese_pink};
+  --deep-champagne: #{$deep_champagne};
+  --verdigris: #{$verdigris};
+  --cyber-grape: #{$cyber_grape};
+  --footer-dark-bg: #{$footer_dark_bg};
+}
 
 
 

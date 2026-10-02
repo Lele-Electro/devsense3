@@ -147,7 +147,7 @@ export class PageTeam1Component implements OnInit, AfterViewInit, OnDestroy {
       hoverImage: "assets/images/our-team5/toni-face-on-hover.webp",
       name: "Toni (Lebogang) Ribeiro",
       designation: "Devsense Tech",
-      introduction: "Interactivity with your idea is what really counts"
+      introduction: "Let's exapnd on how people interact with your business"
     },
     {
       image: "assets/images/our-team5/mabutho-face.webp",

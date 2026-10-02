@@ -54,33 +54,71 @@
   color: $cyber_grape;
 }
 
-:host ::ng-deep .contact-map-marker {
+// Calm OpenStreetMap's colours, closer to the muted basemap this replaced, so the marker stands out.
+:host ::ng-deep .contact-map .leaflet-tile-pane {
+  filter: saturate(0.6);
+}
+
+/* Premises marker: the loader's colour centre piece on a dark pin (46 x 56, tip at the bottom). */
+:host ::ng-deep .premises-marker {
   background: transparent;
   border: 0;
 }
 
-:host ::ng-deep .contact-map-marker::before {
-  content: '';
+:host ::ng-deep .premises-marker__pin {
   position: absolute;
-  top: 1px;
-  left: 2px;
-  width: 26px;
-  height: 26px;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  box-sizing: border-box;
+  border: 2px solid #fff;
   border-radius: 50% 50% 50% 0;
-  background: $chinese_pink;
-  box-shadow: 0 2px 5px rgba($cyber_grape, 0.28);
+  background: var(--footer-dark-bg, #151515);
+  box-shadow: 0 6px 14px rgba($cyber_grape, 0.35);
   transform: rotate(-45deg);
 }
 
-:host ::ng-deep .contact-map-marker::after {
-  content: '';
+:host ::ng-deep .premises-marker__pin img {
+  display: block;
+  width: auto;
+  height: 30px;
+  transform: rotate(45deg);
+}
+
+:host ::ng-deep .premises-marker__pulse {
   position: absolute;
-  top: 8px;
-  left: 9px;
-  width: 12px;
-  height: 12px;
-  border: 3px solid #fff;
+  top: 100%;
+  left: 50%;
+  width: 34px;
+  height: 14px;
+  margin: -7px 0 0 -17px;
   border-radius: 50%;
+  background: rgba($verdigris, 0.45);
+  animation: premises-pulse 2.4s ease-out infinite;
+}
+
+@keyframes premises-pulse {
+  0% {
+    transform: scale(0.35);
+    opacity: 0.9;
+  }
+
+  70%,
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :host ::ng-deep .premises-marker__pulse {
+    animation: none;
+    opacity: 0.5;
+  }
 }
 
 .cons-contact-form2 .input-animate input,

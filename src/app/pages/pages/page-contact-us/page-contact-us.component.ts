@@ -62,22 +62,28 @@ export class PageContactUsComponent implements OnInit, AfterViewInit, OnDestroy 
 
     leaflet.control.zoom({ position: 'topright' }).addTo(this.map);
 
-    leaflet.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}.png', {
-      subdomains: 'abcd',
-      maxZoom: 20,
-      attribution: '&copy; OpenStreetMap contributors &copy; CARTO'
+    // CARTO basemaps now need an API key, so use OpenStreetMap's keyless tiles. Their usage
+    // policy needs the attribution below and a Referer header, so keep the referrer explicit.
+    leaflet.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      referrerPolicy: 'strict-origin-when-cross-origin',
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors'
     }).addTo(this.map);
 
+    // The premises marker is the loader's centre piece in colour, on a dark pin.
     const markerIcon = leaflet.divIcon({
-      className: 'contact-map-marker',
-      iconSize: [30, 42],
-      iconAnchor: [15, 42],
-      popupAnchor: [0, -38]
+      className: 'premises-marker',
+      html: '<span class="premises-marker__pulse"></span>'
+        + '<span class="premises-marker__pin"><img src="assets/images/loader/mark-colour.svg" alt="" width="17" height="30"></span>',
+      iconSize: [46, 56],
+      iconAnchor: [23, 56],
+      popupAnchor: [0, -52]
     });
 
     leaflet.marker([officeCoordinates[1], officeCoordinates[0]], {
       icon: markerIcon,
-      title: 'Libra Office Park'
+      title: 'Devsense premises, Libra Office Park',
+      alt: 'Devsense premises'
     })
       .addTo(this.map)
       .bindPopup('<strong>Libra Office Park</strong><br>1 Von Backstrom Blvd<br>Silver Lakes Golf Estate, 0081', {
